@@ -6,7 +6,6 @@ import { TOKEN_NAME } from "../context/auth.context";
 import authService from "../services/auth.service";
 
 export default function SearchBar() {
-  const [searchQuery, setSearchQuery] = useState("");
   const [searchResults, setSearchResults] = useState([]);
   const [loading, setLoading] = useState(false);
   const [typingTimeout, setTypingTimeout] = useState(null);
