@@ -2,6 +2,9 @@ import { useState, useEffect } from "react";
 import { Input, Box, Image, Text, Spinner, Checkbox } from "@chakra-ui/react";
 import { Link } from "react-router-dom";
 import axios from "axios";
+import favoriteService from "../services/favorite.service";
+import { TOKEN_NAME } from "../context/auth.context";
+import authService from "../services/auth.service";
 
 export default function SearchBar() {
   const [searchQuery, setSearchQuery] = useState("");
@@ -66,6 +69,26 @@ export default function SearchBar() {
   const handleHighlightChange = (event) => {
     const checked = event.target.checked;
     setIsHighlightChecked(checked);
+  };
+
+  const handleArtworkPush = async (artworkId) => {
+    try {
+      const token = localStorage.getItem(TOKEN_NAME);
+      const response = await authService.getUser(token);
+      const userId = response.data._id;
+      console.log(userId)
+
+      favoriteService
+        .update({ id: userId, data: artworkId })
+        .then((response) => {
+          console.log("good", response)
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+    } catch (error) {
+      console.log(error);
+    }
   };
 
   const filterByArtist = (results) => {
@@ -149,10 +172,10 @@ export default function SearchBar() {
               </Text>
 
               {filterByArtist(searchResults).map((result) => (
-                <Link
+                <a
                   key={result.objectID}
-                  to={`/details/${result.objectID}`}
-                  style={{ textDecoration: "none" }}
+                  onClick={() => handleArtworkPush(result.objectID)} // Attach onClick event handler here
+                  style={{ textDecoration: "none", cursor: "pointer" }} // Set cursor style to indicate clickable element
                 >
                   <Box display="flex" alignItems="center" mb={2}>
                     <Image
@@ -167,7 +190,7 @@ export default function SearchBar() {
                     />
                     <Text>{result.title}</Text>
                   </Box>
-                </Link>
+                </a>
               ))}
             </>
           )}
@@ -182,13 +205,13 @@ export default function SearchBar() {
                 ":
               </Text>
               {filterByArtworkTitle(searchResults).map((result) => (
-                <Link
+                <a
                   key={result.objectID}
-                  to={`/details/${result.objectID}`}
-                  style={{ textDecoration: "none" }}
+                  onClick={() => handleArtworkPush(result.objectID)} // Attach onClick event handler here
+                  style={{ textDecoration: "none", cursor: "pointer" }} // Set cursor style to indicate clickable element
                 >
                   <Box display="flex" alignItems="center" mb={2}>
-                  <Image
+                    <Image
                       src={
                         result.primaryImageSmall ||
                         "https://easydrawingguides.com/wp-content/uploads/2021/01/Museum-Step-10.png"
@@ -200,7 +223,7 @@ export default function SearchBar() {
                     />
                     <Text>{result.title}</Text>
                   </Box>
-                </Link>
+                </a>
               ))}
             </>
           )}
@@ -208,13 +231,13 @@ export default function SearchBar() {
             <>
               <Text fontWeight="bold">Other results:</Text>
               {filterByOthers(searchResults).map((result) => (
-                <Link
+                <a
                   key={result.objectID}
-                  to={`/details/${result.objectID}`}
-                  style={{ textDecoration: "none" }}
+                  onClick={() => handleArtworkPush(result.objectID)} // Attach onClick event handler here
+                  style={{ textDecoration: "none", cursor: "pointer" }} // Set cursor style to indicate clickable element
                 >
                   <Box display="flex" alignItems="center" mb={2}>
-                  <Image
+                    <Image
                       src={
                         result.primaryImageSmall ||
                         "https://easydrawingguides.com/wp-content/uploads/2021/01/Museum-Step-10.png"
@@ -226,7 +249,7 @@ export default function SearchBar() {
                     />
                     <Text>{result.title}</Text>
                   </Box>
-                </Link>
+                </a>
               ))}
             </>
           )}
