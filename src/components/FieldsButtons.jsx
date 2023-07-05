@@ -12,21 +12,21 @@ function FieldsButtons() {
   return (
     <div>
       <Button
-        variant={field === "tours" ? "solid" : undefined}
+        colorScheme={field === "tours" ? "blue" : undefined}
         onClick={() => handleClick("tours")}
       >
         Tours
       </Button>
 
       <Button
-        variant={field === "artists" ? "solid" : undefined}
+        colorScheme={field === "artists" ? "blue" : undefined}
         onClick={() => handleClick("artists")}
       >
         Artists
       </Button>
 
       <Button
-        variant={field === "artworks" ? "solid" : undefined}
+        colorScheme={field === "artworks" ? "blue" : undefined}
         onClick={() => handleClick("artworks")}
       >
         Artworks
