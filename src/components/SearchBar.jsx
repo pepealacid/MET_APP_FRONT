@@ -22,8 +22,8 @@ export default function SearchBar() {
       const response = await axios.get(
         `https://collectionapi.metmuseum.org/public/collection/v1/search?q=${query}`
       );
-      setSearchResults(response.data.results);
-      console.log(query, response.data.objectIDs)
+      setSearchResults(response.data.objectIDs);
+      console.log(query, searchResults)
     } catch (error) {
       console.error("Error fetching search results:", error);
     }
@@ -42,7 +42,7 @@ export default function SearchBar() {
       <PopoverContent>
         <PopoverHeader>Search Results</PopoverHeader>
         <PopoverBody>
-          {/* <VStack spacing={2}>
+          <VStack spacing={2}>
             {searchResults.length > 0 ? (
               searchResults.map((result) => (
                 <div key={result.objectID}>{result.title}</div>
@@ -50,7 +50,7 @@ export default function SearchBar() {
             ) : (
               <div>No results found</div>
             )}
-          </VStack> */}
+          </VStack>
         </PopoverBody>
       </PopoverContent>
     </Popover>
