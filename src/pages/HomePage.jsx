@@ -1,7 +1,9 @@
+import SearchBar from "../components/SearchBar"
+
 function HomePage(){
     return(
         <>
-            <p>Esta es una homePage privada</p>
+           <SearchBar />
         </>
     )
 }
