@@ -34,6 +34,7 @@ export default function SearchBar() {
             (objectResponse) => objectResponse.data
           );
           setSearchResults(objects);
+          console.log(objects);
         } catch (error) {
           console.error("Error fetching search results:", error);
         }
@@ -138,7 +139,14 @@ export default function SearchBar() {
         >
           {filterByArtist(searchResults).length > 0 && (
             <>
-            <Text fontWeight="bold">Works from "{searchQuery.split(' ').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ')}"</Text>
+              <Text fontWeight="bold">
+                Works from "
+                {searchQuery
+                  .split(" ")
+                  .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
+                  .join(" ")}
+                "
+              </Text>
 
               {filterByArtist(searchResults).map((result) => (
                 <Link
@@ -148,7 +156,10 @@ export default function SearchBar() {
                 >
                   <Box display="flex" alignItems="center" mb={2}>
                     <Image
-                      src={result.primaryImageSmall}
+                      src={
+                        result.primaryImageSmall ||
+                        "https://easydrawingguides.com/wp-content/uploads/2021/01/Museum-Step-10.png"
+                      }
                       alt={result.title}
                       boxSize="60px"
                       objectFit="cover"
@@ -162,7 +173,14 @@ export default function SearchBar() {
           )}
           {filterByArtworkTitle(searchResults).length > 0 && (
             <>
-              <Text fontWeight="bold">Artworks called "{searchQuery.split(' ').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ')}":</Text>
+              <Text fontWeight="bold">
+                Artworks called "
+                {searchQuery
+                  .split(" ")
+                  .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
+                  .join(" ")}
+                ":
+              </Text>
               {filterByArtworkTitle(searchResults).map((result) => (
                 <Link
                   key={result.objectID}
@@ -170,8 +188,11 @@ export default function SearchBar() {
                   style={{ textDecoration: "none" }}
                 >
                   <Box display="flex" alignItems="center" mb={2}>
-                    <Image
-                      src={result.primaryImageSmall}
+                  <Image
+                      src={
+                        result.primaryImageSmall ||
+                        "https://easydrawingguides.com/wp-content/uploads/2021/01/Museum-Step-10.png"
+                      }
                       alt={result.title}
                       boxSize="60px"
                       objectFit="cover"
@@ -193,8 +214,11 @@ export default function SearchBar() {
                   style={{ textDecoration: "none" }}
                 >
                   <Box display="flex" alignItems="center" mb={2}>
-                    <Image
-                      src={result.primaryImageSmall}
+                  <Image
+                      src={
+                        result.primaryImageSmall ||
+                        "https://easydrawingguides.com/wp-content/uploads/2021/01/Museum-Step-10.png"
+                      }
                       alt={result.title}
                       boxSize="60px"
                       objectFit="cover"
