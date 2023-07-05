@@ -4,11 +4,15 @@ import axios from "axios";
 import favoriteService from "../services/favorite.service";
 import { TOKEN_NAME } from "../context/auth.context";
 import authService from "../services/auth.service";
+import { useParams } from "react-router-dom";
+
 
 export default function SearchBar() {
+  const [searchQuery, setSearchQuery] = useState("");
   const [searchResults, setSearchResults] = useState([]);
   const [loading, setLoading] = useState(false);
   const [typingTimeout, setTypingTimeout] = useState(null);
+  const { field } = useParams()
 
   useEffect(() => {
     if (searchQuery.trim() !== "") {
@@ -59,51 +63,7 @@ export default function SearchBar() {
     setSearchQuery(query);
   };
 
-  const handleArtworkPush = async (artworkId) => {
-    try {
-      const token = localStorage.getItem(TOKEN_NAME);
-      const response = await authService.getUser(token);
-      const userId = response.data._id;
-      console.log(userId);
-
-      favoriteService
-        .update({ id: userId, data: artworkId })
-        .then((response) => {
-          console.log("good", response);
-        })
-        .catch((error) => {
-          console.log(error);
-        });
-    } catch (error) {
-      console.log(error);
-    }
-  };
-
-  const filterByArtist = (results) => {
-    const artistResults = results.filter((result) =>
-      result.artistDisplayName.toLowerCase().includes(searchQuery.toLowerCase())
-    );
-    return artistResults.slice(0, 3);
-  };
-
-  const filterByArtworkTitle = (results) => {
-    const artworkResults = results.filter((result) =>
-      result.title.toLowerCase().includes(searchQuery.toLowerCase())
-    );
-    return artworkResults.slice(0, 3);
-  };
-
-  const filterByOthers = (results) => {
-    const otherResults = results.filter(
-      (result) =>
-        !result.artistDisplayName
-          .toLowerCase()
-          .includes(searchQuery.toLowerCase()) &&
-        !result.title.toLowerCase().includes(searchQuery.toLowerCase())
-    );
-    return otherResults.slice(0, 3);
-  };
-
+  
   return (
     <Box position="relative">
       <Input

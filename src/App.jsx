@@ -3,15 +3,16 @@ import LoginPage from "./pages/LoginPage";
 import SignupPage from "./pages/SignupPage";
 import HomePage from "./pages/HomePage";
 import PrivateRoute from "./components/PrivateRoute";
+import { FieldContextWrapper } from "./context/field.context";
 
 function App() {
   return (
     <Routes>
       <Route
-        path="/"
+        path="/home/:field"
         element={
           <PrivateRoute>
-            <HomePage />
+              <HomePage />
           </PrivateRoute>
         }
       />

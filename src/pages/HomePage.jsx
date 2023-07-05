@@ -1,13 +1,19 @@
 import SearchBar from "../components/SearchBar";
-import React, { useContext } from "react";
+import { useContext } from "react";
 import { AuthContext } from "../context/auth.context";
+import ExploreSearchBar from "../components/ExploreSearchBar";
+import FieldsButtons from "../components/FieldsButtons";
+import { Button } from "@chakra-ui/react";
 
 function HomePage() {
-    const { logout } = useContext(AuthContext)
+  const { logout } = useContext(AuthContext);
+
   return (
     <>
       <SearchBar />
-      <butto onClick={logout}>Logout</butto>
+      <ExploreSearchBar />
+      <Button onClick={logout}>Logout</Button>
+      <FieldsButtons />
     </>
   );
 }
