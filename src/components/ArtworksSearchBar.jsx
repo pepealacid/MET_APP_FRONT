@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { Input, Box, Image, Text, Spinner, Button } from "@chakra-ui/react";
 import axios from "axios";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 
 export default function ArtworksSearchBar() {
   const [searchQuery, setSearchQuery] = useState("");
@@ -100,9 +100,9 @@ export default function ArtworksSearchBar() {
         >
           <>
             {searchResults.map((result) => (
-              <a
+              <Link
                 key={result.objectID}
-                // onClick={() => handleArtworkPush(result.objectID)} // Attach onClick event handler here
+                to={`/artworks/${result.objectID}`} // Set the route for each result
                 style={{ textDecoration: "none", cursor: "pointer" }} // Set cursor style to indicate clickable element
               >
                 <Box display="flex" alignItems="center" mb={2}>
@@ -118,7 +118,7 @@ export default function ArtworksSearchBar() {
                   />
                   <Text>{result.title}</Text>
                 </Box>
-              </a>
+              </Link>
             ))}
           </>
         </Box>
