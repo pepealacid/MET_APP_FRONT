@@ -1,13 +1,12 @@
-import { useState, useEffect } from "react";
-import { Input, Box, Image, Text, Spinner, Button } from "@chakra-ui/react";
+import { useState } from "react";
+import { Input, Box, Spinner, Button } from "@chakra-ui/react";
 import axios from "axios";
-import { Link, useParams } from "react-router-dom";
+import { Link } from "react-router-dom";
+import ArtistCard from "./ArtistCard/ArtistCard";
 
-export default function ArtistsSearchBar() {
+export default function ArtistsSearchBar({ updateResults }) {
   const [searchQuery, setSearchQuery] = useState("");
-  const [searchResults, setSearchResults] = useState([]);
   const [loading, setLoading] = useState(false);
-  const { field } = useParams();
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -15,12 +14,6 @@ export default function ArtistsSearchBar() {
     setLoading(true);
 
     try {
-      if (field !== "artists") {
-        console.error("Invalid field:", field);
-        setLoading(false);
-        return;
-      }
-
       const apiUrl = `https://api.artsy.net/api/search?q=${searchQuery}&type=artist`;
       const response = await axios.get(apiUrl, {
         headers: {
@@ -28,14 +21,19 @@ export default function ArtistsSearchBar() {
         },
       });
       const results = response.data._embedded.results;
-      setSearchResults(results);
 
       for (const result of results) {
         if (result._links.self.href) {
           const selfLink = result._links.self.href;
           result.imageUrl = await getImageUrl(selfLink);
+          result.birthday = await getBirthday(selfLink);
+          result.deathday = await getDeathday(selfLink);
+          result.id = await getId(selfLink)
         }
       }
+
+      updateResults(results); // Call the updateResults function with the updated results
+
     } catch (error) {
       console.error("Error fetching search results:", error);
     }
@@ -62,11 +60,62 @@ export default function ArtistsSearchBar() {
     return null;
   };
 
+  const getBirthday = async (result) => {
+    try {
+      const response = await axios.get(result, {
+        headers: {
+          "X-Xapp-Token": import.meta.env.VITE_ARTSY_TOKEN,
+        },
+      });
+      if (response.data) {
+        const birthday = response.data.birthday;
+        return birthday;
+      }
+    } catch (error) {
+      console.error("Error fetching birthday:", error);
+    }
+    return null;
+  };
+
+  const getDeathday = async (result) => {
+    try {
+      const response = await axios.get(result, {
+        headers: {
+          "X-Xapp-Token": import.meta.env.VITE_ARTSY_TOKEN,
+        },
+      });
+      if (response.data) {
+        const deathday = response.data.deathday;
+        return deathday;
+      }
+    } catch (error) {
+      console.error("Error fetching deathday:", error);
+    }
+    return null;
+  };
+
+  const getId = async (result) => {
+    try {
+      const response = await axios.get(result, {
+        headers: {
+          "X-Xapp-Token": import.meta.env.VITE_ARTSY_TOKEN,
+        },
+      });
+      if (response.data) {
+        const id = response.data.id;
+        return id;
+      }
+    } catch (error) {
+      console.error("Error fetching id:", error);
+    }
+    return null;
+  };
+
   return (
     <Box position="relative">
       <form onSubmit={handleSubmit}>
         <Input
-          placeholder={`Search for ${field}`}
+          placeholder={`Search for artists`}
           size="md"
           value={searchQuery}
           onChange={(event) => setSearchQuery(event.target.value)}
@@ -90,48 +139,6 @@ export default function ArtistsSearchBar() {
           overflowY="auto"
         >
           <Spinner size="sm" color="gray.500" mr={2} />
-        </Box>
-      )}
-
-      {searchQuery.trim() !== "" && !loading && searchResults.length > 0 && (
-        <Box
-          position="absolute"
-          zIndex={10}
-          top="100%"
-          left={0}
-          right={0}
-          backgroundColor="white"
-          boxShadow="md"
-          borderRadius="md"
-          p={4}
-          mt={2}
-          maxHeight="300px"
-          overflowY="auto"
-        >
-          <>
-            {searchResults.map((result) => (
-              <Link
-                key={result.id}
-                to={`/artist/${result.id}`} // Use the unique ID as the route parameter instead of the title
-                style={{ textDecoration: "none", cursor: "pointer" }}
-              >
-                <Box display="flex" alignItems="center" mb={2}>
-                  <Image
-                    src={
-                      result.imageUrl ||
-                      "https://drawinghowtos.com/wp-content/uploads/2022/07/painter-colored.jpg"
-                    }
-                    alt={result.title}
-                    boxSize="60px"
-                    objectFit="cover"
-                    marginRight={4}
-                  />
-
-                  <Text>{result.title}</Text>
-                </Box>
-              </Link>
-            ))}
-          </>
         </Box>
       )}
     </Box>
