@@ -31,9 +31,10 @@ export default function ArtistsSearchBar() {
       setSearchResults(results);
 
       for (const result of results) {
-        const imageUrl = await getImageUrl(result);
-        result.imageUrl = imageUrl;
-        console.log(imageUrl)
+        if (result._links.self.href) {
+          const selfLink = result._links.self.href;
+          result.imageUrl = await getImageUrl(selfLink);
+        }
       }
     } catch (error) {
       console.error("Error fetching search results:", error);
@@ -44,14 +45,16 @@ export default function ArtistsSearchBar() {
 
   const getImageUrl = async (result) => {
     try {
-      if (result._links.image && result.image_versions && result.image_versions.length > 0) {
-        const imageUrl = result._links.image.href.replace("{image_version}", result.image_versions[0]);
-        const response = await axios.get(imageUrl, {
-          headers: {
-            "X-Xapp-Token": import.meta.env.VITE_ARTSY_TOKEN,
-          },
-        });
-        return response.data._links.thumbnail.href;
+      const response = await axios.get(result, {
+        headers: {
+          "X-Xapp-Token": import.meta.env.VITE_ARTSY_TOKEN,
+        },
+      });
+      if (response.data._links.image.href) {
+        const firstLink = response.data._links.image.href;
+        const image_version = response.data.image_versions[0];
+        const finalLink = firstLink.replace("{image_version}", image_version);
+        return finalLink;
       }
     } catch (error) {
       console.error("Error fetching image URL:", error);
@@ -109,27 +112,21 @@ export default function ArtistsSearchBar() {
             {searchResults.map((result) => (
               <Link
                 key={result.id}
-                to={`/artist/${result.title}`}
+                to={`/artist/${result.id}`} // Use the unique ID as the route parameter instead of the title
                 style={{ textDecoration: "none", cursor: "pointer" }}
               >
                 <Box display="flex" alignItems="center" mb={2}>
-                  {result.imageUrl ? (
-                    <Image
-                      src={result.imageUrl}
-                      alt={result.title}
-                      boxSize="60px"
-                      objectFit="cover"
-                      marginRight={4}
-                    />
-                  ) : (
-                    <Box
-                      width="60px"
-                      height="60px"
-                      backgroundColor="gray.200"
-                      borderRadius="md"
-                      marginRight={4}
-                    />
-                  )}
+                  <Image
+                    src={
+                      result.imageUrl ||
+                      "https://drawinghowtos.com/wp-content/uploads/2022/07/painter-colored.jpg"
+                    }
+                    alt={result.title}
+                    boxSize="60px"
+                    objectFit="cover"
+                    marginRight={4}
+                  />
+
                   <Text>{result.title}</Text>
                 </Box>
               </Link>
