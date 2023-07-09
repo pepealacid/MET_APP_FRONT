@@ -1,8 +1,7 @@
 import { useState } from "react";
-import { Input, Box, Spinner, Button } from "@chakra-ui/react";
+import { Input, Box, Spinner } from "@chakra-ui/react";
+import { SearchIcon } from "@chakra-ui/icons";
 import axios from "axios";
-import { Link } from "react-router-dom";
-import ArtistCard from "./ArtistCard/ArtistCard";
 
 export default function ArtistsSearchBar({ updateResults }) {
   const [searchQuery, setSearchQuery] = useState("");
@@ -28,12 +27,11 @@ export default function ArtistsSearchBar({ updateResults }) {
           result.imageUrl = await getImageUrl(selfLink);
           result.birthday = await getBirthday(selfLink);
           result.deathday = await getDeathday(selfLink);
-          result.id = await getId(selfLink)
+          result.id = await getId(selfLink);
         }
       }
 
       updateResults(results); // Call the updateResults function with the updated results
-
     } catch (error) {
       console.error("Error fetching search results:", error);
     }
@@ -114,13 +112,22 @@ export default function ArtistsSearchBar({ updateResults }) {
   return (
     <Box position="relative">
       <form onSubmit={handleSubmit}>
-        <Input
-          placeholder={`Search for artists`}
-          size="md"
-          value={searchQuery}
-          onChange={(event) => setSearchQuery(event.target.value)}
-        />
-        <Button type="submit">Search</Button>
+        <Box position="relative">
+          <SearchIcon
+            position="absolute"
+            left="0.75rem"
+            top="50%"
+            transform="translateY(-50%)"
+            color="gray.300"
+          />
+          <Input
+            placeholder={`Search for artists`}
+            size="md"
+            value={searchQuery}
+            onChange={(event) => setSearchQuery(event.target.value)}
+            pl="2.5rem" // Add padding to the left to accommodate the icon
+          />
+        </Box>
       </form>
 
       {loading && (

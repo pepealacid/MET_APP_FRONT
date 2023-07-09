@@ -12,7 +12,6 @@ const ArtistSearchPage = () => {
     setResults(searchResults);
   };
 
-  console.log(results);
 
   return (
     <div>
