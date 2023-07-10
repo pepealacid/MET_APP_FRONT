@@ -5,7 +5,7 @@ import FieldsButtons from "../components/FieldsButtons";
 import { Button } from "@chakra-ui/react";
 import { useParams } from "react-router-dom";
 import ArtistsSearchBar from "../components/ArtistsSearchBar";
-import ArtworksSearchBar from "../components/ArtworksSearchBar";
+import ArtworksSearchBar from "../components/ArtworksLiveSearchBar";
 
 function HomePage() {
   const { logout } = useContext(AuthContext);

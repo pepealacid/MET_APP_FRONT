@@ -1,24 +1,18 @@
 import { useState, useEffect } from "react";
 import { Input, Box, Image, Text, Spinner, Button } from "@chakra-ui/react";
 import axios from "axios";
-import { Link, useParams } from "react-router-dom";
+import { SearchIcon } from "@chakra-ui/icons";
 
-export default function ArtworksSearchBar() {
+
+export default function ArtworksSearchBar({ updateResults }) {
   const [searchQuery, setSearchQuery] = useState("");
-  const [searchResults, setSearchResults] = useState([]);
   const [loading, setLoading] = useState(false);
-  const { field } = useParams();
 
-  const fetchSearchResults = async () => {
+  const handleSubmit = async (event) => {
+    event.preventDefault();
     setLoading(true);
 
     try {
-      if (field !== "artworks") {
-        console.error("Invalid field:", field);
-        setLoading(false);
-        return;
-      }
-
       const apiUrl = `https://collectionapi.metmuseum.org/public/collection/v1/search?q=${searchQuery}&isHighlight=true`;
       const response = await axios.get(apiUrl);
       const objectIDs = response.data.objectIDs;
@@ -32,9 +26,7 @@ export default function ArtworksSearchBar() {
         (objectResponse) => objectResponse.data
       );
 
-      setSearchResults(objects);
-      console.log(objects);
-      console.log("QUERY", searchQuery);
+      updateResults(objects);
     } catch (error) {
       console.error("Error fetching search results:", error);
     }
@@ -42,87 +34,48 @@ export default function ArtworksSearchBar() {
     setLoading(false);
   };
 
-  const handleInputChange = (event) => {
-    const query = event.target.value;
-    setSearchQuery(query);
-  };
-
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    fetchSearchResults();
-  };
-
   return (
-    <Box position="relative">
+    <>
+      <Box position="relative">
       <form onSubmit={handleSubmit}>
-        <Input
-          placeholder={`Search for the ${field}`}
-          size="md"
-          value={searchQuery}
-          onChange={handleInputChange}
-        />
-        <Button type="submit">Search</Button>
+        <Box position="relative">
+          <SearchIcon
+            position="absolute"
+            left="0.75rem"
+            top="50%"
+            transform="translateY(-50%)"
+            color="gray.300"
+          />
+          <Input
+            placeholder={`Search for artworks`}
+            size="md"
+            value={searchQuery}
+            onChange={(event) => setSearchQuery(event.target.value)}
+            pl="2.5rem" // Add padding to the left to accommodate the icon
+          />
+        </Box>
       </form>
 
-      {loading && (
-        <Box
-          position="absolute"
-          zIndex={10}
-          top="100%"
-          left={0}
-          right={0}
-          backgroundColor="white"
-          boxShadow="md"
-          borderRadius="md"
-          p={4}
-          mt={2}
-          maxHeight="300px"
-          overflowY="auto"
-        >
-          <Spinner size="sm" color="gray.500" mr={2} />
-        </Box>
-      )}
 
-      {searchQuery.trim() !== "" && !loading && searchResults.length > 0 && (
-        <Box
-          position="absolute"
-          zIndex={10}
-          top="100%"
-          left={0}
-          right={0}
-          backgroundColor="white"
-          boxShadow="md"
-          borderRadius="md"
-          p={4}
-          mt={2}
-          maxHeight="300px"
-          overflowY="auto"
-        >
-          <>
-            {searchResults.map((result) => (
-              <Link
-                key={result.objectID}
-                to={`/artworks/${result.objectID}`} // Set the route for each result
-                style={{ textDecoration: "none", cursor: "pointer" }} // Set cursor style to indicate clickable element
-              >
-                <Box display="flex" alignItems="center" mb={2}>
-                  <Image
-                    src={
-                      result.primaryImageSmall ||
-                      "https://easydrawingguides.com/wp-content/uploads/2021/01/Museum-Step-10.png"
-                    }
-                    alt={result.title}
-                    boxSize="60px"
-                    objectFit="cover"
-                    marginRight={4}
-                  />
-                  <Text>{result.title}</Text>
-                </Box>
-              </Link>
-            ))}
-          </>
-        </Box>
-      )}
-    </Box>
+        {loading && (
+          <Box
+            position="absolute"
+            zIndex={10}
+            top="100%"
+            left={0}
+            right={0}
+            backgroundColor="white"
+            boxShadow="md"
+            borderRadius="md"
+            p={4}
+            mt={2}
+            maxHeight="300px"
+            overflowY="auto"
+          >
+            <Spinner size="sm" color="gray.500" mr={2} />
+          </Box>
+        )}
+      </Box>
+    </>
   );
 }

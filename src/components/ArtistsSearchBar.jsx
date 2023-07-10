@@ -9,7 +9,6 @@ export default function ArtistsSearchBar({ updateResults }) {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-
     setLoading(true);
 
     try {
@@ -31,7 +30,7 @@ export default function ArtistsSearchBar({ updateResults }) {
         }
       }
 
-      updateResults(results); // Call the updateResults function with the updated results
+      updateResults(results); 
     } catch (error) {
       console.error("Error fetching search results:", error);
     }

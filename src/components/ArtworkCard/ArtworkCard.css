@@ -1,0 +1,20 @@
+.artwork-card{
+    margin: 20px;
+    padding: 10px;
+    border-radius: 10px;
+    border-bottom: 1px solid grey;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.main-img{
+    height: 80px;
+    width: 100vh;
+}
+
+.date{
+    display: flex;
+}
+
+.clock{
+    height: 16px;
+}
