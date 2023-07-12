@@ -25,9 +25,7 @@ const ArtworkSearchPage = () => {
       favoriteService
         .getFavorites(userId)
         .then((response) => {
-          const favoriteArtworkIds = response.data.map(
-            (favorite) => favorite.data
-          );
+          const favoriteArtworkIds = response.data;
           setFavoriteArtworkIds(favoriteArtworkIds);
         })
         .catch((error) => {
@@ -40,7 +38,6 @@ const ArtworkSearchPage = () => {
 
   const updateResults = (searchResults) => {
     setResults(searchResults);
-    console.log(results);
   };
 
   const favArtwork = async (artworkID) => {
@@ -48,19 +45,30 @@ const ArtworkSearchPage = () => {
       const token = localStorage.getItem(TOKEN_NAME);
       const response = await authService.getUser(token);
       const userId = response.data._id;
-
-      favoriteService
-        .update({ id: userId, data: artworkID })
-        .then((response) => {
-          console.log("good", response);
-        })
-        .catch((error) => {
-          console.log(error);
-        });
+  
+      const promiseFavorites = await favoriteService.getFavorites(userId);
+      const favorites = promiseFavorites.data || []; // Get the artworksSaved array
+      console.log(favorites) // Fetch user's favorites
+      
+      // Check if artworkID is present in favorites
+      const index = favorites.indexOf(artworkID);
+      if (index > -1) {
+        // If artworkID exists, remove it from the array
+        favorites.splice(index, 1);
+      } else {
+        // If artworkID doesn't exist, add it to the array
+        favorites.push(artworkID);
+      }
+  
+      // Update the user's favorites
+      await favoriteService.update({ id: userId, data: favorites });
+      console.log("Update successful");
+  
     } catch (error) {
       console.log(error);
     }
   };
+  
 
   return (
     <div>
