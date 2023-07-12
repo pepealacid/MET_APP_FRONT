@@ -1,6 +1,5 @@
 import { useState, useEffect } from "react";
-import { Input, Box, Image, Text, Spinner, Checkbox } from "@chakra-ui/react";
-import { Link } from "react-router-dom";
+import { Input, Box, Image, Text, Spinner } from "@chakra-ui/react";
 import axios from "axios";
 import favoriteService from "../services/favorite.service";
 import { TOKEN_NAME } from "../context/auth.context";
@@ -10,7 +9,6 @@ export default function SearchBar() {
   const [searchQuery, setSearchQuery] = useState("");
   const [searchResults, setSearchResults] = useState([]);
   const [loading, setLoading] = useState(false);
-  const [isHighlightChecked, setIsHighlightChecked] = useState(false);
   const [typingTimeout, setTypingTimeout] = useState(null);
 
   useEffect(() => {
@@ -19,11 +17,7 @@ export default function SearchBar() {
         setLoading(true);
 
         try {
-          let apiUrl = `https://collectionapi.metmuseum.org/public/collection/v1/search?q=${searchQuery}`;
-
-          if (isHighlightChecked) {
-            apiUrl += "&isHighlight=true";
-          }
+          let apiUrl = `https://collectionapi.metmuseum.org/public/collection/v1/search?q=${searchQuery}&isHighlight=true`;
 
           const response = await axios.get(apiUrl);
           const objectIDs = response.data.objectIDs;
@@ -59,16 +53,11 @@ export default function SearchBar() {
     } else {
       setSearchResults([]);
     }
-  }, [searchQuery, isHighlightChecked]);
+  }, [searchQuery]);
 
   const handleInputChange = (event) => {
     const query = event.target.value;
     setSearchQuery(query);
-  };
-
-  const handleHighlightChange = (event) => {
-    const checked = event.target.checked;
-    setIsHighlightChecked(checked);
   };
 
   const handleArtworkPush = async (artworkId) => {
@@ -76,12 +65,12 @@ export default function SearchBar() {
       const token = localStorage.getItem(TOKEN_NAME);
       const response = await authService.getUser(token);
       const userId = response.data._id;
-      console.log(userId)
+      console.log(userId);
 
       favoriteService
         .update({ id: userId, data: artworkId })
         .then((response) => {
-          console.log("good", response)
+          console.log("good", response);
         })
         .catch((error) => {
           console.log(error);
@@ -124,9 +113,7 @@ export default function SearchBar() {
         value={searchQuery}
         onChange={handleInputChange}
       />
-      <Checkbox mt={2} onChange={handleHighlightChange}>
-        Show only highlights
-      </Checkbox>
+
       {loading && (
         <Box
           position="absolute"
