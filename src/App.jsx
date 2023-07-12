@@ -29,7 +29,7 @@ function App() {
       <Route path="/login" element={<LoginPage />} />
       <Route path="/signup" element={<SignupPage />} />
       <Route path="/artist/:title" element={<ArtistDetailsPage />} />
-      <Route path="/artworks/:objectId" element={<ArtworkDetailsPage />} />
+      <Route path="/artwork/:objectId" element={<ArtworkDetailsPage />} />
     </Routes>
   );
 }

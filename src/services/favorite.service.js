@@ -5,9 +5,13 @@ class FavoriteService {
     this.api = apiInstance;
   }
 
-  update({id, data}) {
+  update({ id, data }) {
     return this.api.put(`/user/${id}/${data}`);
   }
+
+  // getFavorites(userId) {
+  //   return this.api.get(`/user/favorites/${userId}`);
+  // }
 }
 
 const favoriteService = new FavoriteService();

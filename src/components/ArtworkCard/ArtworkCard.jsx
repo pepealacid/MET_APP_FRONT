@@ -1,11 +1,44 @@
 import "./ArtworkCard.css";
-import SandClock from "../../assets/images/SandClock.png"
+import SandClock from "../../assets/images/SandClock.png";
+import FavHeart from "../../assets/images/FavHeart.png";
+import FavHeartFilled from "../../assets/images/FavHeartFilled.png";
+import { useState, useEffect } from "react";
 
-const ArtworkCard = ({ imageUrl, title, author, date }) => {
+const ArtworkCard = ({
+  imageUrl,
+  title,
+  author,
+  date,
+  favArtwork,
+  artworkID,
+  favArtworkIds,
+  fetchFavorites,
+}) => {
+  const [favorites, setFavorites] = useState([]);
+
+  useEffect(() => {
+    setFavorites(favArtworkIds);
+  }, [favArtworkIds]);
+
+  const handleFavClick = (event) => {
+    event.preventDefault();
+    favArtwork(artworkID);
+    fetchFavorites();
+  };
+
   return (
     <div className="artwork-card">
       <div className="top">
-        <img className="main-img" src={imageUrl} />
+        <div className="img-container">
+          <img className="main-img" src={imageUrl} alt="artwork" />
+          <button className="fav-button" onClick={handleFavClick}>
+            {favorites ? (
+              <img className="fav-button-img" src={FavHeartFilled} alt="favorite" />
+            ) : (
+              <img className="fav-button-img" src={FavHeart} alt="not-favorite" />
+            )}
+          </button>
+        </div>
       </div>
       <div className="foot">
         <h3>{title}</h3>

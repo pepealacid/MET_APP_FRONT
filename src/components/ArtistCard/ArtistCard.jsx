@@ -1,6 +1,8 @@
 import "./ArtistCard.css"
 
 const ArtistCard = ({ imageUrl, title, birthday, deathday }) => {
+
+  
   return (
     <div className="artist-card">
       <div className="top">
