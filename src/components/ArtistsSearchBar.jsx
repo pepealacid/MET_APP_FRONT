@@ -28,7 +28,6 @@ export default function ArtistsSearchBar({ updateResults }) {
           result.birthday = await getBirthday(selfLink);
           result.deathday = await getDeathday(selfLink);
           result.id = await getId(selfLink);
-          console.log("------------------", result.id)
         }
       }
 

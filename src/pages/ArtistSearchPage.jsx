@@ -8,9 +8,6 @@ import { TOKEN_NAME } from "../context/auth.context";
 import authService from "../services/auth.service";
 import favoriteService from "../services/favorite.service";
 
-
-
-
 const ArtistSearchPage = () => {
   const [results, setResults] = useState([]);
   const [favoriteArtistIds, setFavoriteArtistIds] = useState([]);
@@ -49,7 +46,7 @@ const ArtistSearchPage = () => {
       const response = await authService.getUser(token);
       const userId = response.data._id;
 
-      const promiseFavorites = await favoriteService.getFavoriteArtists(artistID);
+      const promiseFavorites = await favoriteService.getFavoriteArtists(userId);
       const favorites = promiseFavorites.data || []; // Get the artworksSaved array
 
       // Check if artworkID is present in favorites
@@ -63,10 +60,10 @@ const ArtistSearchPage = () => {
       }
 
       // Update the user's favorites on the backend
-      await favoriteService.update({ id: userId, artistID });
+      await favoriteService.updateFavoriteArtists({ id: userId, artistID });
 
       // Fetch the updated favorites from the backend
-      const updatedFavoritesResponse = await favoriteService.getFavorites(
+      const updatedFavoritesResponse = await favoriteService.getFavoriteArtists(
         userId
       );
       const updatedFavorites = updatedFavoritesResponse.data || [];
@@ -102,7 +99,7 @@ const ArtistSearchPage = () => {
                       title={result.title}
                       birthday={result.birthday}
                       deathday={result.deathday}
-                      artworkID={result.id}
+                      artistID={result.id}
                       favoriteArtistIds={favoriteArtistIds}
                       favArtist={favArtist}
                       fetchFavorites={fetchFavorites}

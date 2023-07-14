@@ -17,7 +17,7 @@ class FavoriteService {
   }
 
   updateFavoriteArtists({ id, artistID }) {
-    return this.api.put(`/user/artists/update-favorites/${id}${artistID}`);
+    return this.api.put(`/user/artists/update-favorites/${id}/${artistID}`);
   }
 }
 
