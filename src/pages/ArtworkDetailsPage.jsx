@@ -56,7 +56,6 @@ const ArtworkDetailsPage = () => {
               image_version
             );
             setArtistImage(finalLink);
-            console.log(artworkData);
           }
         } catch (error) {
           console.error("Error fetching image", error);

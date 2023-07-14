@@ -4,17 +4,20 @@ class FavoriteService {
   constructor() {
     this.api = apiInstance;
   }
-
-  addFavorite({ id, data }) {
-    return this.api.put(`/user/addfav/${id}/${data}`);
+  getFavoriteArtworks(userId) {
+    return this.api.get(`/user/artworks/favorites/${userId}`);
   }
 
-  deleteFavorite({ id, data }) {
-    return this.api.put(`/user/deletefav/${id}/${data}`);
+  updateFavoriteArtworks({ id, artworkID }) {
+    return this.api.put(`/user/artworks/update-favorites/${id}/${artworkID}`);
   }
 
-  getFavorites(userId) {
-    return this.api.get(`/user/favorites/${userId}`);
+  getFavoriteArtists(userId) {
+    return this.api.get(`/user/artists/favorites/${userId}`);
+  }
+
+  updateFavoriteArtists({ id, artistID }) {
+    return this.api.put(`/user/artists/update-favorites/${id}${artistID}`);
   }
 }
 

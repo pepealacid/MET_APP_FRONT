@@ -6,6 +6,7 @@ import axios from "axios";
 export default function ArtistsSearchBar({ updateResults }) {
   const [searchQuery, setSearchQuery] = useState("");
   const [loading, setLoading] = useState(false);
+  
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -27,6 +28,7 @@ export default function ArtistsSearchBar({ updateResults }) {
           result.birthday = await getBirthday(selfLink);
           result.deathday = await getDeathday(selfLink);
           result.id = await getId(selfLink);
+          console.log("------------------", result.id)
         }
       }
 
