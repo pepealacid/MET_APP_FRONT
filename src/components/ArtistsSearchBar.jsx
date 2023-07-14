@@ -6,6 +6,7 @@ import axios from "axios";
 export default function ArtistsSearchBar({ updateResults }) {
   const [searchQuery, setSearchQuery] = useState("");
   const [loading, setLoading] = useState(false);
+  
 
   const handleSubmit = async (event) => {
     event.preventDefault();

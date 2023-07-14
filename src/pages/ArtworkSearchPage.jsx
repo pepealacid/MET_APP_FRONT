@@ -23,7 +23,7 @@ const ArtworkSearchPage = () => {
       const userId = response.data._id;
 
       favoriteService
-        .getFavorites(userId)
+        .getFavoriteArtworks(userId)
         .then((response) => {
           const favoriteArtworkIds = response.data;
           setFavoriteArtworkIds(favoriteArtworkIds);
@@ -45,11 +45,10 @@ const ArtworkSearchPage = () => {
       const token = localStorage.getItem(TOKEN_NAME);
       const response = await authService.getUser(token);
       const userId = response.data._id;
-  
-      const promiseFavorites = await favoriteService.getFavorites(userId);
+
+      const promiseFavorites = await favoriteService.getFavoriteArtworks(userId);
       const favorites = promiseFavorites.data || []; // Get the artworksSaved array
-      console.log(favorites) // Fetch user's favorites
-      
+
       // Check if artworkID is present in favorites
       const index = favorites.indexOf(artworkID);
       if (index > -1) {
@@ -59,16 +58,22 @@ const ArtworkSearchPage = () => {
         // If artworkID doesn't exist, add it to the array
         favorites.push(artworkID);
       }
-  
-      // Update the user's favorites
-      await favoriteService.update({ id: userId, data: favorites });
-      console.log("Update successful");
-  
+
+      // Update the user's favorites on the backend
+      await favoriteService.updateFavoriteArtworks({ id: userId, artworkID });
+
+      // Fetch the updated favorites from the backend
+      const updatedFavoritesResponse = await favoriteService.getFavoriteArtworks(
+        userId
+      );
+      const updatedFavorites = updatedFavoritesResponse.data || [];
+
+      // Update the favoriteArtworkIds state to trigger re-render
+      setFavoriteArtworkIds(updatedFavorites);
     } catch (error) {
       console.log(error);
     }
   };
-  
 
   return (
     <div>

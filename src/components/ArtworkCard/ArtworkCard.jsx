@@ -18,8 +18,7 @@ const ArtworkCard = ({
 
   useEffect(() => {
     setFavorites(favoriteArtworkIds);
-    console.log(favorites.includes(artworkID.toString()))
-  }, []);
+  }, [favoriteArtworkIds]);
 
   const handleFavClick = (event) => {
     event.preventDefault();
@@ -34,9 +33,17 @@ const ArtworkCard = ({
           <img className="main-img" src={imageUrl} alt="artwork" />
           <button className="fav-button" onClick={handleFavClick}>
             {favorites.includes(artworkID.toString()) ? (
-              <img className="fav-button-img" src={FavHeartFilled} alt="favorite" />
+              <img
+                className="fav-button-img"
+                src={FavHeartFilled}
+                alt="favorite"
+              />
             ) : (
-              <img className="fav-button-img" src={FavHeart} alt="not-favorite" />
+              <img
+                className="fav-button-img"
+                src={FavHeart}
+                alt="not-favorite"
+              />
             )}
           </button>
         </div>
