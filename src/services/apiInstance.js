@@ -1,6 +1,6 @@
 import axios from 'axios'
 import { TOKEN_NAME } from '../context/auth.context'
-const URL = import.meta.env.VITE_BACK_BASE_URL 
+const URL = import.meta.env.VITE_BACK_BASE_URL
 console.log(URL)
 
 const apiInstace = axios.create({

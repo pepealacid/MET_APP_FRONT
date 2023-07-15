@@ -10,7 +10,6 @@ ReactDOM.createRoot(document.getElementById("root")).render(
   <ChakraProvider>
     <AuthContextWrapper>
       <Router>
-        {/* <Navbar /> */}
         <App />
       </Router>
     </AuthContextWrapper>
