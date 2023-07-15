@@ -3,10 +3,13 @@ import LoginPage from "./pages/LoginPage";
 import SignupPage from "./pages/SignupPage";
 import HomePage from "./pages/HomePage";
 import PrivateRoute from "./components/PrivateRoute";
+import MuseumPage from "./pages/MuseumPage";
 
 function App() {
   return (
     <Routes>
+      <Route path="/login" element={<LoginPage />} />
+      <Route path="/signup" element={<SignupPage />} />
       <Route
         path="/"
         element={
@@ -15,8 +18,15 @@ function App() {
           </PrivateRoute>
         }
       />
-      <Route path="/login" element={<LoginPage />} />
-      <Route path="/signup" element={<SignupPage />} />
+
+      <Route
+        path="/museum/:name"
+        element={
+          <PrivateRoute>
+            <MuseumPage />
+          </PrivateRoute>
+        }
+      />
     </Routes>
   );
 }
