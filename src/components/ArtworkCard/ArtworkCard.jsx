@@ -1,6 +1,7 @@
 import "./ArtworkCard.css";
 import SandClock from "../../assets/images/SandClock.png";
 import FavHeart from "../../assets/images/FavHeart.png";
+import PropTypes from "prop-types";
 import FavHeartFilled from "../../assets/images/FavHeartFilled.png";
 import { useState, useEffect } from "react";
 
@@ -58,6 +59,17 @@ const ArtworkCard = ({
       </div>
     </div>
   );
+};
+
+ArtworkCard.propTypes = {
+  imageUrl: PropTypes.string,
+  title: PropTypes.string.isRequired,
+  author: PropTypes.string,
+  date: PropTypes.number,
+  favArtwork: PropTypes.array.isRequired,
+  artworkID: PropTypes.string.isRequired,
+  favoriteArtworkIds: PropTypes.array.isRequired,
+  fetchFavorites: PropTypes.func.isRequired,
 };
 
 export default ArtworkCard;
