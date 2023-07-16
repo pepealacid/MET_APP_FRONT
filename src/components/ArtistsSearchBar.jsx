@@ -122,6 +122,7 @@ export default function ArtistsSearchBar({ updateResults }) {
           />
           <Input
             placeholder={`Search for artists`}
+            className="search-bar"
             size="md"
             value={searchQuery}
             onChange={(event) => setSearchQuery(event.target.value)}

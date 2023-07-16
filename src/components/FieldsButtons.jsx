@@ -10,27 +10,55 @@ function FieldsButtons() {
   };
 
   return (
-    <div>
-      <Button
-        colorScheme={location.pathname === "/home/tours" ? "blue" : undefined}
-        onClick={() => handleClick("tours")}
-      >
-        Tours
-      </Button>
-
-      <Button
-        colorScheme={location.pathname === "/home/artists" ? "blue" : undefined}
-        onClick={() => handleClick("artists")}
-      >
-        Artists
-      </Button>
-
-      <Button
-        colorScheme={location.pathname === "/home/artworks" ? "blue" : undefined}
-        onClick={() => handleClick("artworks")}
-      >
-        Artworks
-      </Button>
+    <div className="buttons-container">
+      <div>
+        <Button
+          className={
+            location.pathname === "/home/tours"
+              ? "selected-field-button"
+              : "field-button"
+          }
+          onClick={() => handleClick("tours")}
+        >
+          Tours
+        </Button>
+      </div>
+      <div>
+        <Button
+          className={
+            location.pathname === "/home/museum"
+              ? "selected-field-button"
+              : "field-button"
+          }
+          onClick={() => handleClick("tours")}
+        >
+          Museum
+        </Button>
+      </div>
+      <div>
+        <Button
+          className={
+            location.pathname === "/home/artists"
+              ? "selected-field-button"
+              : "field-button"
+          }
+          onClick={() => handleClick("artists")}
+        >
+          Artists
+        </Button>
+      </div>
+      <div>
+        <Button
+          className={
+            location.pathname === "/home/artworks"
+              ? "selected-field-button"
+              : "field-button"
+          }
+          onClick={() => handleClick("artworks")}
+        >
+          Artworks
+        </Button>
+      </div>
     </div>
   );
 }

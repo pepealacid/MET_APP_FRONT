@@ -1,13 +1,13 @@
 import { useState, useEffect } from "react";
 import { Grid, GridItem } from "@chakra-ui/react";
-import ArtworkCard from "../components/ArtworkCard/ArtworkCard";
+import ArtworkCard from "../../components/ArtworkCard/ArtworkCard";
 import { Link } from "react-router-dom";
-import FieldsButtons from "../components/FieldsButtons";
-import ArtworksSearchBar from "../components/ArtworksSearchBar";
-import { TOKEN_NAME } from "../context/auth.context";
-import authService from "../services/auth.service";
-import favoriteService from "../services/favorite.service";
-import ArtworkRecommendations from "../components/Recommendations/ArtworkRecommendations/ArtworkRecommendations";
+import FieldsButtons from "../../components/FieldsButtons";
+import ArtworksSearchBar from "../../components/ArtworksSearchBar";
+import { TOKEN_NAME } from "../../context/auth.context";
+import authService from "../../services/auth.service";
+import favoriteService from "../../services/favorite.service";
+import ArtworkRecommendations from "../../components/Recommendations/ArtworkRecommendations/ArtworkRecommendations";
 
 const ArtworkSearchPage = () => {
   const [results, setResults] = useState([]);

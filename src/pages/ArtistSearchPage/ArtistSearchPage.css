@@ -1,0 +1,30 @@
+.search-bar {
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+.buttons-container {
+    display: flex;
+    justify-content: space-around;
+}
+
+.field-button {
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+  width: 90px;
+}
+
+.selected-field-button {
+  color: #ffffff !important;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+  width: 90px;
+  background-color: #356670 !important;
+}
+
+.recommendations-container{
+    padding: 20px;
+}
+
+.recomm-header{
+    font-weight: bold;
+    font-size: 30px;
+}

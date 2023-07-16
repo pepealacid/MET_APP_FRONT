@@ -1,8 +1,15 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
-import { Spinner } from "@chakra-ui/react";
+import { Spinner, Grid, GridItem, Text } from "@chakra-ui/react";
+import { Link } from "react-router-dom";
+import ArtworkCard from "../../ArtworkCard/ArtworkCard";
 
-const RandomArtworks = ({ n }) => {
+const RandomArtworks = ({
+  n,
+  favArtwork,
+  favoriteArtworkIds,
+  fetchFavorites,
+}) => {
   const [randomArtworks, setRandomArtworks] = useState([]);
   const [loading, setLoading] = useState(true);
 
@@ -26,7 +33,9 @@ const RandomArtworks = ({ n }) => {
         );
 
         const artwork = detailsResponse.data;
-        artworks.push(artwork);
+        if (artwork.id !== null && (artwork.primaryImageSmall || artwork.primaryImage)) {
+          artworks.push(artwork);
+        }
       }
 
       setRandomArtworks(artworks);
@@ -56,18 +65,35 @@ const RandomArtworks = ({ n }) => {
 
   return (
     <div>
-      <h3>
-        <b>Random Artworks</b>
-      </h3>
+      <Text className="recomm-header">Random artworks</Text>
       {loading ? (
         <Spinner />
       ) : (
-        randomArtworks.map((artwork) => (
-          <div key={artwork.objectID}>
-            <h4>{artwork.title}</h4>
-            <p>Artist: {artwork.artistDisplayName}</p>
-          </div>
-        ))
+        <Grid templateColumns="repeat(2, 1fr)" gap={4}>
+          {randomArtworks
+            .filter(
+              (artwork) => artwork.id !== null && (artwork.primaryImageSmall || artwork.primaryImage)
+            )
+            .map((artwork) => (
+              <GridItem key={artwork.id}>
+                <Link
+                  to={`/artwork/${artwork.objectID}`}
+                  style={{ textDecoration: "none", cursor: "pointer" }}
+                >
+                  <ArtworkCard
+                    imageUrl={artwork.primaryImageSmall || artwork.primaryImage}
+                    title={artwork.title}
+                    author={artwork.artistDisplayName}
+                    date={artwork.objectEndDate || artwork.objectBeginDate}
+                    artworkID={artwork.objectID}
+                    favoriteArtworkIds={favoriteArtworkIds}
+                    favArtwork={favArtwork}
+                    fetchFavorites={fetchFavorites}
+                  />
+                </Link>
+              </GridItem>
+            ))}
+        </Grid>
       )}
     </div>
   );

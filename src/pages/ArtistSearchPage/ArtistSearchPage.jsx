@@ -1,15 +1,16 @@
-import ArtistsSearchBar from "../components/ArtistsSearchBar";
+import ArtistsSearchBar from "../../components/ArtistsSearchBar";
 import { useState, useEffect } from "react";
 import { Grid, GridItem } from "@chakra-ui/react";
-import ArtistCard from "../components/ArtistCard/ArtistCard";
+import ArtistCard from "../../components/ArtistCard/ArtistCard";
 import { Link } from "react-router-dom";
-import FieldsButtons from "../components/FieldsButtons";
-import { TOKEN_NAME } from "../context/auth.context";
-import authService from "../services/auth.service";
-import favoriteService from "../services/favorite.service";
-import RecommendedArtists from "../components/Recommendations/ArtistRecommendations/RecommendedArtists";
-import AmericanArtworks from "../components/Recommendations/ArtworkRecommendations/AmericanArtworks";
-import WomenArtworks from "../components/Recommendations/ArtworkRecommendations/WomenArtworks";
+import FieldsButtons from "../../components/FieldsButtons";
+import { TOKEN_NAME } from "../../context/auth.context";
+import authService from "../../services/auth.service";
+import favoriteService from "../../services/favorite.service";
+import ArtistRecommendations from "../../components/Recommendations/ArtistRecommendations/ArtistRecommendations";
+import "./ArtistSearchPage.css"
+
+
 
 const ArtistSearchPage = () => {
   const [results, setResults] = useState([]);
@@ -83,7 +84,11 @@ const ArtistSearchPage = () => {
       <ArtistsSearchBar updateResults={updateResults} />
       <FieldsButtons />
       {results.length === 0 ? (
-       <WomenArtworks />
+        <ArtistRecommendations
+          favoriteArtistIds={favoriteArtistIds}
+          favArtist={favArtist}
+          fetchFavorites={fetchFavorites}
+        />
       ) : (
         <Grid templateColumns="repeat(2, 1fr)" gap={4}>
           {results.map(

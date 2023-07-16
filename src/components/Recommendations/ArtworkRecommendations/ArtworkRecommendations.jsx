@@ -1,5 +1,4 @@
 import AmericanArtworks from "./AmericanArtworks";
-import SpanishArtworks from "./SpanishArtworks";
 import WomenArtworks from "./WomenArtworks";
 import RandomRecommendations from "./RandomRecommendation";
 import EuropeanArtworks from "./EuropeanArtworks";
@@ -10,18 +9,13 @@ const ArtworkRecommendations = ({
   fetchFavorites,
 }) => {
   return (
-    <div>
+    <div className="recommendations-container">
       <WomenArtworks
         favArtwork={favArtwork}
         favoriteArtworkIds={favoriteArtworkIds}
         fetchFavorites={fetchFavorites}
       />
       <AmericanArtworks
-        favArtwork={favArtwork}
-        favoriteArtworkIds={favoriteArtworkIds}
-        fetchFavorites={fetchFavorites}
-      />
-      <SpanishArtworks
         favArtwork={favArtwork}
         favoriteArtworkIds={favoriteArtworkIds}
         fetchFavorites={fetchFavorites}

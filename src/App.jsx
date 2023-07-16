@@ -4,8 +4,9 @@ import SignupPage from "./pages/SignupPage";
 import PrivateRoute from "./components/PrivateRoute";
 import ArtistDetailsPage from "./pages/ArtistDetailsPage";
 import ArtworkDetailsPage from "./pages/ArtworkDetailsPage";
-import ArtworkSearchPage from "./pages/ArtworkSearchPage"
-import ArtistSearchPage from "./pages/ArtistSearchPage";
+import ArtworkSearchPage from "./pages/ArtworkSearchPage/ArtworkSearchPage"
+import ArtistSearchPage from "./pages/ArtistSearchPage/ArtistSearchPage";
+import Tinder from "./pages/Tinder";
 
 function App() {
   return (
@@ -30,6 +31,8 @@ function App() {
       <Route path="/signup" element={<SignupPage />} />
       <Route path="/artist/:title" element={<ArtistDetailsPage />} />
       <Route path="/artwork/:objectId" element={<ArtworkDetailsPage />} />
+      <Route path="/tinder" element={<Tinder />} />
+
     </Routes>
   );
 }
