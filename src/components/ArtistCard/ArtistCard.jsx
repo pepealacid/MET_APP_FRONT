@@ -1,4 +1,3 @@
-import React from "react";
 import PropTypes from "prop-types";
 import "./ArtistCard.css";
 import FavHeart from "../../assets/images/FavHeart.png";
@@ -44,7 +43,7 @@ const ArtistCard = ({
           <p>{title}</p>
         </div>
         <div>
-          <button onClick={handleFavClick}>
+          <button className="fav-button" onClick={handleFavClick}>
             {favorites.includes(artistID) ? (
               <img
                 className="fav-button-img"

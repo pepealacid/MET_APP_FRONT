@@ -7,6 +7,7 @@ import ArtworksSearchBar from "../components/ArtworksSearchBar";
 import { TOKEN_NAME } from "../context/auth.context";
 import authService from "../services/auth.service";
 import favoriteService from "../services/favorite.service";
+import ArtworkRecommendations from "../components/Recommendations/ArtworkRecommendations/ArtworkRecommendations";
 
 const ArtworkSearchPage = () => {
   const [results, setResults] = useState([]);
@@ -46,7 +47,9 @@ const ArtworkSearchPage = () => {
       const response = await authService.getUser(token);
       const userId = response.data._id;
 
-      const promiseFavorites = await favoriteService.getFavoriteArtworks(userId);
+      const promiseFavorites = await favoriteService.getFavoriteArtworks(
+        userId
+      );
       const favorites = promiseFavorites.data || []; // Get the artworksSaved array
 
       // Check if artworkID is present in favorites
@@ -63,9 +66,8 @@ const ArtworkSearchPage = () => {
       await favoriteService.updateFavoriteArtworks({ id: userId, artworkID });
 
       // Fetch the updated favorites from the backend
-      const updatedFavoritesResponse = await favoriteService.getFavoriteArtworks(
-        userId
-      );
+      const updatedFavoritesResponse =
+        await favoriteService.getFavoriteArtworks(userId);
       const updatedFavorites = updatedFavoritesResponse.data || [];
 
       // Update the favoriteArtworkIds state to trigger re-render
@@ -79,7 +81,7 @@ const ArtworkSearchPage = () => {
     <div>
       <ArtworksSearchBar updateResults={updateResults} />
       <FieldsButtons />
-      {results.length > 0 && (
+      {results.length > 0 ? (
         <Grid templateColumns="repeat(2, 1fr)" gap={4}>
           {results.map(
             (result) =>
@@ -104,6 +106,12 @@ const ArtworkSearchPage = () => {
               )
           )}
         </Grid>
+      ) : (
+        <ArtworkRecommendations
+          favoriteArtworkIds={favoriteArtworkIds}
+          favArtwork={favArtwork}
+          fetchFavorites={fetchFavorites}
+        />
       )}
     </div>
   );

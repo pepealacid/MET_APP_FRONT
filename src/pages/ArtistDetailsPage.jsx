@@ -82,7 +82,13 @@ const ArtistDetailsPage = () => {
             <Text>Not bio available</Text>
           )}
           <h4>Get more info</h4>
-          <a href={artistData._links.permalink.href}>here</a>
+          <a
+            href={artistData._links.permalink.href}
+            target="_blank"
+            rel="noreferrer"
+          >
+            here
+          </a>
         </div>
       ) : (
         <>

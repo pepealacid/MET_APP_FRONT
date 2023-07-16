@@ -47,4 +47,6 @@
   .fav-button-img-active {
     pointer-events: none;
   }
+
+  .fav-button:focus {outline:0;}
   

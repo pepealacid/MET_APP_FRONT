@@ -7,6 +7,9 @@ import FieldsButtons from "../components/FieldsButtons";
 import { TOKEN_NAME } from "../context/auth.context";
 import authService from "../services/auth.service";
 import favoriteService from "../services/favorite.service";
+import RecommendedArtists from "../components/Recommendations/ArtistRecommendations/RecommendedArtists";
+import AmericanArtworks from "../components/Recommendations/ArtworkRecommendations/AmericanArtworks";
+import WomenArtworks from "../components/Recommendations/ArtworkRecommendations/WomenArtworks";
 
 const ArtistSearchPage = () => {
   const [results, setResults] = useState([]);
@@ -79,7 +82,9 @@ const ArtistSearchPage = () => {
     <div>
       <ArtistsSearchBar updateResults={updateResults} />
       <FieldsButtons />
-      {results.length > 0 && (
+      {results.length === 0 ? (
+       <WomenArtworks />
+      ) : (
         <Grid templateColumns="repeat(2, 1fr)" gap={4}>
           {results.map(
             (result) =>
