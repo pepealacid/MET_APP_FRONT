@@ -89,9 +89,9 @@ function SetItineraryTime({ setItineraryData, setPage }) {
             <Text>
                 How long do you have for your visit?
             </Text>
-            <Input type="number" onChange={handleHourChange} placeholder={"00"}  />
+            <Input type="number" onChange={handleHourChange} placeholder={"hours"}  />
             :
-            <Input type="number" onChange={handleMinuteChange} placeholder={"00"}  />
+            <Input type="number" onChange={handleMinuteChange} placeholder={"minutes"}  />
             {nextMessage}  <br />
             {hourMessage}  <br />
             {minuteMessage} <br />

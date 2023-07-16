@@ -21,24 +21,30 @@ export async function decideTourArtpieces (number, departments){
     console.log(allArt)
     const selectedPieces = []
     const galleries = []
+    const piecesData = []
 
     while(selectedPieces.length < number){
 
         //seleccionar elemento random y ver si tiene gallery number y si no está repetido 
         const randomId = getRandomElement(allArt.data.objectIDs)
         const object = await apiMET.getObject(randomId)
-        if (object.data.GalleryNumber && !selectedPieces.includes(randomId)){
+
+        const isInTheMuseum = object.data.GalleryNumber
+        const hasPicture = object.data.primaryImage
+        const isNotDuplicated = !selectedPieces.includes(randomId)
+        
+        if ( isInTheMuseum && hasPicture && isNotDuplicated){
             console.log(randomId)
             selectedPieces.push(randomId)
             galleries.push(object.data.GalleryNumber)
+            piecesData.push(object.data)
         }else{
             console.log("Doest have")
 
         }
         
     }
-    console.log("All galleries", galleries)
-    return selectedPieces
+    return {selectedPieces, galleries, piecesData}
 }
 
 
