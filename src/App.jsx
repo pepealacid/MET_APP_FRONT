@@ -4,6 +4,7 @@ import SignupPage from "./pages/SignupPage";
 import PrivateRoute from "./components/PrivateRoute";
 import MuseumPage from "./pages/MuseumPage";
 import ArtistDetailsPage from "./pages/ArtistDetailsPage";
+import NewItineraryPage from "./pages/Itinerary/NewItineraryPage";
 import ArtworkDetailsPage from "./pages/ArtworkDetailsPage/ArtworkDetailsPage";
 import ArtworkSearchPage from "./pages/ArtworkSearchPage/ArtworkSearchPage"
 import ArtistSearchPage from "./pages/ArtistSearchPage/ArtistSearchPage";
@@ -40,6 +41,14 @@ function App() {
         element={
           <PrivateRoute>
             <MuseumPage />
+          </PrivateRoute>
+        }
+      />
+      <Route
+        path="/itinerary/new"
+        element={
+          <PrivateRoute>
+            <NewItineraryPage />
           </PrivateRoute>
         }
       />
