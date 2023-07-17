@@ -13,6 +13,9 @@ class ItineraryService {
     getUserItineraries(userId){
         return this.api.get(`/user/itineraries/${userId}`)
     }
+    getItineraryById(id){
+        return this.api.get(`/itineraries/${id}`)
+    }
 }
 
 const itineraryService = new ItineraryService();

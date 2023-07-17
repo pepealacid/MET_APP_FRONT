@@ -3,40 +3,50 @@ import FavFieldsButtons from "../FavFieldsButtons";
 import NoElementsFound from "./NoElementsFound";
 import itineraryService from "../../services/itinerary.service";
 import { AuthContext } from "../../context/auth.context";
-import authService from "../../services/auth.service";
+import { Box } from "@chakra-ui/react";
+import FavCard from "../Itinerary/fav/favCard";
 
 
 const ToursFavorites = () => {
-  // const [savedTour, setSaveTour] = useState(null)
-  // const { user } = useContext(AuthContext)
-  
-  // useEffect(()=>{
-  //   console.log(user)
+  const [savedTour, setSaveTour] = useState(null)
+  const { user } = useContext(AuthContext);
 
-  // }, [])
-  
-  
-  // const getUserSavedItineraries = async()=>{
-  //   const userId = getUserId()
-  //   const saved = await itineraryService.getUserItineraries(userId)
-  //   return saved
-  //   console.log(saved.data)
-  // }
-  // const getUserId = () => {
-  //   return user
-  // }
 
-  // getUserSavedItineraries()
+  useEffect(() => {
+    getUserSavedItineraries()
+  }, [user]);
+
+
+  const getUserSavedItineraries = async () => {
+    try {
+      const userId = user?.data._id
+      if (userId) {
+        const res = await itineraryService.getUserItineraries(userId)
+        setSaveTour(res.data)
+      }
+    } catch (error) {
+      console.log(error)
+    }
+
+  }
+
 
 
   return (
     <div>
       <h3>ToursFavorites</h3>
       <FavFieldsButtons />
-      {savedTour? 
-      <>Poner aquí los tours de api</>:
-      <NoElementsFound> tours </NoElementsFound>
-    }
+      {
+        savedTour
+          ?
+          <Box>
+            {
+              savedTour.map((tour)=> <FavCard key={tour._id}></FavCard>)
+            }
+          </Box>
+          :
+          <NoElementsFound> tours </NoElementsFound>
+      }
     </div>
   );
 };
