@@ -70,3 +70,34 @@
 .artwork-card .fav-button:focus {
   outline: 0;
 }
+
+.little-artwork-card {
+  border-radius: 10px;
+  border-bottom: 1px solid grey;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+  width: 90%;
+  height: 20%;
+}
+
+.little-artwork-card .main-img {
+  height: 70px;
+  width: 100%;
+  object-fit: cover;
+  object-position: center;
+  overflow: hidden;
+  padding: 0px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+.little-artwork-card .foot {
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.little-artwork-card .title {
+  font-size: 12px;
+  text-align: center;
+}

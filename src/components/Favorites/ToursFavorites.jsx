@@ -4,7 +4,6 @@ const ToursFavorites = () => {
   return (
     <div>
       <h3>ToursFavorites</h3>
-      <FavFieldsButtons />
     </div>
   );
 };
