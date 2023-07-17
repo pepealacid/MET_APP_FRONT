@@ -1,8 +1,12 @@
-import { useEffect, useState } from "react";
+import { useEffect, useContext, useState } from "react";
 import axios from "axios";
-import { Spinner } from "@chakra-ui/react";
+import { Spinner, Table, Tbody, Tr, Td, Text, Box } from "@chakra-ui/react";
+import { Link } from "react-router-dom";
+import ArtworkCard from "../../ArtworkCard/ArtworkCard";
 
 const RandomArtworks = ({ n }) => {
+
+
   const [randomArtworks, setRandomArtworks] = useState([]);
   const [loading, setLoading] = useState(true);
 
@@ -26,7 +30,12 @@ const RandomArtworks = ({ n }) => {
         );
 
         const artwork = detailsResponse.data;
-        artworks.push(artwork);
+        if (
+          artwork.id !== null &&
+          (artwork.primaryImageSmall || artwork.primaryImage)
+        ) {
+          artworks.push(artwork);
+        }
       }
 
       setRandomArtworks(artworks);
@@ -56,18 +65,71 @@ const RandomArtworks = ({ n }) => {
 
   return (
     <div>
-      <h3>
-        <b>Random Artworks</b>
-      </h3>
+      <Text className="recomm-header">Random artworks</Text>
       {loading ? (
         <Spinner />
       ) : (
-        randomArtworks.map((artwork) => (
-          <div key={artwork.objectID}>
-            <h4>{artwork.title}</h4>
-            <p>Artist: {artwork.artistDisplayName}</p>
-          </div>
-        ))
+        <Box
+          position="relative"
+          mt={2}
+          overflowX="auto"
+          maxHeight="600px"
+          whiteSpace="nowrap"
+        >
+          <Table size="sm">
+            <Tbody>
+              <Tr>
+                {randomArtworks
+                  .slice(0, Math.ceil(randomArtworks.length / 2))
+                  .map((artwork) => (
+                    <Td key={artwork.id} px={2}>
+                      <Link
+                        to={`/artwork/${artwork.objectID}`}
+                        style={{ textDecoration: "none", cursor: "pointer" }}
+                      >
+                        <ArtworkCard
+                          imageUrl={
+                            artwork.primaryImageSmall || artwork.primaryImage
+                          }
+                          title={artwork.title}
+                          author={artwork.artistDisplayName}
+                          date={
+                            artwork.objectEndDate || artwork.objectBeginDate
+                          }
+                          artworkID={artwork.objectID}
+                        />
+                      </Link>
+                    </Td>
+                  ))}
+              </Tr>
+              <Tr>
+                {randomArtworks
+                  .slice(Math.ceil(randomArtworks.length / 2))
+                  .map((artwork) => (
+                    <Td key={artwork.id} px={2}>
+                      <Link
+                        to={`/artwork/${artwork.objectID}`}
+                        style={{ textDecoration: "none", cursor: "pointer" }}
+                      >
+                        <ArtworkCard
+                          imageUrl={
+                            artwork.primaryImageSmall || artwork.primaryImage
+                          }
+                          title={artwork.title}
+                          author={artwork.artistDisplayName}
+                          date={
+                            artwork.objectEndDate || artwork.objectBeginDate
+                          }
+                          artworkID={artwork.objectID}
+                         
+                        />
+                      </Link>
+                    </Td>
+                  ))}
+              </Tr>
+            </Tbody>
+          </Table>
+        </Box>
       )}
     </div>
   );

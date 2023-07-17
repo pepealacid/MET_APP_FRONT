@@ -1,20 +1,24 @@
 import PropTypes from "prop-types";
+import { useContext, useEffect, useState } from "react";
 import "./ArtistCard.css";
-import FavHeart from "../../assets/images/FavHeart.png";
+import ArtistFavHeart from "../../assets/images/ArtistFavHeart.png";
 import FavHeartFilled from "../../assets/images/FavHeartFilled.png";
-import { useState, useEffect } from "react";
+import SandClock from "../../assets/images/SandClock.png";
+import { FavContext } from "../../context/fav.context";
 
 const ArtistCard = ({
   imageUrl,
   title,
   birthday,
   deathday,
-  favArtist,
   artistID,
-  favoriteArtistIds,
-  fetchFavorites,
 }) => {
+  const { favoriteArtistIds, addFavoriteArtist, removeFavoriteArtist } = useContext(
+    FavContext
+  );
+
   const [favorites, setFavorites] = useState([]);
+  const truncatedTitle = title.length > 18 ? `${title.substring(0, 18)}...` : title;
 
   useEffect(() => {
     setFavorites(favoriteArtistIds);
@@ -22,8 +26,11 @@ const ArtistCard = ({
 
   const handleFavClick = (event) => {
     event.preventDefault();
-    favArtist(artistID);
-    fetchFavorites();
+    if (favoriteArtistIds.includes(artistID.toString())) {
+      removeFavoriteArtist(artistID.toString());
+    } else {
+      addFavoriteArtist(artistID.toString());
+    }
   };
 
   return (
@@ -40,7 +47,7 @@ const ArtistCard = ({
           />
         </div>
         <div>
-          <p>{title}</p>
+          <p>{truncatedTitle}</p>
         </div>
         <div>
           <button className="fav-button" onClick={handleFavClick}>
@@ -53,20 +60,22 @@ const ArtistCard = ({
             ) : (
               <img
                 className="fav-button-img"
-                src={FavHeart}
+                src={ArtistFavHeart}
                 alt="not-favorite"
               />
             )}
           </button>
         </div>
       </div>
-      <div className="foot">
-        {birthday && deathday && (
+
+      {birthday && deathday && (
+        <div className="foot">
+          <img className="clock" src={SandClock} alt="year" />
           <p>
             {birthday}-{deathday}
           </p>
-        )}
-      </div>
+        </div>
+      )}
     </div>
   );
 };
@@ -76,10 +85,7 @@ ArtistCard.propTypes = {
   title: PropTypes.string.isRequired,
   birthday: PropTypes.string,
   deathday: PropTypes.string,
-  favArtist: PropTypes.func.isRequired,
   artistID: PropTypes.string.isRequired,
-  favoriteArtistIds: PropTypes.array.isRequired,
-  fetchFavorites: PropTypes.func.isRequired,
 };
 
 export default ArtistCard;

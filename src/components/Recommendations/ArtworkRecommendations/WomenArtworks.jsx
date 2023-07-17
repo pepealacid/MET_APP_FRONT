@@ -1,12 +1,18 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
-import { Spinner } from "@chakra-ui/react";
+import { Spinner, Table, Tbody, Tr, Td, Text, Box } from "@chakra-ui/react";
+import ArtworkCard from "../../ArtworkCard/ArtworkCard";
+import { Link } from "react-router-dom";
 
 const WomenArtworks = () => {
   const womenArtworkIDs = [
-    488014, 547713, 265820, 286121, 848077, 487806, 158999, 485803, 106018,
-    169750, 87376, 854343, 656371, 431261, 485458, 267025, 294427, 170161,
-    79878, 485454,
+    13384, 4267, 10344, 10345, 10731, 10838, 10868, 11271, 11272, 11876, 10088,
+    12594, 12645, 13747, 13752, 13753, 13756, 11554, 12655, 12656, 12657, 14087,
+    10956, 10957, 10958, 11156, 11157, 13587, 13597, 13598, 13599, 13849, 13854,
+    13869, 13875, 11698, 11699, 13604, 13605, 14091, 14092, 14093, 14094, 14096,
+    14099, 13606, 13607, 13611, 13612, 14101, 13620, 13624, 13626, 13629, 13674,
+    13712, 13725, 13743, 13169, 13348, 14128, 14130, 14131, 14138, 14139, 14199,
+    14312, 14317,
   ];
 
   const [womenArtworks, setWomenArtworks] = useState([]);
@@ -16,11 +22,13 @@ const WomenArtworks = () => {
     fetchWomenArtworks();
   }, []);
 
+  //USING THE ARRAY - FASTER OPTION
+
   const fetchWomenArtworks = async () => {
     try {
-      const randomArtworkIDs = getRandomArtworkIDs(womenArtworkIDs, 10);
-
+      const randomArtworkIDs = getRandomArtworkIDs(10);
       const artworks = [];
+
       for (const objectID of randomArtworkIDs) {
         const response = await axios.get(
           `https://collectionapi.metmuseum.org/public/collection/v1/objects/${objectID}`
@@ -38,25 +46,123 @@ const WomenArtworks = () => {
     }
   };
 
-  const getRandomArtworkIDs = (artworkIDs, count) => {
-    const shuffledIDs = artworkIDs.sort(() => 0.5 - Math.random());
-    return shuffledIDs.slice(0, count);
+  const getRandomArtworkIDs = (count) => {
+    const randomArtworkIDs = [];
+
+    while (randomArtworkIDs.length < count) {
+      const randomIndex = Math.floor(Math.random() * womenArtworkIDs.length);
+      const randomArtworkID = womenArtworkIDs[randomIndex];
+
+      if (!randomArtworkIDs.includes(randomArtworkID)) {
+        randomArtworkIDs.push(randomArtworkID);
+      }
+    }
+
+    return randomArtworkIDs;
   };
+
+  //USING THE API - SLOWER OPTION
+
+  // const fetchWomenArtworks = async () => {
+  //   try {
+  //     const apiUrl = "https://collectionapi.metmuseum.org/public/collection/v1/objects";
+  //     const response = await axios.get(apiUrl);
+  //     const objectIDs = response.data.objectIDs;
+
+  //     const artworks = [];
+  //     let count = 0;
+
+  //     while (count < 10) {
+  //       const randomIndex = Math.floor(Math.random() * objectIDs.length);
+  //       const objectID = objectIDs[randomIndex];
+  //       const detailsResponse = await axios.get(
+  //         `https://collectionapi.metmuseum.org/public/collection/v1/objects/${objectID}`
+  //       );
+
+  //       const artwork = detailsResponse.data;
+  //       if (
+  //         artwork.artistGender === "Female" &&
+  //         (artwork.primaryImageSmall || artwork.primaryImage)
+  //       ) {
+  //         artworks.push(artwork);
+  //         count++;
+  //       }
+  //     }
+
+  //     setFemaleArtworks(artworks);
+  //   } catch (error) {
+  //     console.error("Error fetching search results:", error);
+  //   } finally {
+  //     setLoading(false);
+  //   }
+  // };
 
   return (
     <div>
-      <h3>
-        <b>Women Artworks</b>
-      </h3>
+      <Text className="recomm-header">Women in art</Text>
       {loading ? (
         <Spinner />
       ) : (
-        womenArtworks.map((artwork) => (
-          <div key={artwork.objectID}>
-            <h4>{artwork.title}</h4>
-            <p>Artist: {artwork.artistDisplayName}</p>
-          </div>
-        ))
+        <Box
+          position="relative"
+          mt={2}
+          overflowX="auto"
+          maxHeight="600px"
+          whiteSpace="nowrap"
+        >
+          <Table size="sm">
+            <Tbody>
+              <Tr>
+                {womenArtworks
+                  .slice(0, Math.ceil(womenArtworks.length / 2))
+                  .map((artwork) => (
+                    <Td key={artwork.id} px={2}>
+                      <Link
+                        to={`/artwork/${artwork.objectID}`}
+                        style={{ textDecoration: "none", cursor: "pointer" }}
+                      >
+                        <ArtworkCard
+                          imageUrl={
+                            artwork.primaryImageSmall || artwork.primaryImage
+                          }
+                          title={artwork.title}
+                          author={artwork.artistDisplayName}
+                          date={
+                            artwork.objectEndDate || artwork.objectBeginDate
+                          }
+                          artworkID={artwork.objectID}
+                        />
+                      </Link>
+                    </Td>
+                  ))}
+              </Tr>
+              <Tr>
+                {womenArtworks
+                  .slice(Math.ceil(womenArtworks.length / 2))
+                  .map((artwork) => (
+                    <Td key={artwork.id} px={2}>
+                      <Link
+                        to={`/artwork/${artwork.objectID}`}
+                        style={{ textDecoration: "none", cursor: "pointer" }}
+                      >
+                        <ArtworkCard
+                          imageUrl={
+                            artwork.primaryImageSmall || artwork.primaryImage
+                          }
+                          title={artwork.title}
+                          author={artwork.artistDisplayName}
+                          date={
+                            artwork.objectEndDate || artwork.objectBeginDate
+                          }
+                          artworkID={artwork.objectID}
+                        />
+                      </Link>
+                    </Td>
+                  ))}
+              </Tr>
+            </Tbody>
+          </Table>
+        </Box>
       )}
     </div>
   );

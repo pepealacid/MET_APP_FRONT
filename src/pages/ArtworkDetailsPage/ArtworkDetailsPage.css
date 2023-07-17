@@ -1,0 +1,143 @@
+.artwork-details-container {
+  position: relative;
+  margin: 0;
+}
+
+.artwork-details-container .top-main {
+  position: relative;
+}
+
+.artwork-details-container .main-image {
+  height: 200px;
+  width: 100vh;
+  object-fit: cover;
+}
+
+.artwork-details-container .fav-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.artwork-details-container .goback-button {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.artwork-details-container .top-info {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  color: white;
+  font-weight: bold;
+}
+
+.artwork-details-container .title {
+  font-size: 20px;
+}
+
+.artwork-details-container .top-text {
+  display: flex;
+  align-items: center;
+}
+
+.artwork-details-container .white-clock {
+  width: 20px;
+  height: 20px;
+  margin-right: 4px;
+}
+
+.artwork-details-container .bottom-info {
+  padding: 10px;
+}
+
+.artwork-details-container .artist-div {
+  display: flex;
+  align-items: center;
+}
+
+.artwork-details-container .artist-image {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.artwork-details-container .artist-name {
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.artwork-details-container .about-div {
+  margin-top: 20px;
+}
+
+.artwork-details-container .about-header {
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.artwork-details-container .details-div {
+  margin-top: 20px;
+}
+
+.artwork-details-container .details-header {
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.artwork-details-container .info-card {
+  background-color: #f6f6f6;
+  border-radius: 10px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: flex-start;
+  margin-top: 20px;
+}
+
+.artwork-details-container .info-card .header {
+  font-weight: bold;
+  font-size: 20px;
+  padding: 16px;
+  padding-bottom: 0px;
+}
+
+.artwork-details-container .info-card .link {
+  padding: 16px;
+  padding-top: 2px;
+  font-size: 12px;
+  max-width: 200px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.artwork-details-container .button-side {
+  padding: 16px;
+}
+
+.css-m0ngsp {
+  margin: 0px !important;
+  margin-top: 30px !important;
+}
+
+.artwork-details-container .maps .map-header {
+  font-weight: bold;
+  font-size: 20px;
+  padding-bottom: 0px;
+  margin-top: 20px;
+}
+
+.artwork-details-container .related-header {
+  font-weight: bold;
+  font-size: 20px;
+  padding-bottom: 0px;
+  margin-top: 20px;
+}
