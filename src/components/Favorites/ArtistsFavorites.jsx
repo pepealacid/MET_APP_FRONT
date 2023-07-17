@@ -37,21 +37,23 @@ const ArtistsFavorites = () => {
   }
 
   return (
-    <Grid
-      templateColumns="repeat(2, 1fr)"
-      gap={4}
-      paddingTop={"40px"}
-      marginLeft={"10px"}
-    >
-      {favorites.map((artwork) => (
-        <Link key={artwork.objectID} to={`/artwork/${artwork.objectID}`}>
-          <ArtworkCardLittle
-            title={artwork.title}
-            imageUrl={artwork.primaryImageSmall || artwork.primaryImage}
-          />
-        </Link>
-      ))}
-    </Grid>
+    <>
+      <Grid
+        templateColumns="repeat(2, 1fr)"
+        gap={4}
+        paddingTop={"40px"}
+        marginLeft={"10px"}
+      >
+        {favorites.map((artwork) => (
+          <Link key={artwork.objectID} to={`/artwork/${artwork.objectID}`}>
+            <ArtworkCardLittle
+              title={artwork.title}
+              imageUrl={artwork.primaryImageSmall || artwork.primaryImage}
+            />
+          </Link>
+        ))}
+      </Grid>
+    </>
   );
 };
 
