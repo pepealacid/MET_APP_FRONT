@@ -1,50 +1,72 @@
 .artwork-card {
   margin: 20px;
-  padding: 10px;
   border-radius: 10px;
   border-bottom: 1px solid grey;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+  width: 260px;
+  height: 180px;
 }
 
-.main-img {
+.artwork-card .foot {
+  padding: 10px;
+}
+
+.artwork-card .main-img {
+  height: 80px;
   width: 100vh;
-  height: 20vh;
   object-fit: none;
   object-position: center;
   overflow: hidden;
+  padding: 0px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
 }
 
-.date {
+.artwork-card .title {
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.artwork-card .date {
   display: flex;
+  font-size: 16px;
 }
 
-.clock {
-  height: 16px;
+.artwork-card .clock {
+  height: 20px;
+  margin-top: 2px;
 }
 
-.img-container {
-    position: relative;
-    display: inline-block;
-  }
-  
-  .fav-button {
-    position: absolute;
-    top: 0;
-    right: 0;
-    z-index: 1;
-    padding: 8px;
-    background-color: transparent;
-    border: none;
-    cursor: pointer;
-  }
+.artwork-card .author {
+  margin: 2px;
+  font-size: 14px;
+}
 
-  
-  .fav-button-img {
-    width: 30px;
-    height: 30px;
-  }
-  
-  .fav-button-img-active {
-    pointer-events: none;
-  }
-  
+.artwork-card .img-container {
+  position: relative;
+  display: inline-block;
+}
+
+.artwork-card .fav-button {
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 1;
+  padding: 8px;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.artwork-card .fav-button-img {
+  width: 30px;
+  height: 30px;
+}
+
+.artwork-card .fav-button-img-active {
+  pointer-events: none;
+}
+
+.artwork-card .fav-button:focus {
+  outline: 0;
+}

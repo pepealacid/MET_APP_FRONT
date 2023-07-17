@@ -1,0 +1,24 @@
+.museum-card {
+    padding: 10px;
+}
+
+.museum-card .main-image{
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+.museum-card .museum-name{
+    font-weight: bold;
+}
+
+.museum-card .location {
+    display: flex;
+    gap:10px;
+    align-items: center;
+}
+
+.museum-card .location-icon {
+    width: 18px;
+    height: 18px;
+}
+
