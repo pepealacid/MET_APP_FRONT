@@ -4,7 +4,6 @@ import SignupPage from "./pages/SignupPage";
 import PrivateRoute from "./components/PrivateRoute";
 import ArtistDetailsPage from "./pages/ArtistDetailsPage/ArtistDetailsPage";
 import MuseumPage from "./pages/MuseumPage";
-import ArtistDetailsPage from "./pages/ArtistDetailsPage";
 import NewItineraryPage from "./pages/Itinerary/NewItineraryPage";
 import ArtworkDetailsPage from "./pages/ArtworkDetailsPage/ArtworkDetailsPage";
 import ArtworkSearchPage from "./pages/ArtworkSearchPage/ArtworkSearchPage";
