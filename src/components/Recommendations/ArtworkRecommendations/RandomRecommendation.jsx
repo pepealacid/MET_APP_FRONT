@@ -1,15 +1,12 @@
-import { useEffect, useState } from "react";
+import { useEffect, useContext, useState } from "react";
 import axios from "axios";
-import { Spinner, Grid, GridItem, Text } from "@chakra-ui/react";
+import { Spinner, Table, Tbody, Tr, Td, Text, Box } from "@chakra-ui/react";
 import { Link } from "react-router-dom";
 import ArtworkCard from "../../ArtworkCard/ArtworkCard";
 
-const RandomArtworks = ({
-  n,
-  favArtwork,
-  favoriteArtworkIds,
-  fetchFavorites,
-}) => {
+const RandomArtworks = ({ n }) => {
+
+
   const [randomArtworks, setRandomArtworks] = useState([]);
   const [loading, setLoading] = useState(true);
 
@@ -33,7 +30,10 @@ const RandomArtworks = ({
         );
 
         const artwork = detailsResponse.data;
-        if (artwork.id !== null && (artwork.primaryImageSmall || artwork.primaryImage)) {
+        if (
+          artwork.id !== null &&
+          (artwork.primaryImageSmall || artwork.primaryImage)
+        ) {
           artworks.push(artwork);
         }
       }
@@ -69,31 +69,67 @@ const RandomArtworks = ({
       {loading ? (
         <Spinner />
       ) : (
-        <Grid templateColumns="repeat(2, 1fr)" gap={4}>
-          {randomArtworks
-            .filter(
-              (artwork) => artwork.id !== null && (artwork.primaryImageSmall || artwork.primaryImage)
-            )
-            .map((artwork) => (
-              <GridItem key={artwork.id}>
-                <Link
-                  to={`/artwork/${artwork.objectID}`}
-                  style={{ textDecoration: "none", cursor: "pointer" }}
-                >
-                  <ArtworkCard
-                    imageUrl={artwork.primaryImageSmall || artwork.primaryImage}
-                    title={artwork.title}
-                    author={artwork.artistDisplayName}
-                    date={artwork.objectEndDate || artwork.objectBeginDate}
-                    artworkID={artwork.objectID}
-                    favoriteArtworkIds={favoriteArtworkIds}
-                    favArtwork={favArtwork}
-                    fetchFavorites={fetchFavorites}
-                  />
-                </Link>
-              </GridItem>
-            ))}
-        </Grid>
+        <Box
+          position="relative"
+          mt={2}
+          overflowX="auto"
+          maxHeight="600px"
+          whiteSpace="nowrap"
+        >
+          <Table size="sm">
+            <Tbody>
+              <Tr>
+                {randomArtworks
+                  .slice(0, Math.ceil(randomArtworks.length / 2))
+                  .map((artwork) => (
+                    <Td key={artwork.id} px={2}>
+                      <Link
+                        to={`/artwork/${artwork.objectID}`}
+                        style={{ textDecoration: "none", cursor: "pointer" }}
+                      >
+                        <ArtworkCard
+                          imageUrl={
+                            artwork.primaryImageSmall || artwork.primaryImage
+                          }
+                          title={artwork.title}
+                          author={artwork.artistDisplayName}
+                          date={
+                            artwork.objectEndDate || artwork.objectBeginDate
+                          }
+                          artworkID={artwork.objectID}
+                        />
+                      </Link>
+                    </Td>
+                  ))}
+              </Tr>
+              <Tr>
+                {randomArtworks
+                  .slice(Math.ceil(randomArtworks.length / 2))
+                  .map((artwork) => (
+                    <Td key={artwork.id} px={2}>
+                      <Link
+                        to={`/artwork/${artwork.objectID}`}
+                        style={{ textDecoration: "none", cursor: "pointer" }}
+                      >
+                        <ArtworkCard
+                          imageUrl={
+                            artwork.primaryImageSmall || artwork.primaryImage
+                          }
+                          title={artwork.title}
+                          author={artwork.artistDisplayName}
+                          date={
+                            artwork.objectEndDate || artwork.objectBeginDate
+                          }
+                          artworkID={artwork.objectID}
+                         
+                        />
+                      </Link>
+                    </Td>
+                  ))}
+              </Tr>
+            </Tbody>
+          </Table>
+        </Box>
       )}
     </div>
   );

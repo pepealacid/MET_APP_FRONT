@@ -8,9 +8,7 @@ import { TOKEN_NAME } from "../../context/auth.context";
 import authService from "../../services/auth.service";
 import favoriteService from "../../services/favorite.service";
 import ArtistRecommendations from "../../components/Recommendations/ArtistRecommendations/ArtistRecommendations";
-import "./ArtistSearchPage.css"
-
-
+import "./ArtistSearchPage.css";
 
 const ArtistSearchPage = () => {
   const [results, setResults] = useState([]);
@@ -110,9 +108,6 @@ const ArtistSearchPage = () => {
                       birthday={result.birthday}
                       deathday={result.deathday}
                       artistID={result.id}
-                      favoriteArtistIds={favoriteArtistIds}
-                      favArtist={favArtist}
-                      fetchFavorites={fetchFavorites}
                     />
                   </Link>
                 </GridItem>

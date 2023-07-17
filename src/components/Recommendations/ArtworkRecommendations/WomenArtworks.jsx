@@ -1,10 +1,10 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
-import { Spinner, Grid, GridItem, Text } from "@chakra-ui/react";
+import { Spinner, Table, Tbody, Tr, Td, Text, Box } from "@chakra-ui/react";
 import ArtworkCard from "../../ArtworkCard/ArtworkCard";
 import { Link } from "react-router-dom";
 
-const WomenArtworks = ({ favArtwork, favoriteArtworkIds, fetchFavorites }) => {
+const WomenArtworks = () => {
   const womenArtworkIDs = [
     13384, 4267, 10344, 10345, 10731, 10838, 10868, 11271, 11272, 11876, 10088,
     12594, 12645, 13747, 13752, 13753, 13756, 11554, 12655, 12656, 12657, 14087,
@@ -68,17 +68,17 @@ const WomenArtworks = ({ favArtwork, favoriteArtworkIds, fetchFavorites }) => {
   //     const apiUrl = "https://collectionapi.metmuseum.org/public/collection/v1/objects";
   //     const response = await axios.get(apiUrl);
   //     const objectIDs = response.data.objectIDs;
-  
+
   //     const artworks = [];
   //     let count = 0;
-  
+
   //     while (count < 10) {
   //       const randomIndex = Math.floor(Math.random() * objectIDs.length);
   //       const objectID = objectIDs[randomIndex];
   //       const detailsResponse = await axios.get(
   //         `https://collectionapi.metmuseum.org/public/collection/v1/objects/${objectID}`
   //       );
-  
+
   //       const artwork = detailsResponse.data;
   //       if (
   //         artwork.artistGender === "Female" &&
@@ -88,7 +88,7 @@ const WomenArtworks = ({ favArtwork, favoriteArtworkIds, fetchFavorites }) => {
   //         count++;
   //       }
   //     }
-  
+
   //     setFemaleArtworks(artworks);
   //   } catch (error) {
   //     console.error("Error fetching search results:", error);
@@ -96,39 +96,73 @@ const WomenArtworks = ({ favArtwork, favoriteArtworkIds, fetchFavorites }) => {
   //     setLoading(false);
   //   }
   // };
-  
+
   return (
     <div>
       <Text className="recomm-header">Women in art</Text>
       {loading ? (
         <Spinner />
       ) : (
-        <Grid templateColumns="repeat(2, 1fr)" gap={4}>
-          {womenArtworks.map(
-            (artwork) =>
-              artwork.id !== null && (
-                <GridItem key={artwork.id}>
-                  <Link
-                    to={`/artwork/${artwork.objectID}`}
-                    style={{ textDecoration: "none", cursor: "pointer" }}
-                  >
-                    <ArtworkCard
-                      imageUrl={
-                        artwork.primaryImageSmall || artwork.primaryImage
-                      }
-                      title={artwork.title}
-                      author={artwork.artistDisplayName}
-                      date={artwork.objectEndDate || artwork.objectBeginDate}
-                      artworkID={artwork.objectID}
-                      favoriteArtworkIds={favoriteArtworkIds}
-                      favArtwork={favArtwork}
-                      fetchFavorites={fetchFavorites}
-                    />
-                  </Link>
-                </GridItem>
-              )
-          )}
-        </Grid>
+        <Box
+          position="relative"
+          mt={2}
+          overflowX="auto"
+          maxHeight="600px"
+          whiteSpace="nowrap"
+        >
+          <Table size="sm">
+            <Tbody>
+              <Tr>
+                {womenArtworks
+                  .slice(0, Math.ceil(womenArtworks.length / 2))
+                  .map((artwork) => (
+                    <Td key={artwork.id} px={2}>
+                      <Link
+                        to={`/artwork/${artwork.objectID}`}
+                        style={{ textDecoration: "none", cursor: "pointer" }}
+                      >
+                        <ArtworkCard
+                          imageUrl={
+                            artwork.primaryImageSmall || artwork.primaryImage
+                          }
+                          title={artwork.title}
+                          author={artwork.artistDisplayName}
+                          date={
+                            artwork.objectEndDate || artwork.objectBeginDate
+                          }
+                          artworkID={artwork.objectID}
+                        />
+                      </Link>
+                    </Td>
+                  ))}
+              </Tr>
+              <Tr>
+                {womenArtworks
+                  .slice(Math.ceil(womenArtworks.length / 2))
+                  .map((artwork) => (
+                    <Td key={artwork.id} px={2}>
+                      <Link
+                        to={`/artwork/${artwork.objectID}`}
+                        style={{ textDecoration: "none", cursor: "pointer" }}
+                      >
+                        <ArtworkCard
+                          imageUrl={
+                            artwork.primaryImageSmall || artwork.primaryImage
+                          }
+                          title={artwork.title}
+                          author={artwork.artistDisplayName}
+                          date={
+                            artwork.objectEndDate || artwork.objectBeginDate
+                          }
+                          artworkID={artwork.objectID}
+                        />
+                      </Link>
+                    </Td>
+                  ))}
+              </Tr>
+            </Tbody>
+          </Table>
+        </Box>
       )}
     </div>
   );

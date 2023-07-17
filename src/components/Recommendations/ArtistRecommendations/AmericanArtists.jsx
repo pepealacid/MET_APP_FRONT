@@ -1,10 +1,10 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
-import { Spinner, Grid, GridItem, Text } from "@chakra-ui/react";
+import { Spinner, Table, Tr, Tbody, Td, Text, Box } from "@chakra-ui/react";
 import ArtistCard from "../../ArtistCard/ArtistCard";
 import { Link } from "react-router-dom";
 
-const AmericanArtists = ({ favArtist, favoriteArtistIds, fetchFavorites }) => {
+const AmericanArtists = () => {
   const americanArtworksIDs = [
     34, 40, 41, 108, 109, 110, 111, 112, 113, 114, 115, 116, 117, 119, 122, 123,
     130, 134, 203, 205, 215, 216, 218, 219, 220, 221, 223, 224, 225, 229, 230,
@@ -34,7 +34,9 @@ const AmericanArtists = ({ favArtist, favoriteArtistIds, fetchFavorites }) => {
       const artists = [];
 
       while (artists.length < 10 && americanArtworksIDs.length > 0) {
-        const randomIndex = Math.floor(Math.random() * americanArtworksIDs.length);
+        const randomIndex = Math.floor(
+          Math.random() * americanArtworksIDs.length
+        );
         const randomArtworkID = americanArtworksIDs[randomIndex];
         americanArtworksIDs.splice(randomIndex, 1); // Remove the used ID from the array
 
@@ -65,10 +67,14 @@ const AmericanArtists = ({ favArtist, favoriteArtistIds, fetchFavorites }) => {
               },
             });
             const selfInfo = selfResponse.data;
-            if (selfInfo._links.image && selfInfo._links.image.href) { // Added verification for _links.image
+            if (selfInfo._links.image && selfInfo._links.image.href) {
+              // Added verification for _links.image
               const firstLink = selfInfo._links.image.href;
               const image_version = selfInfo.image_versions[0];
-              const finalLink = firstLink.replace("{image_version}", image_version);
+              const finalLink = firstLink.replace(
+                "{image_version}",
+                image_version
+              );
               selfInfo.imageUrl = finalLink;
 
               if (!artists.some((artist) => artist.name === selfInfo.name)) {
@@ -93,22 +99,68 @@ const AmericanArtists = ({ favArtist, favoriteArtistIds, fetchFavorites }) => {
       {loading ? (
         <Spinner />
       ) : (
-        <Grid templateColumns="repeat(2, 1fr)" gap={4}>
-          {results.map((result, index) => (
-            <GridItem key={index}>
-              <ArtistCard
-                imageUrl={result.imageUrl || undefined}
-                title={result.name}
-                birthday={result.birthday}
-                deathday={result.deathday}
-                artistID={result.id}
-                favoriteArtistIds={favoriteArtistIds}
-                favArtist={favArtist}
-                fetchFavorites={fetchFavorites}
-              />
-            </GridItem>
-          ))}
-        </Grid>
+        <Box
+          position="relative"
+          mt={2}
+          overflowX="auto"
+          maxHeight="600px"
+          whiteSpace="nowrap"
+        >
+          <Table size="sm">
+            <Tbody>
+              <Tr>
+                {results
+                  .slice(0, Math.ceil(results.length / 2))
+                  .map((result, index) => (
+                    <Td key={index} px={2}>
+                      <Link
+                        to={{
+                          pathname: `/artist/${result.title}`,
+                          search: `?url=${encodeURIComponent(
+                            result._links.self.href
+                          )}`,
+                        }}
+                        style={{ textDecoration: "none", cursor: "pointer" }}
+                      >
+                        <ArtistCard
+                          imageUrl={result.imageUrl || undefined}
+                          title={result.name}
+                          birthday={result.birthday}
+                          deathday={result.deathday}
+                          artistID={result.id}
+                        />
+                      </Link>
+                    </Td>
+                  ))}
+              </Tr>
+              <Tr>
+                {results
+                  .slice(Math.ceil(results.length / 2))
+                  .map((result, index) => (
+                    <Td key={index} px={2}>
+                      <Link
+                        to={{
+                          pathname: `/artist/${result.title}`,
+                          search: `?url=${encodeURIComponent(
+                            result._links.self.href
+                          )}`,
+                        }}
+                        style={{ textDecoration: "none", cursor: "pointer" }}
+                      >
+                        <ArtistCard
+                          imageUrl={result.imageUrl || undefined}
+                          title={result.name}
+                          birthday={result.birthday}
+                          deathday={result.deathday}
+                          artistID={result.id}
+                        />
+                      </Link>
+                    </Td>
+                  ))}
+              </Tr>
+            </Tbody>
+          </Table>
+        </Box>
       )}
     </div>
   );

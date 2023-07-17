@@ -1,10 +1,10 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
-import { Spinner, Grid, GridItem, Text } from "@chakra-ui/react";
+import { Spinner, Table, Tr, Tbody, Td, Text, Box } from "@chakra-ui/react";
 import ArtistCard from "../../ArtistCard/ArtistCard";
 import { Link } from "react-router-dom";
 
-const WomenArtists = ({ favArtist, favoriteArtistIds, fetchFavorites }) => {
+const WomenArtists = () => {
   const womenArtworkIDs = [
     13384, 4267, 10344, 10345, 10731, 10838, 10868, 11271, 11272, 11876, 10088,
     12594, 12645, 13747, 13752, 13753, 13756, 11554, 12655, 12656, 12657, 14087,
@@ -58,10 +58,14 @@ const WomenArtists = ({ favArtist, favoriteArtistIds, fetchFavorites }) => {
               },
             });
             const selfInfo = selfResponse.data;
-            if (selfInfo._links.image && selfInfo._links.image.href) { // Added verification for _links.image
+            if (selfInfo._links.image && selfInfo._links.image.href) {
+              // Added verification for _links.image
               const firstLink = selfInfo._links.image.href;
               const image_version = selfInfo.image_versions[0];
-              const finalLink = firstLink.replace("{image_version}", image_version);
+              const finalLink = firstLink.replace(
+                "{image_version}",
+                image_version
+              );
               selfInfo.imageUrl = finalLink;
 
               if (!artists.some((artist) => artist.name === selfInfo.name)) {
@@ -86,22 +90,68 @@ const WomenArtists = ({ favArtist, favoriteArtistIds, fetchFavorites }) => {
       {loading ? (
         <Spinner />
       ) : (
-        <Grid templateColumns="repeat(2, 1fr)" gap={4}>
-          {results.map((result, index) => (
-            <GridItem key={index}>
-              <ArtistCard
-                imageUrl={result.imageUrl || undefined}
-                title={result.name}
-                birthday={result.birthday}
-                deathday={result.deathday}
-                artistID={result.id}
-                favoriteArtistIds={favoriteArtistIds}
-                favArtist={favArtist}
-                fetchFavorites={fetchFavorites}
-              />
-            </GridItem>
-          ))}
-        </Grid>
+        <Box
+          position="relative"
+          mt={2}
+          overflowX="auto"
+          maxHeight="600px"
+          whiteSpace="nowrap"
+        >
+          <Table size="sm">
+            <Tbody>
+              <Tr>
+                {results
+                  .slice(0, Math.ceil(results.length / 2))
+                  .map((result, index) => (
+                    <Td key={index} px={2}>
+                      <Link
+                        to={{
+                          pathname: `/artist/${result.title}`,
+                          search: `?url=${encodeURIComponent(
+                            result._links.self.href
+                          )}`,
+                        }}
+                        style={{ textDecoration: "none", cursor: "pointer" }}
+                      >
+                        <ArtistCard
+                          imageUrl={result.imageUrl || undefined}
+                          title={result.name}
+                          birthday={result.birthday}
+                          deathday={result.deathday}
+                          artistID={result.id}
+                        />
+                      </Link>
+                    </Td>
+                  ))}
+              </Tr>
+              <Tr>
+                {results
+                  .slice(Math.ceil(results.length / 2))
+                  .map((result, index) => (
+                    <Td key={index} px={2}>
+                      <Link
+                        to={{
+                          pathname: `/artist/${result.title}`,
+                          search: `?url=${encodeURIComponent(
+                            result._links.self.href
+                          )}`,
+                        }}
+                        style={{ textDecoration: "none", cursor: "pointer" }}
+                      >
+                        <ArtistCard
+                          imageUrl={result.imageUrl || undefined}
+                          title={result.name}
+                          birthday={result.birthday}
+                          deathday={result.deathday}
+                          artistID={result.id}
+                        />
+                      </Link>
+                    </Td>
+                  ))}
+              </Tr>
+            </Tbody>
+          </Table>
+        </Box>
       )}
     </div>
   );

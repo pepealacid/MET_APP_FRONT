@@ -2,28 +2,12 @@ import AmericanArtists from "./AmericanArtists";
 import SpanishArtists from "./SpanishArtists";
 import WomenArtists from "./WomenArtists";
 
-const ArtistRecommendations = ({
-  favArtist,
-  favoriteArtistIds,
-  fetchFavorites,
-}) => {
+const ArtistRecommendations = () => {
   return (
     <div className="recommendations-container">
-      <WomenArtists
-        favoriteArtistIds={favoriteArtistIds}
-        favArtist={favArtist}
-        fetchFavorites={fetchFavorites}
-      />
-      <AmericanArtists
-        favoriteArtistIds={favoriteArtistIds}
-        favArtist={favArtist}
-        fetchFavorites={fetchFavorites}
-      />
-      <SpanishArtists
-        favoriteArtistIds={favoriteArtistIds}
-        favArtist={favArtist}
-        fetchFavorites={fetchFavorites}
-      />
+      <WomenArtists />
+      <AmericanArtists />
+      <SpanishArtists />
     </div>
   );
 };

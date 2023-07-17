@@ -3,28 +3,30 @@ import SandClock from "../../assets/images/SandClock.png";
 import FavHeart from "../../assets/images/FavHeart.png";
 import PropTypes from "prop-types";
 import FavHeartFilled from "../../assets/images/FavHeartFilled.png";
-import { useState, useEffect } from "react";
+import { useContext } from "react";
+import { FavContext } from "../../context/fav.context";
 
 const ArtworkCard = ({
   imageUrl,
   title,
   author,
   date,
-  favArtwork,
   artworkID,
-  favoriteArtworkIds,
-  fetchFavorites,
 }) => {
-  const [favorites, setFavorites] = useState([]);
+  const { favoriteArtworkIds, addFavoriteArtwork, removeFavoriteArtwork } =
+    useContext(FavContext);
+  const truncatedTitle = title.length > 18 ? `${title.substring(0, 18)}...` : title;
+  const truncatedAuthor = author.length > 30 ? `${author.substring(0, 30)}...` : author;
 
-  useEffect(() => {
-    setFavorites(favoriteArtworkIds);
-  }, [favoriteArtworkIds]);
+
 
   const handleFavClick = (event) => {
     event.preventDefault();
-    favArtwork(artworkID);
-    fetchFavorites();
+    if (favoriteArtworkIds.includes(artworkID.toString())) {
+      removeFavoriteArtwork(artworkID.toString());
+    } else {
+      addFavoriteArtwork(artworkID.toString());
+    }
   };
 
   return (
@@ -33,7 +35,7 @@ const ArtworkCard = ({
         <div className="img-container">
           <img className="main-img" src={imageUrl} alt="artwork" />
           <button className="fav-button" onClick={handleFavClick}>
-            {favorites.includes(artworkID.toString()) ? (
+            {favoriteArtworkIds.includes(artworkID.toString()) ? (
               <img
                 className="fav-button-img"
                 src={FavHeartFilled}
@@ -50,8 +52,8 @@ const ArtworkCard = ({
         </div>
       </div>
       <div className="foot">
-        <h3>{title}</h3>
-        <p>{author}</p>
+        <h3 className="title">{truncatedTitle}</h3>
+        <p className="author">{truncatedAuthor}</p>
         <div className="date">
           <img className="clock" src={SandClock} alt="year" />
           <p>{date}</p>
@@ -66,10 +68,7 @@ ArtworkCard.propTypes = {
   title: PropTypes.string.isRequired,
   author: PropTypes.string,
   date: PropTypes.number,
-  favArtwork: PropTypes.array.isRequired,
   artworkID: PropTypes.string.isRequired,
-  favoriteArtworkIds: PropTypes.array.isRequired,
-  fetchFavorites: PropTypes.func.isRequired,
 };
 
 export default ArtworkCard;

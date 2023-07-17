@@ -1,14 +1,10 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
-import { Spinner, Grid, GridItem, Text, Box } from "@chakra-ui/react";
+import { Spinner, Table, Tbody, Tr, Td, Text, Box } from "@chakra-ui/react";
 import { Link } from "react-router-dom";
 import ArtworkCard from "../../ArtworkCard/ArtworkCard";
 
-const AmericanArtworks = ({
-  favArtwork,
-  favoriteArtworkIds,
-  fetchFavorites,
-}) => {
+const AmericanArtworks = () => {
   const [americanArtworks, setAmericanArtworks] = useState([]);
   const [loading, setLoading] = useState(true);
 
@@ -32,21 +28,18 @@ const AmericanArtworks = ({
   useEffect(() => {
     fetchAmericanArtworks();
   }, []);
-  //USING THE PRESAVED ARRAY - FASTER OPTION
+
   const fetchAmericanArtworks = async () => {
     try {
       const randomArtworkIDs = getRandomArtworkIDs(10);
-      const artworks = [];
-
-      for (const objectID of randomArtworkIDs) {
-        const response = await axios.get(
-          `https://collectionapi.metmuseum.org/public/collection/v1/objects/${objectID}`
-        );
-
-        const artwork = response.data;
-        artworks.push(artwork);
-      }
-
+      const artworks = await Promise.all(
+        randomArtworkIDs.map(async (objectID) => {
+          const response = await axios.get(
+            `https://collectionapi.metmuseum.org/public/collection/v1/objects/${objectID}`
+          );
+          return response.data;
+        })
+      );
       setAmericanArtworks(artworks);
     } catch (error) {
       console.error("Error fetching artwork details:", error);
@@ -56,56 +49,9 @@ const AmericanArtworks = ({
   };
 
   const getRandomArtworkIDs = (count) => {
-    const randomArtworkIDs = [];
-
-    while (randomArtworkIDs.length < count) {
-      const randomIndex = Math.floor(
-        Math.random() * americanArtworksIDs.length
-      );
-      const randomArtworkID = americanArtworksIDs[randomIndex];
-
-      if (!randomArtworkIDs.includes(randomArtworkID)) {
-        randomArtworkIDs.push(randomArtworkID);
-      }
-    }
-
-    return randomArtworkIDs;
+    const shuffledIDs = americanArtworksIDs.sort(() => 0.5 - Math.random());
+    return shuffledIDs.slice(0, count);
   };
-  //USING THE API - SLOWER OPTION
-  // const fetchAmericanArtworks = async () => {
-  //   try {
-  //     const apiUrl =
-  //       "https://collectionapi.metmuseum.org/public/collection/v1/objects";
-  //     const response = await axios.get(apiUrl);
-  //     const objectIDs = response.data.objectIDs;
-
-  //     const artworks = [];
-  //     let count = 0;
-
-  //     while (count < 10) {
-  //       const randomIndex = Math.floor(Math.random() * objectIDs.length);
-  //       const objectID = objectIDs[randomIndex];
-  //       const detailsResponse = await axios.get(
-  //         `https://collectionapi.metmuseum.org/public/collection/v1/objects/${objectID}`
-  //       );
-
-  //       const artwork = detailsResponse.data;
-  //       if (
-  //         artwork.artistNationality === "American" &&
-  //         (artwork.primaryImageSmall || artwork.primaryImage)
-  //       ) {
-  //         artworks.push(artwork);
-  //         count++;
-  //       }
-  //     }
-
-  //     setAmericanArtworks(artworks);
-  //   } catch (error) {
-  //     console.error("Error fetching search results:", error);
-  //   } finally {
-  //     setLoading(false);
-  //   }
-  // };
 
   return (
     <div>
@@ -116,35 +62,62 @@ const AmericanArtworks = ({
         <Box
           position="relative"
           mt={2}
-          display="flex"
           overflowX="auto"
-          flexWrap="nowrap"
-          height="600px"
+          maxHeight="600px"
+          whiteSpace="nowrap"
         >
-          {americanArtworks.map(
-            (artwork) =>
-              artwork.id !== null && (
-                <Box key={artwork.id} flex="0 0 auto" px={2}>
-                  <Link
-                    to={`/artwork/${artwork.objectID}`}
-                    style={{ textDecoration: "none", cursor: "pointer" }}
-                  >
-                    <ArtworkCard
-                      imageUrl={
-                        artwork.primaryImageSmall || artwork.primaryImage
-                      }
-                      title={artwork.title}
-                      author={artwork.artistDisplayName}
-                      date={artwork.objectEndDate || artwork.objectBeginDate}
-                      artworkID={artwork.objectID}
-                      favoriteArtworkIds={favoriteArtworkIds}
-                      favArtwork={favArtwork}
-                      fetchFavorites={fetchFavorites}
-                    />
-                  </Link>
-                </Box>
-              )
-          )}
+          <Table size="sm">
+            <Tbody>
+              <Tr>
+                {americanArtworks
+                  .slice(0, Math.ceil(americanArtworks.length / 2))
+                  .map((artwork) => (
+                    <Td key={artwork.id} px={2}>
+                      <Link
+                        to={`/artwork/${artwork.objectID}`}
+                        style={{ textDecoration: "none", cursor: "pointer" }}
+                      >
+                        <ArtworkCard
+                          imageUrl={
+                            artwork.primaryImageSmall || artwork.primaryImage
+                          }
+                          title={artwork.title}
+                          author={artwork.artistDisplayName}
+                          date={
+                            artwork.objectEndDate || artwork.objectBeginDate
+                          }
+                          artworkID={artwork.objectID}
+                        />
+                      </Link>
+                    </Td>
+                  ))}
+              </Tr>
+              <Tr>
+                {americanArtworks
+                  .slice(Math.ceil(americanArtworks.length / 2))
+                  .map((artwork) => (
+                    <Td key={artwork.id} px={2}>
+                      <Link
+                        to={`/artwork/${artwork.objectID}`}
+                        style={{ textDecoration: "none", cursor: "pointer" }}
+                      >
+                        <ArtworkCard
+                          imageUrl={
+                            artwork.primaryImageSmall || artwork.primaryImage
+                          }
+                          title={artwork.title}
+                          author={artwork.artistDisplayName}
+                          date={
+                            artwork.objectEndDate || artwork.objectBeginDate
+                          }
+                          artworkID={artwork.objectID}
+                        />
+                      </Link>
+                    </Td>
+                  ))}
+              </Tr>
+            </Tbody>
+          </Table>
         </Box>
       )}
     </div>

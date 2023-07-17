@@ -1,10 +1,10 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
-import { Spinner, Grid, GridItem, Text } from "@chakra-ui/react";
+import { Spinner, Table, Tr, Tbody, Td, Text, Box } from "@chakra-ui/react";
 import ArtistCard from "../../ArtistCard/ArtistCard";
 import { Link } from "react-router-dom";
 
-const SpanishArtists = ({ favArtist, favoriteArtistIds, fetchFavorites }) => {
+const SpanishArtists = () => {
   const spanishArtworksIDs = [
     263815, 369473, 333865, 656425, 336471, 724996, 479788, 491864, 493757,
     436926, 437742, 369468, 380635, 892369, 333963, 335316, 856581, 470878,
@@ -88,28 +88,68 @@ const SpanishArtists = ({ favArtist, favoriteArtistIds, fetchFavorites }) => {
       {loading ? (
         <Spinner />
       ) : (
-        <div style={{ overflowX: "auto" }}>
-          <Grid
-            templateColumns="repeat(auto-fit, minmax(300px, 1fr))"
-            gap={4}
-            minWidth="100%"
-          >
-            {results.map((result, index) => (
-              <GridItem key={index}>
-                <ArtistCard
-                  imageUrl={result.imageUrl || undefined}
-                  title={result.name}
-                  birthday={result.birthday}
-                  deathday={result.deathday}
-                  artistID={result.id}
-                  favoriteArtistIds={favoriteArtistIds}
-                  favArtist={favArtist}
-                  fetchFavorites={fetchFavorites}
-                />
-              </GridItem>
-            ))}
-          </Grid>
-        </div>
+        <Box
+          position="relative"
+          mt={2}
+          overflowX="auto"
+          maxHeight="600px"
+          whiteSpace="nowrap"
+        >
+          <Table size="sm">
+            <Tbody>
+              <Tr>
+                {results
+                  .slice(0, Math.ceil(results.length / 2))
+                  .map((result, index) => (
+                    <Td key={index} px={2}>
+                      <Link
+                        to={{
+                          pathname: `/artist/${result.title}`,
+                          search: `?url=${encodeURIComponent(
+                            result._links.self.href
+                          )}`,
+                        }}
+                        style={{ textDecoration: "none", cursor: "pointer" }}
+                      >
+                        <ArtistCard
+                          imageUrl={result.imageUrl || undefined}
+                          title={result.name}
+                          birthday={result.birthday}
+                          deathday={result.deathday}
+                          artistID={result.id}
+                        />
+                      </Link>
+                    </Td>
+                  ))}
+              </Tr>
+              <Tr>
+                {results
+                  .slice(Math.ceil(results.length / 2))
+                  .map((result, index) => (
+                    <Td key={index} px={2}>
+                      <Link
+                        to={{
+                          pathname: `/artist/${result.title}`,
+                          search: `?url=${encodeURIComponent(
+                            result._links.self.href
+                          )}`,
+                        }}
+                        style={{ textDecoration: "none", cursor: "pointer" }}
+                      >
+                        <ArtistCard
+                          imageUrl={result.imageUrl || undefined}
+                          title={result.name}
+                          birthday={result.birthday}
+                          deathday={result.deathday}
+                          artistID={result.id}
+                        />
+                      </Link>
+                    </Td>
+                  ))}
+              </Tr>
+            </Tbody>
+          </Table>
+        </Box>
       )}
     </div>
   );
