@@ -6,12 +6,12 @@ import "./Favorites.css"
 
 const Favorites = () => {
   return (
-    <div>
+    <>
       <Image className="fav-header" src={FavoritesHeader} alt="Favorites" />
       <Text className="fav-title">Favorites</Text>
       <FavFieldsButtons />
       <Outlet />
-    </div>
+    </>
   );
 };
 

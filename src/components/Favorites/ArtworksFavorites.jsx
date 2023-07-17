@@ -17,12 +17,14 @@ const ArtworksFavorites = () => {
   const fetchFavorites = async () => {
     try {
       const requests = favoriteArtworkIds.map((id) =>
-        axios.get(`https://collectionapi.metmuseum.org/public/collection/v1/objects/${id}`)
+        axios.get(
+          `https://collectionapi.metmuseum.org/public/collection/v1/objects/${id}`
+        )
       );
       const responses = await Promise.all(requests);
       const favoriteArtworks = responses.map((response) => response.data);
       setFavorites(favoriteArtworks);
-      setIsLoading(false); // Set loading state to false after fetching
+      setIsLoading(false);
     } catch (error) {
       console.error("Error fetching favorites:", error);
     }
@@ -33,16 +35,23 @@ const ArtworksFavorites = () => {
   }
 
   return (
-    <Grid templateColumns="repeat(2, 1fr)" gap={4} paddingTop={"40px"} marginLeft={"10px"}>
-      {favorites.map((artwork) => (
-        <Link key={artwork.objectID} to={`/artwork/${artwork.objectID}`}>
-          <ArtworkCardLittle
-            title={artwork.title}
-            imageUrl={artwork.primaryImageSmall || artwork.primaryImage}
-          />
-        </Link>
-      ))}
-    </Grid>
+    <>
+      <Grid
+        templateColumns="repeat(2, 1fr)"
+        gap={4}
+        paddingTop={"40px"}
+        marginLeft={"10px"}
+      >
+        {favorites.map((artwork) => (
+          <Link key={artwork.objectID} to={`/artwork/${artwork.objectID}`}>
+            <ArtworkCardLittle
+              title={artwork.title}
+              imageUrl={artwork.primaryImageSmall || artwork.primaryImage}
+            />
+          </Link>
+        ))}
+      </Grid>
+    </>
   );
 };
 
