@@ -24,7 +24,7 @@ import RandomArtist from "../../assets/images/RandomArtist.png";
 import InfoButton from "../../assets/images/InfoButton.png";
 import MuseumCard from "../../components/MuseumCard/MuseumCard";
 import ArtworkCard from "../../components/ArtworkCard/ArtworkCard";
-import GoBackButton from "../../assets/images/GoBackButton.png"
+import GoBackButton from "../../assets/images/GoBackButton.png";
 
 const ArtworkDetailsPage = () => {
   const { objectId } = useParams();
@@ -38,6 +38,7 @@ const ArtworkDetailsPage = () => {
 
   useEffect(() => {
     fetchArtworkDetails();
+    window.scrollTo(0, 0);
   }, [objectId]);
 
   const handleFavorite = () => {
@@ -151,10 +152,7 @@ const ArtworkDetailsPage = () => {
                     }
                     alt={artworkData.title}
                   />
-                  <button
-                    className="goback-button"
-                    onClick={handleGoBack}
-                  >
+                  <button className="goback-button" onClick={handleGoBack}>
                     <Image src={GoBackButton} alt="Go Back" />
                   </button>
                   <button

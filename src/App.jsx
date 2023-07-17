@@ -2,7 +2,7 @@ import { Route, Routes } from "react-router-dom";
 import LoginPage from "./pages/LoginPage";
 import SignupPage from "./pages/SignupPage";
 import PrivateRoute from "./components/PrivateRoute";
-import ArtistDetailsPage from "./pages/ArtistDetailsPage";
+import ArtistDetailsPage from "./pages/ArtistDetailsPage/ArtistDetailsPage";
 import ArtworkDetailsPage from "./pages/ArtworkDetailsPage/ArtworkDetailsPage";
 import ArtworkSearchPage from "./pages/ArtworkSearchPage/ArtworkSearchPage"
 import ArtistSearchPage from "./pages/ArtistSearchPage/ArtistSearchPage";
