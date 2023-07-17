@@ -83,7 +83,7 @@ class Graph {
         if (vertices.length) {
             let path = vertices.map((vertex) => this.dijkstra(["Entrance", vertex]))
             path = this.findShortestSubarray(path)
-            console.log()
+            console.log("finding path.... ")
             let lastVertex = path[path.length - 1]
 
             vertices = vertices.filter(vertex => vertex !== lastVertex)
@@ -99,10 +99,12 @@ class Graph {
                 path = [...path, ...tempPaths.slice(1)]
                 // we renew the last vertex
                 lastVertex = path[path.length - 1]
+                console.log("Trying from", lastVertex)
                 // we remove the vertex from the vertex list
                 vertices = vertices.filter(vertex => vertex !== lastVertex)
+                console.log("trying to find", vertices)
             }
-
+            console.log("the found path is", path)
             return path
         }
 

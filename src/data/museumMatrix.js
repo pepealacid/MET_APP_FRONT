@@ -26,7 +26,7 @@ const museumMatrix = [
     {
         vertex: 111,
         connexions: [
-            115, 114, 113, 110
+            115, 114, 113, 110, 112
         ]
     },
     {
@@ -146,7 +146,7 @@ const museumMatrix = [
     {
         vertex: 132,
         connexions: [
-            128, 107
+            128, 107, 981
         ]
     },
     {
@@ -208,6 +208,12 @@ const museumMatrix = [
         vertex: 134,
         connexions: [
             135, 133
+        ]
+    },
+    {
+        vertex: 133,
+        connexions: [
+            134, 128
         ]
     },
     {
@@ -367,13 +373,14 @@ const museumMatrix = [
     {
         vertex: 506,
         connexions: [
-            503, 508
+            503, 508,
+            507
         ]
     },
     {
         vertex: 507,
         connexions: [
-            507
+            506
         ]
     },
     {
@@ -395,7 +402,8 @@ const museumMatrix = [
         vertex: 732,
         connexions: [
             735, 731,
-            733, 735
+            733, 735,
+            734
         ]
     },
     {
@@ -425,6 +433,12 @@ const museumMatrix = [
         ]
     },
     {
+        vertex: "746 North",
+        connexions: [
+            731, "746 South"
+        ]
+    },
+    {
         vertex: 744,
         connexions: [
             700, 745,
@@ -441,7 +455,8 @@ const museumMatrix = [
         vertex: 743,
         connexions: [
             "746 South",
-            744, 742, 744
+            744, 742, 744,
+            740, 741
         ]
     },
     {
@@ -465,7 +480,8 @@ const museumMatrix = [
     {
         vertex: 736,
         connexions: [
-            743, 737
+            743, 737,
+            738, 739
         ]
     },
     {
@@ -847,7 +863,7 @@ const museumMatrix = [
     {
         vertex: 903,
         connexions: [
-            904, 902, 913
+            904, 902, 913, 916
         ]
     },
     {
@@ -920,7 +936,7 @@ const museumMatrix = [
     {
         vertex: 357,
         connexions: [
-            3356, 358
+            356, 358
         ]
     },
     {
@@ -1056,7 +1072,8 @@ const museumMatrix = [
         vertex: 304,
         connexions: [
             541, 300, 303,
-            301, 500, 305
+            301, 500, 305,
+            599
         ]
     },
     {
@@ -1177,7 +1194,7 @@ const museumMatrix = [
     {
         vertex: 164,
         connexions: [
-            166, 168, 167, 169, 162
+            166, 168, 167, 169, 162, 163
         ]
     },
     {
@@ -1253,7 +1270,7 @@ const museumMatrix = [
     {
         vertex: 707,
         connexions: [
-            "774a", 774
+            "774a", 774, 706, 773
         ]
     },
     {
@@ -1277,7 +1294,7 @@ const museumMatrix = [
     {
         vertex: 916,
         connexions: [
-            915
+            915, 903
         ]
     },
     {
@@ -1289,7 +1306,7 @@ const museumMatrix = [
     {
         vertex: 170,
         connexions: [
-            171, 172
+            171, 172, 169, 458
         ]
     },
     {
@@ -1301,7 +1318,8 @@ const museumMatrix = [
     {
         vertex: 172,
         connexions: [
-            171
+            171, 170,
+            450, 163
         ]
     },
     {
@@ -1362,7 +1380,9 @@ const museumMatrix = [
         vertex: 917,
         connexions: [
             918, 830, 800,
-            "Exhibition Galleries 899"
+            "Exhibition Galleries 899",
+            926,
+            "Exhibition Galleries 999"
         ]
     },
     {
@@ -1564,7 +1584,7 @@ const museumMatrix = [
     {
         vertex: 458,
         connexions: [
-            454
+            454, 170
         ]
     },
     {
@@ -1786,7 +1806,7 @@ const museumMatrix = [
     {
         vertex: 236,
         connexions: [
-            235, 208, 37
+            235, 208, 237
         ]
     },
     {
@@ -1831,7 +1851,7 @@ const museumMatrix = [
     {
         vertex: 243,
         connexions: [
-            242
+            242, 251
         ]
     },
     {
@@ -1896,7 +1916,7 @@ const museumMatrix = [
     {
         vertex: 211,
         connexions: [
-            212, 210, 213
+            212, 210, 213, 219
         ]
     },
     {
@@ -2094,6 +2114,24 @@ const museumMatrix = [
         ]
     },
     {
+        vertex: 625,
+        connexions: [
+            626, 601
+        ]
+    },
+    {
+        vertex: 626,
+        connexions: [
+            625, 627
+        ]
+    },
+    {
+        vertex: 627,
+        connexions: [
+            626, 607
+        ]
+    },
+    {
         vertex: 641,
         connexions: [
             601, 644,
@@ -2286,7 +2324,7 @@ const museumMatrix = [
     {
         vertex: 605,
         connexions: [
-            604, 605
+            604, 605, 616
         ]
     },
     {
@@ -2299,6 +2337,12 @@ const museumMatrix = [
         vertex: 615,
         connexions: [
             614, 617
+        ]
+    },
+    {
+        vertex: 617,
+        connexions: [
+            615, 618
         ]
     },
     {
@@ -2332,14 +2376,15 @@ const museumMatrix = [
     {
         vertex: 706,
         connexions: [
-            705, 772
+            705, 772, 707
         ]
     },
     {
         vertex: 722,
         connexions: [
             769, 771,
-            717, 706
+            717, 706,
+            708
         ]
     },
     {
@@ -2515,7 +2560,7 @@ const museumMatrix = [
     {
         vertex: 703,
         connexions: [
-            704, 747
+            704, 747, 708
         ]
     },
     {
@@ -2589,6 +2634,12 @@ const museumMatrix = [
         connexions: [
             850, 535,
             200, 201
+        ]
+    },
+    {
+        vertex: 535,
+        connexions: [
+            850
         ]
     },
     {
@@ -2689,19 +2740,19 @@ const museumMatrix = [
     {
         vertex: 708,
         connexions: [
-            713, 709
+            713, 709, 722, 709
         ]
     },
     {
         vertex: 709,
         connexions: [
-            708, 710
+            708, 710, 708
         ]
     },
     {
         vertex: 219,
         connexions: [
-            220
+            220, 211
         ]
     },
     {
@@ -2731,7 +2782,7 @@ const museumMatrix = [
     {
         vertex: 251,
         connexions: [
-            253, 252
+            253, 252, 243
         ]
     },
     {
@@ -2743,13 +2794,19 @@ const museumMatrix = [
     {
         vertex: 926,
         connexions: [
-            "Patrons Lounge"
+            917, "Exhibition Gallery 999"
+        ]
+    },
+    {
+        vertex: "Exhibition Gallery 999",
+        connexions: [
+            917, 926
         ]
     },
     {
         vertex: 599,
         connexions: [
-            "Antonio Ratti Textile Center"
+            "Antonio Ratti Textile Center", 304
         ]
     },
     {
@@ -2757,6 +2814,133 @@ const museumMatrix = [
         connexions: [
             599
         ]
+    },
+    {
+        vertex: 961,
+        connexions: [
+            962, 959
+        ]
+    },
+
+]
+
+
+const floorConnexions = [
+    {
+        vertex: 963,
+        connexions: [
+            961, 962
+        ], // This are only the up connexions
+        down: null
+    },
+    {
+        vertex: 981,
+        connexions: [
+            132
+        ], // This are only the up connexions
+        down: null
+    },
+    {
+        vertex: 599,
+        connexions: [
+            304
+        ], // This are only the up connexions
+        down: null
+    },
+    {
+        vertex: 702,
+        connexions: [
+            773
+        ], // This are only the up connexions
+        down: null
+    },
+    {
+        vertex: 903,
+        connexions: [
+            915
+        ], // This are only the up connexions
+        down: null
+    },
+    {
+        vertex: 912,
+        connexions: [
+            915
+        ], // This are only the up connexions
+        down: null
+    },
+    {
+        vertex: 169,
+        connexions: [
+            170
+        ], // This are only the up connexions
+        down: null
+    },
+    {
+        vertex: 163,
+        connexions: [
+            172
+        ], // This are only the up connexions
+        down: null
+    },
+    {
+        vertex: 915,
+        connexions: [
+            920, 925
+        ], // This are only the up connexions
+        down: [
+            903, 912
+        ]
+    },
+    {
+        vertex: 98,
+        connexions: [
+            132
+        ], // This are only the up connexions
+        down: null
+    },
+    {
+        vertex: 172,
+        connexions: [
+            450
+        ], // This are only the up connexions
+        down: [
+            163
+        ]
+    },
+    {
+        vertex: 707,
+        connexions: [
+            706
+        ], // This are only the up connexions
+        down: null
+    },
+    {
+        vertex: 717,
+        connexions: [
+            713
+        ], // This are only the up connexions
+        down: null
+    },
+    {
+        vertex: 753,
+        connexions: [
+            710
+        ], // This are only the up connexions
+        down: null
+    },
+    {
+        vertex: 214,
+        connexions: [
+            222
+        ], // This are only the up connexions
+        down: null
+    },
+    {
+        vertex: 917,
+        connexions: [
+            926
+        ], // This are only the up connexions
+        down: null
     },
 
 ]

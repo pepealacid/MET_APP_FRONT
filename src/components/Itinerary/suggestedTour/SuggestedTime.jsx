@@ -4,20 +4,30 @@ import graph from "../../../utils/mapGraph"
 import { useEffect, useState } from "react"
 import { Box, Heading, Spinner, Text } from "@chakra-ui/react"
 
-function SuggestedTime({ galleries, pieces }) {
-
-    const [time, setTime] = useState(0)
+function SuggestedTime({ galleries, pieces, handleDataChange, artData, time, setTime }) {
 
     useEffect(() => {
+        
+            findPath()
+            
+        
+    }, [galleries, pieces, time])
+
+    const findPath = ()=>{
         const vertices = galleries.map(name => turnIntoNumber(name))
         const shortestPath = graph.findShortestPath(vertices)
+        console.log("shortest path", shortestPath)
         shortestPath ? setTime(shortestPath.length * 2 + pieces.length * 3) : null
-        console.log("The shortest path is", shortestPath, "the time is", time)
-    }, [galleries, pieces])
+        saveData(shortestPath)
+    }
 
-
-
-
+    const saveData = (path)=>{
+        handleDataChange("path", path)
+        handleDataChange("calculatedTime", time)
+        handleDataChange("artworkData", artData)
+        handleDataChange("galleriesId", galleries)
+        handleDataChange("artworkId", pieces)
+    } 
 
     return (<>
         <Box>

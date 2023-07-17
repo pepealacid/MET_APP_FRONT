@@ -13,17 +13,42 @@ function NewItineraryPage() {
     })
     const [page, setPage] = useState("setItineraryTime")
 
+    const [finalData, setFinalData] = useState({
+        departments: [], 
+        departmentsId: [], 
+        artworkId: [], 
+        artworkData:[],
+        galleriesId: [], 
+        calculatedTime: 0, 
+        desiredTime: 0, 
+        path: [],
+        name: ""
+    })
+
+    const handleDataChange = (propertyName, propertyValue)=>{
+        setFinalData(prevState => ({
+            ...prevState,
+            [propertyName]: propertyValue
+        }))
+    }
+
+    const finalProps = {finalData, setFinalData, handleDataChange}
+
     return (
         <>
             {page === "setItineraryTime" &&
                 <SetItineraryTime
                     setItineraryData={setItineraryData}
                     setPage={setPage}
+                    {...finalProps}
+                    
                 />}
             {page === "TagSelection" &&
                 <TagSelection 
                 setItineraryData={setItineraryData}
                 setPage={setPage} 
+                {...finalProps}
+
                 />
             }
             {
@@ -31,6 +56,8 @@ function NewItineraryPage() {
                 <SuggestedTour
                     itineraryData={itineraryData} 
                     setItineraryData={setItineraryData}
+                    {...finalProps}
+
                 />
             }
 

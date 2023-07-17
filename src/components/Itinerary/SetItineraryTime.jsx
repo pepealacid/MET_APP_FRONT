@@ -2,7 +2,7 @@ import { useState } from "react"
 
 import { Input, Text, Button } from "@chakra-ui/react"
 
-function SetItineraryTime({ setItineraryData, setPage }) {
+function SetItineraryTime({ setItineraryData, setPage, handleDataChange }) {
     const [allowSend, setAllowSend] = useState({
         hour: false, 
         minute: false
@@ -79,6 +79,7 @@ function SetItineraryTime({ setItineraryData, setPage }) {
                 estimatedTime: [ timeValue.hour, timeValue.minutes]
             }));
             setPage("TagSelection")
+            handleDataChange("desiredTime", [timeValue.hour, timeValue.minutes])
         }else{
             setNextMessage("You need to properly fill all the fields")
         }
