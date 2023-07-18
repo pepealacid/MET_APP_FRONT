@@ -1,8 +1,8 @@
-import apiInstance from "./apiInstance.js"
+import apiInstance from "./apiInstance.js";
 
 class AuthService {
   constructor() {
-    this.api = apiInstance
+    this.api = apiInstance;
   }
 
   signup(data) {
@@ -15,18 +15,22 @@ class AuthService {
 
   verify(token) {
     return this.api.get(`/auth/verify`, {
-      headers: { Authorization: `Bearer ${token}` }
+      headers: { Authorization: `Bearer ${token}` },
     });
   }
 
-  getUser(token){
+  getUser(token) {
     return this.api.get("/user/get-user", {
-      headers: { Authorization: `Bearer ${token}`}
-    })
+      headers: { Authorization: `Bearer ${token}` },
+    });
   }
 
-  deleteUser(id){
-    return this.api.delete(`/user/${id}`)
+  deleteUser(id) {
+    return this.api.delete(`/user/${id}`);
+  }
+
+  changeFirstTime(id) {
+    return this.api.put(`/user/change-first-time/${id}`);
   }
 }
 

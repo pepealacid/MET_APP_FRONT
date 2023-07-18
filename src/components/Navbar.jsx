@@ -265,6 +265,7 @@ const Navbar = () => {
                           bg="transparent"
                           as="div"
                           display="inline-block"
+                          onClick={()=>{navigate("/lenguage")}}
                         >
                           <Grid
                             templateColumns="1fr 10fr 1fr"
@@ -297,6 +298,7 @@ const Navbar = () => {
                           bg="transparent"
                           as="div"
                           display="inline-block"
+                          onClick={()=>{navigate("/appearance")}}
                         >
                           <Grid
                             templateColumns="1fr 10fr 1fr"
@@ -324,6 +326,7 @@ const Navbar = () => {
                           bg="transparent"
                           as="div"
                           display="inline-block"
+                          onClick={()=>{navigate("/support")}}
                         >
                           <Grid
                             templateColumns="1fr 10fr 1fr"
@@ -351,6 +354,7 @@ const Navbar = () => {
                           bg="transparent"
                           as="div"
                           display="inline-block"
+                          onClick={()=>{navigate("/legal")}}
                         >
                           <Grid
                             templateColumns="1fr 10fr 1fr"

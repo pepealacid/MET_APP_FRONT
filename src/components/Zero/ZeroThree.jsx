@@ -3,14 +3,39 @@ import { Box, Button, Image, Text } from "@chakra-ui/react";
 import BackgroundThree from "../../assets/images/BackgroundThree.png";
 import ProgressThree from "../../assets/images/Progress3.png";
 import Next from "../../assets/images/Next.png";
+import authService from "../../services/auth.service";
+import { TOKEN_NAME } from "../../context/auth.context";
+import { useNavigate } from "react-router-dom";
 
 const ZeroThree = ({ setCounter }) => {
-  const handleClick = () => {
-    setCounter((prevCounter) => prevCounter + 1);
+  const navigate = useNavigate();
+
+  const handleClick = async () => {
+    try {
+      const token = localStorage.getItem(TOKEN_NAME);
+      const user = await authService.getUser(token);
+      const userId = user.data._id;
+      await authService.changeFirstTime(userId);
+      setCounter(4);
+    } catch (error) {
+      console.log(error);
+    }
   };
 
-  const handleSkip = () => {
-    setCounter(4);
+  const handleSkip = async () => {
+    try {
+      const token = localStorage.getItem(TOKEN_NAME);
+      if (token) {
+        const user = await authService.getUser(token);
+        const userId = user.data._id;
+        await authService.changeFirstTime(userId);
+        setCounter(4);
+      } else {
+        navigate("/login");
+      }
+    } catch (error) {
+      console.log(error);
+    }
   };
 
   return (

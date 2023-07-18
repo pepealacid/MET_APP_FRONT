@@ -15,6 +15,10 @@ import ArtistsFavorites from "./components/Favorites/ArtistsFavorites";
 import ArtworksFavorites from "./components/Favorites/ArtworksFavorites";
 import ZeroPage from "./pages/ZeroPage";
 import Navbar from "./components/Navbar";
+import LegalPage from "./pages/LegalPage";
+import SupportPage from "./pages/SupportPage";
+import AppearancePage from "./pages/Appearance";
+import LenguagePage from "./pages/LenguagePage";
 
 function App() {
   const location = useLocation();
@@ -28,6 +32,15 @@ function App() {
         <Route path="/" element={<ZeroPage />} />
         <Route path="/login" element={<LoginPage />} />
         <Route path="/signup" element={<SignupPage />} />
+        <Route path="/legal" element={<LegalPage />} />
+        <Route path="/support" element={<SupportPage />} />
+        <Route path="/appearance" element={<AppearancePage />} />
+        <Route path="/lenguage" element={<LenguagePage />} />
+
+
+
+
+
         <Route
           path="/favorites/"
           element={
@@ -125,6 +138,7 @@ function App() {
             </PrivateRoute>
           }
         />
+
       </Routes>
       {shouldShowNavbar && <Navbar />}
     </>

@@ -1,16 +1,46 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { Image, Box } from "@chakra-ui/react";
 import Background from "../../assets/images/ZeroBackbround.png";
 import Logo from "../../assets/images/ZeroLogo.png";
+import { TOKEN_NAME } from "../../context/auth.context";
+import authService from "../../services/auth.service";
 
 const ZeroZero = ({ setCounter }) => {
+  const [isFirstTime, setIsFirstTime] = useState("false");
+
+  useEffect(() => {
+    const fetchData = async () => {
+      const firstTime = await getFirstTime();
+      setIsFirstTime(firstTime);
+      console.log(firstTime);
+    };
+
+    fetchData();
+  }, []);
+
   useEffect(() => {
     const timer = setTimeout(() => {
-      setCounter(1);
+      if (isFirstTime) {
+        setCounter(1);
+      } else {
+        setCounter(4);
+      }
     }, 3000);
 
-    return () => clearTimeout(timer);
-  }, [setCounter]);
+    return () => clearTimeout(timer); // Clear the timer on component unmount
+  }, [isFirstTime]);
+
+  const getFirstTime = async () => {
+    try {
+      const token = localStorage.getItem(TOKEN_NAME);
+      const user = await authService.getUser(token);
+      const userId = user.data._id;
+      const firstTime = await authService.getFirstTime(userId);
+      return firstTime;
+    } catch (error) {
+      console.log(error);
+    }
+  };
 
   return (
     <Box position="relative" height="100vh">

@@ -13,6 +13,7 @@ const ZeroPage = () => {
     if (counter === 4) {
       navigate("/login");
     }
+    console.log(counter)
   }, [counter, navigate]);
 
   return (
