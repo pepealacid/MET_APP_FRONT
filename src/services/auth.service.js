@@ -24,6 +24,10 @@ class AuthService {
       headers: { Authorization: `Bearer ${token}`}
     })
   }
+
+  deleteUser(id){
+    return this.api.delete(`/user/${id}`)
+  }
 }
 
 const authService = new AuthService();

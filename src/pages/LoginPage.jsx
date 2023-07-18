@@ -26,7 +26,7 @@ const LoginPage = () => {
 
   const navigate = useNavigate();
 
-  const { authenticate, storeToken, error } = useContext(AuthContext);
+  const { authenticate, storeToken } = useContext(AuthContext);
 
   useEffect(()=>{
     const token = localStorage.getItem("authToken")
@@ -120,8 +120,6 @@ const LoginPage = () => {
               </Box>
             </Flex>
           </Box>
-
-          <p>{error}</p>
         </form>
       </Box>
     </>
