@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
-import { Spinner, Table, Tr, Tbody, Td, Text, Box } from "@chakra-ui/react";
+import { Spinner, Table, Tr, Td, Text, Box, Tbody } from "@chakra-ui/react";
 import ArtistCard from "../../ArtistCard/ArtistCard";
 import { Link } from "react-router-dom";
 
@@ -93,75 +93,51 @@ const AmericanArtists = () => {
     }
   };
 
+  if (loading) {
+    return <>
+    <Text className="recomm-header">American Artists</Text>
+    <Spinner />
+  </>
+  }
+
   return (
     <div>
       <Text className="recomm-header">American artists</Text>
-      {loading ? (
-        <Spinner />
-      ) : (
-        <Box
-          position="relative"
-          mt={2}
-          overflowX="auto"
-          maxHeight="600px"
-          whiteSpace="nowrap"
-        >
-          <Table size="sm">
-            <Tbody>
-              <Tr>
-                {results
-                  .slice(0, Math.ceil(results.length / 2))
-                  .map((result, index) => (
-                    <Td key={index} px={2}>
-                      <Link
-                        to={{
-                          pathname: `/artist/${result.title}`,
-                          search: `?url=${encodeURIComponent(
-                            result._links.self.href
-                          )}`,
-                        }}
-                        style={{ textDecoration: "none", cursor: "pointer" }}
-                      >
-                        <ArtistCard
-                          imageUrl={result.imageUrl || undefined}
-                          title={result.name}
-                          birthday={result.birthday}
-                          deathday={result.deathday}
-                          artistID={result.id}
-                        />
-                      </Link>
-                    </Td>
-                  ))}
-              </Tr>
-              <Tr>
-                {results
-                  .slice(Math.ceil(results.length / 2))
-                  .map((result, index) => (
-                    <Td key={index} px={2}>
-                      <Link
-                        to={{
-                          pathname: `/artist/${result.title}`,
-                          search: `?url=${encodeURIComponent(
-                            result._links.self.href
-                          )}`,
-                        }}
-                        style={{ textDecoration: "none", cursor: "pointer" }}
-                      >
-                        <ArtistCard
-                          imageUrl={result.imageUrl || undefined}
-                          title={result.name}
-                          birthday={result.birthday}
-                          deathday={result.deathday}
-                          artistID={result.id}
-                        />
-                      </Link>
-                    </Td>
-                  ))}
-              </Tr>
-            </Tbody>
-          </Table>
-        </Box>
-      )}
+      <Box
+        position="relative"
+        mt={2}
+        overflowX="auto"
+        maxHeight="600px"
+        whiteSpace="nowrap"
+      >
+        <Table size="sm">
+          <Tbody>
+            <Tr>
+              {results.map((result, index) => (
+                <Td key={index} px={2} width={`${100 / results.length}%`}>
+                  <Link
+                    to={{
+                      pathname: `/artist/${result.title}`,
+                      search: `?url=${encodeURIComponent(
+                        result._links.self.href
+                      )}`,
+                    }}
+                    style={{ textDecoration: "none", cursor: "pointer" }}
+                  >
+                    <ArtistCard
+                      imageUrl={result.imageUrl || undefined}
+                      title={result.name}
+                      birthday={result.birthday}
+                      deathday={result.deathday}
+                      artistID={result.id}
+                    />
+                  </Link>
+                </Td>
+              ))}
+            </Tr>
+          </Tbody>
+        </Table>
+      </Box>
     </div>
   );
 };

@@ -67,57 +67,28 @@ const AmericanArtworks = () => {
           whiteSpace="nowrap"
         >
           <Table size="sm">
-            <Tbody>
-              <Tr>
-                {americanArtworks
-                  .slice(0, Math.ceil(americanArtworks.length / 2))
-                  .map((artwork) => (
-                    <Td key={artwork.id} px={2}>
-                      <Link
-                        to={`/artwork/${artwork.objectID}`}
-                        style={{ textDecoration: "none", cursor: "pointer" }}
-                      >
-                        <ArtworkCard
-                          imageUrl={
-                            artwork.primaryImageSmall || artwork.primaryImage
-                          }
-                          title={artwork.title}
-                          author={artwork.artistDisplayName}
-                          date={
-                            artwork.objectEndDate || artwork.objectBeginDate
-                          }
-                          artworkID={artwork.objectID}
-                        />
-                      </Link>
-                    </Td>
-                  ))}
-              </Tr>
-              <Tr>
-                {americanArtworks
-                  .slice(Math.ceil(americanArtworks.length / 2))
-                  .map((artwork) => (
-                    <Td key={artwork.id} px={2}>
-                      <Link
-                        to={`/artwork/${artwork.objectID}`}
-                        style={{ textDecoration: "none", cursor: "pointer" }}
-                      >
-                        <ArtworkCard
-                          imageUrl={
-                            artwork.primaryImageSmall || artwork.primaryImage
-                          }
-                          title={artwork.title}
-                          author={artwork.artistDisplayName}
-                          date={
-                            artwork.objectEndDate || artwork.objectBeginDate
-                          }
-                          artworkID={artwork.objectID}
-                        />
-                      </Link>
-                    </Td>
-                  ))}
-              </Tr>
-            </Tbody>
-          </Table>
+  <Tbody>
+    <Tr>
+      {americanArtworks.map((artwork) => (
+        <Td key={artwork.id} px={2}>
+          <Link
+            to={`/artwork/${artwork.objectID}`}
+            style={{ textDecoration: "none", cursor: "pointer" }}
+          >
+            <ArtworkCard
+              imageUrl={artwork.primaryImageSmall || artwork.primaryImage}
+              title={artwork.title}
+              author={artwork.artistDisplayName}
+              date={artwork.objectEndDate || artwork.objectBeginDate}
+              artworkID={artwork.objectID}
+            />
+          </Link>
+        </Td>
+      ))}
+    </Tr>
+  </Tbody>
+</Table>
+
         </Box>
       )}
     </div>

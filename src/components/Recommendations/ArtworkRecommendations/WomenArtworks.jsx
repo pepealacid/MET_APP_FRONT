@@ -111,57 +111,28 @@ const WomenArtworks = () => {
           whiteSpace="nowrap"
         >
           <Table size="sm">
-            <Tbody>
-              <Tr>
-                {womenArtworks
-                  .slice(0, Math.ceil(womenArtworks.length / 2))
-                  .map((artwork) => (
-                    <Td key={artwork.id} px={2}>
-                      <Link
-                        to={`/artwork/${artwork.objectID}`}
-                        style={{ textDecoration: "none", cursor: "pointer" }}
-                      >
-                        <ArtworkCard
-                          imageUrl={
-                            artwork.primaryImageSmall || artwork.primaryImage
-                          }
-                          title={artwork.title}
-                          author={artwork.artistDisplayName}
-                          date={
-                            artwork.objectEndDate || artwork.objectBeginDate
-                          }
-                          artworkID={artwork.objectID}
-                        />
-                      </Link>
-                    </Td>
-                  ))}
-              </Tr>
-              <Tr>
-                {womenArtworks
-                  .slice(Math.ceil(womenArtworks.length / 2))
-                  .map((artwork) => (
-                    <Td key={artwork.id} px={2}>
-                      <Link
-                        to={`/artwork/${artwork.objectID}`}
-                        style={{ textDecoration: "none", cursor: "pointer" }}
-                      >
-                        <ArtworkCard
-                          imageUrl={
-                            artwork.primaryImageSmall || artwork.primaryImage
-                          }
-                          title={artwork.title}
-                          author={artwork.artistDisplayName}
-                          date={
-                            artwork.objectEndDate || artwork.objectBeginDate
-                          }
-                          artworkID={artwork.objectID}
-                        />
-                      </Link>
-                    </Td>
-                  ))}
-              </Tr>
-            </Tbody>
-          </Table>
+  <Tbody>
+    <Tr>
+      {womenArtworks.map((artwork) => (
+        <Td key={artwork.id} px={2}>
+          <Link
+            to={`/artwork/${artwork.objectID}`}
+            style={{ textDecoration: "none", cursor: "pointer" }}
+          >
+            <ArtworkCard
+              imageUrl={artwork.primaryImageSmall || artwork.primaryImage}
+              title={artwork.title}
+              author={artwork.artistDisplayName}
+              date={artwork.objectEndDate || artwork.objectBeginDate}
+              artworkID={artwork.objectID}
+            />
+          </Link>
+        </Td>
+      ))}
+    </Tr>
+  </Tbody>
+</Table>
+
         </Box>
       )}
     </div>

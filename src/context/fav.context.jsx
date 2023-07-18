@@ -47,7 +47,7 @@ export const FavContextWrapper = ({ children }) => {
   
         const favoriteArtistsResponse = await favoriteService.getFavoriteArtists(userId);
         const favoriteArtistIds = favoriteArtistsResponse.data;
-  
+        console.log(favoriteArtistIds)
         setFavoriteArtistIds(favoriteArtistIds);
       } catch (error) {
         setError(error.message);

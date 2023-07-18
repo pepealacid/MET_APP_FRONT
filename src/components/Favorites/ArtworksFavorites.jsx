@@ -12,7 +12,7 @@ const ArtworksFavorites = () => {
 
   useEffect(() => {
     fetchFavorites();
-  }, []);
+  }, [favoriteArtworkIds]);
 
   const fetchFavorites = async () => {
     try {

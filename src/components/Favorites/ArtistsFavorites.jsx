@@ -1,9 +1,10 @@
 import { FavContext } from "../../context/fav.context";
 import { useContext, useEffect, useState } from "react";
 import axios from "axios";
-import { Grid, Spinner } from "@chakra-ui/react";
-import ArtworkCardLittle from "../ArtworkCard/ArtworkCardLittle";
+import { Spinner } from "@chakra-ui/react";
 import { Link } from "react-router-dom";
+import ArtistCardLittle from "../ArtistCard/ArtistCardLittle";
+import "./ListingFavorites.css";
 
 const ArtistsFavorites = () => {
   const { favoriteArtistIds } = useContext(FavContext);
@@ -12,10 +13,11 @@ const ArtistsFavorites = () => {
 
   useEffect(() => {
     fetchFavorites();
-  }, []);
+  }, [favoriteArtistIds]);
 
   const fetchFavorites = async () => {
     try {
+      const finalArtists = [];
       const requests = favoriteArtistIds.map((id) =>
         axios.get(`https://api.artsy.net/api/artists/${id}`, {
           headers: {
@@ -24,11 +26,22 @@ const ArtistsFavorites = () => {
         })
       );
       const responses = await Promise.all(requests);
-      const favoriteArtworks = responses.map((response) => response.data);
-      setFavorites(favoriteArtworks);
-      setIsLoading(false);
+      const favoriteArtists = responses.map((response) => response.data);
+      for (const artist of favoriteArtists) {
+        if (artist._links.image.href && artist._links.image.href !== "") {
+          const firstLink = artist._links.image.href;
+          const image_version = artist.image_versions[0];
+          const finalLink = firstLink.replace("{image_version}", image_version);
+          finalArtists.push({ ...artist, image: finalLink });
+        } else{
+          finalArtists.push({...artist, image: "https://drawinghowtos.com/wp-content/uploads/2022/07/painter-colored.jpg"})
+        }
+        setFavorites(finalArtists);
+
+        setIsLoading(false);
+      }
     } catch (error) {
-      console.error("Error fetching favorites:", error);
+      console.log(error);
     }
   };
 
@@ -38,21 +51,20 @@ const ArtistsFavorites = () => {
 
   return (
     <>
-      <Grid
-        templateColumns="repeat(2, 1fr)"
-        gap={4}
-        paddingTop={"40px"}
-        marginLeft={"10px"}
-      >
-        {favorites.map((artwork) => (
-          <Link key={artwork.objectID} to={`/artwork/${artwork.objectID}`}>
-            <ArtworkCardLittle
-              title={artwork.title}
-              imageUrl={artwork.primaryImageSmall || artwork.primaryImage}
-            />
+      <div className="artist-card-container">
+        {favorites.map((artist) => (
+          <Link
+            key={artist.id}
+            to={{
+              pathname: `/artist/${artist.title}`,
+              search: `?url=${encodeURIComponent(artist._links.self.href)}`,
+            }}
+            style={{ textDecoration: "none", cursor: "pointer" }}
+          >
+            <ArtistCardLittle image={artist.image} name={artist.name} />
           </Link>
         ))}
-      </Grid>
+      </div>
     </>
   );
 };
