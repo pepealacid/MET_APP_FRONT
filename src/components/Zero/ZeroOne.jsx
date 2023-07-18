@@ -4,8 +4,8 @@ import { Box, Button, Image, Text } from "@chakra-ui/react";
 import BackgroundOne from "../../assets/images/BackgroundOne.png";
 import ProgressOne from "../../assets/images/Progress1.png";
 import Next from "../../assets/images/Next.png";
-import authService from "../../services/auth.service";
 import { TOKEN_NAME } from "../../context/auth.context";
+import userService from "../../services/user.service";
 
 const ZeroOne = ({ setCounter }) => {
   const navigate = useNavigate();
@@ -17,9 +17,9 @@ const ZeroOne = ({ setCounter }) => {
     try {
       const token = localStorage.getItem(TOKEN_NAME);
       if (token) {
-        const user = await authService.getUser(token);
+        const user = await userService.getUser(token);
         const userId = user.data._id;
-        authService.changeFirstTime(userId);
+        userService.changeFirstTime(userId);
         setCounter(4);
       } else {
         navigate("/login");

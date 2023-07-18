@@ -5,10 +5,10 @@ import ArtistCard from "../../components/ArtistCard/ArtistCard";
 import { Link } from "react-router-dom";
 import FieldsButtons from "../../components/FieldsButtons";
 import { TOKEN_NAME } from "../../context/auth.context";
-import authService from "../../services/auth.service";
 import favoriteService from "../../services/favorite.service";
 import ArtistRecommendations from "../../components/Recommendations/ArtistRecommendations/ArtistRecommendations";
 import "./ArtistSearchPage.css";
+import userService from "../../services/user.service";
 
 const ArtistSearchPage = () => {
   const [results, setResults] = useState([]);
@@ -21,7 +21,7 @@ const ArtistSearchPage = () => {
   const fetchFavorites = async () => {
     try {
       const token = localStorage.getItem(TOKEN_NAME);
-      const response = await authService.getUser(token);
+      const response = await userService.getUser(token);
       const userId = response.data._id;
 
       favoriteService
@@ -45,7 +45,7 @@ const ArtistSearchPage = () => {
   const favArtist = async (artistID) => {
     try {
       const token = localStorage.getItem(TOKEN_NAME);
-      const response = await authService.getUser(token);
+      const response = await userService.getUser(token);
       const userId = response.data._id;
 
       const promiseFavorites = await favoriteService.getFavoriteArtists(userId);

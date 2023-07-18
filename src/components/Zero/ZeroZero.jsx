@@ -3,7 +3,7 @@ import { Image, Box } from "@chakra-ui/react";
 import Background from "../../assets/images/ZeroBackbround.png";
 import Logo from "../../assets/images/ZeroLogo.png";
 import { TOKEN_NAME } from "../../context/auth.context";
-import authService from "../../services/auth.service";
+import userService from "../../services/user.service";
 
 const ZeroZero = ({ setCounter }) => {
   const [isFirstTime, setIsFirstTime] = useState("false");
@@ -33,9 +33,9 @@ const ZeroZero = ({ setCounter }) => {
   const getFirstTime = async () => {
     try {
       const token = localStorage.getItem(TOKEN_NAME);
-      const user = await authService.getUser(token);
+      const user = await userService.getUser(token);
       const userId = user.data._id;
-      const firstTime = await authService.getFirstTime(userId);
+      const firstTime = await userService.getFirstTime(userId);
       return firstTime;
     } catch (error) {
       console.log(error);

@@ -1,6 +1,6 @@
 import { createContext, useEffect, useState } from "react";
-import authService from "../services/auth.service";
 import favoriteService from "../services/favorite.service";
+import userService from "../services/user.service";
 
 const TOKEN_NAME = "authToken";
 
@@ -23,7 +23,7 @@ export const FavContextWrapper = ({ children }) => {
         const token = localStorage.getItem(TOKEN_NAME);
         setLoading(true);
   
-        const response = await authService.getUser(token);
+        const response = await userService.getUser(token);
         const userId = response.data._id;
   
         const favoriteArtworksResponse = await favoriteService.getFavoriteArtworks(userId);
@@ -42,7 +42,7 @@ export const FavContextWrapper = ({ children }) => {
         const token = localStorage.getItem(TOKEN_NAME);
         setLoading(true);
   
-        const response = await authService.getUser(token);
+        const response = await userService.getUser(token);
         const userId = response.data._id;
   
         const favoriteArtistsResponse = await favoriteService.getFavoriteArtists(userId);
@@ -59,7 +59,7 @@ export const FavContextWrapper = ({ children }) => {
     const addFavoriteArtwork = async (artworkID) => {
       try {
         const token = localStorage.getItem(TOKEN_NAME);
-        const response = await authService.getUser(token);
+        const response = await userService.getUser(token);
         const userId = response.data._id;
   
         await favoriteService.updateFavoriteArtworks({ id: userId, artworkID });
@@ -72,7 +72,7 @@ export const FavContextWrapper = ({ children }) => {
     const removeFavoriteArtwork = async (artworkID) => {
       try {
         const token = localStorage.getItem(TOKEN_NAME);
-        const response = await authService.getUser(token);
+        const response = await userService.getUser(token);
         const userId = response.data._id;
   
         await favoriteService.updateFavoriteArtworks({ id: userId, artworkID });
@@ -85,7 +85,7 @@ export const FavContextWrapper = ({ children }) => {
     const addFavoriteArtist = async (artistID) => {
       try {
         const token = localStorage.getItem(TOKEN_NAME);
-        const response = await authService.getUser(token);
+        const response = await userService.getUser(token);
         const userId = response.data._id;
   
         await favoriteService.updateFavoriteArtists({ id: userId, artistID });
@@ -98,7 +98,7 @@ export const FavContextWrapper = ({ children }) => {
     const removeFavoriteArtist = async (artistID) => {
       try {
         const token = localStorage.getItem(TOKEN_NAME);
-        const response = await authService.getUser(token);
+        const response = await userService.getUser(token);
         const userId = response.data._id;
   
         await favoriteService.updateFavoriteArtists({ id: userId, artistID });

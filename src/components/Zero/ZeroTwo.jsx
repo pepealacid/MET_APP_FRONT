@@ -4,8 +4,8 @@ import BackgroundTwo from "../../assets/images/BackgroundTwo.png";
 import ProgressTwo from "../../assets/images/Progress2.png";
 import Next from "../../assets/images/Next.png";
 import { TOKEN_NAME } from "../../context/auth.context";
-import authService from "../../services/auth.service";
 import { useNavigate } from "react-router-dom";
+import userService from "../../services/user.service";
 
 const ZeroTwo = ({ setCounter }) => {
   const navigate = useNavigate();
@@ -18,9 +18,9 @@ const ZeroTwo = ({ setCounter }) => {
     try {
       const token = localStorage.getItem(TOKEN_NAME);
       if (token) {
-        const user = await authService.getUser(token);
+        const user = await userService.getUser(token);
         const userId = user.data._id;
-        await authService.changeFirstTime(userId);
+        await userService.changeFirstTime(userId);
         setCounter(4);
       } else {
         navigate("/login");

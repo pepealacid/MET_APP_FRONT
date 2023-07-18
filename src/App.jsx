@@ -19,12 +19,17 @@ import LegalPage from "./pages/LegalPage";
 import SupportPage from "./pages/SupportPage";
 import AppearancePage from "./pages/Appearance";
 import LenguagePage from "./pages/LenguagePage";
+import EditProfilePage from "./pages/EditProfilePage";
+import ProfilePage from "./pages/ProfilePage";
+import ChangePasswordPage from "./pages/ChangePasswordPage";
+// import Testing from "./pages/Testing";
 
 function App() {
   const location = useLocation();
 
-  const shouldShowNavbar =
-    !["/", "/login", "/signup"].includes(location.pathname);
+  const shouldShowNavbar = !["/", "/login", "/signup"].includes(
+    location.pathname
+  );
 
   return (
     <>
@@ -36,10 +41,10 @@ function App() {
         <Route path="/support" element={<SupportPage />} />
         <Route path="/appearance" element={<AppearancePage />} />
         <Route path="/lenguage" element={<LenguagePage />} />
-
-
-
-
+        <Route path="/edit-profile" element={<EditProfilePage />} />
+        <Route path="/my-profile" element={<ProfilePage />} />
+        {/* <Route path="/testing" element={<Testing />} /> */}
+        <Route path="/change-password" element={<ChangePasswordPage />} />
 
         <Route
           path="/favorites/"
@@ -138,7 +143,6 @@ function App() {
             </PrivateRoute>
           }
         />
-
       </Routes>
       {shouldShowNavbar && <Navbar />}
     </>

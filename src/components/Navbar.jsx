@@ -1,4 +1,4 @@
-import { useContext, useState, useRef } from "react";
+import { useContext, useState, useRef, useEffect } from "react";
 import {
   Flex,
   Button,
@@ -17,14 +17,14 @@ import {
   AlertDialogHeader,
   AlertDialogBody,
   AlertDialogFooter,
+  useColorModeValue,
 } from "@chakra-ui/react";
 import { TOKEN_NAME } from "../context/auth.context";
 import Favorites from "../assets/images/Favorites.png";
 import Explore from "../assets/images/Explore.png";
 import Scan from "../assets/images/Scan.png";
 import Profile from "../assets/images/Profile.png";
-import { useNavigate } from "react-router-dom";
-import userPicture from "../../../MET_app_API/controllers/pepe.jpg";
+import { useNavigate, useLocation } from "react-router-dom";
 import Time from "../assets/images/Time.png";
 import ScanStory from "../assets/images/ScanStory.png";
 import Legal from "../assets/images/Legal.png";
@@ -35,8 +35,8 @@ import Translate from "../assets/images/Translate.png";
 import Appearance from "../assets/images/Appearance.png";
 import Support from "../assets/images/Support.png";
 import Delete from "../assets/images/Delete.png";
-// import Preference from "../assets/images/Preference.png";
-import authService from "../services/auth.service";
+import userService from "../services/user.service";
+import DefaultUser from "../assets/images/DefaultUser.svg";
 
 import {
   Popover,
@@ -49,18 +49,32 @@ import { AuthContext } from "../context/auth.context";
 
 const Navbar = () => {
   const navigate = useNavigate();
-  const [isOpen, setIsOpen] = useState(false);
+  const [isWindowOpen, setIsWindowOpen] = useState(false);
+  const [isPopoverOpen, setIsPopoverOpen] = useState(false);
+  const [userImage, setUserImage] = useState("");
+  const [userName, setUserName] = useState("");
 
-  const onClose = () => setIsOpen(false);
+  const onWindowClose = () => setIsWindowOpen(false);
   const cancelRef = useRef();
+  const location = useLocation();
+
+  const bg = useColorModeValue("white", "gray.800");
+
+  const handlePopoverOpen = () => {
+    setIsPopoverOpen(true);
+  };
+
+  const handlePopoverClose = () => {
+    setIsPopoverOpen(false);
+  };
 
   const handleDelete = async () => {
     try {
       const token = localStorage.getItem(TOKEN_NAME);
-      const user = await authService.getUser(token);
+      const user = await userService.getUser(token);
       const userId = user.data._id;
 
-      await authService.deleteUser(userId, {
+      await userService.deleteUser(userId, {
         headers: {
           Authorization: `Bearer ${token}`,
         },
@@ -73,7 +87,22 @@ const Navbar = () => {
     }
   };
 
+  const handleUserInfo = async () => {
+    try {
+      const token = localStorage.getItem(TOKEN_NAME);
+      const user = await userService.getUser(token);
+      const userData = user.data;
+      setUserImage(userData.image);
+      setUserName(userData.username);
+    } catch (error) {
+      console.log(error);
+    }
+  };
   const { logout } = useContext(AuthContext);
+
+  useEffect(() => {
+    handleUserInfo();
+  }, [location]);
 
   return (
     <Flex
@@ -83,10 +112,10 @@ const Navbar = () => {
       right="0"
       justify="center"
       p={4}
-      bg="white"
       height="100px"
       zIndex={9999}
       alignItems="center"
+      bg={bg}
     >
       <Button
         onClick={() => navigate("/explore")}
@@ -121,7 +150,11 @@ const Navbar = () => {
           <Text mt={2}>Favorites</Text>
         </Flex>
       </Button>
-      <Popover>
+      <Popover
+        isOpen={isPopoverOpen}
+        onOpen={handlePopoverOpen}
+        onClose={handlePopoverClose}
+      >
         <PopoverTrigger>
           <Button mr={4} colorScheme="teal" variant="ghost">
             <Flex direction="column" alignItems="center">
@@ -140,7 +173,7 @@ const Navbar = () => {
           bg="white"
           border="none"
         >
-          <PopoverBody>
+          <PopoverBody bg={bg}>
             <Box>
               <Box display="flex" justifyContent="center" flexWrap="wrap">
                 <Box
@@ -148,14 +181,14 @@ const Navbar = () => {
                   display="flex"
                   justifyContent="center"
                   mb={2}
-                  paddingTop="98px"
+                  paddingTop="100px"
                 >
                   <Image
                     objectFit="cover"
                     borderRadius="100%"
                     height="100px"
                     width="100px"
-                    src={userPicture}
+                    src={userImage || DefaultUser}
                     alt="user"
                   />
                 </Box>
@@ -165,7 +198,7 @@ const Navbar = () => {
                   justifyContent="center"
                   mb={2}
                 >
-                  <Text>Pepe</Text>
+                  <Text>{userName}</Text>
                 </Box>
                 <Box flexBasis="100%" display="flex" justifyContent="center">
                   <Button
@@ -173,6 +206,10 @@ const Navbar = () => {
                     w="120px"
                     color="white"
                     bg="black"
+                    onClick={() => {
+                      navigate("/edit-profile");
+                      handlePopoverClose();
+                    }}
                   >
                     Edit
                   </Button>
@@ -238,6 +275,10 @@ const Navbar = () => {
                           bg="transparent"
                           as="div"
                           display="inline-block"
+                          onClick={() => {
+                            navigate("/change-password");
+                            handlePopoverClose();
+                          }}
                         >
                           <Grid
                             templateColumns="1fr 10fr 1fr"
@@ -265,7 +306,10 @@ const Navbar = () => {
                           bg="transparent"
                           as="div"
                           display="inline-block"
-                          onClick={()=>{navigate("/lenguage")}}
+                          onClick={() => {
+                            navigate("/lenguage");
+                            handlePopoverClose();
+                          }}
                         >
                           <Grid
                             templateColumns="1fr 10fr 1fr"
@@ -298,7 +342,10 @@ const Navbar = () => {
                           bg="transparent"
                           as="div"
                           display="inline-block"
-                          onClick={()=>{navigate("/appearance")}}
+                          onClick={() => {
+                            navigate("/appearance");
+                            handlePopoverClose();
+                          }}
                         >
                           <Grid
                             templateColumns="1fr 10fr 1fr"
@@ -326,7 +373,10 @@ const Navbar = () => {
                           bg="transparent"
                           as="div"
                           display="inline-block"
-                          onClick={()=>{navigate("/support")}}
+                          onClick={() => {
+                            navigate("/support");
+                            handlePopoverClose();
+                          }}
                         >
                           <Grid
                             templateColumns="1fr 10fr 1fr"
@@ -354,7 +404,10 @@ const Navbar = () => {
                           bg="transparent"
                           as="div"
                           display="inline-block"
-                          onClick={()=>{navigate("/legal")}}
+                          onClick={() => {
+                            navigate("/legal");
+                            handlePopoverClose();
+                          }}
                         >
                           <Grid
                             templateColumns="1fr 10fr 1fr"
@@ -414,7 +467,7 @@ const Navbar = () => {
                           bg="transparent"
                           as="div"
                           display="inline-block"
-                          onClick={() => setIsOpen(true)}
+                          onClick={() => setIsWindowOpen(true)}
                         >
                           <Grid
                             templateColumns="1fr 10fr 1fr"
@@ -442,9 +495,9 @@ const Navbar = () => {
 
                     {/* Delete confirmation dialog */}
                     <AlertDialog
-                      isOpen={isOpen}
+                      isOpen={isWindowOpen}
                       leastDestructiveRef={cancelRef}
-                      onClose={onClose}
+                      onClose={onWindowClose}
                     >
                       <AlertDialogOverlay>
                         <AlertDialogContent>
@@ -458,7 +511,7 @@ const Navbar = () => {
                           </AlertDialogBody>
 
                           <AlertDialogFooter>
-                            <Button ref={cancelRef} onClick={onClose}>
+                            <Button ref={cancelRef} onClick={onWindowClose}>
                               Cancel
                             </Button>
                             <Button

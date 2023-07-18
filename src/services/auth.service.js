@@ -19,18 +19,11 @@ class AuthService {
     });
   }
 
-  getUser(token) {
-    return this.api.get("/user/get-user", {
-      headers: { Authorization: `Bearer ${token}` },
+  changePassword(userId, currentPassword, newPassword) {
+    return this.api.put(`/auth/change-password/${userId}`, {
+      currentPassword,
+      newPassword,
     });
-  }
-
-  deleteUser(id) {
-    return this.api.delete(`/user/${id}`);
-  }
-
-  changeFirstTime(id) {
-    return this.api.put(`/user/change-first-time/${id}`);
   }
 }
 
