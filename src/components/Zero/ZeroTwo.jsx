@@ -3,32 +3,16 @@ import { Box, Button, Image, Text } from "@chakra-ui/react";
 import BackgroundTwo from "../../assets/images/BackgroundTwo.png";
 import ProgressTwo from "../../assets/images/Progress2.png";
 import Next from "../../assets/images/Next.png";
-import { TOKEN_NAME } from "../../context/auth.context";
-import { useNavigate } from "react-router-dom";
-import userService from "../../services/user.service";
 
 const ZeroTwo = ({ setCounter }) => {
-  const navigate = useNavigate();
 
   const handleClick = () => {
     setCounter((prevCounter) => prevCounter + 1);
   };
 
   const handleSkip = async () => {
-    try {
-      const token = localStorage.getItem(TOKEN_NAME);
-      if (token) {
-        const user = await userService.getUser(token);
-        const userId = user.data._id;
-        await userService.changeFirstTime(userId);
-        setCounter(4);
-      } else {
-        navigate("/login");
-      }
-    } catch (error) {
-      console.log(error);
-    }
-  };
+        setCounter(4)}
+     
 
   return (
     <Box overflow="hidden">

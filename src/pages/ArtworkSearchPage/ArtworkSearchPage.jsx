@@ -1,10 +1,11 @@
 import { useState } from "react";
-import { Grid, GridItem } from "@chakra-ui/react";
+import { Grid, GridItem, Button, Image } from "@chakra-ui/react";
 import ArtworkCard from "../../components/ArtworkCard/ArtworkCard";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import FieldsButtons from "../../components/FieldsButtons";
 import ArtworksSearchBar from "../../components/ArtworksSearchBar";
 import ArtworkRecommendations from "../../components/Recommendations/ArtworkRecommendations/ArtworkRecommendations";
+import GoBackButton from "../../assets/images/GoBackButton.png";
 
 const ArtworkSearchPage = () => {
   const [results, setResults] = useState([]);
@@ -13,8 +14,25 @@ const ArtworkSearchPage = () => {
     setResults(searchResults);
   };
 
+  const navigate = useNavigate();
+
+  const handleGoBack = () => {
+    navigate(-1);
+  };
+
   return (
     <div>
+      <Button
+        bg="transparent"
+        className="goback-button"
+        onClick={handleGoBack}
+        justifyContent="flex-start"
+        top="20px"
+        left="10px"
+        marginBottom="30px"
+      >
+        <Image src={GoBackButton} alt="Go Back" />
+      </Button>
       <ArtworksSearchBar updateResults={updateResults} />
       <FieldsButtons />
       {results.length > 0 ? (

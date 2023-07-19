@@ -1,12 +1,9 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import { Image, Box } from "@chakra-ui/react";
 import Background from "../../assets/images/ZeroBackbround.png";
 import Logo from "../../assets/images/ZeroLogo.png";
-import { TOKEN_NAME } from "../../context/auth.context";
-import userService from "../../services/user.service";
 
 const ZeroZero = ({ setCounter }) => {
-  const [isFirstTime, setIsFirstTime] = useState("false");
 
   useEffect(() => {
     const timer = setTimeout(() => {

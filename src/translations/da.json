@@ -1,0 +1,81 @@
+{
+    "navbar": {
+        "explore": "Udforsk",
+        "favorites": "Favoritter",
+        "profile": "Profil",
+        "edit": "Rediger",
+        "tourTimePreferences": "Præferencer for tur-tid",
+        "scanHistory": "Scan historie",
+        "changePassword": "Skift din adgangskode",
+        "language": "Sprog",
+        "appearance": "Udseende",
+        "support": "Support",
+        "legal": "Juridisk",
+        "logout": "Log ud",
+        "deleteAccount": "Slet konto",
+        "deleteUser": "Slet bruger",
+        "deleteConfirmation": "Er du sikker på, at du vil slette din konto? Denne handling kan ikke fortrydes.",
+        "cancel": "Annuller",
+        "delete": "Slet"
+    },
+
+    "artistSearchPage": {
+        "goBack": "Gå tilbage",
+        "favorited": "Favoriseret",
+        "notFavorited": "Ikke favoriseret",
+        "about": "Om",
+        "readMore": "Læs mere",
+        "readLess": "Læs mindre",
+        "getMoreInfo": "Få mere information",
+        "loadingArtistDetails": "Indlæser kunstnerdetaljer...",
+        "notBioAvailable": "Biografi ikke tilgængelig"
+    },
+
+    "artworkSearchPage": {
+        "women": "Kvinder i kunsten",
+        "american": "Amerikanske kunstværker",
+        "european": "Europæiske kunstværker",
+        "random": "Tilfældige kunstværker"
+    },
+
+    "changeYourPassword": {
+        "current": "Nuværende adgangskode",
+        "new": "Ny adgangskode",
+        "confirm": "Bekræft adgangskode",
+        "change": "Skift adgangskode"
+    },
+
+    "themePage": {
+        "select": "Vælg app-tema",
+        "light": "Lyst tilstand",
+        "dark": "Mørk tilstand"
+    },
+
+    "support": {
+        "header": "Support",
+        "first": "Hvis du har brug for hjælp eller har spørgsmål vedrørende Musart-appen, tøv ikke med at kontakte vores supportteam. Vi er her for at hjælpe!",
+        "contactHeader": "Kontaktinformation",
+        "mail": "E-mail: angpepeles@gmail.com",
+        "phone": "Telefon: +34 667 63 44 56",
+        "operating": "Åbningstider",
+        "week": "Mandag-fredag: 9:00 - 17:00 (EST)",
+        "weekend": "Lørdag-søndag: Lukket"
+    },
+
+    "legal": {
+        "title": "Fortrolighedspolitik",
+        "intro": "Denne fortrolighedspolitik styrer den måde, hvorpå Musart indsamler, bruger, opbevarer og offentliggør oplysninger, der indsamles fra brugere ('Brugere') af Musart-mobilapplikationen ('App'). Denne fortrolighedspolitik gælder for App og alle produkter og tjenester, der tilbydes af Musart.",
+        "personalIdentificationInfoTitle": "Personlig identifikationsinformation",
+        "personalIdentificationInfo": "Musart kan indsamle personlig identifikationsinformation fra brugere på forskellige måder, herunder når brugere registrerer sig på Appen og angiver deres navn, e-mailadresse og adgangskode. Den indsamlede personlige identifikationsinformation bruges til godkendelsesformål og til at forbedre brugeroplevelsen i Appen. Musart er forpligtet til at sikre, at brugerens personlige oplysninger holdes fortrolige og sikre.",
+        "nonPersonalIdentificationInfoTitle": "Ikke-personlig identifikationsinformation",
+        "nonPersonalIdentificationInfo": "Musart kan også indsamle ikke-personlig identifikationsinformation om brugere, hver gang de interagerer med Appen. Disse oplysninger kan omfatte typen af enhed, der bruges, operativsystemet, browserens navn og andre tekniske detaljer relateret til brugerens interaktion med Appen. Disse oplysninger indsamles for at forbedre Appens funktionalitet og give en bedre brugeroplevelse.",
+        "useOfCollectedInfoTitle": "Brug af indsamlede oplysninger",
+        "useOfCollectedInfo": [
+            "At levere og tilpasse brugerens oplevelse: De indsamlede oplysninger giver Musart mulighed for at tilpasse Appens indhold og funktioner for at imødekomme brugerens præferencer og interesser bedre.",
+            "At forbedre kundeservice: Oplysningerne hjælper Musart med at svare mere effektivt på brugersupportanmodninger og yde effektiv kundeservice.",
+            "At sende periodiske e-mails: Musart kan bruge den angivne e-mailadresse til at sende brugeren opdateringer, meddelelser og vigtige oplysninger relateret til Appen. Brugeren kan framelde sig modtagelse af sådanne meddelelser ved at kontakte Musart eller bruge afmeldingslinket i e-mails."
+        ],
+        "protectionOfUserInfoTitle": "Beskyttelse af brugeroplysninger",
+        "protectionOfUserInfo": "Musart træffer passende sikkerhedsforanstaltninger for at beskytte brugeroplysninger mod uautoriseret adgang, ændring, offentliggørelse eller ødelæggelse. Dette inkluderer vedligeholdelse af passende dataindsamling, -opbevaring og -behandlingspraksis samt sikkerhedsforanstaltninger for at beskytte mod uautoriseret adgang til brugeroplysninger.",
+        "sharingOfUserInfoTitle": "Deling af brugeroplysninger",
+        "sharingOfUserInfo": "Musart sælger ikke, handler eller udlejer brugerens personlige identifikationsoplysninger til andre. Brugeroplysninger bruges udelukkende til de formål, der er nævnt i denne fortrolighedspolitik, og er kun tilgængelige for autoriserede Musart-personale eller t

@@ -22,7 +22,6 @@ import {
 import { TOKEN_NAME } from "../context/auth.context";
 import Favorites from "../assets/images/Favorites.png";
 import Explore from "../assets/images/Explore.png";
-import Scan from "../assets/images/Scan.png";
 import Profile from "../assets/images/Profile.png";
 import { useNavigate, useLocation } from "react-router-dom";
 import Time from "../assets/images/Time.png";
@@ -37,6 +36,7 @@ import Support from "../assets/images/Support.png";
 import Delete from "../assets/images/Delete.png";
 import userService from "../services/user.service";
 import DefaultUser from "../assets/images/DefaultUser.svg";
+import { LenguageContext } from "../context/lenguage.context";
 
 import {
   Popover,
@@ -53,10 +53,12 @@ const Navbar = () => {
   const [isPopoverOpen, setIsPopoverOpen] = useState(false);
   const [userImage, setUserImage] = useState("");
   const [userName, setUserName] = useState("");
+  const { lenguage, t } = useContext(LenguageContext);
 
   const onWindowClose = () => setIsWindowOpen(false);
   const cancelRef = useRef();
   const location = useLocation();
+  
 
   const bg = useColorModeValue("white", "gray.800");
 
@@ -104,6 +106,12 @@ const Navbar = () => {
     handleUserInfo();
   }, [location]);
 
+  // useEffect(()=>{console.log(t.navbar.profile)}, [t])
+
+
+  //TEXT
+  // const profile = t.navbar.profile || "Profile"
+
   return (
     <Flex
       position="fixed"
@@ -139,15 +147,18 @@ const Navbar = () => {
           <Text mt={2}>Favorites</Text>
         </Flex>
       </Button>
+
       <Popover
         isOpen={isPopoverOpen}
         onOpen={handlePopoverOpen}
         onClose={handlePopoverClose}
+        placement="bottom-end"
       >
         <PopoverTrigger>
           <Button mr={4} colorScheme="teal" variant="ghost">
             <Flex direction="column" alignItems="center">
               <Image src={Profile} alt="Profile" />
+              {/* <Text mt={2}>{t.navbar.profile}</Text> */}
               <Text mt={2}>Profile</Text>
             </Flex>
           </Button>
@@ -229,32 +240,7 @@ const Navbar = () => {
                       </Button>
                     </Center>
 
-                    <WrapItem>
-                      <Center>
-                        <Button
-                          bg="transparent"
-                          as="div"
-                          display="inline-block"
-                        >
-                          <Grid
-                            templateColumns="1fr 10fr 1fr"
-                            alignItems="center"
-                          >
-                            <Box gridColumn="1">
-                              <Image src={ScanStory} alt="" />
-                            </Box>
-                            <Box gridColumn="2" textAlign="center">
-                              <Text textAlign="left" marginLeft="10px">
-                                Scan history
-                              </Text>
-                            </Box>
-                            <Box gridColumn="3" textAlign="center">
-                              <Image src={NextProfile} alt="" />
-                            </Box>
-                          </Grid>
-                        </Button>
-                      </Center>
-                    </WrapItem>
+                    
 
                     <Divider />
 
@@ -314,7 +300,7 @@ const Navbar = () => {
                             </Box>
                             <Box gridColumn="3" textAlign="center">
                               <Image
-                                marginLeft="7px"
+                                marginLeft="9.5px"
                                 src={NextProfile}
                                 alt=""
                                 paddingLeft="0.4px"
@@ -450,7 +436,7 @@ const Navbar = () => {
                       </Center>
                     </WrapItem>
 
-                    <WrapItem>
+                    <WrapItem marginBottom="60px">
                       <Center>
                         <Button
                           bg="transparent"
