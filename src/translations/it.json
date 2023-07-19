@@ -1,0 +1,87 @@
+{
+    "navbar": {
+        "explore": "Esplora",
+        "favorites": "Preferiti",
+        "profile": "Profilo",
+        "edit": "Modifica",
+        "tourTimePreferences": "Preferenze orari tour",
+        "scanHistory": "Cronologia scansione",
+        "changePassword": "Cambia la tua password",
+        "language": "Lingua",
+        "appearance": "Aspetto",
+        "support": "Supporto",
+        "legal": "Legale",
+        "logout": "Esci",
+        "deleteAccount": "Elimina account",
+        "deleteUser": "Elimina Utente",
+        "deleteConfirmation": "Sei sicuro di voler eliminare il tuo account? Questa azione non può essere annullata.",
+        "cancel": "Annulla",
+        "delete": "Elimina"
+    },
+
+    "artistSearchPage": {
+        "goBack": "Torna indietro",
+        "favorited": "Aggiunto ai preferiti",
+        "notFavorited": "Non aggiunto ai preferiti",
+        "about": "Informazioni",
+        "readMore": "Leggi di più",
+        "readLess": "Leggi meno",
+        "getMoreInfo": "Ulteriori informazioni",
+        "loadingArtistDetails": "Caricamento dettagli artista...",
+        "notBioAvailable": "Biografia non disponibile"
+    },
+
+    "artworkSearchPage": {
+        "women": "Donne nell'arte",
+        "american": "Opere d'arte americane",
+        "european": "Opere d'arte europee",
+        "random": "Opere d'arte casuali"
+    },
+
+    "changeYourPassword": {
+        "current": "Password corrente",
+        "new": "Nuova password",
+        "confirm": "Conferma password",
+        "change": "Cambia password"
+    },
+
+    "themePage": {
+        "select": "Seleziona tema dell'app",
+        "light": "Modalità chiara",
+        "dark": "Modalità scura"
+    },
+
+    "support": {
+        "header": "Supporto",
+        "first": "Se hai bisogno di assistenza o hai domande riguardo all'app Musart, non esitare a contattare il nostro team di supporto. Siamo qui per aiutarti!",
+        "contactHeader": "Informazioni di contatto",
+        "mail": "Email: angpepeles@gmail.com",
+        "phone": "Telefono: +34 667 63 44 56",
+        "operating": "Orari di apertura",
+        "week": "Dal lunedì al venerdì: 9:00 - 17:00 (EST)",
+        "weekend": "Sabato e domenica: Chiuso"
+    },
+
+    "legal": {
+        "title": "Informativa sulla privacy",
+        "intro": "Questa Informativa sulla privacy regola la raccolta, l'utilizzo, la conservazione e la divulgazione delle informazioni raccolte dagli utenti (ciascuno, un 'Utente') dell'applicazione mobile Musart ('App') di Musart. Questa Informativa sulla privacy si applica all'App e a tutti i prodotti e servizi offerti da Musart.",
+        "personalIdentificationInfoTitle": "Informazioni di identificazione personale",
+        "personalIdentificationInfo": "Musart può raccogliere informazioni di identificazione personale dagli Utenti in varie forme, incluso quando gli Utenti si registrano sull'App e forniscono il loro nome, indirizzo email e password. Le informazioni di identificazione personale raccolte sono utilizzate per scopi di autenticazione e per migliorare l'esperienza dell'utente all'interno dell'App. Musart si impegna a mantenere confidenziali e sicure le informazioni personali dell'Utente.",
+        "nonPersonalIdentificationInfoTitle": "Informazioni di identificazione non personali",
+        "nonPersonalIdentificationInfo": "Musart può anche raccogliere informazioni di identificazione non personali sugli Utenti ogni volta che interagiscono con l'App. Queste informazioni possono includere il tipo di dispositivo utilizzato, il sistema operativo, il nome del browser e altri dettagli tecnici relativi all'interazione dell'Utente con l'App. Queste informazioni vengono raccolte per migliorare la funzionalità dell'App e fornire una migliore esperienza utente.",
+        "useOfCollectedInfoTitle": "Utilizzo delle informazioni raccolte",
+        "useOfCollectedInfo": [
+            "Per fornire e personalizzare l'esperienza dell'Utente: Le informazioni raccolte consentono a Musart di personalizzare i contenuti e le funzionalità dell'App per soddisfare meglio le preferenze e gli interessi dell'Utente.",
+            "Per migliorare il servizio clienti: Le informazioni aiutano Musart a rispondere in modo più efficiente alle richieste di supporto degli utenti e a fornire un servizio clienti efficace.",
+            "Per inviare email periodiche: Musart può utilizzare l'indirizzo email fornito per inviare agli Utenti aggiornamenti, notifiche e informazioni importanti relative all'App. L'Utente può scegliere di non ricevere tali comunicazioni contattando Musart o utilizzando il link per annullare l'iscrizione fornito nelle email."
+        ],
+        "protectionOfUserInfoTitle": "Protezione delle informazioni dell'Utente",
+        "protectionOfUserInfo": "Musart adotta adeguate misure di sicurezza per proteggere le informazioni dell'Utente da accessi, alterazioni, divulgazioni o distruzioni non autorizzate. Ciò include pratiche adeguate per la raccolta, la conservazione e l'elaborazione dei dati e misure di sicurezza per proteggere da accessi non autorizzati alle informazioni dell'Utente.",
+        "sharingOfUserInfoTitle": "Condivisione delle informazioni dell'Utente",
+        "sharingOfUserInfo": "Musart non vende, scambia o affitta le informazioni di identificazione personale dell'Utente a terzi. Le informazioni dell'Utente vengono utilizzate esclusivamente per le finalità menzionate in questa Informativa sulla privacy e sono accessibili solo al personale autorizzato di Musart o ai fornitori di servizi che devono conoscere tali informazioni per fornire servizi per conto di Musart.",
+        "changesToPolicyTitle": "Modifiche a questa Informativa sulla privacy",
+        "changesToPolicy": "Musart si riserva il diritto di aggiornare o modificare questa Informativa sulla privacy in qualsiasi momento. Gli Utenti sono incoraggiati a verificare periodicamente questa Informativa sulla privacy per eventuali modifiche. L'utilizzo continuato dell'App dopo le modifiche costituirà il riconoscimento e l'accettazione da parte dell'Utente dell'Informativa sulla privacy aggiornata.",
+        "contactUsTitle": "Contattaci",
+        "contactUsInfo": "Se gli Utenti hanno domande o preoccupazioni riguardo a questa Informativa sulla privacy o alle pratiche dell'App Musart, possono contattarci all'indirizzo angpepeles@gmail.com."
+    }
+}

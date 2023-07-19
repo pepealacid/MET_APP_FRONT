@@ -1,8 +1,9 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useContext } from "react";
 import axios from "axios";
 import { Spinner, Table, Tbody, Tr, Td, Text, Box } from "@chakra-ui/react";
 import { Link } from "react-router-dom";
 import ArtworkCard from "../../ArtworkCard/ArtworkCard";
+import { LenguageContext } from "../../../context/lenguage.context";
 
 const AmericanArtworks = () => {
   const [americanArtworks, setAmericanArtworks] = useState([]);
@@ -48,6 +49,8 @@ const AmericanArtworks = () => {
     }
   };
 
+  const { t } = useContext(LenguageContext)
+
   const getRandomArtworkIDs = (count) => {
     const shuffledIDs = americanArtworksIDs.sort(() => 0.5 - Math.random());
     return shuffledIDs.slice(0, count);
@@ -55,7 +58,7 @@ const AmericanArtworks = () => {
 
   return (
     <div>
-      <Text className="recomm-header">American artworks</Text>
+      <Text className="recomm-header">{t?.artworkSearchPage.american || "American Artworks"}</Text>
       {loading ? (
         <Spinner />
       ) : (
@@ -67,57 +70,28 @@ const AmericanArtworks = () => {
           whiteSpace="nowrap"
         >
           <Table size="sm">
-            <Tbody>
-              <Tr>
-                {americanArtworks
-                  .slice(0, Math.ceil(americanArtworks.length / 2))
-                  .map((artwork) => (
-                    <Td key={artwork.id} px={2}>
-                      <Link
-                        to={`/artwork/${artwork.objectID}`}
-                        style={{ textDecoration: "none", cursor: "pointer" }}
-                      >
-                        <ArtworkCard
-                          imageUrl={
-                            artwork.primaryImageSmall || artwork.primaryImage
-                          }
-                          title={artwork.title}
-                          author={artwork.artistDisplayName}
-                          date={
-                            artwork.objectEndDate || artwork.objectBeginDate
-                          }
-                          artworkID={artwork.objectID}
-                        />
-                      </Link>
-                    </Td>
-                  ))}
-              </Tr>
-              <Tr>
-                {americanArtworks
-                  .slice(Math.ceil(americanArtworks.length / 2))
-                  .map((artwork) => (
-                    <Td key={artwork.id} px={2}>
-                      <Link
-                        to={`/artwork/${artwork.objectID}`}
-                        style={{ textDecoration: "none", cursor: "pointer" }}
-                      >
-                        <ArtworkCard
-                          imageUrl={
-                            artwork.primaryImageSmall || artwork.primaryImage
-                          }
-                          title={artwork.title}
-                          author={artwork.artistDisplayName}
-                          date={
-                            artwork.objectEndDate || artwork.objectBeginDate
-                          }
-                          artworkID={artwork.objectID}
-                        />
-                      </Link>
-                    </Td>
-                  ))}
-              </Tr>
-            </Tbody>
-          </Table>
+  <Tbody>
+    <Tr>
+      {americanArtworks.map((artwork) => (
+        <Td key={artwork.id} px={2}>
+          <Link
+            to={`/artwork/${artwork.objectID}`}
+            style={{ textDecoration: "none", cursor: "pointer" }}
+          >
+            <ArtworkCard
+              imageUrl={artwork.primaryImageSmall || artwork.primaryImage}
+              title={artwork.title}
+              author={artwork.artistDisplayName}
+              date={artwork.objectEndDate || artwork.objectBeginDate}
+              artworkID={artwork.objectID}
+            />
+          </Link>
+        </Td>
+      ))}
+    </Tr>
+  </Tbody>
+</Table>
+
         </Box>
       )}
     </div>

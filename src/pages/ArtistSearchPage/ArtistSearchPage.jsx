@@ -1,18 +1,23 @@
 import ArtistsSearchBar from "../../components/ArtistsSearchBar";
 import { useState, useEffect } from "react";
-import { Grid, GridItem } from "@chakra-ui/react";
+import { Grid, GridItem, Button, Image } from "@chakra-ui/react";
 import ArtistCard from "../../components/ArtistCard/ArtistCard";
 import { Link } from "react-router-dom";
 import FieldsButtons from "../../components/FieldsButtons";
 import { TOKEN_NAME } from "../../context/auth.context";
-import authService from "../../services/auth.service";
 import favoriteService from "../../services/favorite.service";
 import ArtistRecommendations from "../../components/Recommendations/ArtistRecommendations/ArtistRecommendations";
 import "./ArtistSearchPage.css";
+import userService from "../../services/user.service";
+import { useNavigate } from "react-router-dom";
+import GoBackButton from "../../assets/images/GoBackButton.png";
 
 const ArtistSearchPage = () => {
   const [results, setResults] = useState([]);
   const [favoriteArtistIds, setFavoriteArtistIds] = useState([]);
+
+
+
 
   useEffect(() => {
     fetchFavorites();
@@ -21,7 +26,7 @@ const ArtistSearchPage = () => {
   const fetchFavorites = async () => {
     try {
       const token = localStorage.getItem(TOKEN_NAME);
-      const response = await authService.getUser(token);
+      const response = await userService.getUser(token);
       const userId = response.data._id;
 
       favoriteService
@@ -45,7 +50,7 @@ const ArtistSearchPage = () => {
   const favArtist = async (artistID) => {
     try {
       const token = localStorage.getItem(TOKEN_NAME);
-      const response = await authService.getUser(token);
+      const response = await userService.getUser(token);
       const userId = response.data._id;
 
       const promiseFavorites = await favoriteService.getFavoriteArtists(userId);
@@ -78,44 +83,46 @@ const ArtistSearchPage = () => {
   };
 
   return (
-    <div>
-      <ArtistsSearchBar updateResults={updateResults} />
-      <FieldsButtons />
-      {results.length === 0 ? (
-        <ArtistRecommendations
-          favoriteArtistIds={favoriteArtistIds}
-          favArtist={favArtist}
-          fetchFavorites={fetchFavorites}
-        />
-      ) : (
-        <Grid templateColumns="repeat(2, 1fr)" gap={4}>
-          {results.map(
-            (result) =>
-              result.id !== null && (
-                <GridItem key={result.id}>
-                  <Link
-                    to={{
-                      pathname: `/artist/${result.title}`,
-                      search: `?url=${encodeURIComponent(
-                        result._links.self.href
-                      )}`,
-                    }}
-                    style={{ textDecoration: "none", cursor: "pointer" }}
-                  >
-                    <ArtistCard
-                      imageUrl={result.imageUrl}
-                      title={result.title}
-                      birthday={result.birthday}
-                      deathday={result.deathday}
-                      artistID={result.id}
-                    />
-                  </Link>
-                </GridItem>
-              )
-          )}
-        </Grid>
-      )}
-    </div>
+    <>
+            <div>
+        <ArtistsSearchBar updateResults={updateResults} />
+        <FieldsButtons />
+        {results.length === 0 ? (
+          <ArtistRecommendations
+            favoriteArtistIds={favoriteArtistIds}
+            favArtist={favArtist}
+            fetchFavorites={fetchFavorites}
+          />
+        ) : (
+          <Grid templateColumns="repeat(2, 1fr)" gap={4}>
+            {results.map(
+              (result) =>
+                result.id !== null && (
+                  <GridItem key={result.id}>
+                    <Link
+                      to={{
+                        pathname: `/artist/${result.title}`,
+                        search: `?url=${encodeURIComponent(
+                          result._links.self.href
+                        )}`,
+                      }}
+                      style={{ textDecoration: "none", cursor: "pointer" }}
+                    >
+                      <ArtistCard
+                        imageUrl={result.imageUrl}
+                        title={result.title}
+                        birthday={result.birthday}
+                        deathday={result.deathday}
+                        artistID={result.id}
+                      />
+                    </Link>
+                  </GridItem>
+                )
+            )}
+          </Grid>
+        )}
+      </div>
+    </>
   );
 };
 

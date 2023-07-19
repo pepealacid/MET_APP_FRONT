@@ -12,27 +12,28 @@
 
 .artist-card .top {
   display: flex;
-  align-items: flex-start;
-  position: relative;
-  padding: 10px;
 }
 
 .artist-card .artist-image {
+  position: absolute;
   border-radius: 100%;
   height: 80px;
   width: 80px;
-  flex-shrink: 0;
-  margin-right: 10px;
+  margin: 10px;
 }
 
 .artist-card .top p {
+  left: 94px;
+  top:10px;
+  position: absolute;
   font-weight: bold;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
   flex-grow: 1;
-  font-size: 20px;
+  font-size: 18px;
   padding-top: 40px;
+  max-width: calc(100% - 110px);
 }
 
 .artist-card .fav-button {
@@ -42,13 +43,38 @@
   background: transparent;
   border: none;
   cursor: pointer;
-}
-
-.artist-card .fav-button-img {
-  width: 30px;
-  height: 30px;
+  width: 40px;
+  height: 40px;
 }
 
 .artist-card .foot {
   display: flex;
+  position: absolute;
+  top:140px;
+  left:14px
+}
+
+.little-artist-card {
+  display: inline-block; /* Use inline-block to make the card width fit its content */
+  text-align: center;
+  margin-right: 10px; /* Add some margin between artist cards */
+  height: 200px;
+}
+
+.little-artist-card .image {
+  border-radius: 100%;
+  width: 100px;
+  height: 100px;
+  margin-bottom: 8px;
+}
+
+.little-artist-card .name {
+  width: 100px;
+  max-height: 5em; /* Set the maximum height for three lines of text */
+  font-weight: bold;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 3; /* Set the number of lines to be displayed */
+  -webkit-box-orient: vertical;
 }

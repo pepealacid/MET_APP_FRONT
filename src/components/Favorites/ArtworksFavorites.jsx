@@ -1,18 +1,43 @@
-import { FavContext } from "../../context/fav.context";
-import { useContext, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import axios from "axios";
 import { Grid, Spinner } from "@chakra-ui/react";
 import ArtworkCardLittle from "../ArtworkCard/ArtworkCardLittle";
 import { Link } from "react-router-dom";
+import { TOKEN_NAME } from "../../context/auth.context";
+import userService from "../../services/user.service";
+import favoriteService from "../../services/favorite.service";
 
 const ArtworksFavorites = () => {
-  const { favoriteArtworkIds } = useContext(FavContext);
+  const [favoriteArtworkIds, setFavoriteArtworksIds] = useState([]);
   const [favorites, setFavorites] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    fetchFavorites();
+    getFavoriteArtworks();
   }, []);
+
+  useEffect(() => {
+    fetchFavorites();
+  }, [favoriteArtworkIds]);
+
+  const getFavoriteArtworks = async () => {
+    try {
+      const token = localStorage.getItem(TOKEN_NAME);
+      setIsLoading(true);
+
+      const response = await userService.getUser(token);
+      const userId = response.data._id;
+
+      const favoriteArtworksResponse =
+        await favoriteService.getFavoriteArtworks(userId);
+      const favoriteArtworkIds = favoriteArtworksResponse.data;
+      setFavoriteArtworksIds(favoriteArtworkIds);
+    } catch (error) {
+      console.log(error);
+    } finally {
+      setIsLoading(false);
+    }
+  };
 
   const fetchFavorites = async () => {
     try {
@@ -27,6 +52,7 @@ const ArtworksFavorites = () => {
       setIsLoading(false);
     } catch (error) {
       console.error("Error fetching favorites:", error);
+      setIsLoading(false);
     }
   };
 

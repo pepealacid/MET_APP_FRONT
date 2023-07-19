@@ -1,0 +1,87 @@
+{
+    "navbar": {
+        "explore": "Rannsaich",
+        "favorites": "Àrd-ghnèithean",
+        "profile": "Pròifil",
+        "edit": "Deasaich",
+        "tourTimePreferences": "Roghainnean àm turas",
+        "scanHistory": "Eachdraidh-sgrùdaidh",
+        "changePassword": "Atharraich do phasgan-faire",
+        "language": "Cànan",
+        "appearance": "Coltas",
+        "support": "Taic",
+        "legal": "Coileanadh",
+        "logout": "Log às",
+        "deleteAccount": "Sguab às cunntas",
+        "deleteUser": "Sguab às Luchd-cleachdaidh",
+        "deleteConfirmation": "A bheil thu cinnteach gu bheil thu airson do chunntas a sguabadh às? Chan urrainn dhan gnìomh seo ath-tharraing air ais.",
+        "cancel": "Sguir dheth",
+        "delete": "Sguab às"
+    },
+
+    "artistSearchPage": {
+        "goBack": "Till air ais",
+        "favorited": "Air a ghràdhachadh",
+        "notFavorited": "Gun gràdhachadh",
+        "about": "Mu",
+        "readMore": "Lèugh barrachd",
+        "readLess": "Lèugh nas lugha",
+        "getMoreInfo": "Faigh barrachd fiosrachaidh",
+        "loadingArtistDetails": "Ag luchdadh fiosrachadh mu dheidhinn an neach-ealain...",
+        "notBioAvailable": "Chan eil bio ri fhaighinn"
+    },
+
+    "artworkSearchPage": {
+        "women": "Nam ban anns an ealain",
+        "american": "Ealain na h-Aimeireaga",
+        "european": "Ealain na Roinn-Eòrpa",
+        "random": "Ealain nam priobadh"
+    },
+
+    "changeYourPassword": {
+        "current": "Pasgan-faire làithreach",
+        "new": "Pasgan-faire ùr",
+        "confirm": "Dearbhaich pasgan-faire",
+        "change": "Atharraich pasgan-faire"
+    },
+
+    "themePage": {
+        "select": "Tagh dreach a' phrògraim",
+        "light": "Modh solais",
+        "dark": "Modh dorcha"
+    },
+
+    "support": {
+        "header": "Taic",
+        "first": "Ma tha thu airson cuideachadh no tha ceistean agad mu dheireadh air an app Musart, na tèid clis gus ar luchd-taic a chuir fios thugainn. Tha sinn an seo gus cuideachadh!",
+        "contactHeader": "Fiosrachadh fo chonn",
+        "mail": "Post-d: angpepeles@gmail.com",
+        "phone": "Fòn: +34 667 63 44 56",
+        "operating": "Òrain gnìomhachais",
+        "week": "Di-Luain-Di-hAoine: 9:00 AM - 5:00 PM (EST)",
+        "weekend": "Disathairne-DiDòmhnaich: Dùinte"
+    },
+
+    "legal": {
+        "title": "Poileasaidh prìobhaideachd",
+        "intro": "Tha an Poileasaidh Prìobhaideachd seo a' stiùireadh mar a chruinnicheas Musart, cleachdaidhean, stòraichean agus ruith, agus a' no-dhearbhadh fiosrachadh a chaidh a chruinneachadh bhon luchd-cleachdaidh (gach neach, 'Cleachdaiche') de inneal-mheadhanach Musart ('App'). Tha am Poileasaidh Prìobhaideachd seo freagarrach do'n App agus do gach puingean agus seirbheisean a chuirear ri chèile le Musart.",
+        "personalIdentificationInfoTitle": "Fiosrachadh aithne pearsanta",
+        "personalIdentificationInfo": "Tha Musart comasach air fiosrachadh aithne pearsanta a chruinneachadh bhon luchd-cleachdaidh ann an diofar dhòighean, a' gabhail a-steach nuair a tha cleachdaichean a' clàradh air an App agus a' toirt a-steach an t-ainm, seòladh post-d agus pasgan-faire. Tha an fiosrachadh aithne pearsanta a chruinnich airson adhartachadh agus airson feartan an App a fheuchainn. Tha Musart air a bhith freagarrach gu bheil fiosrachadh pearsanta a' chleachdaiche a' cumail air fhaighinn gu faiceallach agus gu sàbhailte.",
+        "nonPersonalIdentificationInfoTitle": "Fiosrachadh aithne neo pearsanta",
+        "nonPersonalIdentificationInfo": "Tha Musart comasach cuideachd air fiosrachadh aithne neo pearsanta mu luchd-cleachdaidh a chruinneachadh nuair a tha iad ag iomradh ris an App. Dh'fhaodadh na fiosrachaidhean seo a bhith a' gabhail a-steach seòrsa na h-inneal a chleachdas iad, an t-siostam obrachaidh, ainm an fhrèataiche agus faidhlichean teicnigeach eile co-cheangailte ri buaidh chleachdaichean air an App. Tha na fiosrachaidhean seo a' cur ris cur-seachadan an App agus a' tabhann iomadachadh do chleachdaichean nas fheàrr.",
+        "useOfCollectedInfoTitle": "Cleachdadh na fiosrachaidhean cruinnichte",
+        "useOfCollectedInfo": [
+            "Airson lìbhrigeadh agus pearsantachd cleachdaichean: Tha na fiosrachaidhean cruinnichte a' leigeil le Musart earbsa a dhèanamh air coimeas agus feartan an App gus freastal air roghainnean agus ùidheamachdan an luchd-cleachdaidh nas fheàrr.",
+            "Airson cuideachadh do chliantean: Tha na fiosrachaidhean a' cuideachadh Musart freagairt gu iomchaidh airson iarrtasan taic luchd-cleachdaidh agus do chliantean a bhrosnachadh.",
+            "Airson a' seòladh ràitheil de phost-d: Dh'fhaodadh Musart a chleachdadh an seòladh post-d a thoirt seachad airson luchd-cleachdaidh nuair a thèid ùrachadh, brathachadh is fiosrachadh cudromach mu'n App. Dh'fhaodadh luchd-cleachdaidh a thaghadh airson nach faod iad fiosrachaidhean den t-seòladh a thoirt seachad le bhith a' togail Musart an co-chomhairleachadh no le bhith a' cleachdadh ceangal-clàraichte leum anns na post-d."
+        ],
+        "protectionOfUserInfoTitle": "Dìon fiosrachaidh na cleachdaiche",
+        "protectionOfUserInfo": "Tha Musart a' gabhail nan cothroman-sàbhailte ri fhaighinn airson fiosrachaidh na cleachdaiche a chumail bho ro-sheasmhachadh, atharrachadh, foillseachadh no milleadh neo-fhrithealaichte. Tha seo a' gabhail a-steach cosgaisean ri cuideachadh ri chruinneachadh, stòrachadh agus obrachadh fiosrachaidh agus ri seasmhachadh airson cur às dhan fiosrachadh na cleachdaiche gun cheadan ath-chluich.",
+        "sharingOfUserInfoTitle": "Roinn fiosrachaidh na cleachdaiche",
+        "sharingOfUserInfo": "Chan reic, chan fhoilseaich, no cha ghabh Musart fiosrachadh pearsanta aithne na cleachdaiche a roinn ri chuideigin eile. Tha fiosrachadh na cleachdaiche a' cleachdadh an aon cheangal ri àiteachan an Poileasaidh Prìobhaideachd seo agus tha e a-mhàin ri fhaighinn aig luchd-obrach Musart a tha fo chheadas no luchd-maoineachaidh a dh'fhaodadh gus fiosrachadh fhaighinn airson seirbheisean a chumail air adhart airson Musart.",
+        "changesToPolicyTitle": "Atharrachaidhean airson Poileasaidh Prìobhaideachd seo",
+        "changesToPolicy": "Tha Musart a' cumail gu bheil e ceadachail Poileasaidh Prìobhaideachd seo a ghluasad no a atharrachadh aig aon àm. Tha sinn a' brosnachadh luchd-cleachdaidh gus am Poileasaidh Prìobhaideachd seo fhaicinn gu cunbhalach airson atharrachaidhean. Thèid coileanadh a' Phoileasaidh Prìobhaideachd agus cleachdadh an App a leanas às deidh na h-atharrachaidhean a bhith ann mar rianadh air admhaichean is aonta luchd-cleachdaidh.",
+        "contactUsTitle": "Cur fios thugainn",
+        "contactUsInfo": "Ma tha ceistean sam bith no buaidh aig luchd-cleachdaidh mu'n Poileasaidh Prìobhaideachd seo no mu dheidhinn prataig Musart, faodaidh iad cur fios thugainn aig angpepeles@gmail.com."
+    }
+}

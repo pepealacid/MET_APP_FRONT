@@ -1,10 +1,11 @@
 import { useState } from "react";
-import { Grid, GridItem } from "@chakra-ui/react";
+import { Grid, GridItem, Button, Image } from "@chakra-ui/react";
 import ArtworkCard from "../../components/ArtworkCard/ArtworkCard";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import FieldsButtons from "../../components/FieldsButtons";
 import ArtworksSearchBar from "../../components/ArtworksSearchBar";
 import ArtworkRecommendations from "../../components/Recommendations/ArtworkRecommendations/ArtworkRecommendations";
+import GoBackButton from "../../assets/images/GoBackButton.png";
 
 const ArtworkSearchPage = () => {
   const [results, setResults] = useState([]);
@@ -13,8 +14,13 @@ const ArtworkSearchPage = () => {
     setResults(searchResults);
   };
 
+
+
+
+
   return (
     <div>
+     
       <ArtworksSearchBar updateResults={updateResults} />
       <FieldsButtons />
       {results.length > 0 ? (

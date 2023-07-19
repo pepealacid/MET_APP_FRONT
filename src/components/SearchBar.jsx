@@ -3,7 +3,7 @@ import { Input, Box, Image, Text, Spinner } from "@chakra-ui/react";
 import axios from "axios";
 import favoriteService from "../services/favorite.service";
 import { TOKEN_NAME } from "../context/auth.context";
-import authService from "../services/auth.service";
+import userService from "../services/user.service";
 
 export default function SearchBar() {
   const [searchQuery, setSearchQuery] = useState("");
@@ -63,7 +63,7 @@ export default function SearchBar() {
   const handleArtworkPush = async (artworkId) => {
     try {
       const token = localStorage.getItem(TOKEN_NAME);
-      const response = await authService.getUser(token);
+      const response = await userService.getUser(token);
       const userId = response.data._id;
       console.log(userId);
 

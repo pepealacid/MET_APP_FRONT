@@ -34,7 +34,6 @@ const ArtworkDetailsPage = () => {
   const [relatedArtworks, setRelatedArtworks] = useState([]);
   const { favoriteArtworkIds, addFavoriteArtwork, removeFavoriteArtwork } =
     useContext(FavContext);
-  const navigate = useNavigate();
 
   useEffect(() => {
     fetchArtworkDetails();
@@ -49,9 +48,6 @@ const ArtworkDetailsPage = () => {
     }
   };
 
-  const handleGoBack = () => {
-    navigate(-1);
-  };
 
   const isArtworkFavorited = () => {
     return favoriteArtworkIds.includes(objectId);
@@ -152,9 +148,7 @@ const ArtworkDetailsPage = () => {
                     }
                     alt={artworkData.title}
                   />
-                  <button className="goback-button" onClick={handleGoBack}>
-                    <Image src={GoBackButton} alt="Go Back" />
-                  </button>
+                 
                   <button
                     className={`fav-button ${
                       isArtworkFavorited() ? "favorited" : ""

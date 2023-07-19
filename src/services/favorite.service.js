@@ -9,7 +9,7 @@ class FavoriteService {
   }
 
   updateFavoriteArtworks({ id, artworkID }) {
-    return this.api.put(`/user/artworks/update-favorites/${id}/${artworkID}`);
+    return this.api.put(`/user/artworks/favorites/${id}/${artworkID}`);
   }
 
   getFavoriteArtists(userId) {
@@ -17,7 +17,7 @@ class FavoriteService {
   }
 
   updateFavoriteArtists({ id, artistID }) {
-    return this.api.put(`/user/artists/update-favorites/${id}/${artistID}`);
+    return this.api.put(`/user/artists/favorites/${id}/${artistID}`);
   }
 }
 

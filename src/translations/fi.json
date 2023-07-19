@@ -1,0 +1,87 @@
+{
+    "navbar": {
+        "explore": "Selaa",
+        "favorites": "Suosikit",
+        "profile": "Profiili",
+        "edit": "Muokkaa",
+        "tourTimePreferences": "Kierrosaikatoiveet",
+        "scanHistory": "Skanien historia",
+        "changePassword": "Vaihda salasana",
+        "language": "Kieli",
+        "appearance": "Ulkoasu",
+        "support": "Tuki",
+        "legal": "Lakiasiat",
+        "logout": "Kirjaudu ulos",
+        "deleteAccount": "Poista tili",
+        "deleteUser": "Poista käyttäjä",
+        "deleteConfirmation": "Oletko varma, että haluat poistaa tilisi? Tätä toimintoa ei voi peruuttaa.",
+        "cancel": "Peruuta",
+        "delete": "Poista"
+    },
+
+    "artistSearchPage": {
+        "goBack": "Palaa takaisin",
+        "favorited": "Lisätty suosikkeihin",
+        "notFavorited": "Ei lisätty suosikkeihin",
+        "about": "Tietoa",
+        "readMore": "Lue lisää",
+        "readLess": "Lue vähemmän",
+        "getMoreInfo": "Lue lisää tietoa",
+        "loadingArtistDetails": "Ladataan taiteilijan tietoja...",
+        "notBioAvailable": "Biografia ei saatavilla"
+    },
+
+    "artworkSearchPage": {
+        "women": "Naisia taiteessa",
+        "american": "Amerikkalaisia taideteoksia",
+        "european": "Eurooppalaisia taideteoksia",
+        "random": "Satunnaisia taideteoksia"
+    },
+
+    "changeYourPassword": {
+        "current": "Nykyinen salasana",
+        "new": "Uusi salasana",
+        "confirm": "Vahvista salasana",
+        "change": "Vaihda salasana"
+    },
+
+    "themePage": {
+        "select": "Valitse sovelluksen teema",
+        "light": "Vaalea tila",
+        "dark": "Tumma tila"
+    },
+
+    "support": {
+        "header": "Tuki",
+        "first": "Jos tarvitset apua tai sinulla on kysyttävää Musart-sovellukseen liittyen, älä epäröi ottaa yhteyttä tukeemme. Olemme täällä auttamassa!",
+        "contactHeader": "Yhteystiedot",
+        "mail": "Sähköposti: angpepeles@gmail.com",
+        "phone": "Puhelin: +34 667 63 44 56",
+        "operating": "Toiminta-ajat",
+        "week": "Maanantaista perjantaihin: 9.00 - 17.00 (EST)",
+        "weekend": "Lauantai-sunnuntai: Suljettu"
+    },
+
+    "legal": {
+        "title": "Tietosuojakäytäntö",
+        "intro": "Tämä tietosuojakäytäntö ohjaa sitä tapaa, jolla Musart kerää, käyttää, ylläpitää ja paljastaa tietoja käyttäjiltä (kutakin, 'käyttäjä') Musartin mobiilisovelluksesta ('Sovellus'). Tämä tietosuojakäytäntö koskee Sovellusta ja kaikkia Musartin tarjoamia tuotteita ja palveluita.",
+        "personalIdentificationInfoTitle": "Henkilökohtaiset tunnistetiedot",
+        "personalIdentificationInfo": "Musart voi kerätä käyttäjiltä henkilökohtaisia tunnistetietoja monin tavoin, mukaan lukien kun käyttäjät rekisteröityvät Sovellukseen ja antavat nimensä, sähköpostiosoitteensa ja salasanansa. Kerätyt henkilökohtaiset tunnistetiedot käytetään todentamistarkoituksiin ja parantamaan käyttäjäkokemusta Sovelluksessa. Musart sitoutuu pitämään käyttäjän henkilökohtaiset tiedot luottamuksellisina ja turvassa.",
+        "nonPersonalIdentificationInfoTitle": "Ei-henkilökohtaiset tunnistetiedot",
+        "nonPersonalIdentificationInfo": "Musart voi myös kerätä käyttäjiltä ei-henkilökohtaisia tunnistetietoja aina kun he vuorovaikuttavat Sovelluksen kanssa. Nämä tiedot voivat sisältää laitteen tyypin, käyttöjärjestelmän, selaimen nimen ja muut tekniset yksityiskohdat, jotka liittyvät käyttäjän vuorovaikutukseen Sovelluksen kanssa. Tätä tietoa kerätään Sovelluksen toiminnallisuuden parantamiseksi ja paremman käyttäjäkokemuksen tarjoamiseksi.",
+        "useOfCollectedInfoTitle": "Kerättyjen tietojen käyttö",
+        "useOfCollectedInfo": [
+            "Käyttäjäkokemuksen tarjoaminen ja räätälöinti: Kerätyt tiedot mahdollistavat Musartin räätälöimään Sovelluksen sisältöä ja ominaisuuksia vastaamaan paremmin käyttäjän mieltymyksiä ja kiinnostuksen kohteita.",
+            "Asiakaspalvelun parantaminen: Tiedot auttavat Musartia reagoimaan käyttäjän tukipyyntöihin tehokkaammin ja tarjoamaan tehokasta asiakaspalvelua.",
+            "Säännöllisten sähköpostien lähettäminen: Musart voi käyttää annettua sähköpostiosoitetta lähettääkseen käyttäjälle päivityksiä, ilmoituksia ja tärkeitä tietoja Sovellukseen liittyen. Käyttäjä voi halutessaan olla vastaanottamatta tällaisia viestintöjä ottamalla yhteyttä Musartiin tai käyttämällä sähköpostiviestien lopetuslinkkiä."
+        ],
+        "protectionOfUserInfoTitle": "Käyttäjätietojen suojaaminen",
+        "protectionOfUserInfo": "Musart toteuttaa asianmukaisia turvallisuustoimenpiteitä suojatakseen käyttäjätietoja luvattomalta pääsyltä, muutoksilta, paljastuksilta tai tuhoutumiselta. Tämä sisältää asianmukaiset käytännöt tiedonkeruussa, säilytyksessä ja käsittelyssä sekä turvatoimenpiteet, jotka suojaavat käyttäjätietoja luvattomalta pääsyltä.",
+        "sharingOfUserInfoTitle": "Käyttäjätietojen jakaminen",
+        "sharingOfUserInfo": "Musart ei myy, vaihda tai vuokraa käyttäjien henkilökohtaisia tunnistetietoja muille. Käyttäjätietoja käytetään tiukasti tässä tietosuojakäytännössä mainittuihin tarkoituksiin ja niihin pääsevät käsiksi vain Musartin valtuuttamat henkilöstö tai palveluntarjoajat, jotka tarvitsevat tietoa Musartin puolesta tarjottavien palveluiden tarjoamiseen.",
+        "changesToPolicyTitle": "Muutokset tähän tietosuojakäytäntöön",
+        "changesToPolicy": "Musart pidättää oikeuden päivittää tai muuttaa tätä tietosuojakäytäntöä milloin tahansa. Käyttäjiä kannustetaan tarkistamaan tämä tietosuojakäytäntö säännöllisesti mahdollisten muutosten varalta. Sovelluksen jatkuvan käytön jälkeen muutosten jälkeen käyttäjä tunnustaa ja hyväksyy päivitetyn tietosuojakäytännön.",
+        "contactUsTitle": "Ota yhteyttä",
+        "contactUsInfo": "Jos käyttäjillä on kysyttävää tai huolenaiheita tästä tietosuojakäytännöstä tai Musart-sovelluksen käytännöistä, he voivat ottaa yhteyttä meihin sähköpostitse osoitteeseen angpepeles@gmail.com."
+    }
+}

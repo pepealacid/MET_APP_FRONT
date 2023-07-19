@@ -61,9 +61,6 @@ const ArtistDetailsPage = () => {
     setShowFullDescription(!showFullDescription);
   };
 
-  const handleGoBack = () => {
-    navigate(-1);
-  };
 
   const isArtistFavorited = () => {
     return favoriteArtistIds.includes(artistData.id);
@@ -87,9 +84,7 @@ const ArtistDetailsPage = () => {
               src={imageUrl || RandomArtist}
               alt={artistData.name}
             />
-            <button className="goback-button" onClick={handleGoBack}>
-              <Image src={GoBackButton} alt="Go Back" />
-            </button>
+            
             <button
               className={`fav-button ${isArtistFavorited() ? "favorited" : ""}`}
               onClick={handleFavorite}
