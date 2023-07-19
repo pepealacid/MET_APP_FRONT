@@ -9,22 +9,10 @@ const ThemePage = () => {
   const isDarkMode = colorMode === "dark";
   const navigate = useNavigate();
 
-  const handleGoBack = () => {
-    navigate(-1);
-  };
+
 
   return (
     <>
-      <Button
-        bg="transparent"
-        className="goback-button"
-        onClick={handleGoBack}
-        justifyContent="flex-start"
-        top="20px"
-        left="10px"
-      >
-        <Image src={GoBackButton} alt="Go Back" />
-      </Button>
       <Heading marginTop="70px" marginLeft="50px" as="h1" size="lg" mb={4}>
         Theme
       </Heading>

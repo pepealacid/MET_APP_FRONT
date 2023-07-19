@@ -24,9 +24,7 @@ const LanguagePage = () => {
     setLenguage(newLenguage);
   };
 
-  const handleGoBack = () => {
-    navigate(-1);
-  };
+
 
   useEffect(() => {
     console.log(lenguage);
@@ -34,17 +32,6 @@ const LanguagePage = () => {
 
   return (
     <>
-        <Button
-          bg="transparent"
-          className="goback-button"
-          onClick={handleGoBack}
-          justifyContent="flex-start"
-          top="20px"
-          left="10px"
-        >
-          <Image src={GoBackButton} alt="Go Back" />
-        </Button>
-
       <Box marginTop="80px">
         <Heading as="h1" size="lg" mb={2} textAlign="center">
           Language
@@ -72,15 +59,6 @@ const LanguagePage = () => {
               <Text paddingBottom="10px">Español</Text>
               <Box ml={4}>
                 <Radio value="es" />
-              </Box>
-            </Flex>
-            <Flex
-              justifyContent="space-between"
-              borderBottom="1px solid #efefef"
-            >
-              <Text paddingBottom="10px">Dansk</Text>
-              <Box ml={4}>
-                <Radio value="da" />
               </Box>
             </Flex>
             <Flex

@@ -53,8 +53,8 @@ const Navbar = () => {
   const [isPopoverOpen, setIsPopoverOpen] = useState(false);
   const [userImage, setUserImage] = useState("");
   const [userName, setUserName] = useState("");
-  const { lenguage, t } = useContext(LenguageContext);
-
+  const { t } = useContext(LenguageContext);
+  
   const onWindowClose = () => setIsWindowOpen(false);
   const cancelRef = useRef();
   const location = useLocation();
@@ -106,13 +106,12 @@ const Navbar = () => {
     handleUserInfo();
   }, [location]);
 
-  // useEffect(()=>{console.log(t.navbar.profile)}, [t])
+  // useEffect(()=>{console.log(t?.navbar.profile)}, [t])
 
 
   //TEXT
-  // const profile = t.navbar.profile || "Profile"
 
-  return (
+  return t?.navbar && (
     <Flex
       position="fixed"
       bottom="0"
@@ -133,7 +132,7 @@ const Navbar = () => {
       >
         <Flex direction="column" alignItems="center">
           <Image src={Explore} alt="Explore" />
-          <Text mt={2}>Explore</Text>
+          <Text mt={2}>{t?.navbar.explore || "Explore"}</Text>
         </Flex>
       </Button>
       <Button
@@ -144,7 +143,7 @@ const Navbar = () => {
       >
         <Flex direction="column" alignItems="center">
           <Image src={Favorites} alt="Favorites" />
-          <Text mt={2}>Favorites</Text>
+          <Text mt={2}>{t?.navbar.favorites}</Text>
         </Flex>
       </Button>
 
@@ -158,8 +157,7 @@ const Navbar = () => {
           <Button mr={4} colorScheme="teal" variant="ghost">
             <Flex direction="column" alignItems="center">
               <Image src={Profile} alt="Profile" />
-              {/* <Text mt={2}>{t.navbar.profile}</Text> */}
-              <Text mt={2}>Profile</Text>
+              <Text mt={2}>{t?.navbar.profile || "Profile"}</Text>
             </Flex>
           </Button>
         </PopoverTrigger>
@@ -211,7 +209,7 @@ const Navbar = () => {
                       handlePopoverClose();
                     }}
                   >
-                    Edit
+                    {t?.navbar.edit || "Edit"}
                   </Button>
                 </Box>
               </Box>
@@ -219,32 +217,7 @@ const Navbar = () => {
               <Box>
                 <ButtonGroup>
                   <Wrap direction="column">
-                    <Center>
-                      <Button bg="transparent" as="div" display="inline-block">
-                        <Grid
-                          templateColumns="1fr 10fr 1fr"
-                          alignItems="center"
-                        >
-                          <Box gridColumn="1">
-                            <Image src={Time} alt="" />
-                          </Box>
-                          <Box gridColumn="2" textAlign="center">
-                            <Text textAlign="left" marginLeft="10px">
-                              Tour Time preferences
-                            </Text>
-                          </Box>
-                          <Box gridColumn="3" textAlign="center">
-                            <Image src={NextProfile} alt="" />
-                          </Box>
-                        </Grid>
-                      </Button>
-                    </Center>
-
-                    
-
-                    <Divider />
-
-                    <WrapItem>
+                                        <WrapItem>
                       <Center>
                         <Button
                           bg="transparent"
@@ -264,7 +237,7 @@ const Navbar = () => {
                             </Box>
                             <Box gridColumn="2" textAlign="center">
                               <Text textAlign="left" marginLeft="10px">
-                                Change your password
+                                {t?.navbar.changePassword || "Change your password"}
                               </Text>
                             </Box>
                             <Box gridColumn="3" textAlign="center">
@@ -295,7 +268,7 @@ const Navbar = () => {
                             </Box>
                             <Box gridColumn="2" textAlign="center">
                               <Text textAlign="left" marginLeft="14px">
-                                Lenguage
+                                {t?.navbar.language || "Language"}
                               </Text>
                             </Box>
                             <Box gridColumn="3" textAlign="center">
@@ -331,7 +304,7 @@ const Navbar = () => {
                             </Box>
                             <Box gridColumn="2" textAlign="center">
                               <Text textAlign="left" marginLeft="10px">
-                                Appearance
+                                {t?.navbar.appearance || "Appearance"}
                               </Text>
                             </Box>
                             <Box gridColumn="3" textAlign="center">
@@ -362,7 +335,7 @@ const Navbar = () => {
                             </Box>
                             <Box gridColumn="2" textAlign="center">
                               <Text textAlign="left" marginLeft="10px">
-                                Support
+                                {t?.navbar.support || "Support"}
                               </Text>
                             </Box>
                             <Box gridColumn="3" textAlign="center">
@@ -393,7 +366,7 @@ const Navbar = () => {
                             </Box>
                             <Box gridColumn="2" textAlign="center">
                               <Text textAlign="left" marginLeft="10px">
-                                Legal
+                                {t?.navbar.legal || "Legal"}
                               </Text>
                             </Box>
                             <Box gridColumn="3" textAlign="center">
@@ -425,7 +398,7 @@ const Navbar = () => {
                             </Box>
                             <Box gridColumn="2" textAlign="center">
                               <Text textAlign="left" marginLeft="10px">
-                                Logout
+                                {t?.navbar.logout || "Logout"}
                               </Text>
                             </Box>
                             <Box gridColumn="3" textAlign="center">
@@ -457,7 +430,7 @@ const Navbar = () => {
                                 textAlign="left"
                                 marginLeft="10px"
                               >
-                                Delete account
+                               {t?.navbar.deleteAccount || "Delete account"}
                               </Text>
                             </Box>
                             <Box gridColumn="3" textAlign="center">

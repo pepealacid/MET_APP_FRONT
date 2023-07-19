@@ -11,16 +11,19 @@ import {
 } from "@chakra-ui/react";
 import userService from "../services/user.service";
 import { useNavigate } from "react-router-dom";
-import GoBackButton from "../assets/images/GoBackButton.png";
 import DefaultUser from "../assets/images/DefaultUser.svg";
-import UploadPicture from "../assets/images/UploadPicture.svg"
+import UploadPicture from "../assets/images/UploadPicture.svg";
 
 const EditProfilePage = () => {
   const [userInfo, setUserInfo] = useState(undefined);
+  const [loadingImage, setLoadingImage] = useState(false);
+
+
   const [data, setData] = useState({
     username: "",
     email: "",
     description: "",
+    image: ""
   });
 
   const userImage = data.image;
@@ -56,14 +59,21 @@ const EditProfilePage = () => {
     });
   };
 
-  const handleGoBack = () => {
-    navigate(-1);
-  };
+  const uploadImage = (e) => {
+    setLoadingImage(true);
 
-  const handleFileChange = async () => {};
+    const uploadData = new FormData();
+    uploadData.append("image", e.target.files[0]);
+
+    uploadService.uploadImage(uploadData).then(({ data }) => {
+      setLoadingImage(false);
+      setPostStatus({ ...postStatus, image: data.cloudinary_url });
+    });
+  };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+
     try {
       await userService.edit(userInfo._id, data);
       navigate("/my-profile");
@@ -74,17 +84,6 @@ const EditProfilePage = () => {
 
   return (
     <>
-      <Button
-        bg="transparent"
-        className="goback-button"
-        onClick={handleGoBack}
-        justifyContent="flex-start"
-        top="20px"
-        left="10px"
-      >
-        <Image src={GoBackButton} alt="Go Back" />
-      </Button>
-
       <Box
         flexBasis="100%"
         display="flex"
@@ -101,9 +100,14 @@ const EditProfilePage = () => {
           alt="user"
         />
 
-        <Box position="absolute" top="210px" left="220px">
-          <label htmlFor="fileInput">
-            <Image src={UploadPicture} size={24} cursor="pointer" color="teal" />
+        <Box position="absolute" top="170px" left="220px">
+          <label htmlFor="file-upload">
+            <Image
+              src={UploadPicture}
+              size={24}
+              cursor="pointer"
+              color="teal"
+            />
           </label>
         </Box>
       </Box>
@@ -144,10 +148,10 @@ const EditProfilePage = () => {
 
         <Input
           type="file"
-          id="fileInput"
+          id="file-upload"
           ref={fileInputRef}
           style={{ display: "none" }}
-          onChange={handleFileChange}
+          onChange={uploadImage}
         />
 
         <Button mt={4} bg="black" color="white" onClick={handleSubmit}>

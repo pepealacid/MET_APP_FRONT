@@ -20,8 +20,8 @@ import SupportPage from "./pages/SupportPage";
 import AppearancePage from "./pages/AppearancePage";
 import LenguagePage from "./pages/LanguagePage";
 import EditProfilePage from "./pages/EditProfilePage";
-import ProfilePage from "./pages/ProfilePage";
 import ChangePasswordPage from "./pages/ChangePasswordPage";
+import BackButton from "./components/BackButton";
 // import Testing from "./pages/Testing";
 
 function App() {
@@ -31,8 +31,13 @@ function App() {
     location.pathname
   );
 
+  const shouldShowBackButton = !["/favorites", "/itinerary/new"].includes(
+    location.pathname
+  );
+
   return (
-    <>
+    <div>
+      {shouldShowBackButton && <BackButton />}
       <Routes>
         <Route path="/" element={<ZeroPage />} />
         <Route path="/login" element={<LoginPage />} />
@@ -42,8 +47,6 @@ function App() {
         <Route path="/appearance" element={<AppearancePage />} />
         <Route path="/lenguage" element={<LenguagePage />} />
         <Route path="/edit-profile" element={<EditProfilePage />} />
-        <Route path="/my-profile" element={<ProfilePage />} />
-        {/* <Route path="/testing" element={<Testing />} /> */}
         <Route path="/change-password" element={<ChangePasswordPage />} />
 
         <Route
@@ -145,7 +148,7 @@ function App() {
         />
       </Routes>
       {shouldShowNavbar && <Navbar />}
-    </>
+    </div>
   );
 }
 

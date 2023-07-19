@@ -1,29 +1,13 @@
-import { Box, Text, Button, Image } from "@chakra-ui/react";
-import { Translation } from "react-i18next";
-import GoBackButton from "../assets/images/GoBackButton.png"
-import { useNavigate } from "react-router-dom";
+import { Box, Text,  } from "@chakra-ui/react";
 
 const Legal = () => {
 
-  const navigate = useNavigate()
 
-  const handleGoBack = () => {
-    navigate(-1)
-  }
+
 
   return (
     <Box padding="20px">
-      <Button
-        bg="transparent"
-        className="goback-button"
-        onClick={handleGoBack}
-        justifyContent="flex-start"
-        top="20px"
-        left="10px"
-        marginBottom="30px"
-      >
-        <Image src={GoBackButton} alt="Go Back" />
-      </Button>
+      
 
       <Text fontWeight="bold" marginBottom="10px">
         Privacy Policy

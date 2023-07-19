@@ -14,25 +14,13 @@ const ArtworkSearchPage = () => {
     setResults(searchResults);
   };
 
-  const navigate = useNavigate();
 
-  const handleGoBack = () => {
-    navigate(-1);
-  };
+
+
 
   return (
     <div>
-      <Button
-        bg="transparent"
-        className="goback-button"
-        onClick={handleGoBack}
-        justifyContent="flex-start"
-        top="20px"
-        left="10px"
-        marginBottom="30px"
-      >
-        <Image src={GoBackButton} alt="Go Back" />
-      </Button>
+     
       <ArtworksSearchBar updateResults={updateResults} />
       <FieldsButtons />
       {results.length > 0 ? (

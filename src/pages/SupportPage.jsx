@@ -1,7 +1,11 @@
 import React from "react";
-import { Box, Text, Heading } from "@chakra-ui/react";
+import { Box, Text, Heading, Button, Image } from "@chakra-ui/react";
+import { useNavigate } from "react-router-dom";
+import GoBackButton from "../assets/images/GoBackButton.png"
 
 const SupportPage = () => {
+
+
   return (
     <Box padding="20px">
       <Heading as="h1" size="xl" mb={4}>

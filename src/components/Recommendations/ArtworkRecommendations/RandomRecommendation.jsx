@@ -3,12 +3,14 @@ import axios from "axios";
 import { Spinner, Table, Tbody, Tr, Td, Text, Box } from "@chakra-ui/react";
 import { Link } from "react-router-dom";
 import ArtworkCard from "../../ArtworkCard/ArtworkCard";
+import { LenguageContext } from "../../../context/lenguage.context";
 
 const RandomArtworks = ({ n }) => {
 
 
   const [randomArtworks, setRandomArtworks] = useState([]);
   const [loading, setLoading] = useState(true);
+  const { t } = useContext(LenguageContext)
 
   useEffect(() => {
     fetchRandomArtworks();
@@ -65,7 +67,7 @@ const RandomArtworks = ({ n }) => {
 
   return (
     <div>
-      <Text className="recomm-header">Random artworks</Text>
+      <Text className="recomm-header">{t?.artworkSearchPage.random || "Random artworks"}</Text>
       {loading ? (
         <Spinner />
       ) : (

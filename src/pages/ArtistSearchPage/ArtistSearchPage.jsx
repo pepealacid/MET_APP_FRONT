@@ -16,11 +16,8 @@ const ArtistSearchPage = () => {
   const [results, setResults] = useState([]);
   const [favoriteArtistIds, setFavoriteArtistIds] = useState([]);
 
-  const navigate = useNavigate();
 
-  const handleGoBack = () => {
-    navigate(-1);
-  };
+
 
   useEffect(() => {
     fetchFavorites();
@@ -87,18 +84,7 @@ const ArtistSearchPage = () => {
 
   return (
     <>
-      <Button
-        bg="transparent"
-        className="goback-button"
-        onClick={handleGoBack}
-        justifyContent="flex-start"
-        top="20px"
-        left="10px"
-        marginBottom="30px"
-      >
-        <Image src={GoBackButton} alt="Go Back" />
-      </Button>
-      <div>
+            <div>
         <ArtistsSearchBar updateResults={updateResults} />
         <FieldsButtons />
         {results.length === 0 ? (

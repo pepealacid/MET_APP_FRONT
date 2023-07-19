@@ -27,7 +27,10 @@
         "readLess": "Read less",
         "getMoreInfo": "Get more info",
         "loadingArtistDetails": "Loading artist details...",
-        "notBioAvailable": "Not bio available"
+        "notBioAvailable": "Not bio available",
+        "american": "American artists",
+        "spanish": "Spanish artists",
+        "women": "Women in art"
     }, 
 
     "artworkSearchPage":{

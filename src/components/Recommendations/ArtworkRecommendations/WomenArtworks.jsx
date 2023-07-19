@@ -1,8 +1,10 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useContext } from "react";
 import axios from "axios";
 import { Spinner, Table, Tbody, Tr, Td, Text, Box } from "@chakra-ui/react";
 import ArtworkCard from "../../ArtworkCard/ArtworkCard";
 import { Link } from "react-router-dom";
+import { LenguageContext } from "../../../context/lenguage.context";
+
 
 const WomenArtworks = () => {
   const womenArtworkIDs = [
@@ -17,6 +19,8 @@ const WomenArtworks = () => {
 
   const [womenArtworks, setWomenArtworks] = useState([]);
   const [loading, setLoading] = useState(true);
+
+  const { t } = useContext(LenguageContext)
 
   useEffect(() => {
     fetchWomenArtworks();
@@ -99,7 +103,7 @@ const WomenArtworks = () => {
 
   return (
     <div>
-      <Text className="recomm-header">Women in art</Text>
+      <Text className="recomm-header">{t?.artworkSearchPage.women}</Text>
       {loading ? (
         <Spinner />
       ) : (
