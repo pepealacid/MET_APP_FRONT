@@ -15,6 +15,8 @@ import "../main.css";
 import authService from "../services/auth.service";
 import { AuthContext } from "../context/auth.context";
 import { useContext, useEffect, useState } from "react";
+import { FavContext } from "../context/fav.context";
+import userService from "../services/user.service";
 
 const LoginPage = () => {
   const [loginData, setLoginData] = useState({
@@ -23,17 +25,20 @@ const LoginPage = () => {
   });
 
   const [showPassword, setShowPassword] = useState(false);
+  const [errorMessage, setErrorMessage] = useState(""); // New state variable
 
   const navigate = useNavigate();
 
   const { authenticate, storeToken } = useContext(AuthContext);
+  const { resetFavorites, updateFavoriteArtworkIds, updateFavoriteArtistIds } =
+    useContext(FavContext);
 
-  useEffect(()=>{
-    const token = localStorage.getItem("authToken")
-    if (token){
-      navigate("/home/artworks")
+  useEffect(() => {
+    const token = localStorage.getItem("authToken");
+    if (token) {
+      navigate("/home/artworks");
     }
-  }, [])
+  }, []);
 
   const handleInputChange = (e) => {
     const { value, name } = e.target;
@@ -43,15 +48,26 @@ const LoginPage = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
+    resetFavorites();
+
     authService
       .login(loginData)
       .then(({ data }) => {
         console.log(data);
         storeToken(data.authToken);
         authenticate();
+        updateFavoriteArtistIds(data.authToken);
+        updateFavoriteArtworkIds(data.authToken);
         navigate("/home/artworks");
       })
-      .catch((err) => console.log(err));
+      .catch((err) => {
+        if (err.response && err.response.status === 401) {
+          setErrorMessage("Incorrect email or password"); // Update error message
+        } else {
+          setErrorMessage("An error occurred. Please try again."); // Generic error message
+        }
+        console.log(err);
+      });
   };
 
   const handleTogglePassword = () => {
@@ -71,7 +87,12 @@ const LoginPage = () => {
         >
           Welcome back!
         </Text>
-        <Text marginTop="20px" fontSize="24px" width="340px" className="login-text">
+        <Text
+          marginTop="20px"
+          fontSize="24px"
+          width="340px"
+          className="login-text"
+        >
           Sign in to start discovering all the art.
         </Text>
       </Box>
@@ -108,13 +129,28 @@ const LoginPage = () => {
               </InputRightElement>
             </InputGroup>
           </FormControl>
+
+          {errorMessage && (
+            <Box color="red" marginTop="10px">
+              {errorMessage}
+            </Box>
+          )}
+
           <Box position="fixed" bottom="0" left="0" right="0" p="4" bg="white">
             <Flex justifyContent="center">
               <Box>
                 <Link to="/signup">
-                  <Text align="center" marginBottom="28px">Don't have an account? Sign up</Text>
+                  <Text align="center" marginBottom="28px">
+                    Don't have an account? Sign up
+                  </Text>
                 </Link>
-                <Button color="white" backgroundColor="black" width="380px"  variant="solid" type="submit">
+                <Button
+                  color="white"
+                  backgroundColor="black"
+                  width="380px"
+                  variant="solid"
+                  type="submit"
+                >
                   Log in
                 </Button>
               </Box>

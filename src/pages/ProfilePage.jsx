@@ -7,19 +7,19 @@ import { TOKEN_NAME } from "../context/auth.context";
 const ProfilePage = () => {
   const [user, setUser] = useState({
     image: DefaultUser,
-    name: "",
+    username: "",
     email: "",
     description: "",
   });
 
   const fetchUser = async () => {
     try {
-      const token = localStorage.getItem(TOKEN_NAME)
+      const token = localStorage.getItem(TOKEN_NAME);
       const response = await userService.getUser(token);
       const userData = response.data;
       setUser({
         image: userData.image || DefaultUser,
-        name: userData.name,
+        username: userData.username,
         email: userData.email,
         description: userData.description,
       });
@@ -48,7 +48,9 @@ const ProfilePage = () => {
           {user.username}
         </Text>
         <Text>Email: {user.email}</Text>
-        <Text>Description: {user.description}</Text>
+        {user.description && user.description !== "" && (
+          <Text>Description: {user.description}</Text>
+        )}
       </Box>
     </Box>
   );

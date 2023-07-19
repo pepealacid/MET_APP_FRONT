@@ -8,10 +8,14 @@ import {
   Text,
   Alert,
   AlertIcon,
+  InputGroup,
+  InputRightElement,
+  useColorModeValue,
 } from "@chakra-ui/react";
 import { TOKEN_NAME } from "../context/auth.context";
 import authService from "../services/auth.service";
 import userService from "../services/user.service";
+import { FiEye, FiEyeOff } from "react-icons/fi";
 
 const ChangePasswordPage = () => {
   const [currentPassword, setCurrentPassword] = useState("");
@@ -20,6 +24,9 @@ const ChangePasswordPage = () => {
   const [error, setError] = useState("");
   const [success, setSuccess] = useState(false);
   const [userId, setUserId] = useState("");
+  const [showPassword, setShowPassword] = useState(false);
+  const [showNewPassword, setShowNewPassword] = useState(false);
+  const [showNewPasswordCheck, setShowNewPasswordCheck] = useState(false);
 
   useEffect(() => {
     fetchUserInfo();
@@ -69,6 +76,21 @@ const ChangePasswordPage = () => {
     }
   };
 
+  const handleToggleNewPassword = () => {
+    setShowNewPassword(!showNewPassword);
+  };
+
+  const handleTogglePassword = () => {
+    setShowPassword(!showPassword);
+  };
+
+  const handleToggleNewPasswordCheck = () => {
+    setShowNewPasswordCheck(!showNewPasswordCheck);
+  };
+
+  const bg = useColorModeValue("black", "white");
+  const tp = useColorModeValue("white", "black");
+
   return (
     <Box maxW="sm" m="auto">
       <Text fontSize="xl" mb={4}>
@@ -89,32 +111,68 @@ const ChangePasswordPage = () => {
       <form onSubmit={handleSubmit}>
         <FormControl id="currentPassword" mb={4}>
           <FormLabel>Current Password</FormLabel>
-          <Input
-            type="password"
-            name="currentPassword"
-            value={currentPassword}
-            onChange={handleChange}
-          />
+          <InputGroup>
+            <Input
+              type={showPassword ? "text" : "password"}
+              name="currentPassword"
+              value={currentPassword}
+              onChange={handleChange}
+            />
+            <InputRightElement width="4.5rem">
+              <Button
+                size="m"
+                onClick={handleTogglePassword}
+                backgroundColor="transparent"
+                left="10px"
+              >
+                {showPassword ? <FiEyeOff /> : <FiEye />}
+              </Button>
+            </InputRightElement>
+          </InputGroup>
         </FormControl>
         <FormControl id="newPassword" mb={4}>
           <FormLabel>New Password</FormLabel>
-          <Input
-            type="password"
-            name="newPassword"
-            value={newPassword}
-            onChange={handleChange}
-          />
+          <InputGroup>
+            <Input
+              type={showNewPassword ? "text" : "password"}
+              name="newPassword"
+              value={newPassword}
+              onChange={handleChange}
+            />
+            <InputRightElement width="4.5rem">
+              <Button
+                size="m"
+                onClick={handleToggleNewPassword}
+                backgroundColor="transparent"
+                left="10px"
+              >
+                {showNewPassword ? <FiEyeOff /> : <FiEye />}
+              </Button>
+            </InputRightElement>
+          </InputGroup>
         </FormControl>
         <FormControl id="confirmPassword" mb={4}>
           <FormLabel>Confirm Password</FormLabel>
-          <Input
-            type="password"
-            name="confirmPassword"
-            value={confirmPassword}
-            onChange={handleChange}
-          />
+          <InputGroup>
+            <Input
+              type={showNewPasswordCheck ? "text" : "password"}
+              name="confirmPassword"
+              value={confirmPassword}
+              onChange={handleChange}
+            />
+            <InputRightElement width="4.5rem">
+              <Button
+                size="m"
+                onClick={handleToggleNewPasswordCheck}
+                backgroundColor="transparent"
+                left="10px"
+              >
+                {showNewPasswordCheck ? <FiEyeOff /> : <FiEye />}
+              </Button>
+            </InputRightElement>
+          </InputGroup>
         </FormControl>
-        <Button type="submit" colorScheme="teal">
+        <Button type="submit" bg={bg} color={tp}>
           Change Password
         </Button>
       </form>

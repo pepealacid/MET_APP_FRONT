@@ -1,19 +1,45 @@
-import { FavContext } from "../../context/fav.context";
-import { useContext, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import axios from "axios";
 import { Spinner } from "@chakra-ui/react";
 import { Link } from "react-router-dom";
 import ArtistCardLittle from "../ArtistCard/ArtistCardLittle";
 import "./ListingFavorites.css";
+import { TOKEN_NAME } from "../../context/auth.context";
+import userService from "../../services/user.service";
+import favoriteService from "../../services/favorite.service";
 
 const ArtistsFavorites = () => {
-  const { favoriteArtistIds } = useContext(FavContext);
+  const [favoriteArtistIds, setFavoriteArtistIds] = useState([]);
   const [favorites, setFavorites] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
+    getFavoriteArtists();
+  }, []);
+
+  useEffect(() => {
     fetchFavorites();
   }, [favoriteArtistIds]);
+
+  const getFavoriteArtists = async () => {
+    try {
+      const token = localStorage.getItem(TOKEN_NAME);
+      setIsLoading(true);
+
+      const response = await userService.getUser(token);
+      const userId = response.data._id;
+
+      const favoriteArtistsResponse = await favoriteService.getFavoriteArtists(
+        userId
+      );
+      const favoriteArtistIds = favoriteArtistsResponse.data;
+      setFavoriteArtistIds(favoriteArtistIds);
+    } catch (error) {
+      console.log(error);
+    } finally {
+      setIsLoading(false);
+    }
+  };
 
   const fetchFavorites = async () => {
     try {
@@ -33,13 +59,16 @@ const ArtistsFavorites = () => {
           const image_version = artist.image_versions[0];
           const finalLink = firstLink.replace("{image_version}", image_version);
           finalArtists.push({ ...artist, image: finalLink });
-        } else{
-          finalArtists.push({...artist, image: "https://drawinghowtos.com/wp-content/uploads/2022/07/painter-colored.jpg"})
+        } else {
+          finalArtists.push({
+            ...artist,
+            image:
+              "https://drawinghowtos.com/wp-content/uploads/2022/07/painter-colored.jpg",
+          });
         }
-        setFavorites(finalArtists);
-
-        setIsLoading(false);
       }
+      setFavorites(finalArtists);
+      setIsLoading(false);
     } catch (error) {
       console.log(error);
     }

@@ -118,7 +118,7 @@ const Navbar = () => {
       bg={bg}
     >
       <Button
-        onClick={() => navigate("/explore")}
+        onClick={() => navigate("/home/artworks")}
         mr={4}
         colorScheme="teal"
         variant="ghost"
@@ -126,17 +126,6 @@ const Navbar = () => {
         <Flex direction="column" alignItems="center">
           <Image src={Explore} alt="Explore" />
           <Text mt={2}>Explore</Text>
-        </Flex>
-      </Button>
-      <Button
-        onClick={() => navigate("/scan")}
-        mr={4}
-        colorScheme="teal"
-        variant="ghost"
-      >
-        <Flex direction="column" alignItems="center">
-          <Image src={Scan} alt="Scan" />
-          <Text mt={2}>Scan</Text>
         </Flex>
       </Button>
       <Button
@@ -169,7 +158,7 @@ const Navbar = () => {
           alignItems="center"
           width="100vw"
           maxWidth="100%"
-          padding={4}
+          padding={0}
           bg="white"
           border="none"
         >

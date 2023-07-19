@@ -9,38 +9,15 @@ const ZeroZero = ({ setCounter }) => {
   const [isFirstTime, setIsFirstTime] = useState("false");
 
   useEffect(() => {
-    const fetchData = async () => {
-      const firstTime = await getFirstTime();
-      setIsFirstTime(firstTime);
-      console.log(firstTime);
-    };
-
-    fetchData();
-  }, []);
-
-  useEffect(() => {
     const timer = setTimeout(() => {
-      if (isFirstTime) {
-        setCounter(1);
-      } else {
-        setCounter(4);
-      }
+      setCounter(1);
     }, 3000);
 
-    return () => clearTimeout(timer); // Clear the timer on component unmount
-  }, [isFirstTime]);
+    return () => {
+      clearTimeout(timer); // Clear the timeout when the component unmounts or when the effect re-runs
+    };
+  }, []);
 
-  const getFirstTime = async () => {
-    try {
-      const token = localStorage.getItem(TOKEN_NAME);
-      const user = await userService.getUser(token);
-      const userId = user.data._id;
-      const firstTime = await userService.getFirstTime(userId);
-      return firstTime;
-    } catch (error) {
-      console.log(error);
-    }
-  };
 
   return (
     <Box position="relative" height="100vh">
