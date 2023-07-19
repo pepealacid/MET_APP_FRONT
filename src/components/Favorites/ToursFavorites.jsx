@@ -23,6 +23,7 @@ const ToursFavorites = () => {
       if (userId) {
         const res = await itineraryService.getUserItineraries(userId)
         setSaveTour(res.data)
+        console.log(res.data)
       }
     } catch (error) {
       console.log(error)
@@ -41,7 +42,7 @@ const ToursFavorites = () => {
           ?
           <Box>
             {
-              savedTour.map((tour)=> <FavCard key={tour._id}></FavCard>)
+              savedTour.map((tour)=> <FavCard key={tour._id} tour={tour}/>) 
             }
           </Box>
           :

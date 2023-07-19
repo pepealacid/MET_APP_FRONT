@@ -13,6 +13,7 @@ import Favorites from "./pages/Favorites";
 import ToursFavorites from "./components/Favorites/ToursFavorites";
 import ArtistsFavorites from "./components/Favorites/ArtistsFavorites";
 import ArtworksFavorites from "./components/Favorites/ArtworksFavorites";
+import ItineraryPage from "./pages/Itinerary/ItineraryPage";
 
 
 function App() {
@@ -49,6 +50,14 @@ function App() {
         element={
           <PrivateRoute>
             <NewItineraryPage />
+          </PrivateRoute>
+        }
+      />
+      <Route
+        path="/itinerary/:id"
+        element={
+          <PrivateRoute>
+            <ItineraryPage />
           </PrivateRoute>
         }
       />

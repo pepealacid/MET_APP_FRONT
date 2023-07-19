@@ -27,6 +27,8 @@ function SuggestedTime({ galleries, pieces, handleDataChange, artData, time, set
         handleDataChange("artworkData", artData)
         handleDataChange("galleriesId", galleries)
         handleDataChange("artworkId", pieces)
+        handleDataChange("name", "Personalized tour")
+        handleDataChange("picture", artData[0]?.primaryImage)
     } 
 
     return (<>
