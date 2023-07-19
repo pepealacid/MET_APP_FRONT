@@ -10,8 +10,18 @@ class ItineraryService {
     addItinerary(userId, data){
         return this.api.put(`/user/itineraries/${userId}`, data)
     }
+    removeItinerary(userId, data) {
+        return this.api.put(`/user/itineraries/remove/${userId}`, data)
+    }
+    getUserItineraries(userId){
+        return this.api.get(`/user/itineraries/${userId}`)
+    }
+    getItineraryById(id){
+        return this.api.get(`/itinerary/${id}`)
+    }
 }
 
 const itineraryService = new ItineraryService();
 
 export default itineraryService;
+
