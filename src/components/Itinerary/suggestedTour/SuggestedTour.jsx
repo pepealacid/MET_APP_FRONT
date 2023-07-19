@@ -5,6 +5,7 @@ import PieceCard from "./PieceCard"
 import SuggestedTime from "./SuggestedTime"
 import itineraryService from "../../../services/itinerary.service"
 import { AuthContext } from "../../../context/auth.context"
+import { useNavigate } from "react-router-dom"
 
 
 
@@ -15,6 +16,7 @@ function SuggestedTour({ itineraryData, finalData, handleDataChange }) {
     const [time, setTime] = useState(0);
     const allStates = { pieces, galleries, artData, time, setTime}
     const { user } = useContext(AuthContext);
+    const navigate = useNavigate()
 
 
     useEffect(() => {
@@ -27,6 +29,8 @@ function SuggestedTour({ itineraryData, finalData, handleDataChange }) {
             const newItinerary = await itineraryService.create(finalData);
             const itineraryId = newItinerary.data._id
             await saveInUsersItineraries(itineraryId)
+            navigate(`/itinerary/${itineraryId}`);
+
         } catch (error) {
             console.log(error);
         }
@@ -46,8 +50,6 @@ function SuggestedTour({ itineraryData, finalData, handleDataChange }) {
     const getUserId = ()=>{
         return user.data._id
     }
-
-   
 
     const selectArtpieces = async () => {
         const artpiecesNumber = decideArtpiecesAmount(itineraryData.estimatedTime);

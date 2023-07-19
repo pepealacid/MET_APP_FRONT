@@ -1,12 +1,12 @@
 import { Card, Image, Stack, CardBody, Heading, Text, CardFooter, Button } from "@chakra-ui/react"
 
 
-function PieceCard({art, deleteOne}) {
+function PieceCard({ art, deleteOne, cannotDelete }) {
     // console.log("This is the art", art)
 
-    
+
     return (<>
-        
+
         <Card
             direction={{ base: 'column', sm: 'row' }}
             overflow='hidden'
@@ -22,7 +22,7 @@ function PieceCard({art, deleteOne}) {
             <Stack>
                 <CardBody>
                     <Heading size='sm'>{art.title}</Heading>
-                    
+
 
                     <Text py='2'>
                         {art.artistDisplayName}
@@ -31,11 +31,18 @@ function PieceCard({art, deleteOne}) {
                     <Text>
                         {`${art.objectDate} | Room ${art.GalleryNumber}`}
                     </Text>
-                    <Button onClick={()=>{
-                        deleteOne(art.objectID)
-                    }}>
-                        X
-                    </Button>
+
+                    {
+                        cannotDelete ?
+                            null :
+                            <Button onClick={() => {
+                                deleteOne(art.objectID)
+                            }}>
+                                X
+                            </Button>
+
+                    }
+
                 </CardBody>
 
             </Stack>
