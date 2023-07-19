@@ -48,6 +48,7 @@ const ToursFavorites = () => {
           :
           <NoElementsFound> tours </NoElementsFound>
       }
+
     </div>
   );
 };

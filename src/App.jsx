@@ -2,14 +2,14 @@ import { Route, Routes } from "react-router-dom";
 import LoginPage from "./pages/LoginPage";
 import SignupPage from "./pages/SignupPage";
 import PrivateRoute from "./components/PrivateRoute";
+import ArtistDetailsPage from "./pages/ArtistDetailsPage/ArtistDetailsPage";
 import MuseumPage from "./pages/MuseumPage";
-import ArtistDetailsPage from "./pages/ArtistDetailsPage";
 import NewItineraryPage from "./pages/Itinerary/NewItineraryPage";
 import ArtworkDetailsPage from "./pages/ArtworkDetailsPage/ArtworkDetailsPage";
-import ArtworkSearchPage from "./pages/ArtworkSearchPage/ArtworkSearchPage"
+import ArtworkSearchPage from "./pages/ArtworkSearchPage/ArtworkSearchPage";
 import ArtistSearchPage from "./pages/ArtistSearchPage/ArtistSearchPage";
 import Tinder from "./pages/Tinder";
-import Favorites from "./pages/Favorites";
+import Favorites from "./pages/FavoritesPage/Favorites";
 import ToursFavorites from "./components/Favorites/ToursFavorites";
 import ArtistsFavorites from "./components/Favorites/ArtistsFavorites";
 import ArtworksFavorites from "./components/Favorites/ArtworksFavorites";
@@ -17,17 +17,22 @@ import ItineraryPage from "./pages/Itinerary/ItineraryPage";
 import GuidedTourPage from "./pages/Itinerary/GuidedTourPage";
 import EndGuidedTourPage from "./pages/Itinerary/EndGuidedTourPage";
 
-
 function App() {
   return (
     <Routes>
       <Route path="/login" element={<LoginPage />} />
       <Route path="/signup" element={<SignupPage />} />
+      <Route path="/favorites/" element={<Favorites />}>
+        <Route index element={<ToursFavorites />} />
+        <Route path="tours" element={<ToursFavorites />} />
+        <Route path="artists" element={<ArtistsFavorites />} />
+        <Route path="artworks" element={<ArtworksFavorites />} />
+      </Route>
       <Route
         path="/home/artists"
         element={
           <PrivateRoute>
-             <ArtistSearchPage />
+            <ArtistSearchPage />
           </PrivateRoute>
         }
       />
@@ -35,7 +40,7 @@ function App() {
         path="/home/artworks"
         element={
           <PrivateRoute>
-             <ArtworkSearchPage />
+            <ArtworkSearchPage />
           </PrivateRoute>
         }
       />
@@ -84,11 +89,6 @@ function App() {
       <Route path="/artist/:title" element={<ArtistDetailsPage />} />
       <Route path="/artwork/:objectId" element={<ArtworkDetailsPage />} />
       <Route path="/tinder" element={<Tinder />} />
-      <Route path="/favorites" element={<Favorites />} />
-      <Route path="/favorites/tours" element={<ToursFavorites />} />
-      <Route path="/favorites/artists" element={<ArtistsFavorites />} />
-      <Route path="/favorites/artworks" element={<ArtworksFavorites />} />
-
     </Routes>
   );
 }

@@ -1,0 +1,95 @@
+.artist-details-container {
+  position: relative;
+  margin: 0;
+}
+
+.artist-details-container .top-main {
+  position: relative;
+}
+
+.artist-details-container .main-image {
+  height: 200px;
+  width: 100vh;
+  object-fit: cover;
+}
+
+.artist-details-container .fav-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  width: 40px;
+  height: 40px;
+}
+
+.artist-details-container .goback-button {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.artist-details-container .top-info {
+  position: absolute;
+  top: 26%;
+  left: 10px;
+  color: white;
+  font-weight: bold;
+}
+
+.artist-details-container .name {
+  font-size: 20px;
+}
+
+.artist-details-container .top-text {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-weight: lighter;
+}
+
+.artist-details-container .white-clock {
+  width: 20px;
+  height: 20px;
+  margin-right: 4px;
+}
+
+.artist-details-container .bottom-info {
+  padding: 10px;
+}
+
+
+.artist-details-container .about-div {
+  margin-top: 20px;
+}
+
+.artist-details-container .about-header {
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.artist-details-container .info-card {
+  background-color: #f6f6f6;
+  border-radius: 10px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: flex-start;
+  margin-top: 20px;
+}
+
+
+.artist-details-container .read-more .show-more-text {
+    color: black;
+    font-weight: bold;
+    border-bottom: 1px solid black;
+    display: inline-block;
+}
+
+.artist-details-container .read-more{
+    display: flex;
+    gap: 6px
+}
