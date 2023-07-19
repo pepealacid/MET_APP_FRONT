@@ -4,14 +4,18 @@ import { useParams } from "react-router-dom"
 import itineraryService from "../../services/itinerary.service"
 import PieceCard from "../../components/Itinerary/suggestedTour/PieceCard"
 import { convertToHoursAndMinutes } from "../../utils/functions"
-import { Box, Image } from "@chakra-ui/react"
+import { Box, Image, Button } from "@chakra-ui/react"
 import { AuthContext } from "../../context/auth.context"
+import { useNavigate } from "react-router-dom"
+
 
 
 
 function ItineraryPage() {
     const metPicture = "https://upload.wikimedia.org/wikipedia/commons/b/ba/Details_of_the_Met.JPG"
     const { user } = useContext(AuthContext);
+    const navigate = useNavigate()
+
 
     const [tourData, setTourData] = useState([])
     const [time, setTime] = useState([])
@@ -39,7 +43,7 @@ function ItineraryPage() {
     const removeSaved = async () => {
         const userId = user.data?._id
         try {
-            await itineraryService.removeItinerary(userId, {itineraryId : id})
+            await itineraryService.removeItinerary(userId, { itineraryId: id })
             decideSavedStatus()
         } catch (error) {
             console.log(error)
@@ -63,10 +67,15 @@ function ItineraryPage() {
         return savedTours
     }
 
-    const handleSaving = ()=>{
+    const handleSaving = () => {
         favorite ?
             removeSaved() :
             addToSaved()
+    }
+
+    const startTour = ()=>{
+        navigate(`/tour/${id}`)
+
     }
 
 
@@ -82,7 +91,7 @@ function ItineraryPage() {
             {
                 favorite ? "it's saved" : "it's not save "
             }
-            
+
         </Box>
 
         <Box>
@@ -104,6 +113,9 @@ function ItineraryPage() {
                     />)
             }
         </Box>
+        <Button onClick={startTour}>
+            Start Tour
+        </Button>
 
     </>)
 }
