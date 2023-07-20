@@ -1,91 +1,28 @@
-import { useContext, useState, useRef, useEffect } from "react";
-import {
-  Flex,
-  Button,
-  Image,
-  Text,
-  Box,
-  ButtonGroup,
-  WrapItem,
-  Wrap,
-  Center,
-  Grid,
-  Divider,
-  AlertDialog,
-  AlertDialogOverlay,
-  AlertDialogContent,
-  AlertDialogHeader,
-  AlertDialogBody,
-  AlertDialogFooter,
-  useColorModeValue,
-} from "@chakra-ui/react";
+import { useContext, useState, useEffect } from "react";
+import { Flex, Button, Image, Text, useColorModeValue } from "@chakra-ui/react";
 import { TOKEN_NAME } from "../context/auth.context";
 import Favorites from "../assets/images/Favorites.png";
 import Explore from "../assets/images/Explore.png";
 import Profile from "../assets/images/Profile.png";
 import { useNavigate, useLocation } from "react-router-dom";
-import Time from "../assets/images/Time.png";
-import ScanStory from "../assets/images/ScanStory.png";
-import Legal from "../assets/images/Legal.png";
-import Logout from "../assets/images/Logout.png";
-import Key from "../assets/images/Key.png";
-import NextProfile from "../assets/images/NextProfile.png";
-import Translate from "../assets/images/Translate.png";
-import Appearance from "../assets/images/Appearance.png";
-import Support from "../assets/images/Support.png";
-import Delete from "../assets/images/Delete.png";
 import userService from "../services/user.service";
-import DefaultUser from "../assets/images/DefaultUser.svg";
-import { LenguageContext } from "../context/lenguage.context";
-
-import {
-  Popover,
-  PopoverTrigger,
-  PopoverContent,
-  PopoverBody,
-  Button as PopoverButton,
-} from "@chakra-ui/react";
-import { AuthContext } from "../context/auth.context";
+import { LanguageContext } from "../context/language.context";
 
 const Navbar = () => {
   const navigate = useNavigate();
-  const [isWindowOpen, setIsWindowOpen] = useState(false);
-  const [isPopoverOpen, setIsPopoverOpen] = useState(false);
   const [userImage, setUserImage] = useState("");
   const [userName, setUserName] = useState("");
-  const { t } = useContext(LenguageContext);
-  
-  const onWindowClose = () => setIsWindowOpen(false);
-  const cancelRef = useRef();
+  const { t } = useContext(LanguageContext);
+
   const location = useLocation();
-  
 
   const bg = useColorModeValue("white", "gray.800");
 
-  const handlePopoverOpen = () => {
-    setIsPopoverOpen(true);
-  };
-
-  const handlePopoverClose = () => {
-    setIsPopoverOpen(false);
-  };
-
-  const handleDelete = async () => {
-    try {
-      const token = localStorage.getItem(TOKEN_NAME);
-      const user = await userService.getUser(token);
-      const userId = user.data._id;
-
-      await userService.deleteUser(userId, {
-        headers: {
-          Authorization: `Bearer ${token}`,
-        },
-      });
-
-      logout();
-      navigate("/login");
-    } catch (error) {
-      console.log(error);
+  const handleProfileClick = () => {
+    if (location.pathname === "/profile") {
+      navigate(-1);
+    } else {
+      navigate("/profile");
     }
   };
 
@@ -100,387 +37,61 @@ const Navbar = () => {
       console.log(error);
     }
   };
-  const { logout } = useContext(AuthContext);
 
   useEffect(() => {
     handleUserInfo();
   }, [location]);
 
-  // useEffect(()=>{console.log(t?.navbar.profile)}, [t])
-
-
-  //TEXT
-
-  return t?.navbar && (
-    <Flex
-      position="fixed"
-      bottom="0"
-      left="0"
-      right="0"
-      justify="center"
-      p={4}
-      height="100px"
-      zIndex={9999}
-      alignItems="center"
-      bg={bg}
-    >
-      <Button
-        onClick={() => navigate("/home/artworks")}
-        mr={4}
-        colorScheme="teal"
-        variant="ghost"
+  return (
+    t?.navbar && (
+      <Flex
+        position="fixed"
+        bottom="0"
+        left="0"
+        right="0"
+        justify="center"
+        p={4}
+        height="100px"
+        zIndex={9999}
+        alignItems="center"
+        bg={bg}
       >
-        <Flex direction="column" alignItems="center">
-          <Image src={Explore} alt="Explore" />
-          <Text mt={2}>{t?.navbar.explore || "Explore"}</Text>
-        </Flex>
-      </Button>
-      <Button
-        onClick={() => navigate("/favorites")}
-        mr={4}
-        colorScheme="teal"
-        variant="ghost"
-      >
-        <Flex direction="column" alignItems="center">
-          <Image src={Favorites} alt="Favorites" />
-          <Text mt={2}>{t?.navbar.favorites}</Text>
-        </Flex>
-      </Button>
-
-      <Popover
-        isOpen={isPopoverOpen}
-        onOpen={handlePopoverOpen}
-        onClose={handlePopoverClose}
-        placement="bottom-end"
-      >
-        <PopoverTrigger>
-          <Button mr={4} colorScheme="teal" variant="ghost">
-            <Flex direction="column" alignItems="center">
-              <Image src={Profile} alt="Profile" />
-              <Text mt={2}>{t?.navbar.profile || "Profile"}</Text>
-            </Flex>
-          </Button>
-        </PopoverTrigger>
-        <PopoverContent
-          display="flex"
-          flexDirection="column"
-          alignItems="center"
-          width="100vw"
-          maxWidth="100%"
-          padding={0}
-          bg="white"
-          border="none"
+        <Button
+          onClick={() => navigate("/home/artworks")}
+          mr={4}
+          colorScheme="teal"
+          variant="ghost"
         >
-          <PopoverBody bg={bg}>
-            <Box>
-              <Box display="flex" justifyContent="center" flexWrap="wrap">
-                <Box
-                  flexBasis="100%"
-                  display="flex"
-                  justifyContent="center"
-                  mb={2}
-                  paddingTop="100px"
-                >
-                  <Image
-                    objectFit="cover"
-                    borderRadius="100%"
-                    height="100px"
-                    width="100px"
-                    src={userImage || DefaultUser}
-                    alt="user"
-                  />
-                </Box>
-                <Box
-                  flexBasis="100%"
-                  display="flex"
-                  justifyContent="center"
-                  mb={2}
-                >
-                  <Text>{userName}</Text>
-                </Box>
-                <Box flexBasis="100%" display="flex" justifyContent="center">
-                  <Button
-                    marginBottom="40px"
-                    w="120px"
-                    color="white"
-                    bg="black"
-                    onClick={() => {
-                      navigate("/edit-profile");
-                      handlePopoverClose();
-                    }}
-                  >
-                    {t?.navbar.edit || "Edit"}
-                  </Button>
-                </Box>
-              </Box>
+          <Flex direction="column" alignItems="center">
+            <Image src={Explore} alt="Explore" />
+            <Text mt={2}>{t?.navbar.explore || "Explore"}</Text>
+          </Flex>
+        </Button>
+        <Button
+          onClick={() => navigate("/favorites")}
+          mr={4}
+          colorScheme="teal"
+          variant="ghost"
+        >
+          <Flex direction="column" alignItems="center">
+            <Image src={Favorites} alt="Favorites" />
+            <Text mt={2}>{t?.navbar.favorites}</Text>
+          </Flex>
+        </Button>
 
-              <Box>
-                <ButtonGroup>
-                  <Wrap direction="column">
-                                        <WrapItem>
-                      <Center>
-                        <Button
-                          bg="transparent"
-                          as="div"
-                          display="inline-block"
-                          onClick={() => {
-                            navigate("/change-password");
-                            handlePopoverClose();
-                          }}
-                        >
-                          <Grid
-                            templateColumns="1fr 10fr 1fr"
-                            alignItems="center"
-                          >
-                            <Box gridColumn="1">
-                              <Image src={Key} alt="" />
-                            </Box>
-                            <Box gridColumn="2" textAlign="center">
-                              <Text textAlign="left" marginLeft="10px">
-                                {t?.navbar.changePassword || "Change your password"}
-                              </Text>
-                            </Box>
-                            <Box gridColumn="3" textAlign="center">
-                              <Image src={NextProfile} alt="" />
-                            </Box>
-                          </Grid>
-                        </Button>
-                      </Center>
-                    </WrapItem>
-
-                    <WrapItem>
-                      <Center>
-                        <Button
-                          bg="transparent"
-                          as="div"
-                          display="inline-block"
-                          onClick={() => {
-                            navigate("/lenguage");
-                            handlePopoverClose();
-                          }}
-                        >
-                          <Grid
-                            templateColumns="1fr 10fr 1fr"
-                            alignItems="center"
-                          >
-                            <Box gridColumn="1">
-                              <Image src={Translate} alt="" />
-                            </Box>
-                            <Box gridColumn="2" textAlign="center">
-                              <Text textAlign="left" marginLeft="14px">
-                                {t?.navbar.language || "Language"}
-                              </Text>
-                            </Box>
-                            <Box gridColumn="3" textAlign="center">
-                              <Image
-                                marginLeft="9.5px"
-                                src={NextProfile}
-                                alt=""
-                                paddingLeft="0.4px"
-                              />
-                            </Box>
-                          </Grid>
-                        </Button>
-                      </Center>
-                    </WrapItem>
-
-                    <WrapItem>
-                      <Center>
-                        <Button
-                          bg="transparent"
-                          as="div"
-                          display="inline-block"
-                          onClick={() => {
-                            navigate("/appearance");
-                            handlePopoverClose();
-                          }}
-                        >
-                          <Grid
-                            templateColumns="1fr 10fr 1fr"
-                            alignItems="center"
-                          >
-                            <Box gridColumn="1">
-                              <Image src={Appearance} alt="" />
-                            </Box>
-                            <Box gridColumn="2" textAlign="center">
-                              <Text textAlign="left" marginLeft="10px">
-                                {t?.navbar.appearance || "Appearance"}
-                              </Text>
-                            </Box>
-                            <Box gridColumn="3" textAlign="center">
-                              <Image src={NextProfile} alt="" />
-                            </Box>
-                          </Grid>
-                        </Button>
-                      </Center>
-                    </WrapItem>
-
-                    <WrapItem>
-                      <Center>
-                        <Button
-                          bg="transparent"
-                          as="div"
-                          display="inline-block"
-                          onClick={() => {
-                            navigate("/support");
-                            handlePopoverClose();
-                          }}
-                        >
-                          <Grid
-                            templateColumns="1fr 10fr 1fr"
-                            alignItems="center"
-                          >
-                            <Box gridColumn="1">
-                              <Image src={Support} alt="" />
-                            </Box>
-                            <Box gridColumn="2" textAlign="center">
-                              <Text textAlign="left" marginLeft="10px">
-                                {t?.navbar.support || "Support"}
-                              </Text>
-                            </Box>
-                            <Box gridColumn="3" textAlign="center">
-                              <Image src={NextProfile} alt="" />
-                            </Box>
-                          </Grid>
-                        </Button>
-                      </Center>
-                    </WrapItem>
-
-                    <WrapItem>
-                      <Center>
-                        <Button
-                          bg="transparent"
-                          as="div"
-                          display="inline-block"
-                          onClick={() => {
-                            navigate("/legal");
-                            handlePopoverClose();
-                          }}
-                        >
-                          <Grid
-                            templateColumns="1fr 10fr 1fr"
-                            alignItems="center"
-                          >
-                            <Box gridColumn="1">
-                              <Image src={Legal} alt="" />
-                            </Box>
-                            <Box gridColumn="2" textAlign="center">
-                              <Text textAlign="left" marginLeft="10px">
-                                {t?.navbar.legal || "Legal"}
-                              </Text>
-                            </Box>
-                            <Box gridColumn="3" textAlign="center">
-                              <Image src={NextProfile} alt="" />
-                            </Box>
-                          </Grid>
-                        </Button>
-                      </Center>
-                    </WrapItem>
-
-                    <Divider />
-
-                    <WrapItem>
-                      <Center>
-                        <Button
-                          onClick={() => {
-                            logout();
-                          }}
-                          bg="transparent"
-                          as="div"
-                          display="inline-block"
-                        >
-                          <Grid
-                            templateColumns="1fr 10fr 1fr"
-                            alignItems="center"
-                          >
-                            <Box gridColumn="1">
-                              <Image src={Logout} alt="" />
-                            </Box>
-                            <Box gridColumn="2" textAlign="center">
-                              <Text textAlign="left" marginLeft="10px">
-                                {t?.navbar.logout || "Logout"}
-                              </Text>
-                            </Box>
-                            <Box gridColumn="3" textAlign="center">
-                              <Image src={NextProfile} alt="" />
-                            </Box>
-                          </Grid>
-                        </Button>
-                      </Center>
-                    </WrapItem>
-
-                    <WrapItem marginBottom="60px">
-                      <Center>
-                        <Button
-                          bg="transparent"
-                          as="div"
-                          display="inline-block"
-                          onClick={() => setIsWindowOpen(true)}
-                        >
-                          <Grid
-                            templateColumns="1fr 10fr 1fr"
-                            alignItems="center"
-                          >
-                            <Box gridColumn="1">
-                              <Image src={Delete} alt="" />
-                            </Box>
-                            <Box gridColumn="2" textAlign="center">
-                              <Text
-                                color="red"
-                                textAlign="left"
-                                marginLeft="10px"
-                              >
-                               {t?.navbar.deleteAccount || "Delete account"}
-                              </Text>
-                            </Box>
-                            <Box gridColumn="3" textAlign="center">
-                              <Image src={NextProfile} alt="" />
-                            </Box>
-                          </Grid>
-                        </Button>
-                      </Center>
-                    </WrapItem>
-
-                    {/* Delete confirmation dialog */}
-                    <AlertDialog
-                      isOpen={isWindowOpen}
-                      leastDestructiveRef={cancelRef}
-                      onClose={onWindowClose}
-                    >
-                      <AlertDialogOverlay>
-                        <AlertDialogContent>
-                          <AlertDialogHeader fontSize="lg" fontWeight="bold">
-                            Delete User
-                          </AlertDialogHeader>
-
-                          <AlertDialogBody>
-                            Are you sure you want to delete your account? This
-                            action cannot be undone.
-                          </AlertDialogBody>
-
-                          <AlertDialogFooter>
-                            <Button ref={cancelRef} onClick={onWindowClose}>
-                              Cancel
-                            </Button>
-                            <Button
-                              colorScheme="red"
-                              onClick={handleDelete}
-                              ml={3}
-                            >
-                              Delete
-                            </Button>
-                          </AlertDialogFooter>
-                        </AlertDialogContent>
-                      </AlertDialogOverlay>
-                    </AlertDialog>
-                  </Wrap>
-                </ButtonGroup>
-              </Box>
-            </Box>
-          </PopoverBody>
-        </PopoverContent>
-      </Popover>
-    </Flex>
+        <Button
+          onClick={handleProfileClick}
+          mr={4}
+          colorScheme="teal"
+          variant="ghost"
+        >
+          <Flex direction="column" alignItems="center">
+            <Image src={Profile} alt="Favorites" />
+            <Text mt={2}>{t?.navbar.profile}</Text>
+          </Flex>
+        </Button>
+      </Flex>
+    )
   );
 };
 

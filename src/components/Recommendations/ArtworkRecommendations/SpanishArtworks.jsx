@@ -97,6 +97,7 @@ const SpanishArtworks = () => {
                     style={{ textDecoration: "none", cursor: "pointer" }}
                   >
                     <ArtworkCard
+                      context="recommendation"
                       imageUrl={
                         artwork.primaryImageSmall || artwork.primaryImage
                       }

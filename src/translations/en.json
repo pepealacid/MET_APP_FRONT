@@ -1,91 +1,149 @@
 {
-    "navbar":{
-        "explore": "Explore",
-        "favorites": "Favorites",
-        "profile": "Profile",
-        "edit": "Edit",
-        "tourTimePreferences": "Tour Time preferences",
-        "scanHistory": "Scan history",
-        "changePassword": "Change your password",
-        "language": "Language",
-        "appearance": "Appearance",
-        "support": "Support",
-        "legal": "Legal",
-        "logout": "Logout",
-        "deleteAccount": "Delete account",
-        "deleteUser": "Delete User",
-        "deleteConfirmation": "Are you sure you want to delete your account? This action cannot be undone.",
-        "cancel": "Cancel",
-        "delete": "Delete"},
-
-    "artistSearchPage":{
-        "goBack": "Go Back",
-        "favorited": "Favorited",
-        "notFavorited": "Not Favorited",
-        "about": "About",
-        "readMore": "Read more",
-        "readLess": "Read less",
-        "getMoreInfo": "Get more info",
-        "loadingArtistDetails": "Loading artist details...",
-        "notBioAvailable": "Not bio available",
-        "american": "American artists",
-        "spanish": "Spanish artists",
-        "women": "Women in art"
-    }, 
-
-    "artworkSearchPage":{
-        "women": "Women in art",
-        "american": "American artworks",
-        "european": "European artworks",
-        "random": "Random artworks"
+  "zero": {
+    "skip": "Skip",
+    "one": {
+      "header": "Don't miss a thing!",
+      "text": "Choose any of the pre-defined tours or customize your own to see it all."
     },
-
-    "changeYourPassword":{
-        "current": "Current Password",
-        "new": "New Password",
-        "confirm": "Confirm Password",
-        "change": "Change Password"
+    "two": {
+      "header": "Get all the info with just one scan",
+      "text": "Scan any work of art to see the whole story behind it."
     },
-
-    "themePage":{
-        "select": "Select App Theme",
-        "light": "Light Mode",
-        "dark": "Dark Mode"
-    },
-
-    "support":{
-        "header": "Support",
-        "first": "If you need any assistance or have any questions regarding the Musart app, please don't hesitate to reach out to our support team. We are here to help!",
-        "contactHeader": "Contact Information",
-        "mail": "Email: angpepeles@gmail.com",
-        "phone": "Phone: +34 667 63 44 56",
-        "operating": "Operating Hours",
-        "week": "Monday-Friday: 9:00 AM - 5:00 PM (EST)",
-        "weekend": "Saturday-Sunday: Closed"
-    },
-
-    "legal":{
-        "title": "Privacy Policy",
-        "intro": "This Privacy Policy governs the manner in which Musart collects, uses, maintains, and discloses information collected from users (each, a 'User') of the Musart mobile application ('App'). This Privacy Policy applies to the App and all products and services offered by Musart.",
-        "personalIdentificationInfoTitle": "Personal Identification Information",
-        "personalIdentificationInfo": "Musart may collect personal identification information from Users in a variety of ways, including when Users register on the App and provide their name, email address, and password. The personal identification information collected is used for authentication purposes and to enhance the user experience within the App. Musart is committed to ensuring that the User's personal information is kept confidential and secure.",
-        "nonPersonalIdentificationInfoTitle": "Non-Personal Identification Information",
-        "nonPersonalIdentificationInfo": "Musart may also collect non-personal identification information about Users whenever they interact with the App. This information may include the type of device used, the operating system, the browser name, and other technical details related to the User's interaction with the App. This information is collected to improve the App's functionality and to provide a better user experience.",
-        "useOfCollectedInfoTitle": "Use of Collected Information",
-        "useOfCollectedInfo": [
-        "To provide and personalize the User's experience: The information collected allows Musart to customize the App's content and features to better suit the User's preferences and interests.",
-        "To improve customer service: The information helps Musart respond to user support requests more efficiently and provide effective customer service.",
-        "To send periodic emails: Musart may use the provided email address to send the User updates, notifications, and important information related to the App. The User can opt-out of receiving such communications by contacting Musart or using the unsubscribe link provided in the emails."
-        ],
-        "protectionOfUserInfoTitle": "Protection of User Information",
-        "protectionOfUserInfo": "Musart takes appropriate security measures to protect User information against unauthorized access, alteration, disclosure, or destruction. This includes maintaining appropriate data collection, storage, and processing practices and security measures to protect against unauthorized access to User information.",
-        "sharingOfUserInfoTitle": "Sharing of User Information",
-        "sharingOfUserInfo": "Musart does not sell, trade, or rent User's personal identification information to others. User information is strictly used for the purposes mentioned in this Privacy Policy and is only accessible to authorized Musart personnel or service providers who need to know the information to provide services on behalf of Musart.",
-        "changesToPolicyTitle": "Changes to this Privacy Policy",
-        "changesToPolicy": "Musart reserves the right to update or modify this Privacy Policy at any time. Users are encouraged to check this Privacy Policy periodically for any changes. Continued use of the App after the modifications will constitute the User's acknowledgment and acceptance of the updated Privacy Policy.",
-        "contactUsTitle": "Contact Us",
-        "contactUsInfo": "If Users have any questions or concerns about this Privacy Policy or the practices of the Musart App, they can contact us at angpepeles@gmail.com."
+    "three": {
+      "header": "Add everything you like to your favourites",
+      "text": "Our algorithm ensures that nothing you like goes unnoticed."
     }
+  },
+  "buttons": {
+    "tours": "Tours",
+    "artists": "Artists",
+    "artworks": "Artworks",
+    "museum": "Museum"
+  },
+  "navbar": {
+    "explore": "Explore",
+    "favorites": "Favorites",
+    "profile": "Profile",
+    "edit": "Edit",
+    "changePassword": "Change your password",
+    "language": "Language",
+    "appearance": "Appearance",
+    "support": "Support",
+    "legal": "Legal",
+    "logout": "Logout",
+    "deleteAccount": "Delete account",
+    "deleteUser": "Delete User",
+    "deleteConfirmation": "Are you sure you want to delete your account? This action is irreversible.",
+    "cancel": "Cancel",
+    "delete": "Delete"
+  },
+
+  "artistSearchPage": {
+    "goBack": "Go Back",
+    "favorited": "Favorited",
+    "notFavorited": "Not Favorited",
+    "about": "About",
+    "readMore": "Read more",
+    "readLess": "Read less",
+    "getMoreInfo": "Get more info",
+    "loadingArtistDetails": "Loading artist details...",
+    "notBioAvailable": "Not bio available",
+    "american": "American artists",
+    "spanish": "Spanish artists",
+    "women": "Women in art",
+    "results": "Results for"
+  },
+
+  "artworkSearchPage": {
+    "women": "Women in art",
+    "american": "American artworks",
+    "european": "European artworks",
+    "random": "Random artworks",
+    "results": "Results for"
+  },
+
+  "changeYourPassword": {
+    "current": "Current Password",
+    "new": "New Password",
+    "confirm": "Confirm Password",
+    "change": "Change your password",
+    "success": "Password changed successfully!"
+  },
+
+  "themePage": {
+    "header": "Theme",
+    "light": "Light",
+    "dark": "Dark"
+  },
+
+  "support": {
+    "header": "Support",
+    "first": "If you need any assistance or have any questions regarding the Musart app, please don't hesitate to reach out to our support team. We are here to help!",
+    "contactHeader": "Contact Information",
+    "mail": "Email: angpepeles@gmail.com",
+    "phone": "Phone: +34 667 63 44 56",
+    "operating": "Operating Hours",
+    "week": "Monday-Friday: 9:00 AM - 5:00 PM (EST)",
+    "weekend": "Saturday-Sunday: Closed"
+  },
+
+  "legal": {
+    "title": "Privacy Policy",
+    "intro": "This Privacy Policy governs the manner in which Musart collects, uses, maintains, and discloses information collected from users (each, a 'User') of the Musart mobile application ('App'). This Privacy Policy applies to the App and all products and services offered by Musart.",
+    "personalIdentificationInfoTitle": "Personal Identification Information",
+    "personalIdentificationInfo": "Musart may collect personal identification information from Users in a variety of ways, including when Users register on the App and provide their name, email address, and password. The personal identification information collected is used for authentication purposes and to enhance the user experience within the App. Musart is committed to ensuring that the User's personal information is kept confidential and secure.",
+    "nonPerIdInTitle": "Non-Personal Identification Information",
+    "nonPerIdIn": "Musart may also collect non-personal identification information about Users whenever they interact with the App. This information may include the type of device used, the operating system, the browser name, and other technical details related to the User's interaction with the App. This information is collected to improve the App's functionality and to provide a better user experience.",
+    "useOfTitle": "Use of Collected Information",
+    "useOfCollectedInfo": [
+      "Musart may use the collected information for the following purposes:",
+      "- To provide and personalize the User's experience: The information collected allows Musart to customize the App's content and features to better suit the User's preferences and interests.",
+      "- To improve customer service: The information helps Musart respond to user support requests more efficiently and provide effective customer service.",
+      "- To send periodic emails: Musart may use the provided email address to send the User updates, notifications, and important information related to the App. The User can opt-out of receiving such communications by contacting Musart or using the unsubscribe link provided in the emails."
+    ],
+    "protectionOfUserInfoTitle": "Protection of User Information",
+    "protectionOfUserInfo": "Musart takes appropriate security measures to protect User information against unauthorized access, alteration, disclosure, or destruction. This includes maintaining appropriate data collection, storage, and processing practices and security measures to protect against unauthorized access to User information.",
+    "sharingOfUserInfoTitle": "Sharing of User Information",
+    "sharingOfUserInfo": "Musart does not sell, trade, or rent User's personal identification information to others. User information is strictly used for the purposes mentioned in this Privacy Policy and is only accessible to authorized Musart personnel or service providers who need to know the information to provide services on behalf of Musart.",
+    "changesToPolicyTitle": "Changes to this Privacy Policy",
+    "changesToPolicy": "Musart reserves the right to update or modify this Privacy Policy at any time. Users are encouraged to check this Privacy Policy periodically for any changes. Continued use of the App after the modifications will constitute the User's acknowledgment and acceptance of the updated Privacy Policy.",
+    "contactUsTitle": "Contact Us",
+    "contactUsInfo": "If Users have any questions or concerns about this Privacy Policy or the practices of the Musart App, they can contact us at angpepeles@gmail.com."
+  },
+
+  "editProfile": {
+    "name": "Name",
+    "email": "Email",
+    "description": "Description",
+    "save": "Save"
+  },
+
+  "museum": {
+    "aboutTitle": "About the museum",
+    "about": "The Metropolitan Museum of Art, commonly known as the Met, is the largest art museum in the Americas, located in New York City. As of 2022, it has welcomed 3,208,832 visitors, ranking it eighth among the most-visited art museums worldwide. In the United States, it is the second-most visited art museum, surpassed only by the National Gallery of Art in Washington D.C. The Met's permanent collection boasts over two million works, which are organized into 17 curatorial departments. Situated on 1000 Fifth Avenue, along the Museum Mile on Manhattan's Upper East Side, the Met's main building is one of the world's largest art museums in terms of area. Its construction began in 1880, and it covers approximately 2 million square feet (190,000 m2). Another location, The Cloisters at Fort Tryon Park in Upper Manhattan, houses a vast collection of art, architecture, and artifacts from medieval Europe. The establishment of the Metropolitan Museum of Art dates back to 1870, with a mission to bring art and art education to the American people. Its permanent collection encompasses various art forms, including classical antiquity, ancient Egypt, European Old Masters' paintings and sculptures, American and modern art. Moreover, the Met holds extensive holdings of African, Asian, Oceanian, Byzantine, and Islamic art. The museum also showcases encyclopedic collections of musical instruments, costumes, accessories, and antique weapons and armor from around the world. Notably, the galleries feature remarkable interiors spanning from 1st-century Rome to modern American design.",
+    "schedules": "Schedules",
+    "closed": "CLOSED",
+    "find": "Where to find it",
+    "maps": "Open in Maps"
+  },
+
+  "artworkDetails": {
+    "about": "About",
+    "details": "Details",
+    "find": "Where you'll find this",
+    "open": "Open in Maps",
+    "like": "You might also like",
+    "loading": "Loading artwork details...",
+    "unable": "Unable to fetch artwork details."
+  },
+
+  "artistDetails": {
+    "about": "About",
+    "more": "Read more",
+    "less": "Read less",
+    "moreInfo": "Get more info",
+    "visit": "Visit",
+    "not": "Not bio available",
+    "loading": "Loading artist details..."
   }
-
-
+}

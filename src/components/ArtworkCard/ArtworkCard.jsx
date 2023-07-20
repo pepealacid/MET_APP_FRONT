@@ -1,24 +1,21 @@
-import "./ArtworkCard.css";
 import SandClock from "../../assets/images/SandClock.png";
 import FavHeart from "../../assets/images/FavHeart.png";
 import PropTypes from "prop-types";
 import FavHeartFilled from "../../assets/images/FavHeartFilled.png";
 import { useContext } from "react";
 import { FavContext } from "../../context/fav.context";
+import "./ArtworkCard.css";
 
-const ArtworkCard = ({
-  imageUrl,
-  title,
-  author,
-  date,
-  artworkID,
-}) => {
+const ArtworkCard = ({ context, imageUrl, title, author, date, artworkID }) => {
+  const cardStyles =
+    context === "recommendation" ? "recommendation" : "search-result";
+
   const { favoriteArtworkIds, addFavoriteArtwork, removeFavoriteArtwork } =
     useContext(FavContext);
-  const truncatedTitle = title.length > 18 ? `${title.substring(0, 18)}...` : title;
-  const truncatedAuthor = author.length > 30 ? `${author.substring(0, 30)}...` : author;
-
-
+  const truncatedTitle =
+    title.length > 18 ? `${title.substring(0, 18)}...` : title;
+  const truncatedAuthor =
+    author.length > 30 ? `${author.substring(0, 30)}...` : author;
 
   const handleFavClick = (event) => {
     event.preventDefault();
@@ -30,33 +27,35 @@ const ArtworkCard = ({
   };
 
   return (
-    <div className="artwork-card">
-      <div className="top">
-        <div className="img-container">
-          <img className="main-img" src={imageUrl} alt="artwork" />
-          <button className="fav-button" onClick={handleFavClick}>
-            {favoriteArtworkIds.includes(artworkID.toString()) ? (
-              <img
-                className="fav-button-img"
-                src={FavHeartFilled}
-                alt="favorite"
-              />
-            ) : (
-              <img
-                className="fav-button-img"
-                src={FavHeart}
-                alt="not-favorite"
-              />
-            )}
-          </button>
+    <div className={cardStyles}>
+      <div className="artwork-card">
+        <div className="top">
+          <div className="img-container">
+            <img className="main-img" src={imageUrl} alt="artwork" />
+            <button className="fav-button" onClick={handleFavClick}>
+              {favoriteArtworkIds.includes(artworkID.toString()) ? (
+                <img
+                  className="fav-button-img"
+                  src={FavHeartFilled}
+                  alt="favorite"
+                />
+              ) : (
+                <img
+                  className="fav-button-img"
+                  src={FavHeart}
+                  alt="not-favorite"
+                />
+              )}
+            </button>
+          </div>
         </div>
-      </div>
-      <div className="foot">
-        <h3 className="title">{truncatedTitle}</h3>
-        <p className="author">{truncatedAuthor}</p>
-        <div className="date">
-          <img className="clock" src={SandClock} alt="year" />
-          <p>{date}</p>
+        <div className="foot">
+          <h3 className="title">{truncatedTitle}</h3>
+          <p className="author">{truncatedAuthor}</p>
+          <div className="date">
+            <img className="clock" src={SandClock} alt="year" />
+            <p>{date}</p>
+          </div>
         </div>
       </div>
     </div>
@@ -69,6 +68,7 @@ ArtworkCard.propTypes = {
   author: PropTypes.string,
   date: PropTypes.number,
   artworkID: PropTypes.string.isRequired,
+  context: PropTypes.string,
 };
 
 export default ArtworkCard;
