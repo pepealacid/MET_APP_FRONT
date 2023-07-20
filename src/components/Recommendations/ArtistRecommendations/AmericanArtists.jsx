@@ -3,7 +3,7 @@ import axios from "axios";
 import { Spinner, Table, Tr, Td, Text, Box, Tbody } from "@chakra-ui/react";
 import ArtistCard from "../../ArtistCard/ArtistCard";
 import { Link } from "react-router-dom";
-import { LenguageContext } from "../../../context/lenguage.context";
+import { LanguageContext } from "../../../context/language.context";
 
 const AmericanArtists = () => {
   const americanArtworksIDs = [
@@ -25,8 +25,8 @@ const AmericanArtists = () => {
 
   const [loading, setLoading] = useState(true);
   const [results, setResults] = useState([]);
-  
-  const { t } = useContext(LenguageContext)
+
+  const { t } = useContext(LanguageContext);
 
   useEffect(() => {
     fetchAmericanArtists();
@@ -97,50 +97,60 @@ const AmericanArtists = () => {
   };
 
   if (loading) {
-    return <>
-    <Spinner />
-  </>
+    return (
+      <>
+        <Text className="recomm-header">
+          {t.artistSearchPage.american || "American artists"}
+        </Text>
+        <Spinner />
+      </>
+    );
   }
 
-  return t?.artistsSearchPage && (
-    <div>
-      <Text className="recomm-header">{t.artistSearchPage.american || "American artists"}</Text>
-      <Box
-        position="relative"
-        mt={2}
-        overflowX="auto"
-        maxHeight="600px"
-        whiteSpace="nowrap"
-      >
-        <Table size="sm">
-          <Tbody>
-            <Tr>
-              {results.map((result, index) => (
-                <Td key={index} px={2} width={`${100 / results.length}%`}>
-                  <Link
-                    to={{
-                      pathname: `/artist/${result.title}`,
-                      search: `?url=${encodeURIComponent(
-                        result._links.self.href
-                      )}`,
-                    }}
-                    style={{ textDecoration: "none", cursor: "pointer" }}
-                  >
-                    <ArtistCard
-                      imageUrl={result.imageUrl || undefined}
-                      title={result.name}
-                      birthday={result.birthday}
-                      deathday={result.deathday}
-                      artistID={result.id}
-                    />
-                  </Link>
-                </Td>
-              ))}
-            </Tr>
-          </Tbody>
-        </Table>
-      </Box>
-    </div>
+  return (
+    t?.artistsSearchPage && (
+      <div>
+        <Text className="recomm-header">
+          {t.artistSearchPage.american || "American artists"}
+        </Text>
+        <Box
+          position="relative"
+          mt={2}
+          overflowX="auto"
+          maxHeight="600px"
+          whiteSpace="nowrap"
+        >
+          <Table size="sm">
+            <Tbody>
+              <Tr>
+                {results.map((result, index) => (
+                  <Td key={index} px={2} width={`${100 / results.length}%`}>
+                    <Link
+                      to={{
+                        pathname: `/artist/${result.title}`,
+                        search: `?url=${encodeURIComponent(
+                          result._links.self.href
+                        )}`,
+                      }}
+                      style={{ textDecoration: "none", cursor: "pointer" }}
+                    >
+                      <ArtistCard
+                        context="recommendation"
+                        imageUrl={result.imageUrl || undefined}
+                        title={result.name}
+                        birthday={result.birthday}
+                        deathday={result.deathday}
+                        artistID={result.id}
+                      />
+                    </Link>
+                  </Td>
+                ))}
+              </Tr>
+            </Tbody>
+          </Table>
+        </Box>
+      </div>
+    )
   );
 };
 

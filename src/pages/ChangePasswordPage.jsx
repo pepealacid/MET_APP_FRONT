@@ -11,12 +11,14 @@ import {
   InputGroup,
   InputRightElement,
   useColorModeValue,
+  Image,
 } from "@chakra-ui/react";
 import { TOKEN_NAME } from "../context/auth.context";
 import authService from "../services/auth.service";
 import userService from "../services/user.service";
 import { FiEye, FiEyeOff } from "react-icons/fi";
-import { LenguageContext } from "../context/lenguage.context";
+import { LanguageContext } from "../context/language.context";
+import DefaultUser from "../assets/images/DefaultUser.svg";
 
 const ChangePasswordPage = () => {
   const [currentPassword, setCurrentPassword] = useState("");
@@ -25,11 +27,12 @@ const ChangePasswordPage = () => {
   const [error, setError] = useState("");
   const [success, setSuccess] = useState(false);
   const [userId, setUserId] = useState("");
+  const [userImage, setUserImage] = useState("");
   const [showPassword, setShowPassword] = useState(false);
   const [showNewPassword, setShowNewPassword] = useState(false);
   const [showNewPasswordCheck, setShowNewPasswordCheck] = useState(false);
 
-  const { t } = useContext(LenguageContext);
+  const { t } = useContext(LanguageContext);
 
   useEffect(() => {
     fetchUserInfo();
@@ -72,8 +75,9 @@ const ChangePasswordPage = () => {
       const token = localStorage.getItem(TOKEN_NAME);
       const user = await userService.getUser(token);
       const userId = user.data._id;
-      console.log(userId);
+      const image = user.data.image
       setUserId(userId);
+      setUserImage(image)
     } catch (error) {
       console.log(error);
     }
@@ -100,6 +104,16 @@ const ChangePasswordPage = () => {
         <Text fontSize="xl" mb={4}>
           {t?.changeYourPassword.change || "Change your password"}
         </Text>
+        <Box display="flex" justifyContent="center" margin="50px">
+          <Image
+            objectFit="cover"
+            borderRadius="100%"
+            height="100px"
+            width="100px"
+            src={userImage || DefaultUser}
+            alt="user"
+          />
+        </Box>
         {error && (
           <Alert status="error" mb={4}>
             <AlertIcon />

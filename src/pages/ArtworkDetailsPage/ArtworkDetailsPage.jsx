@@ -1,7 +1,7 @@
 import "./ArtworkDetailsPage.css";
 import { useEffect, useState, useContext } from "react";
 import axios from "axios";
-import { Link, useParams, useNavigate } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import {
   Box,
   Flex,
@@ -24,7 +24,7 @@ import RandomArtist from "../../assets/images/RandomArtist.png";
 import InfoButton from "../../assets/images/InfoButton.png";
 import MuseumCard from "../../components/MuseumCard/MuseumCard";
 import ArtworkCard from "../../components/ArtworkCard/ArtworkCard";
-import GoBackButton from "../../assets/images/GoBackButton.png";
+import { LanguageContext } from "../../context/language.context";
 
 const ArtworkDetailsPage = () => {
   const { objectId } = useParams();
@@ -34,6 +34,8 @@ const ArtworkDetailsPage = () => {
   const [relatedArtworks, setRelatedArtworks] = useState([]);
   const { favoriteArtworkIds, addFavoriteArtwork, removeFavoriteArtwork } =
     useContext(FavContext);
+
+  const { t } = useContext(LanguageContext);
 
   useEffect(() => {
     fetchArtworkDetails();
@@ -47,7 +49,6 @@ const ArtworkDetailsPage = () => {
       addFavoriteArtwork(objectId);
     }
   };
-
 
   const isArtworkFavorited = () => {
     return favoriteArtworkIds.includes(objectId);
@@ -128,205 +129,222 @@ const ArtworkDetailsPage = () => {
   };
 
   return (
-    <Box>
-      {loading ? (
-        <Flex direction="column" align="center" justify="center">
-          <Spinner />
-          <Text>Loading artwork details...</Text>
-        </Flex>
-      ) : (
-        <Box>
-          <div className="artwork-details-container">
-            {artworkData ? (
-              <>
-                <div className="top-main">
-                  <Image
-                    className="main-image"
-                    src={
-                      artworkData.primaryImageSmall ||
-                      "https://i0.wp.com/businessday.ng/wp-content/uploads/2022/02/art-work-1.jpg?fit=700%2C400&ssl=1"
-                    }
-                    alt={artworkData.title}
-                  />
-                 
-                  <button
-                    className={`fav-button ${
-                      isArtworkFavorited() ? "favorited" : ""
-                    }`}
-                    onClick={handleFavorite}
-                  >
-                    {isArtworkFavorited() ? (
-                      <img
-                        className="fav-button-img"
-                        src={FavHeartFilled}
-                        alt="favorited"
-                      />
-                    ) : (
-                      <img
-                        className="fav-button-img"
-                        src={ArtistFavHeart}
-                        alt="not-favorited"
-                      />
-                    )}
-                  </button>
-                  <div className="top-info">
-                    <Text className="title" as="h4">
-                      {artworkData.title}
-                    </Text>
-                    <div className="top-text">
-                      <Image
-                        className="white-clock"
-                        src={WhiteClock}
-                        alt="date"
-                      />
-                      <Text>{artworkData.objectDate}</Text>
+    t?.artworkDetails && (
+      <Box>
+        {loading ? (
+          <Flex direction="column" align="center" justify="center">
+            <Spinner />
+            <Text>
+              {t?.artworkDetails.loading || "Loading artwork details..."}
+            </Text>
+          </Flex>
+        ) : (
+          <Box>
+            <div className="artwork-details-container">
+              {artworkData ? (
+                <>
+                  <div className="top-main">
+                    <Image
+                      className="main-image"
+                      src={
+                        artworkData.primaryImageSmall ||
+                        "https://i0.wp.com/businessday.ng/wp-content/uploads/2022/02/art-work-1.jpg?fit=700%2C400&ssl=1"
+                      }
+                      alt={artworkData.title}
+                    />
+
+                    <button
+                      className={`fav-button ${
+                        isArtworkFavorited() ? "favorited" : ""
+                      }`}
+                      onClick={handleFavorite}
+                    >
+                      {isArtworkFavorited() ? (
+                        <img
+                          className="fav-button-img"
+                          src={FavHeartFilled}
+                          alt="favorited"
+                        />
+                      ) : (
+                        <img
+                          className="fav-button-img"
+                          src={ArtistFavHeart}
+                          alt="not-favorited"
+                        />
+                      )}
+                    </button>
+                    <div className="top-info">
+                      <Text className="title" as="h4">
+                        {artworkData.title}
+                      </Text>
+                      <div className="top-text">
+                        <Image
+                          className="white-clock"
+                          src={WhiteClock}
+                          alt="date"
+                        />
+                        <Text>{artworkData.objectDate}</Text>
+                      </div>
                     </div>
                   </div>
-                </div>
-                <div className="bottom-info">
-                  <div className="artist-div">
-                    <Image
-                      className="artist-image"
-                      src={artistImage || RandomArtist}
-                    />
-                    <Text className="artist-name">
-                      {artworkData.artistDisplayName}
-                    </Text>
-                  </div>
-                  <div className="about-div">
-                    <Text className="about-header">About</Text>
-                    <Text className="about-info">{artworkData.creditLine}</Text>
-                  </div>
-                  <div className="details-div">
-                    <Text className="details-header">Details</Text>
-                    <Flex align="center">
-                      <Image src={SandClock} alt="year" />
-                      <Text className="details-info">
-                        {artworkData.objectDate}
+                  <div className="bottom-info">
+                    <div className="artist-div">
+                      <Image
+                        className="artist-image"
+                        src={artistImage || RandomArtist}
+                      />
+                      <Text className="artist-name">
+                        {artworkData.artistDisplayName}
                       </Text>
-                    </Flex>
-                    <Flex align="center">
-                      <Image src={Brush} alt="medium" />
-                      <Text className="details-info">{artworkData.medium}</Text>
-                    </Flex>
-                    <Flex align="center">
-                      <Image src={Ruler} alt="dimensions" />
-                      <Text className="details-info">
-                        {artworkData.dimensions}
+                    </div>
+                    <div className="about-div">
+                      <Text className="about-header">
+                        {t?.artworkDetails.about || "About"}
                       </Text>
-                    </Flex>
-                  </div>
-                  {artworkData.objectWikidata_URL &&
-                    artworkData.objectWikidata_URL !== "" && (
-                      <Box mt={20}>
-                        <Text
-                          className="more-info-header"
-                          fontWeight="bold"
-                          fontSize="20px"
-                        >
-                          Get more info
+                      <Text className="about-info">
+                        {artworkData.creditLine}
+                      </Text>
+                    </div>
+                    <div className="details-div">
+                      <Text className="details-header">
+                        {t?.artworkDetails.details || "Details"}
+                      </Text>
+                      <Flex align="center">
+                        <Image src={SandClock} alt="year" />
+                        <Text className="details-info">
+                          {artworkData.objectDate}
                         </Text>
-                        <Link
-                          to={artworkData.objectWikidata_URL}
-                          target="_blank"
-                        >
-                          <Flex
-                            className="info-card"
-                            backgroundColor="#f6f6f6"
-                            borderRadius="10px"
-                            display="inline-flex"
-                            alignItems="center"
-                            justifyContent="flex-start"
+                      </Flex>
+                      <Flex align="center">
+                        <Image src={Brush} alt="medium" />
+                        <Text className="details-info">
+                          {artworkData.medium}
+                        </Text>
+                      </Flex>
+                      <Flex align="center">
+                        <Image src={Ruler} alt="dimensions" />
+                        <Text className="details-info">
+                          {artworkData.dimensions}
+                        </Text>
+                      </Flex>
+                    </div>
+                    {artworkData.objectWikidata_URL &&
+                      artworkData.objectWikidata_URL !== "" && (
+                        <Box mt={20}>
+                          <Text
+                            className="more-info-header"
+                            fontWeight="bold"
+                            fontSize="20px"
                           >
-                            <Flex direction="column" flexGrow={1}>
-                              <Text
-                                className="header"
-                                fontWeight="bold"
-                                padding={4}
-                                paddingBottom={0}
-                              >
-                                Wikidata
-                              </Text>
-                              <Text
-                                className="link"
-                                padding={4}
-                                paddingTop={2}
-                                fontSize="12px"
-                                maxWidth="200px"
-                                overflow="hidden"
-                                textOverflow="ellipsis"
-                                whiteSpace="nowrap"
-                              >
-                                Visit {artworkData.objectWikidata_URL}
-                              </Text>
+                            Get more info
+                          </Text>
+                          <Link
+                            to={artworkData.objectWikidata_URL}
+                            target="_blank"
+                          >
+                            <Flex
+                              className="info-card"
+                              backgroundColor="#f6f6f6"
+                              borderRadius="10px"
+                              display="inline-flex"
+                              alignItems="center"
+                              justifyContent="flex-start"
+                            >
+                              <Flex direction="column" flexGrow={1}>
+                                <Text
+                                  className="header"
+                                  fontWeight="bold"
+                                  padding={4}
+                                  paddingBottom={0}
+                                >
+                                  Wikidata
+                                </Text>
+                                <Text
+                                  className="link"
+                                  padding={4}
+                                  paddingTop={2}
+                                  fontSize="12px"
+                                  maxWidth="200px"
+                                  overflow="hidden"
+                                  textOverflow="ellipsis"
+                                  whiteSpace="nowrap"
+                                >
+                                  Visit {artworkData.objectWikidata_URL}
+                                </Text>
+                              </Flex>
+                              <Box className="button-side" padding={4}>
+                                <img src={InfoButton} alt="go" />
+                              </Box>
                             </Flex>
-                            <Box className="button-side" padding={4}>
-                              <img src={InfoButton} alt="go" />
-                            </Box>
-                          </Flex>
-                        </Link>
-                      </Box>
-                    )}
-                  <Box className="maps">
-                    <Text className="map-header">Where you'll find this</Text>
-                    <MuseumCard />
-                  </Box>
-                  {relatedArtworks.length > 0 && (
-                    <div>
-                      <Text className="related-header">
-                        You might also like
-                      </Text>
-                      {relatedArtworks.length > 0 && (
-                        <Box
-                          position="relative"
-                          mt={2}
-                          overflowX="auto"
-                          whiteSpace="nowrap"
-                        >
-                          <Table size="sm">
-                            <Tbody>
-                              <Tr>
-                                {relatedArtworks.map((artwork) => (
-                                  <Td key={artwork.id} px={2}>
-                                    <Link
-                                      to={`/artwork/${artwork.objectID}`}
-                                      style={{
-                                        textDecoration: "none",
-                                        cursor: "pointer",
-                                      }}
-                                    >
-                                      <ArtworkCard
-                                        imageUrl={
-                                          artwork.primaryImageSmall ||
-                                          artwork.primaryImage
-                                        }
-                                        title={artwork.title}
-                                        author={artwork.artistDisplayName}
-                                        date={
-                                          artwork.objectEndDate ||
-                                          artwork.objectBeginDate
-                                        }
-                                        artworkID={artwork.objectID}
-                                      />
-                                    </Link>
-                                  </Td>
-                                ))}
-                              </Tr>
-                            </Tbody>
-                          </Table>
+                          </Link>
                         </Box>
                       )}
-                    </div>
-                  )}
-                </div>
-              </>
-            ) : (
-              <Text>Unable to fetch artwork details.</Text>
-            )}
-          </div>
-        </Box>
-      )}
-    </Box>
+                    <Box className="maps">
+                      <Text className="map-header">
+                        {t?.artworkDetails.find || "Where you'll find this"}
+                      </Text>
+                      <MuseumCard />
+                    </Box>
+                    {relatedArtworks.length > 0 && (
+                      <div>
+                        <Text className="related-header">
+                          {t?.artworkDetails.like || "You might also like"}
+                        </Text>
+                        {relatedArtworks.length > 0 && (
+                          <Box
+                            position="relative"
+                            mt={2}
+                            overflowX="auto"
+                            whiteSpace="nowrap"
+                          >
+                            <Table size="sm">
+                              <Tbody>
+                                <Tr>
+                                  {relatedArtworks.map((artwork) => (
+                                    <Td key={artwork.id} px={2}>
+                                      <Link
+                                        to={`/artwork/${artwork.objectID}`}
+                                        style={{
+                                          textDecoration: "none",
+                                          cursor: "pointer",
+                                        }}
+                                      >
+                                        <ArtworkCard
+                                          imageUrl={
+                                            artwork.primaryImageSmall ||
+                                            artwork.primaryImage
+                                          }
+                                          title={artwork.title}
+                                          author={artwork.artistDisplayName}
+                                          date={
+                                            artwork.objectEndDate ||
+                                            artwork.objectBeginDate
+                                          }
+                                          artworkID={artwork.objectID}
+                                        />
+                                      </Link>
+                                    </Td>
+                                  ))}
+                                </Tr>
+                              </Tbody>
+                            </Table>
+                          </Box>
+                        )}
+                      </div>
+                    )}
+                  </div>
+                </>
+              ) : (
+                <Text>
+                  {t?.artworkDetails.unable ||
+                    "Unable to fetch artwork details."}
+                </Text>
+              )}
+            </div>
+          </Box>
+        )}
+      </Box>
+    )
   );
 };
 

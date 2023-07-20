@@ -10,7 +10,7 @@ import {
 } from "@chakra-ui/react";
 import metData from "../../../data/museumData";
 import { useState, useContext } from "react";
-import { LenguageContext } from "../../../context/lenguage.context";
+import { LanguageContext } from "../../../context/language.context";
 import MapIcon1 from "../../../assets/images/MapIcon1.svg";
 import Map from "../map/Map";
 import Maps from "../../../assets/images/Maps.svg";
@@ -18,7 +18,7 @@ import Maps from "../../../assets/images/Maps.svg";
 function About() {
   const [readMore, setReadMore] = useState(false);
 
-  const { t } = useContext(LenguageContext);
+  const { t } = useContext(LanguageContext);
 
   const handleRead = () => {
     setReadMore(!readMore);

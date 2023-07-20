@@ -1,10 +1,10 @@
 import React from "react";
 import { Box, Text, Heading } from "@chakra-ui/react";
 import { useContext } from "react";
-import { LenguageContext } from "../context/lenguage.context";
+import { LanguageContext } from "../context/language.context";
 
 const SupportPage = () => {
-  const { t } = useContext(LenguageContext);
+  const { t } = useContext(LanguageContext);
 
   return (
     t?.support && (

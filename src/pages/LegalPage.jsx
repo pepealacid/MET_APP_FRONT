@@ -1,9 +1,9 @@
 import { Box, Text } from "@chakra-ui/react";
 import { useContext } from "react";
-import { LenguageContext } from "../context/lenguage.context";
+import { LanguageContext } from "../context/language.context";
 
 const Legal = () => {
-  const { t } = useContext(LenguageContext);
+  const { t } = useContext(LanguageContext);
 
   return (
     t?.legal && (

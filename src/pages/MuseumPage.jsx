@@ -12,6 +12,7 @@ import { useState } from "react";
 import About from "../components/museumView/about/About";
 import MetArtworks from "../components/museumView/Artworks/MetArtworks";
 import Tickets from "../components/museumView/Tickets/Tickets";
+import MetPic from "../assets/images/MetPic.jpeg"
 
 function MuseumPage() {
   const [selected, setSelected] = useState("About");
@@ -34,7 +35,7 @@ function MuseumPage() {
   return (
     <>
        <Box
-      bgImage={metData.image}
+      bgImage={MetPic}
       bgSize="cover"
       bgPosition="center"
       bgRepeat="no-repeat"

@@ -1,7 +1,9 @@
+import RandomArtworks from "../../Recommendations/ArtworkRecommendations/RandomRecommendation"
+
 const MetArtworks = () => {
     return(
         <div>
-            <h3>MetArtworks</h3>
+            <RandomArtworks n={10} />
         </div>
     )
 }

@@ -8,7 +8,7 @@ const Map = () => {
   const map = useRef(null);
   const [lng, setLng] = useState(-73.963244);
   const [lat, setLat] = useState(40.7794366);
-  const [zoom, setZoom] = useState(14);
+  const [zoom, setZoom] = useState(15);
 
   useEffect(() => {
     if (map.current) return; // initialize map only once
@@ -20,7 +20,6 @@ const Map = () => {
       zoom: zoom,
     });
 
-    new mapboxgl.Marker().setLngLat([lng, lat]).addTo(map.current);
   }, [lng, lat, zoom]);
 
   return (

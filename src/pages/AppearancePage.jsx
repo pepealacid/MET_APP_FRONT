@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import { LenguageContext } from "../context/lenguage.context";
+import { LanguageContext } from "../context/language.context";
 import { Button, Flex, Heading, useColorMode, Image } from "@chakra-ui/react";
 import { useNavigate } from "react-router-dom";
 
@@ -7,7 +7,7 @@ const ThemePage = () => {
   const { colorMode, toggleColorMode } = useColorMode();
   const isDarkMode = colorMode === "dark";
 
-  const { t } = useContext(LenguageContext);
+  const { t } = useContext(LanguageContext);
 
   return (
     t?.themePage && (

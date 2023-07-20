@@ -14,14 +14,14 @@ import { useNavigate } from "react-router-dom";
 import DefaultUser from "../assets/images/DefaultUser.svg";
 import UploadPicture from "../assets/images/UploadPicture.svg";
 import uploadService from "../services/upload.service";
-import { LenguageContext } from "../context/lenguage.context";
+import { LanguageContext } from "../context/language.context";
 
 const EditProfilePage = () => {
   const [userInfo, setUserInfo] = useState(undefined);
   const [loadingImage, setLoadingImage] = useState(false);
   const [userId, setUserId] = useState();
 
-  const { t } = useContext(LenguageContext);
+  const { t } = useContext(LanguageContext);
 
   const [userData, setUserData] = useState({
     username: "",

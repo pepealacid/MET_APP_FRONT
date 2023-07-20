@@ -28,7 +28,7 @@ import userService from "../services/user.service";
 import { useNavigate } from "react-router-dom";
 import { TOKEN_NAME } from "../context/auth.context";
 import { AuthContext } from "../context/auth.context";
-import { LenguageContext } from "../context/lenguage.context";
+import { LanguageContext } from "../context/language.context";
 import DefaultUser from "../assets/images/DefaultUser.svg"
 
 const ProfilePage = () => {
@@ -42,7 +42,7 @@ const ProfilePage = () => {
   const onClose = () => setIsOpen(false);
   const cancelRef = useRef();
 
-  const { t } = useContext(LenguageContext);
+  const { t } = useContext(LanguageContext);
 
   const navigate = useNavigate();
 
@@ -157,7 +157,7 @@ const ProfilePage = () => {
                     as="div"
                     display="inline-block"
                     onClick={() => {
-                      navigate("/lenguage");
+                      navigate("/language");
                     }}
                   >
                     <Grid templateColumns="1fr 10fr 1fr" alignItems="center">
@@ -171,7 +171,7 @@ const ProfilePage = () => {
                       </Box>
                       <Box gridColumn="3" textAlign="center">
                         <Image
-                          marginLeft="9.5px"
+                          marginLeft="11.4px"
                           src={NextProfile}
                           alt=""
                           paddingLeft="0.4px"
