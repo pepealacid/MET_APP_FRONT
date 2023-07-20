@@ -24,12 +24,6 @@ const LanguagePage = () => {
     setLanguage(newLanguage);
   };
 
-
-
-  useEffect(() => {
-    console.log(language);
-  }, [language]);
-
   return (
     <>
       <Box marginTop="80px">
@@ -95,6 +89,15 @@ const LanguagePage = () => {
               <Text paddingBottom="10px">Gaelic</Text>
               <Box ml={4}>
                 <Radio value="gd" />
+              </Box>
+            </Flex>
+            <Flex
+              justifyContent="space-between"
+              borderBottom="1px solid #efefef"
+            >
+              <Text paddingBottom="10px">Euskera</Text>
+              <Box ml={4}>
+                <Radio value="eu" />
               </Box>
             </Flex>
             <Flex

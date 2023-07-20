@@ -1,98 +1,152 @@
 {
-    "navbar": {
-      "explore": "Explorar",
-      "favorites": "Preferits",
-      "profile": "Perfil",
-      "edit": "Editar",
-      "changePassword": "Canviar contrasenya",
-      "language": "Idioma",
-      "appearance": "Aparença",
-      "support": "Suport",
-      "legal": "Legal",
-      "logout": "Tancar sessió",
-      "deleteAccount": "Eliminar compte",
-      "deleteUser": "Eliminar usuari",
-      "deleteConfirmation": "Esteu segur que voleu eliminar el vostre compte? Aquesta acció és irreversible.",
-      "cancel": "Cancel·lar",
-      "delete": "Eliminar"
+  "zero": {
+    "skip": "Salta",
+    "one": {
+      "header": "No et perdis res!",
+      "text": "Escull qualsevol de les rutes predefinides o personalitza la teva pròpia per veure-ho tot."
     },
-  
-    "artistSearchPage": {
-      "goBack": "Tornar",
-      "favorited": "Afegit a preferits",
-      "notFavorited": "No afegit a preferits",
-      "about": "Sobre",
-      "readMore": "Llegir més",
-      "readLess": "Llegir menys",
-      "getMoreInfo": "Obtenir més informació",
-      "loadingArtistDetails": "Carregant detalls de l'artista...",
-      "notBioAvailable": "Biografia no disponible",
-      "american": "Artistes americans",
-      "spanish": "Artistes espanyols",
-      "women": "Dones en l'art"
-    }, 
-  
-    "artworkSearchPage": {
-      "women": "Dones en l'art",
-      "american": "Obres d'art americanes",
-      "european": "Obres d'art europees",
-      "random": "Obres d'art aleatòries"
+    "two": {
+      "header": "Obtén tota la informació amb un sol escaneig",
+      "text": "Escaneja qualsevol obra d'art per veure tota la història que hi ha darrere."
     },
-  
-    "changeYourPassword": {
-      "current": "Contrasenya actual",
-      "new": "Nova contrasenya",
-      "confirm": "Confirmar contrasenya",
-      "change": "Canviar contrasenya",
-      "success": "Contrasenya canviada amb èxit!"
-    },
-  
-    "themePage": {
-      "header": "Tema",
-      "light": "Clar",
-      "dark": "Fosc"
-    },
-  
-    "support": {
-      "header": "Suport",
-      "first": "Si necessiteu assistència o teniu alguna pregunta sobre l'aplicació Musart, no dubteu a posar-vos en contacte amb el nostre equip de suport. Estem aquí per ajudar!",
-      "contactHeader": "Informació de contacte",
-      "mail": "Email: angpepeles@gmail.com",
-      "phone": "Telèfon: +34 667 63 44 56",
-      "operating": "Horari d'atenció",
-      "week": "Dilluns a divendres: 9:00 AM - 5:00 PM (EST)",
-      "weekend": "Dissabte i diumenge: Tancat"
-    },
-  
-    "legal": {
-      "title": "Política de privacitat",
-      "intro": "Aquesta Política de privacitat regeix la manera en què Musart recull, utilitza, manté i divulga la informació recollida dels usuaris (cada un, un 'Usuari') de l'aplicació mòbil Musart ('App'). Aquesta Política de privacitat s'aplica a l'App i a tots els productes i serveis oferts per Musart.",
-      "personalIdentificationInfoTitle": "Informació d'identificació personal",
-      "personalIdentificationInfo": "Musart pot recopilar informació d'identificació personal dels Usuaris de diverses maneres, incloent el registre a l'App i la provisió del seu nom, adreça de correu electrònic i contrasenya. La informació d'identificació personal recopilada s'utilitza amb fins d'autenticació i per millorar l'experiència de l'usuari dins de l'App. Musart es compromet a mantenir confidencial i segura la informació personal de l'Usuari.",
-      "nonPerIdInTitle": "Informació d'identificació no personal",
-      "nonPerIdIn": "Musart també pot recopilar informació d'identificació no personal dels Usuaris cada vegada que interactuen amb l'App. Aquesta informació pot incloure el tipus de dispositiu utilitzat, el sistema operatiu, el nom del navegador i altres detalls tècnics relacionats amb la interacció de l'Usuari amb l'App. Aquesta informació es recopila per millorar la funcionalitat de l'App i proporcionar una millor experiència d'usuari.",
-      "useOfTitle": "Ús de la informació recollida",
-      "useOfCollectedInfo": [
-        "Musart pot utilitzar la informació recollida per als següents propòsits:",
-        "- Proporcionar i personalitzar l'experiència de l'Usuari: La informació recollida permet a Musart personalitzar el contingut i les funcions de l'App per adaptar-se millor a les preferències i interessos de l'Usuari.",
-        "- Millorar el servei d'atenció al client: La informació ajuda a Musart a respondre de manera més eficient a les sol·licituds de suport de l'usuari i proporcionar un servei d'atenció al client eficaç.",
-        "- Enviar correus electrònics periòdics: Musart pot utilitzar l'adreça de correu electrònic proporcionada per enviar a l'Usuari actualitzacions, notificacions i informació important relacionada amb l'App. L'Usuari pot optar per no rebre aquestes comunicacions posant-se en contacte amb Musart o utilitzant l'enllaç de cancel·lació de subscripció proporcionat als correus electrònics."
-      ],
-      "protectionOfUserInfoTitle": "Protecció de la informació de l'Usuari",
-      "protectionOfUserInfo": "Musart pren mesures de seguretat adequades per protegir la informació de l'Usuari contra l'accés no autoritzat, l'alteració, divulgació o destrucció. Això inclou mantenir pràctiques adequades de recopilació, emmagatzematge i processament de dades i mesures de seguretat per protegir contra l'accés no autoritzat a la informació de l'Usuari.",
-      "sharingOfUserInfoTitle": "Compartir informació de l'Usuari",
-      "sharingOfUserInfo": "Musart no ven, comercialitza ni lloga informació d'identificació personal de l'Usuari a tercers. La informació de l'Usuari s'utilitza estrictament per als fins esmentats en aquesta Política de privacitat i només és accessible per al personal autoritzat de Musart o els proveïdors de serveis que necessiten conèixer la informació per proporcionar serveis en nom de Musart.",
-      "changesToPolicyTitle": "Canvis en aquesta Política de privacitat",
-      "changesToPolicy": "Musart es reserva el dret d'actualitzar o modificar aquesta Política de privacitat en qualsevol moment. Es recomana als Usuaris que revisin periòdicament aquesta Política de privacitat per conèixer possibles canvis. La continuació de l'ús de l'App després de les modificacions constituirà el reconeixement i l'acceptació de l'Usuari de la Política de privacitat actualitzada.",
-      "contactUsTitle": "Contacteu-nos",
-      "contactUsInfo": "Si els Usuaris tenen alguna pregunta o inquietud sobre aquesta Política de privacitat o les pràctiques de l'App Musart, poden posar-se en contacte amb nosaltres a angpepeles@gmail.com."
-    },
-  
-    "editProfile": {
-      "name": "Nom",
-      "email": "Correu electrònic",
-      "description": "Descripció",
-      "save": "Guardar"
+    "three": {
+      "header": "Afegeix tot el que t'agrada als teus preferits",
+      "text": "El nostre algoritme s'assegura que res del que t'agrada no passi desapercebut."
     }
+  },
+  "buttons": {
+    "tours": "Rutes",
+    "artists": "Artistes",
+    "artworks": "Obres d'art",
+    "museum": "Museu",
+    "about": "Sobre",
+    "tickets": "Entrades",
+    "ticketsButton": "Comprar entrades"
+  },
+  "navbar": {
+    "explore": "Explora",
+    "favorites": "Preferits",
+    "profile": "Perfil",
+    "edit": "Editar",
+    "changePassword": "Canvia la contrasenya",
+    "language": "Idioma",
+    "appearance": "Aparença",
+    "support": "Suport",
+    "legal": "Legal",
+    "logout": "Sortir",
+    "deleteAccount": "Eliminar compte",
+    "deleteUser": "Eliminar usuari",
+    "deleteConfirmation": "Esteu segur que voleu eliminar el vostre compte? Aquesta acció és irreversible.",
+    "cancel": "Cancel·lar",
+    "delete": "Eliminar"
+  },
+
+  "artistSearchPage": {
+    "goBack": "Tornar",
+    "favorited": "Afegit a preferits",
+    "notFavorited": "No afegit a preferits",
+    "about": "Sobre",
+    "readMore": "Llegir més",
+    "readLess": "Llegir menys",
+    "getMoreInfo": "Més informació",
+    "loadingArtistDetails": "Carregant detalls de l'artista...",
+    "notBioAvailable": "Biografia no disponible",
+    "american": "Artistes americans",
+    "spanish": "Artistes espanyols",
+    "women": "Dones a l'art",
+    "results": "Resultats per a"
+  },
+
+  "artworkSearchPage": {
+    "women": "Dones a l'art",
+    "american": "Obres d'art americanes",
+    "european": "Obres d'art europees",
+    "random": "Obres d'art aleatòries",
+    "results": "Resultats per a"
+  },
+
+  "changeYourPassword": {
+    "current": "Contrasenya actual",
+    "new": "Nova contrasenya",
+    "confirm": "Confirmar contrasenya",
+    "change": "Canviar la contrasenya",
+    "success": "Contrasenya canviada amb èxit!"
+  },
+
+  "themePage": {
+    "header": "Tema",
+    "light": "Clar",
+    "dark": "Fosc"
+  },
+
+  "support": {
+    "header": "Suport",
+    "first": "Si necessiteu assistència o teniu qualsevol pregunta sobre l'aplicació Musart, no dubteu a contactar amb el nostre equip de suport. Estem aquí per ajudar-vos!",
+    "contactHeader": "Informació de contacte",
+    "mail": "Correu electrònic: angpepeles@gmail.com",
+    "phone": "Telèfon: +34 667 63 44 56",
+    "operating": "Horari d'atenció",
+    "week": "Dilluns a divendres: de 9:00 a 17:00 (EST)",
+    "weekend": "Dissabte i diumenge: Tancat"
+  },
+
+  "legal": {
+    "title": "Política de privadesa",
+    "intro": "Aquesta Política de privadesa regeix la manera en què Musart recopila, utilitza, manté i divulga la informació recopilada dels usuaris (cada un, un 'Usuari') de l'aplicació mòbil Musart ('App'). Aquesta Política de privadesa s'aplica a l'App i a tots els productes i serveis oferts per Musart.",
+    "personalIdentificationInfoTitle": "Informació d'identificació personal",
+    "personalIdentificationInfo": "Musart pot recopilar informació d'identificació personal dels usuaris de diverses maneres, incloent-hi quan els usuaris s'inscriuen a l'App i proporcionen el seu nom, adreça de correu electrònic i contrasenya. La informació d'identificació personal recopilada s'utilitza amb fins d'autenticació i per millorar l'experiència de l'usuari dins de l'App. Musart es compromet a mantenir confidencial i segura la informació personal de l'usuari.",
+    "nonPerIdInTitle": "Informació no personal d'identificació",
+    "nonPerIdIn": "Musart també pot recopilar informació no personal d'identificació sobre els usuaris cada vegada que interactuen amb l'App. Aquesta informació pot incloure el tipus d'aparell utilitzat, el sistema operatiu, el nom del navegador i altres detalls tècnics relacionats amb la interacció de l'usuari amb l'App. Aquesta informació es recopila per millorar la funcionalitat de l'App i proporcionar una millor experiència d'usuari.",
+    "useOfTitle": "Ús de la informació recopilada",
+    "useOfCollectedInfo": [
+      "Musart pot utilitzar la informació recopilada per als següents fins:",
+      "- Per proporcionar i personalitzar l'experiència de l'usuari: La informació recopilada permet a Musart personalitzar el contingut i les funcionalitats de l'App per adaptar-se millor a les preferències i interessos de l'usuari.",
+      "- Per millorar l'atenció al client: La informació ajuda a Musart a respondre de manera més eficient a les sol·licituds d'assistència de l'usuari i proporcionar un servei d'atenció al client efectiu.",
+      "- Per enviar correus electrònics periòdics: Musart pot utilitzar l'adreça de correu electrònic proporcionada per enviar actualitzacions, notificacions i informació important relacionada amb l'App. L'usuari pot optar per no rebre aquestes comunicacions posant-se en contacte amb Musart o utilitzant l'enllaç per cancel·lar la subscripció proporcionat als correus electrònics."
+    ],
+    "protectionOfUserInfoTitle": "Protecció de la informació de l'usuari",
+    "protectionOfUserInfo": "Musart pren les mesures de seguretat adequades per protegir la informació de l'usuari contra l'accés no autoritzat, l'alteració, la divulgació o la destrucció. Això inclou mantenir pràctiques adequades de recopilació, emmagatzematge i processament de dades i mesures de seguretat per protegir contra l'accés no autoritzat a la informació de l'usuari.",
+    "sharingOfUserInfoTitle": "Compartir informació de l'usuari",
+    "sharingOfUserInfo": "Musart no ven, comercialitza ni lloga la informació d'identificació personal de l'usuari a altres persones. La informació de l'usuari s'utilitza estrictament per als fins mencionats en aquesta Política de privadesa i només està accessible per al personal autoritzat o proveïdors de serveis de Musart que necessiten conèixer la informació per proporcionar serveis en nom de Musart.",
+    "changesToPolicyTitle": "Canvis en aquesta Política de privadesa",
+    "changesToPolicy": "Musart es reserva el dret d'actualitzar o modificar aquesta Política de privadesa en qualsevol moment. S'encoratja els usuaris a revisar aquesta Política de privadesa periòdicament per conèixer qualsevol canvi. La continuació de l'ús de l'App després de les modificacions constituirà l'acceptació i reconeixement per part de l'usuari de la Política de privadesa actualitzada.",
+    "contactUsTitle": "Contacteu amb nosaltres",
+    "contactUsInfo": "Si els usuaris tenen qualsevol pregunta o preocupació sobre aquesta Política de privadesa o les pràctiques de l'aplicació Musart, poden posar-se en contacte amb nosaltres a angpepeles@gmail.com."
+  },
+
+  "editProfile": {
+    "name": "Nom",
+    "email": "Correu electrònic",
+    "description": "Descripció",
+    "save": "Desar"
+  },
+
+  "museum": {
+    "aboutTitle": "Sobre el museu",
+    "about": "El Museu Metropolità d'Art, conegut com a Met, és el museu d'art més gran d'Amèrica, situat a la ciutat de Nova York. Fins al 2022, ha rebut 3.208.832 visitants, situant-se en vuitena posició entre els museus d'art més visitats de tot el món. Als Estats Units, és el segon museu d'art més visitat, superat únicament per la National Gallery of Art de Washington D.C. La seva col·lecció permanent compta amb més de dos milions d'obres, organitzades en 17 departaments curatorials. Situat al 1000 Fifth Avenue, al costat del Museum Mile a l'Upper East Side de Manhattan, l'edifici principal del Met és un dels museus d'art més grans del món en termes d'àrea. La seva construcció va començar el 1880 i cobreix aproximadament 2 milions de peus quadrats (190.000 m²). Una altra ubicació, The Cloisters al Fort Tryon Park a l'Upper Manhattan, alberga una extensa col·lecció d'art, arquitectura i artifacts de l'Europa medieval. L'establiment del Metropolitan Museum of Art es remunta a l'any 1870, amb la missió de portar l'art i l'educació artística al poble americà. La seva col·lecció permanent abasta diverses formes d'art, incloent-hi l'antiguitat clàssica, l'antic Egipte, pintures i escultures dels Mestres Antics europeus, art americà i modern. A més a més, el Met té extenses col·leccions d'art africà, asiàtic, oceànic, bizantí i islàmic. El museu també exhibeix col·leccions enciclopèdiques d'instruments musicals, vestits, accessoris i armes antigues de tot el món. Les galeries destaquen per les seves interiors notables que abasten des de l'antiga Roma del segle I fins al disseny americà modern.",
+    "schedules": "Horaris",
+    "closed": "TANCAT",
+    "find": "On trobar-lo",
+    "maps": "Obre a Maps"
+  },
+
+  "artworkDetails": {
+    "about": "Sobre",
+    "details": "Detalls",
+    "find": "On trobaràs això",
+    "open": "Obre a Maps",
+    "like": "També et pot agradar",
+    "loading": "Carregant detalls de l'obra d'art...",
+    "unable": "No es pot obtenir els detalls de l'obra d'art."
+  },
+
+  "artistDetails": {
+    "about": "Sobre",
+    "more": "Llegir més",
+    "less": "Llegir menys",
+    "moreInfo": "Més informació",
+    "visit": "Visitar",
+    "not": "Biografia no disponible",
+    "loading": "Carregant detalls de l'artista..."
   }
-  
+}

@@ -1,87 +1,153 @@
 {
+    "zero": {
+      "skip": "Overslaan",
+      "one": {
+        "header": "Mis niets!",
+        "text": "Kies een van de vooraf gedefinieerde rondleidingen of stel uw eigen rondleiding samen om alles te zien."
+      },
+      "two": {
+        "header": "Krijg alle informatie met slechts één scan",
+        "text": "Scan elk kunstwerk om het hele verhaal erachter te zien."
+      },
+      "three": {
+        "header": "Voeg alles wat je leuk vindt toe aan je favorieten",
+        "text": "Ons algoritme zorgt ervoor dat niets wat je leuk vindt onopgemerkt blijft."
+      }
+    },
+    "buttons": {
+      "tours": "Rondleidingen",
+      "artists": "Artiesten",
+      "artworks": "Kunstwerken",
+      "museum": "Museum",
+      "about": "Over",
+      "tickets": "Tickets",
+      "ticketsButton": "Tickets kopen"
+    },
     "navbar": {
-        "explore": "Verkennen",
-        "favorites": "Favorieten",
-        "profile": "Profiel",
-        "edit": "Bewerken",
-        "tourTimePreferences": "Voorkeuren rondleidingstijden",
-        "scanHistory": "Scan geschiedenis",
-        "changePassword": "Wijzig je wachtwoord",
-        "language": "Taal",
-        "appearance": "Uiterlijk",
-        "support": "Ondersteuning",
-        "legal": "Juridisch",
-        "logout": "Uitloggen",
-        "deleteAccount": "Account verwijderen",
-        "deleteUser": "Gebruiker verwijderen",
-        "deleteConfirmation": "Weet je zeker dat je je account wilt verwijderen? Deze actie kan niet ongedaan worden gemaakt.",
-        "cancel": "Annuleren",
-        "delete": "Verwijderen"
+      "explore": "Verkennen",
+      "favorites": "Favorieten",
+      "profile": "Profiel",
+      "edit": "Bewerken",
+      "changePassword": "Wachtwoord wijzigen",
+      "language": "Taal",
+      "appearance": "Uiterlijk",
+      "support": "Ondersteuning",
+      "legal": "Juridisch",
+      "logout": "Uitloggen",
+      "deleteAccount": "Account verwijderen",
+      "deleteUser": "Gebruiker verwijderen",
+      "deleteConfirmation": "Weet u zeker dat u uw account wilt verwijderen? Deze actie kan niet ongedaan worden gemaakt.",
+      "cancel": "Annuleren",
+      "delete": "Verwijderen"
     },
-
+  
     "artistSearchPage": {
-        "goBack": "Ga terug",
-        "favorited": "Favoriet",
-        "notFavorited": "Niet favoriet",
-        "about": "Over",
-        "readMore": "Lees meer",
-        "readLess": "Lees minder",
-        "getMoreInfo": "Meer informatie",
-        "loadingArtistDetails": "Bezig met laden van artiestendetails...",
-        "notBioAvailable": "Biografie niet beschikbaar"
+      "goBack": "Ga terug",
+      "favorited": "Favoriet",
+      "notFavorited": "Niet favoriet",
+      "about": "Over",
+      "readMore": "Lees meer",
+      "readLess": "Lees minder",
+      "getMoreInfo": "Meer informatie",
+      "loadingArtistDetails": "Bezig met laden van details van de artiest...",
+      "notBioAvailable": "Biografie niet beschikbaar",
+      "american": "Amerikaanse artiesten",
+      "spanish": "Spaanse artiesten",
+      "women": "Vrouwen in de kunst",
+      "results": "Resultaten voor"
     },
-
+  
     "artworkSearchPage": {
-        "women": "Vrouwen in de kunst",
-        "american": "Amerikaanse kunstwerken",
-        "european": "Europese kunstwerken",
-        "random": "Willekeurige kunstwerken"
+      "women": "Vrouwen in de kunst",
+      "american": "Amerikaanse kunstwerken",
+      "european": "Europese kunstwerken",
+      "random": "Willekeurige kunstwerken",
+      "results": "Resultaten voor"
     },
-
+  
     "changeYourPassword": {
-        "current": "Huidig wachtwoord",
-        "new": "Nieuw wachtwoord",
-        "confirm": "Bevestig wachtwoord",
-        "change": "Wachtwoord wijzigen"
+      "current": "Huidig wachtwoord",
+      "new": "Nieuw wachtwoord",
+      "confirm": "Bevestig nieuw wachtwoord",
+      "change": "Wijzig uw wachtwoord",
+      "success": "Wachtwoord succesvol gewijzigd!"
     },
-
+  
     "themePage": {
-        "select": "Selecteer app-thema",
-        "light": "Lichte modus",
-        "dark": "Donkere modus"
+      "header": "Thema",
+      "light": "Licht",
+      "dark": "Donker"
     },
-
+  
     "support": {
-        "header": "Ondersteuning",
-        "first": "Als je hulp nodig hebt of vragen hebt over de Musart-app, aarzel dan niet om contact op te nemen met ons ondersteuningsteam. We zijn hier om te helpen!",
-        "contactHeader": "Contactgegevens",
-        "mail": "E-mail: angpepeles@gmail.com",
-        "phone": "Telefoon: +34 667 63 44 56",
-        "operating": "Openingstijden",
-        "week": "Maandag-vrijdag: 9:00 - 17:00 (EST)",
-        "weekend": "Zaterdag-zondag: Gesloten"
+      "header": "Ondersteuning",
+      "first": "Als u hulp nodig heeft of vragen heeft over de Musart-app, aarzel dan niet om contact op te nemen met ons ondersteuningsteam. We zijn hier om te helpen!",
+      "contactHeader": "Contactgegevens",
+      "mail": "E-mail: angpepeles@gmail.com",
+      "phone": "Telefoon: +34 667 63 44 56",
+      "operating": "Openingstijden",
+      "week": "Maandag-vrijdag: 9:00 - 17:00 uur (EST)",
+      "weekend": "Zaterdag-zondag: Gesloten"
     },
-
+  
     "legal": {
-        "title": "Privacybeleid",
-        "intro": "Dit Privacybeleid regelt de manier waarop Musart informatie verzamelt, gebruikt, onderhoudt en openbaar maakt die is verzameld bij gebruikers (elk, een 'Gebruiker') van de mobiele applicatie Musart ('App'). Dit Privacybeleid is van toepassing op de App en alle producten en diensten die worden aangeboden door Musart.",
-        "personalIdentificationInfoTitle": "Persoonlijke identificatie-informatie",
-        "personalIdentificationInfo": "Musart kan persoonlijke identificatie-informatie verzamelen van Gebruikers op verschillende manieren, waaronder wanneer Gebruikers zich registreren op de App en hun naam, e-mailadres en wachtwoord opgeven. De verzamelde persoonlijke identificatie-informatie wordt gebruikt voor authenticatiedoeleinden en om de gebruikerservaring binnen de App te verbeteren. Musart zet zich in om de persoonlijke informatie van de Gebruiker vertrouwelijk en veilig te houden.",
-        "nonPersonalIdentificationInfoTitle": "Niet-persoonlijke identificatie-informatie",
-        "nonPersonalIdentificationInfo": "Musart kan ook niet-persoonlijke identificatie-informatie over Gebruikers verzamelen telkens wanneer ze interageren met de App. Deze informatie kan het type apparaat dat wordt gebruikt, het besturingssysteem, de browsernaam en andere technische details over de interactie van de Gebruiker met de App omvatten. Deze informatie wordt verzameld om de functionaliteit van de App te verbeteren en een betere gebruikerservaring te bieden.",
-        "useOfCollectedInfoTitle": "Gebruik van verzamelde informatie",
-        "useOfCollectedInfo": [
-            "Om de ervaring van de Gebruiker te bieden en te personaliseren: De verzamelde informatie stelt Musart in staat de inhoud en functies van de App aan te passen aan de voorkeuren en interesses van de Gebruiker.",
-            "Om klantenservice te verbeteren: De informatie helpt Musart om efficiënter te reageren op ondersteuningsverzoeken van gebruikers en effectieve klantenservice te bieden.",
-            "Om periodieke e-mails te sturen: Musart kan het opgegeven e-mailadres gebruiken om updates, meldingen en belangrijke informatie met betrekking tot de App naar de Gebruiker te sturen. De Gebruiker kan ervoor kiezen om dergelijke communicatie niet te ontvangen door contact op te nemen met Musart of door gebruik te maken van de afmeldlink die is opgenomen in de e-mails."
-        ],
-        "protectionOfUserInfoTitle": "Bescherming van gebruikersinformatie",
-        "protectionOfUserInfo": "Musart neemt passende beveiligingsmaatregelen om gebruikersinformatie te beschermen tegen ongeoorloofde toegang, wijziging, openbaarmaking of vernietiging. Dit omvat passende praktijken voor gegevensverzameling, -opslag en -verwerking en beveiligingsmaatregelen om ongeoorloofde toegang tot gebruikersinformatie te voorkomen.",
-        "sharingOfUserInfoTitle": "Delen van gebruikersinformatie",
-        "sharingOfUserInfo": "Musart verkoopt, verhandelt of verhuurt de persoonlijke identificatie-informatie van Gebruikers niet aan anderen. Gebruikersinformatie wordt strikt gebruikt voor de doeleinden die in dit Privacybeleid worden genoemd en is alleen toegankelijk voor geautoriseerd personeel van Musart of dienstverleners die deze informatie nodig hebben om namens Musart diensten te verlenen.",
-        "changesToPolicyTitle": "Wijzigingen in dit privacybeleid",
-        "changesToPolicy": "Musart behoudt zich het recht voor om dit privacybeleid op elk moment bij te werken of te wijzigen. Gebruikers worden aangemoedigd om dit privacybeleid regelmatig te controleren op eventuele wijzigingen. Door de App te blijven gebruiken na de wijzigingen, erkent en accepteert de Gebruiker het bijgewerkte privacybeleid.",
-        "contactUsTitle": "Neem contact met ons op",
-        "contactUsInfo": "Als Gebruikers vragen of zorgen hebben over dit Privacybeleid of de praktijken van de Musart App, kunnen ze contact met ons opnemen via angpepeles@gmail.com."
+      "title": "Privacybeleid",
+      "intro": "Dit privacybeleid regelt hoe Musart informatie verzamelt, gebruikt, onderhoudt en bekendmaakt die van gebruikers (elk een 'Gebruiker') van de mobiele applicatie Musart ('App') is verzameld. Dit privacybeleid is van toepassing op de App en alle producten en diensten die worden aangeboden door Musart.",
+      "personalIdentificationInfoTitle": "Persoonlijke identificatie-informatie",
+      "personalIdentificationInfo": "Musart kan persoonlijke identificatie-informatie van Gebruikers verzamelen op verschillende manieren, waaronder wanneer Gebruikers zich registreren op de App en hun naam, e-mailadres en wachtwoord verstrekken. De verzamelde persoonlijke identificatie-informatie wordt gebruikt voor verificatiedoeleinden en om de gebruikerservaring binnen de App te verbeteren. Musart verbindt zich ertoe ervoor te zorgen dat de persoonlijke informatie van de Gebruiker vertrouwelijk en veilig wordt bewaard.",
+      "nonPerIdInTitle": "Niet-persoonlijke identificatie-informatie",
+      "nonPerIdIn": "Musart kan ook niet-persoonlijke identificatie-informatie over Gebruikers verzamelen telkens wanneer ze met de App interageren. Deze informatie kan het type apparaat omvatten dat wordt gebruikt, het besturingssysteem, de browsernaam en andere technische details met betrekking tot de interactie van de Gebruiker met de App. Deze informatie wordt verzameld om de functionaliteit van de App te verbeteren en een betere gebruikerservaring te bieden.",
+      "useOfTitle": "Gebruik van verzamelde informatie",
+      "useOfCollectedInfo": [
+        "Musart kan de verzamelde informatie voor de volgende doeleinden gebruiken:",
+        "- Het leveren en personaliseren van de gebruikerservaring: De verzamelde informatie stelt Musart in staat om de inhoud en functies van de App aan te passen aan de voorkeuren en interesses van de Gebruiker.",
+        "- Verbetering van de klantenservice: De informatie helpt Musart om efficiënter te reageren op verzoeken van gebruikersondersteuning en effectieve klantenservice te bieden.",
+        "- Verzenden van periodieke e-mails: Musart kan het verstrekte e-mailadres gebruiken om de Gebruiker updates, meldingen en belangrijke informatie met betrekking tot de App te sturen. De Gebruiker kan zich afmelden voor het ontvangen van dergelijke communicatie door contact op te nemen met Musart of door de afmeldlink te gebruiken die in de e-mails wordt verstrekt."
+      ],
+      "protectionOfUserInfoTitle": "Bescherming van gebruikersinformatie",
+      "protectionOfUserInfo": "Musart neemt passende beveiligingsmaatregelen om gebruikersinformatie te beschermen tegen ongeoorloofde toegang, wijziging, openbaarmaking of vernietiging. Dit omvat het handhaven van passende gegevensverzamelings-, opslag- en verwerkingspraktijken en beveiligingsmaatregelen om ongeautoriseerde toegang tot gebruikersinformatie te voorkomen.",
+      "sharingOfUserInfoTitle": "Delen van gebruikersinformatie",
+      "sharingOfUserInfo": "Musart verkoopt, verhandelt of verhuurt de persoonlijke identificatie-informatie van Gebruikers niet aan anderen. Gebruikersinformatie wordt strikt gebruikt voor de doeleinden die in dit Privacybeleid worden vermeld en is alleen toegankelijk voor geautoriseerd personeel van Musart of serviceproviders die de informatie moeten kennen om diensten namens Musart te leveren.",
+      "changesToPolicyTitle": "Wijzigingen in dit privacybeleid",
+      "changesToPolicy": "Musart behoudt zich het recht voor om dit privacybeleid op elk moment bij te werken of te wijzigen. Gebruikers worden aangemoedigd om dit privacybeleid regelmatig te controleren op wijzigingen. Het voortgezette gebruik van de App na de wijzigingen vormt de erkenning en aanvaarding van de bijgewerkte privacybeleid door de Gebruiker.",
+      "contactUsTitle": "Neem contact met ons op",
+      "contactUsInfo": "Als gebruikers vragen of opmerkingen hebben over dit privacybeleid of de praktijken van de Musart-app, kunnen ze contact met ons opnemen via angpepeles@gmail.com."
+    },
+  
+    "editProfile": {
+      "name": "Naam",
+      "email": "E-mail",
+      "description": "Beschrijving",
+      "save": "Opslaan"
+    },
+  
+    "museum": {
+      "aboutTitle": "Over het museum",
+      "about": "Het Metropolitan Museum of Art, algemeen bekend als het Met, is het grootste kunstmuseum in de Amerika's en is gevestigd in New York City. In 2022 ontving het museum 3.208.832 bezoekers, waarmee het op de achtste plaats staat van meest bezochte kunstmusea ter wereld. In de Verenigde Staten is het Met het op één na meest bezochte kunstmuseum, alleen overtroffen door de National Gallery of Art in Washington D.C. De permanente collectie van het Met omvat meer dan twee miljoen kunstwerken, georganiseerd in 17 curatoriële afdelingen. Het belangrijkste gebouw van het Met, gelegen aan Fifth Avenue in Upper East Side, Manhattan, is een van de grootste kunstmusea ter wereld qua oppervlakte. De bouw begon in 1880 en beslaat ongeveer 190.000 vierkante meter. Een andere locatie, The Cloisters in Fort Tryon Park in Upper Manhattan, herbergt een uitgebreide collectie kunst, architectuur en artefacten uit middeleeuws Europa. De oprichting van het Metropolitan Museum of Art dateert uit 1870, met als missie kunst en kunsteducatie naar het Amerikaanse volk te brengen. De permanente collectie omvat verschillende kunstvormen, waaronder klassieke oudheid, het oude Egypte, Europese meesterwerken en sculpturen, Amerikaanse en moderne kunst. Bovendien heeft het Met uitgebreide collecties van Afrikaanse, Aziatische, Oceanische, Byzantijnse en islamitische kunst. Het museum toont ook encyclopedische collecties van muziekinstrumenten, kostuums, accessoires en antieke wapens en harnassen uit de hele wereld. De galerijen bevatten opmerkelijke interieurs die zich uitstrekken van het oude Rome tot modern Amerikaans ontwerp.",
+      "schedules": "Openingstijden",
+      "closed": "GESLOTEN",
+      "find": "Waar te vinden",
+      "maps": "Openen in Google Maps"
+    },
+  
+    "artworkDetails": {
+      "about": "Over",
+      "details": "Details",
+      "find": "Waar u dit kunstwerk kunt vinden",
+      "open": "Openen in Google Maps",
+      "like": "U vindt dit misschien ook leuk",
+      "loading": "Details van het kunstwerk worden geladen...",
+      "unable": "Kan de details van het kunstwerk niet ophalen."
+    },
+  
+    "artistDetails": {
+      "about": "Over",
+      "more": "Lees meer",
+      "less": "Lees minder",
+      "moreInfo": "Meer informatie",
+      "visit": "Bezoek",
+      "not": "Biografie niet beschikbaar",
+      "loading": "Details van de artiest worden geladen..."
     }
-}
+  }
+  

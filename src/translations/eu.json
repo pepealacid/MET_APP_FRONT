@@ -1,0 +1,153 @@
+{
+    "zero": {
+      "skip": "Atendatu ez",
+      "one": {
+        "header": "Ez galdu ezer!",
+        "text": "Hautatu lehenetsitako ibilbideetako bat edo zurea pertsonalizatu, dena ikusteko."
+      },
+      "two": {
+        "header": "Informazio guztia eskaneatu batekin",
+        "text": "Eskaneatu obra artistiko batean, bertan dagoen historia guztia ikusteko."
+      },
+      "three": {
+        "header": "Gogokoena dena gehitu zure gogokoetan",
+        "text": "Gure algoritmoak zure gogokoena ez ditzala ahazten bermatzen du."
+      }
+    },
+    "buttons": {
+      "tours": "Ibilbideak",
+      "artists": "Artistak",
+      "artworks": "Obra artistikoak",
+      "museum": "Museoa",
+      "about": "Honi buruz",
+      "tickets": "Sarrerak",
+      "ticketsButton": "Erosi sarrerak"
+    },
+    "navbar": {
+      "explore": "Esploratu",
+      "favorites": "Gogokoenak",
+      "profile": "Profila",
+      "edit": "Editatu",
+      "changePassword": "Aldatu zure pasahitza",
+      "language": "Hizkuntza",
+      "appearance": "Itxura",
+      "support": "Laguntza",
+      "legal": "Legala",
+      "logout": "Saioa itxi",
+      "deleteAccount": "Kontua ezabatu",
+      "deleteUser": "Erabiltzailea ezabatu",
+      "deleteConfirmation": "Ziur zaude zure kontua ezabatu nahi duzula? Ekintza hau ezin da desegin.",
+      "cancel": "Ezeztatu",
+      "delete": "Ezabatu"
+    },
+  
+    "artistSearchPage": {
+      "goBack": "Itzuli",
+      "favorited": "Gogokoetan",
+      "notFavorited": "Ez gogokoetan",
+      "about": "Honi buruz",
+      "readMore": "Irakurri gehiago",
+      "readLess": "Irakurri gutxiago",
+      "getMoreInfo": "Informazio gehiago lortu",
+      "loadingArtistDetails": "Artistaren xehetasunak kargatzen...",
+      "notBioAvailable": "Ez dago biografiarik",
+      "american": "Amerikako artistak",
+      "spanish": "Espainiako artistak",
+      "women": "Emakumeak artean",
+      "results": "Emaitzak hauentzat"
+    },
+  
+    "artworkSearchPage": {
+      "women": "Emakumeak artean",
+      "american": "Amerikako obrak",
+      "european": "Europako obrak",
+      "random": "Aleatorioko obrak",
+      "results": "Emaitzak hauentzat"
+    },
+  
+    "changeYourPassword": {
+      "current": "Uneko pasahitza",
+      "new": "Pasahitz berria",
+      "confirm": "Pasahitz berria baieztatu",
+      "change": "Aldatu zure pasahitza",
+      "success": "Pasahitza ongi aldatuta!"
+    },
+  
+    "themePage": {
+      "header": "Itxura",
+      "light": "Argia",
+      "dark": "Iluna"
+    },
+  
+    "support": {
+      "header": "Laguntza",
+      "first": "Musart aplikazioarekin zerikusia duten zalantzak edo galderak badituzu, mesedez, ez ezazu zalantzarik izan gure laguntza taldearekin harremanetan jarri. Laguntzeko hemen gaude!",
+      "contactHeader": "Harremanetarako informazioa",
+      "mail": "Emaila: angpepeles@gmail.com",
+      "phone": "Telefonoa: +34 667 63 44 56",
+      "operating": "Lanaldiak",
+      "week": "Astelehenetik ostiralera: 9:00etatik 17:00etara (EST)",
+      "weekend": "Larunbatean eta igandeetan: Itxita"
+    },
+  
+    "legal": {
+      "title": "Pribatutasun-politika",
+      "intro": "Pribatutasun-politika honek Musartek erabiltzaileekin (batez ere, 'Erabiltzailea' den bakoitzarekin) bildutako informazioa nola jasotzen, erabiltzen, mantentzen eta zehazten den arautzen du. Honek Musart-en mugikor aplikazioan ('App') eta Musarten eskaintzen dituen produktu eta zerbitzu guztietan erabiltzen du.",
+      "personalIdentificationInfoTitle": "Pertsonal identifikazio-informazioa",
+      "personalIdentificationInfo": "Musartek erabiltzaileekin pertsonal identifikazio-informazioa hainbat modutan jaso dezake, aplikazioan erregistratu direnean eta izena, email helbidea eta pasahitza emanez. Bildutako pertsonal identifikazio-informazioa autentifikazio helburuetarako eta aplikazioan erabiltzaileen esperientzia hobetzeko erabiltzen da. Musartek zain dago Erabiltzailearen pertsonal informazioa konfidentziala eta segurua mantentzen dela bermatzeko.",
+      "nonPerIdInTitle": "Ez pertsonal identifikazio-informazioa",
+      "nonPerIdIn": "Musartek ez pertsonal identifikazio-informazioa ere bildu dezake erabiltzaileek aplikazioarekin interakzioan daudenean. Informazio hau aplikazioarekin interakzioan jarduten duten erabiltzailearen gailu-mota, sistema eragilea, nabigatzailearen izena eta beste informazio tekniko batzuk izan daiteke. Informazio hau bildu egiten da aplikazioaren funtzionalitatea hobetzeko eta erabiltzaileen esperientzia hobeagoa eskaintzeko.",
+      "useOfTitle": "Bildutako informazioaren erabilera",
+      "useOfCollectedInfo": [
+        "Musartek bildutako informazioa honako helburu hauetarako erabili dezake:",
+        "- Erabiltzailearen esperientzia ematea eta pertsonalizatzea: Bildutako informazioak Musart-en eduki eta ezaugarriak pertsonalizatzea ahalbidetzen dio, Erabiltzailearen nahien eta interesen arabera.",
+        "- Bezero zerbitzua hobetzea: Informazioak Musartek erabiltzaileek egiten dituzten laguntza-eskaeretara eraginkortasunez erantzuteko eta bezero zerbitzu ona eskaintzeko laguntzen du.",
+        "- Mezu elektronikoak bidaltzea: Musartek emaniko email helbidea erabiltzea Erabiltzaileari eguneratzeak, jakinarazpenak eta aplikazioarekin lotutako informazio garrantzitsuak bidaltzeko. Erabiltzaileak gainera erantzun gabe hartu dezake komunikazio horiek, Musartekin harremanetan jarri edo emailen unsubscrisketa estekan klik eginez."
+      ],
+      "protectionOfUserInfoTitle": "Erabiltzailearen informazioaren babesa",
+      "protectionOfUserInfo": "Musartek segurtasun neurriak hartzen ditu Erabiltzailearen informazioa baimenik gabeko atzipena, aldatzea, argitaratzea edo suntsitzearen aurka babesteko. Horretarako, datuak jaso, gorde eta prozesatzeko egokiak diren praktikak eta segurtasun neurriak ezartzen ditu Musartek Erabiltzailearen informazioa atzitzeko baimena duten Musarteko langile edo zerbitzu hornitzaileekin bakarrik izan dezaten.",
+      "sharingOfUserInfoTitle": "Erabiltzailearen informazioa partekatzea",
+      "sharingOfUserInfo": "Musartek ez du Erabiltzailearen pertsonal identifikazio-informazioa saltzen, trukatzen edo alokatzen besteentzat. Erabiltzailearen informazioa bakarrik berehalako helburuetarako erabiltzen da, Pribatutasun-politika honetan adierazitako helburuengatik. Informazio hori Musarteko baimendutako langile edo zerbitzu hornitzaileen esku dago, haiek zerbitzuak emateko behar duten informazioa jakin dezaten.",
+      "changesToPolicyTitle": "Pribatutasun-politika honen aldaketak",
+      "changesToPolicy": "Musartek eskubidea du Pribatutasun-politika honen eguneratze edo aldatzea behin betiko izan daitekeena. Erabiltzaileak Pribatutasun-politika honetako aldaketak eguneroki egiaztatzeko animatzen dira. Aldaketak onartu ondoren, aplikazioaren erabilera jarraitzeak Erabiltzaileak onartzea izango da Pribatutasun-politika eguneratua.",
+      "contactUsTitle": "Jarri gurekin harremanetan",
+      "contactUsInfo": "Erabiltzaileek edozein zalantza edo kezka izanez gero, edo Musart App-ekin egiten dituen praktikez galdetzeko, kontaktatu gurekin angpepeles@gmail.com helbidean."
+    },
+  
+    "editProfile": {
+      "name": "Izena",
+      "email": "Emaila",
+      "description": "Deskribapena",
+      "save": "Gorde"
+    },
+  
+    "museum": {
+      "aboutTitle": "Museoari buruz",
+      "about": "Metropolitan Art Museoari, Met izenez ezaguna, Amerikan dauden arte museo handiena da, New York hirian kokatuta. 2022an 3,208,832 bisitari hartu ditu, mundu osoko arte museo bisitatuenen zortzikerian kokatuz. Ameriketako Estatu Batuetan, National Gallery of Art-en ondoren bigarren arte museo bisitatua da, Washington D.C.n. Meten jabe jokoa 2 milioi obra ditu, 17 zuzendaritza departamentutan antolatuak. 1000 Fifth Avenue, Manhattanen dagoen Met-eko eraikuntza nagusia munduko arte museo handienetakoa da eremukoan. 1880an hasi zen eraikuntza, 2 milioi gelaren esparrua (190,000 m2) ditu. Beste kokapen bat, The Cloisters, Fort Tryon Park-en, Manhattanen, Europako Erdi Aroko artea, arkitektura eta artifiziazioaren bilduma handia aurkezten du. Metropolitan Art Museoaren sorrera 1870ean eman zen, Amerikarrei artea eta arte-hezkuntza hurbiltzeko misioa izanik. Bere bilduma egonkorra, antzinako antikitatea, ña arteri oldee, amerikarrak eta modernoak barneratzen ditu. Gainera, Metek Afrikako, Asian, Ozeaniko, Bizantinoko eta Islamgo artearen jabe dauka. Museoak, ordea, mundu osoko musika tresnen, kostumen, osagarrien eta adar armaginen bildumak erakusten ditu.",
+      "schedules": "Ordutegiak",
+      "closed": "ITXITA",
+      "find": "Non aurkitu",
+      "maps": "Ireki Mapetan"
+    },
+  
+    "artworkDetails": {
+      "about": "Honi buruz",
+      "details": "Xehetasunak",
+      "find": "Hona non aurkituko duzun",
+      "open": "Ireki Mapetan",
+      "like": "Gustatuko zaizu ere",
+      "loading": "Obra xehetasunak kargatzen...",
+      "unable": "Ezin izan da obra xehetasunak eskuratu."
+    },
+  
+    "artistDetails": {
+      "about": "Honi buruz",
+      "more": "Irakurri gehiago",
+      "less": "Irakurri gutxiago",
+      "moreInfo": "Informazio gehiago lortu",
+      "visit": "Bisita egin",
+      "not": "Biografiarik ez",
+      "loading": "Artista xehetasunak kargatzen..."
+    }
+  }
+  

@@ -18,7 +18,10 @@
     "tours": "Tours",
     "artists": "Artists",
     "artworks": "Artworks",
-    "museum": "Museum"
+    "museum": "Museum",
+    "about": "About",
+    "tickets": "Tickets",
+    "ticketsButton": "Buy tickets"
   },
   "navbar": {
     "explore": "Explore",

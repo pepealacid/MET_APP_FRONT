@@ -1,87 +1,153 @@
 {
+    "zero": {
+      "skip": "Salta",
+      "one": {
+        "header": "Non perderti niente!",
+        "text": "Scegli uno dei tour predefiniti o personalizza il tuo per vedere tutto."
+      },
+      "two": {
+        "header": "Ottieni tutte le informazioni con un solo scansione",
+        "text": "Scansiona qualsiasi opera d'arte per vedere l'intera storia dietro di essa."
+      },
+      "three": {
+        "header": "Aggiungi tutto ciò che ti piace ai tuoi preferiti",
+        "text": "Il nostro algoritmo assicura che nulla di ciò che ti piace passi inosservato."
+      }
+    },
+    "buttons": {
+      "tours": "Tour",
+      "artists": "Artisti",
+      "artworks": "Opere d'arte",
+      "museum": "Museo",
+      "about": "Informazioni",
+      "tickets": "Biglietti",
+      "ticketsButton": "Acquista biglietti"
+    },
     "navbar": {
-        "explore": "Esplora",
-        "favorites": "Preferiti",
-        "profile": "Profilo",
-        "edit": "Modifica",
-        "tourTimePreferences": "Preferenze orari tour",
-        "scanHistory": "Cronologia scansione",
-        "changePassword": "Cambia la tua password",
-        "language": "Lingua",
-        "appearance": "Aspetto",
-        "support": "Supporto",
-        "legal": "Legale",
-        "logout": "Esci",
-        "deleteAccount": "Elimina account",
-        "deleteUser": "Elimina Utente",
-        "deleteConfirmation": "Sei sicuro di voler eliminare il tuo account? Questa azione non può essere annullata.",
-        "cancel": "Annulla",
-        "delete": "Elimina"
+      "explore": "Esplora",
+      "favorites": "Preferiti",
+      "profile": "Profilo",
+      "edit": "Modifica",
+      "changePassword": "Cambia la tua password",
+      "language": "Lingua",
+      "appearance": "Aspetto",
+      "support": "Supporto",
+      "legal": "Legale",
+      "logout": "Logout",
+      "deleteAccount": "Elimina account",
+      "deleteUser": "Elimina utente",
+      "deleteConfirmation": "Sei sicuro di voler eliminare il tuo account? Questa azione è irreversibile.",
+      "cancel": "Annulla",
+      "delete": "Elimina"
     },
-
+  
     "artistSearchPage": {
-        "goBack": "Torna indietro",
-        "favorited": "Aggiunto ai preferiti",
-        "notFavorited": "Non aggiunto ai preferiti",
-        "about": "Informazioni",
-        "readMore": "Leggi di più",
-        "readLess": "Leggi meno",
-        "getMoreInfo": "Ulteriori informazioni",
-        "loadingArtistDetails": "Caricamento dettagli artista...",
-        "notBioAvailable": "Biografia non disponibile"
+      "goBack": "Indietro",
+      "favorited": "Aggiunto ai preferiti",
+      "notFavorited": "Non aggiunto ai preferiti",
+      "about": "Informazioni",
+      "readMore": "Leggi di più",
+      "readLess": "Leggi meno",
+      "getMoreInfo": "Ottieni maggiori informazioni",
+      "loadingArtistDetails": "Caricamento dettagli dell'artista...",
+      "notBioAvailable": "Biografia non disponibile",
+      "american": "Artisti americani",
+      "spanish": "Artisti spagnoli",
+      "women": "Donne nell'arte",
+      "results": "Risultati per"
     },
-
+  
     "artworkSearchPage": {
-        "women": "Donne nell'arte",
-        "american": "Opere d'arte americane",
-        "european": "Opere d'arte europee",
-        "random": "Opere d'arte casuali"
+      "women": "Donne nell'arte",
+      "american": "Opere d'arte americane",
+      "european": "Opere d'arte europee",
+      "random": "Opere d'arte casuali",
+      "results": "Risultati per"
     },
-
+  
     "changeYourPassword": {
-        "current": "Password corrente",
-        "new": "Nuova password",
-        "confirm": "Conferma password",
-        "change": "Cambia password"
+      "current": "Password attuale",
+      "new": "Nuova password",
+      "confirm": "Conferma nuova password",
+      "change": "Cambia la tua password",
+      "success": "Password cambiata con successo!"
     },
-
+  
     "themePage": {
-        "select": "Seleziona tema dell'app",
-        "light": "Modalità chiara",
-        "dark": "Modalità scura"
+      "header": "Tema",
+      "light": "Chiaro",
+      "dark": "Scuro"
     },
-
+  
     "support": {
-        "header": "Supporto",
-        "first": "Se hai bisogno di assistenza o hai domande riguardo all'app Musart, non esitare a contattare il nostro team di supporto. Siamo qui per aiutarti!",
-        "contactHeader": "Informazioni di contatto",
-        "mail": "Email: angpepeles@gmail.com",
-        "phone": "Telefono: +34 667 63 44 56",
-        "operating": "Orari di apertura",
-        "week": "Dal lunedì al venerdì: 9:00 - 17:00 (EST)",
-        "weekend": "Sabato e domenica: Chiuso"
+      "header": "Supporto",
+      "first": "Se hai bisogno di assistenza o hai domande riguardo all'applicazione Musart, non esitare a contattare il nostro team di supporto. Siamo qui per aiutarti!",
+      "contactHeader": "Informazioni di contatto",
+      "mail": "Email: angpepeles@gmail.com",
+      "phone": "Telefono: +34 667 63 44 56",
+      "operating": "Orari di apertura",
+      "week": "Lunedì-venerdì: 9:00 - 17:00 (EST)",
+      "weekend": "Sabato e domenica: Chiuso"
     },
-
+  
     "legal": {
-        "title": "Informativa sulla privacy",
-        "intro": "Questa Informativa sulla privacy regola la raccolta, l'utilizzo, la conservazione e la divulgazione delle informazioni raccolte dagli utenti (ciascuno, un 'Utente') dell'applicazione mobile Musart ('App') di Musart. Questa Informativa sulla privacy si applica all'App e a tutti i prodotti e servizi offerti da Musart.",
-        "personalIdentificationInfoTitle": "Informazioni di identificazione personale",
-        "personalIdentificationInfo": "Musart può raccogliere informazioni di identificazione personale dagli Utenti in varie forme, incluso quando gli Utenti si registrano sull'App e forniscono il loro nome, indirizzo email e password. Le informazioni di identificazione personale raccolte sono utilizzate per scopi di autenticazione e per migliorare l'esperienza dell'utente all'interno dell'App. Musart si impegna a mantenere confidenziali e sicure le informazioni personali dell'Utente.",
-        "nonPersonalIdentificationInfoTitle": "Informazioni di identificazione non personali",
-        "nonPersonalIdentificationInfo": "Musart può anche raccogliere informazioni di identificazione non personali sugli Utenti ogni volta che interagiscono con l'App. Queste informazioni possono includere il tipo di dispositivo utilizzato, il sistema operativo, il nome del browser e altri dettagli tecnici relativi all'interazione dell'Utente con l'App. Queste informazioni vengono raccolte per migliorare la funzionalità dell'App e fornire una migliore esperienza utente.",
-        "useOfCollectedInfoTitle": "Utilizzo delle informazioni raccolte",
-        "useOfCollectedInfo": [
-            "Per fornire e personalizzare l'esperienza dell'Utente: Le informazioni raccolte consentono a Musart di personalizzare i contenuti e le funzionalità dell'App per soddisfare meglio le preferenze e gli interessi dell'Utente.",
-            "Per migliorare il servizio clienti: Le informazioni aiutano Musart a rispondere in modo più efficiente alle richieste di supporto degli utenti e a fornire un servizio clienti efficace.",
-            "Per inviare email periodiche: Musart può utilizzare l'indirizzo email fornito per inviare agli Utenti aggiornamenti, notifiche e informazioni importanti relative all'App. L'Utente può scegliere di non ricevere tali comunicazioni contattando Musart o utilizzando il link per annullare l'iscrizione fornito nelle email."
-        ],
-        "protectionOfUserInfoTitle": "Protezione delle informazioni dell'Utente",
-        "protectionOfUserInfo": "Musart adotta adeguate misure di sicurezza per proteggere le informazioni dell'Utente da accessi, alterazioni, divulgazioni o distruzioni non autorizzate. Ciò include pratiche adeguate per la raccolta, la conservazione e l'elaborazione dei dati e misure di sicurezza per proteggere da accessi non autorizzati alle informazioni dell'Utente.",
-        "sharingOfUserInfoTitle": "Condivisione delle informazioni dell'Utente",
-        "sharingOfUserInfo": "Musart non vende, scambia o affitta le informazioni di identificazione personale dell'Utente a terzi. Le informazioni dell'Utente vengono utilizzate esclusivamente per le finalità menzionate in questa Informativa sulla privacy e sono accessibili solo al personale autorizzato di Musart o ai fornitori di servizi che devono conoscere tali informazioni per fornire servizi per conto di Musart.",
-        "changesToPolicyTitle": "Modifiche a questa Informativa sulla privacy",
-        "changesToPolicy": "Musart si riserva il diritto di aggiornare o modificare questa Informativa sulla privacy in qualsiasi momento. Gli Utenti sono incoraggiati a verificare periodicamente questa Informativa sulla privacy per eventuali modifiche. L'utilizzo continuato dell'App dopo le modifiche costituirà il riconoscimento e l'accettazione da parte dell'Utente dell'Informativa sulla privacy aggiornata.",
-        "contactUsTitle": "Contattaci",
-        "contactUsInfo": "Se gli Utenti hanno domande o preoccupazioni riguardo a questa Informativa sulla privacy o alle pratiche dell'App Musart, possono contattarci all'indirizzo angpepeles@gmail.com."
+      "title": "Informativa sulla privacy",
+      "intro": "Questa informativa sulla privacy disciplina il modo in cui Musart raccoglie, utilizza, mantiene e divulga le informazioni raccolte dagli utenti (ciascuno, 'Utente') dell'applicazione mobile Musart ('App'). Questa informativa sulla privacy si applica all'App e a tutti i prodotti e servizi offerti da Musart.",
+      "personalIdentificationInfoTitle": "Informazioni di identificazione personale",
+      "personalIdentificationInfo": "Musart può raccogliere informazioni di identificazione personale dagli Utenti in vari modi, inclusi quando gli Utenti si registrano sull'App e forniscono il proprio nome, indirizzo email e password. Le informazioni di identificazione personale raccolte vengono utilizzate per scopi di autenticazione e per migliorare l'esperienza dell'utente all'interno dell'App. Musart si impegna a garantire che le informazioni personali dell'Utente siano mantenute confidenziali e sicure.",
+      "nonPerIdInTitle": "Informazioni non di identificazione personale",
+      "nonPerIdIn": "Musart può anche raccogliere informazioni non di identificazione personale sugli Utenti ogni volta che interagiscono con l'App. Queste informazioni possono includere il tipo di dispositivo utilizzato, il sistema operativo, il nome del browser e altri dettagli tecnici relativi all'interazione dell'Utente con l'App. Queste informazioni vengono raccolte per migliorare la funzionalità dell'App e fornire una migliore esperienza utente.",
+      "useOfTitle": "Utilizzo delle informazioni raccolte",
+      "useOfCollectedInfo": [
+        "Musart può utilizzare le informazioni raccolte per i seguenti scopi:",
+        "- Fornire e personalizzare l'esperienza dell'Utente: Le informazioni raccolte consentono a Musart di personalizzare i contenuti e le funzionalità dell'App per adattarle alle preferenze e agli interessi dell'Utente.",
+        "- Migliorare il servizio clienti: Le informazioni aiutano Musart a rispondere in modo più efficiente alle richieste di supporto degli utenti e a fornire un servizio clienti efficace.",
+        "- Inviare email periodiche: Musart può utilizzare l'indirizzo email fornito per inviare agli Utenti aggiornamenti, notifiche e informazioni importanti relative all'App. L'Utente può optare per non ricevere tali comunicazioni contattando Musart o utilizzando il link per annullare l'iscrizione fornito nelle email."
+      ],
+      "protectionOfUserInfoTitle": "Protezione delle informazioni dell'Utente",
+      "protectionOfUserInfo": "Musart adotta adeguate misure di sicurezza per proteggere le informazioni dell'Utente da accessi non autorizzati, alterazioni, divulgazioni o distruzioni. Questo include il mantenimento di pratiche adeguate di raccolta, archiviazione e trattamento dei dati e misure di sicurezza per proteggere da accessi non autorizzati alle informazioni dell'Utente.",
+      "sharingOfUserInfoTitle": "Condivisione delle informazioni dell'Utente",
+      "sharingOfUserInfo": "Musart non vende, scambia o affitta le informazioni di identificazione personale dell'Utente a terzi. Le informazioni dell'Utente vengono utilizzate strettamente per gli scopi menzionati in questa Informativa sulla privacy e sono accessibili solo al personale autorizzato di Musart o ai fornitori di servizi che hanno bisogno di conoscere le informazioni per fornire servizi per conto di Musart.",
+      "changesToPolicyTitle": "Modifiche a questa Informativa sulla privacy",
+      "changesToPolicy": "Musart si riserva il diritto di aggiornare o modificare questa Informativa sulla privacy in qualsiasi momento. Si incoraggia gli Utenti a verificare periodicamente questa Informativa sulla privacy per eventuali cambiamenti. L'utilizzo continuato dell'App dopo le modifiche costituirà il riconoscimento e l'accettazione da parte dell'Utente dell'Informativa sulla privacy aggiornata.",
+      "contactUsTitle": "Contattaci",
+      "contactUsInfo": "Se gli Utenti hanno domande o dubbi riguardo a questa Informativa sulla privacy o alle pratiche dell'App Musart, possono contattarci all'indirizzo email angpepeles@gmail.com."
+    },
+  
+    "editProfile": {
+      "name": "Nome",
+      "email": "Email",
+      "description": "Descrizione",
+      "save": "Salva"
+    },
+  
+    "museum": {
+      "aboutTitle": "Informazioni sul museo",
+      "about": "Il Metropolitan Museum of Art, comunemente noto come Met, è il più grande museo d'arte delle Americhe, situato a New York. Nel 2022 ha accolto 3.208.832 visitatori, posizionandosi all'ottavo posto tra i musei d'arte più visitati al mondo. Negli Stati Uniti, è il secondo museo d'arte più visitato, superato solo dalla National Gallery of Art a Washington D.C. La collezione permanente del Met conta oltre due milioni di opere, organizzate in 17 dipartimenti curatoriali. Situato sulla Quinta Strada, nell'Upper East Side di Manhattan, il principale edificio del Met è uno dei musei d'arte più grandi del mondo in termini di superficie. La sua costruzione è iniziata nel 1880 e copre circa 2 milioni di piedi quadrati (190.000 m2). Un'altra sede, The Cloisters a Fort Tryon Park nell'Upper Manhattan, ospita una vasta collezione di arte, architettura e manufatti dell'Europa medievale. La fondazione del Metropolitan Museum of Art risale al 1870, con la missione di portare arte e educazione artistica al popolo americano. La sua collezione permanente abbraccia varie forme d'arte, tra cui l'antichità classica, l'antico Egitto, le pitture e le sculture dei maestri europei, l'arte americana e l'arte moderna. Inoltre, il Met possiede ampie collezioni di arte africana, asiatica, oceanica, bizantina e islamica. Il museo espone anche collezioni enciclopediche di strumenti musicali, costumi, accessori e armi e armature antiche provenienti da tutto il mondo. Le gallerie includono notevoli interni che spaziano dalla Roma del I secolo al design americano moderno.",
+      "schedules": "Orari",
+      "closed": "CHIUSO",
+      "find": "Dove trovarlo",
+      "maps": "Apri in Google Maps"
+    },
+  
+    "artworkDetails": {
+      "about": "Informazioni",
+      "details": "Dettagli",
+      "find": "Dove trovare quest'opera",
+      "open": "Apri in Google Maps",
+      "like": "Potrebbe piacerti anche",
+      "loading": "Caricamento dettagli dell'opera d'arte...",
+      "unable": "Impossibile recuperare i dettagli dell'opera d'arte."
+    },
+  
+    "artistDetails": {
+      "about": "Informazioni",
+      "more": "Leggi di più",
+      "less": "Leggi meno",
+      "moreInfo": "Ulteriori informazioni",
+      "visit": "Visita",
+      "not": "Biografia non disponibile",
+      "loading": "Caricamento dettagli dell'artista..."
     }
-}
+  }
+  

@@ -48,13 +48,55 @@ function App() {
           <Route path="/" element={<ZeroPage />} />
           <Route path="/login" element={<LoginPage />} />
           <Route path="/signup" element={<SignupPage />} />
-          <Route path="/legal" element={<LegalPage />} />
-          <Route path="/support" element={<SupportPage />} />
-          <Route path="/appearance" element={<AppearancePage />} />
-          <Route path="/language" element={<LanguagePage />} />
-          <Route path="/edit-profile" element={<EditProfilePage />} />
+          <Route
+            path="/legal"
+            element={
+              <PrivateRoute>
+                <LegalPage />{" "}
+              </PrivateRoute>
+            }
+          />
+          <Route
+            path="/support"
+            element={
+              <PrivateRoute>
+                <SupportPage />{" "}
+              </PrivateRoute>
+            }
+          />
+          <Route
+            path="/appearance"
+            element={
+              <PrivateRoute>
+                <AppearancePage />{" "}
+              </PrivateRoute>
+            }
+          />
+          <Route
+            path="/language"
+            element={
+              <PrivateRoute>
+                <LanguagePage />{" "}
+              </PrivateRoute>
+            }
+          />
+          <Route
+            path="/edit-profile"
+            element={
+              <PrivateRoute>
+                <EditProfilePage />
+              </PrivateRoute>
+            }
+          />
           <Route path="/change-password" element={<ChangePasswordPage />} />
-          <Route path="/profile" element={<ProfilePage />} />
+          <Route
+            path="/profile"
+            element={
+              <PrivateRoute>
+                <ProfilePage />
+              </PrivateRoute>
+            }
+          />
 
           <Route
             path="/favorites/"
