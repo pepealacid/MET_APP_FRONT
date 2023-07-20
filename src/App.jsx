@@ -8,7 +8,6 @@ import NewItineraryPage from "./pages/Itinerary/NewItineraryPage";
 import ArtworkDetailsPage from "./pages/ArtworkDetailsPage/ArtworkDetailsPage";
 import ArtworkSearchPage from "./pages/ArtworkSearchPage/ArtworkSearchPage";
 import ArtistSearchPage from "./pages/ArtistSearchPage/ArtistSearchPage";
-import Tinder from "./pages/Tinder";
 import Favorites from "./pages/FavoritesPage/Favorites";
 import ToursFavorites from "./components/Favorites/ToursFavorites";
 import ArtistsFavorites from "./components/Favorites/ArtistsFavorites";
@@ -23,11 +22,10 @@ import LenguagePage from "./pages/LanguagePage";
 import EditProfilePage from "./pages/EditProfilePage";
 import ChangePasswordPage from "./pages/ChangePasswordPage";
 import BackButton from "./components/BackButton";
-// import Testing from "./pages/Testing";
 import ItineraryPage from "./pages/Itinerary/ItineraryPage";
 import GuidedTourPage from "./pages/Itinerary/GuidedTourPage";
 import EndGuidedTourPage from "./pages/Itinerary/EndGuidedTourPage";
-
+import ProfilePage from "./pages/ProfilePage";
 
 function App() {
   const location = useLocation();
@@ -41,7 +39,6 @@ function App() {
   );
 
   return (
-
     <div>
       {shouldShowBackButton && <BackButton />}
       <Routes>
@@ -54,9 +51,7 @@ function App() {
         <Route path="/lenguage" element={<LenguagePage />} />
         <Route path="/edit-profile" element={<EditProfilePage />} />
         <Route path="/change-password" element={<ChangePasswordPage />} />
-          
-          
-          
+        <Route path="/profile" element={<ProfilePage />} />
 
         <Route
           path="/favorites/"
@@ -116,7 +111,7 @@ function App() {
           }
         />
         <Route
-          path="/museum/:name"
+          path="/home/museums"
           element={
             <PrivateRoute>
               <MuseumPage />
@@ -131,16 +126,16 @@ function App() {
             </PrivateRoute>
           }
         />
-            
-      <Route
-        path="/itinerary/:id"
-        element={
-          <PrivateRoute>
-            <ItineraryPage />
-          </PrivateRoute>
-        }
-      />
-          
+
+        <Route
+          path="/itinerary/:id"
+          element={
+            <PrivateRoute>
+              <ItineraryPage />
+            </PrivateRoute>
+          }
+        />
+
         <Route
           path="/artist/:title"
           element={
@@ -158,23 +153,15 @@ function App() {
           }
         />
         <Route
-          path="/tinder"
+          path="/tour/end"
           element={
             <PrivateRoute>
-              <Tinder />
+              <EndGuidedTourPage />
             </PrivateRoute>
           }
         />
-                  <Route
-        path="/tour/end"
-        element={
-          <PrivateRoute>
-            <EndGuidedTourPage />
-          </PrivateRoute>
-        }
-      />
-          
-                  <Route
+
+        <Route
           path="/tour/:id"
           element={
             <PrivateRoute>
@@ -182,14 +169,12 @@ function App() {
             </PrivateRoute>
           }
         />
-            
-                  <Route path="/artist/:title" element={<ArtistDetailsPage />} />
-      <Route path="/artwork/:objectId" element={<ArtworkDetailsPage />} />
-          
+
+        <Route path="/artist/:title" element={<ArtistDetailsPage />} />
+        <Route path="/artwork/:objectId" element={<ArtworkDetailsPage />} />
       </Routes>
       {shouldShowNavbar && <Navbar />}
     </div>
-
   );
 }
 

@@ -89,7 +89,6 @@ const WomenArtists = () => {
   if (loading) {
     return (
       <>
-        <Text className="recomm-header">Women in Art</Text>
         <Spinner />
       </>
     );

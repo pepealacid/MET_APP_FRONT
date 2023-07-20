@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import {
   FormControl,
   FormLabel,
@@ -16,6 +16,7 @@ import { TOKEN_NAME } from "../context/auth.context";
 import authService from "../services/auth.service";
 import userService from "../services/user.service";
 import { FiEye, FiEyeOff } from "react-icons/fi";
+import { LenguageContext } from "../context/lenguage.context";
 
 const ChangePasswordPage = () => {
   const [currentPassword, setCurrentPassword] = useState("");
@@ -27,6 +28,8 @@ const ChangePasswordPage = () => {
   const [showPassword, setShowPassword] = useState(false);
   const [showNewPassword, setShowNewPassword] = useState(false);
   const [showNewPasswordCheck, setShowNewPasswordCheck] = useState(false);
+
+  const { t } = useContext(LenguageContext);
 
   useEffect(() => {
     fetchUserInfo();
@@ -92,91 +95,97 @@ const ChangePasswordPage = () => {
   const tp = useColorModeValue("white", "black");
 
   return (
-    <Box maxW="sm" m="auto">
-      <Text fontSize="xl" mb={4}>
-        Change Password
-      </Text>
-      {error && (
-        <Alert status="error" mb={4}>
-          <AlertIcon />
-          {error}
-        </Alert>
-      )}
-      {success && (
-        <Alert status="success" mb={4}>
-          <AlertIcon />
-          Password changed successfully!
-        </Alert>
-      )}
-      <form onSubmit={handleSubmit}>
-        <FormControl id="currentPassword" mb={4}>
-          <FormLabel>Current Password</FormLabel>
-          <InputGroup>
-            <Input
-              type={showPassword ? "text" : "password"}
-              name="currentPassword"
-              value={currentPassword}
-              onChange={handleChange}
-            />
-            <InputRightElement width="4.5rem">
-              <Button
-                size="m"
-                onClick={handleTogglePassword}
-                backgroundColor="transparent"
-                left="10px"
-              >
-                {showPassword ? <FiEyeOff /> : <FiEye />}
-              </Button>
-            </InputRightElement>
-          </InputGroup>
-        </FormControl>
-        <FormControl id="newPassword" mb={4}>
-          <FormLabel>New Password</FormLabel>
-          <InputGroup>
-            <Input
-              type={showNewPassword ? "text" : "password"}
-              name="newPassword"
-              value={newPassword}
-              onChange={handleChange}
-            />
-            <InputRightElement width="4.5rem">
-              <Button
-                size="m"
-                onClick={handleToggleNewPassword}
-                backgroundColor="transparent"
-                left="10px"
-              >
-                {showNewPassword ? <FiEyeOff /> : <FiEye />}
-              </Button>
-            </InputRightElement>
-          </InputGroup>
-        </FormControl>
-        <FormControl id="confirmPassword" mb={4}>
-          <FormLabel>Confirm Password</FormLabel>
-          <InputGroup>
-            <Input
-              type={showNewPasswordCheck ? "text" : "password"}
-              name="confirmPassword"
-              value={confirmPassword}
-              onChange={handleChange}
-            />
-            <InputRightElement width="4.5rem">
-              <Button
-                size="m"
-                onClick={handleToggleNewPasswordCheck}
-                backgroundColor="transparent"
-                left="10px"
-              >
-                {showNewPasswordCheck ? <FiEyeOff /> : <FiEye />}
-              </Button>
-            </InputRightElement>
-          </InputGroup>
-        </FormControl>
-        <Button type="submit" bg={bg} color={tp}>
-          Change Password
-        </Button>
-      </form>
-    </Box>
+    t?.changeYourPassword && (
+      <Box maxW="sm" m="auto">
+        <Text fontSize="xl" mb={4}>
+          {t?.changeYourPassword.change || "Change your password"}
+        </Text>
+        {error && (
+          <Alert status="error" mb={4}>
+            <AlertIcon />
+            {error}
+          </Alert>
+        )}
+        {success && (
+          <Alert status="success" mb={4}>
+            <AlertIcon />
+            {t?.changeYourPassword.success || "Password changed successfully!"}
+          </Alert>
+        )}
+        <form onSubmit={handleSubmit}>
+          <FormControl id="currentPassword" mb={4}>
+            <FormLabel>
+              {t?.changeYourPassword.current || "Current Password"}{" "}
+            </FormLabel>
+            <InputGroup>
+              <Input
+                type={showPassword ? "text" : "password"}
+                name="currentPassword"
+                value={currentPassword}
+                onChange={handleChange}
+              />
+              <InputRightElement width="4.5rem">
+                <Button
+                  size="m"
+                  onClick={handleTogglePassword}
+                  backgroundColor="transparent"
+                  left="10px"
+                >
+                  {showPassword ? <FiEyeOff /> : <FiEye />}
+                </Button>
+              </InputRightElement>
+            </InputGroup>
+          </FormControl>
+          <FormControl id="newPassword" mb={4}>
+            <FormLabel>{t?.changeYourPassword.new || "New Password"}</FormLabel>
+            <InputGroup>
+              <Input
+                type={showNewPassword ? "text" : "password"}
+                name="newPassword"
+                value={newPassword}
+                onChange={handleChange}
+              />
+              <InputRightElement width="4.5rem">
+                <Button
+                  size="m"
+                  onClick={handleToggleNewPassword}
+                  backgroundColor="transparent"
+                  left="10px"
+                >
+                  {showNewPassword ? <FiEyeOff /> : <FiEye />}
+                </Button>
+              </InputRightElement>
+            </InputGroup>
+          </FormControl>
+          <FormControl id="confirmPassword" mb={4}>
+            <FormLabel>
+              {t?.changeYourPassword.confirm || "Confirm Password"}
+            </FormLabel>
+            <InputGroup>
+              <Input
+                type={showNewPasswordCheck ? "text" : "password"}
+                name="confirmPassword"
+                value={confirmPassword}
+                onChange={handleChange}
+              />
+              <InputRightElement width="4.5rem">
+                <Button
+                  size="m"
+                  onClick={handleToggleNewPasswordCheck}
+                  backgroundColor="transparent"
+                  left="10px"
+                >
+                  {showNewPasswordCheck ? <FiEyeOff /> : <FiEye />}
+                </Button>
+              </InputRightElement>
+            </InputGroup>
+          </FormControl>
+          <Button type="submit" bg={bg} color={tp}>
+            {t?.changeYourPassword.change || "Change Password"}
+          </Button>
+        </form>
+      </Box>
+    )
   );
 };
 
