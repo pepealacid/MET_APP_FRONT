@@ -1,4 +1,10 @@
 {
+  "main": {
+    "loading": "Loading...",
+    "searchArtwork": "Search for artworks",
+    "searchArtist": "Search for artists",
+    "searchTour": "Search for tours"
+  },
   "zero": {
     "skip": "Skip",
     "one": {
@@ -148,5 +154,48 @@
     "visit": "Visit",
     "not": "Not bio available",
     "loading": "Loading artist details..."
+  },
+
+  "toursRecommendations": {
+    "one": "One hour tours",
+    "recom": "Recommended",
+    "like": "You might like",
+    "personalize": "Personalize a Tour"
+  },
+
+  "tours": {
+    "rate": "Overall, how would you rate the experience with this tour?",
+    "next": "Next",
+    "end": "End Tour",
+    "time": "Was the time of the tour accurate according to your preference and your estimated time?",
+    "info": "Was the information of the Tour artworks useful for you?",
+    "noMatch": "There are no matching tours",
+    "long": "How long do you have your visit?",
+    "least": "You need at least one hour for your visit",
+    "exceed": "You cannot exceed 5 hours of tour",
+    "negative": "You cannot have negative minutes",
+    "moreMinutes": "You cannot have more than 59 minutes",
+    "allFields": "You need to properly fill all the fields",
+    "oneTage": "You have to choose at least one tag",
+    "miss": "Which artist movement wouldn't you like to miss out?",
+    "important": "I only want to see the most important artworks",
+    "save": "Save tour",
+    "tourTime": "Tour Time",
+    "can": "You can add, delete the artworks here. We will notify you if your changes exceed the time of the tour.",
+    "room": "Room",
+    "discover": "Discover art",
+    "goTo": "In order to go to the next artwork you have to go the gallery:",
+    "unknown": "Unknown artist",
+    "bio": "Artist biography: ",
+    "type": "Type of art: ",
+    "created": "Created through",
+    "noFavorites": "You have no favorite {{field}}",
+    "mark": "All the {{field}} you mark as favorite will appear here",
+    "explore": "Go Explore!",
+    "artworks": "artworks",
+    "artists": "artists",
+    "creating": "We are creating the perfect tour for you...",
+    "start": "Start Tour",
+    "personalized": "Personalized tour"
   }
 }

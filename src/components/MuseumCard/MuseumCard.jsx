@@ -1,6 +1,6 @@
 import { Image, Text, Button } from "@chakra-ui/react";
 import MetImage from "../../assets/images/METPicture.jpeg";
-import LocationImage from "../../assets/images/Location.png";
+import LocationImage from "../../assets/images/Location.svg";
 import { Link } from "react-router-dom";
 import "./MuseumCard.css";
 import { useContext } from "react";

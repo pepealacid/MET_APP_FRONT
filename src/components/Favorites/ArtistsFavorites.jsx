@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import axios from "axios";
 import { Spinner } from "@chakra-ui/react";
 import { Link } from "react-router-dom";
@@ -7,11 +7,15 @@ import "./ListingFavorites.css";
 import { TOKEN_NAME } from "../../context/auth.context";
 import userService from "../../services/user.service";
 import favoriteService from "../../services/favorite.service";
+import NoElementsFound from "./NoElementsFound";
+import { LanguageContext } from "../../context/language.context";
 
 const ArtistsFavorites = () => {
   const [favoriteArtistIds, setFavoriteArtistIds] = useState([]);
   const [favorites, setFavorites] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
+
+  const { t } = useContext(LanguageContext);
 
   useEffect(() => {
     getFavoriteArtists();
@@ -79,22 +83,28 @@ const ArtistsFavorites = () => {
   }
 
   return (
-    <>
-      <div className="artist-card-container">
-        {favorites.map((artist) => (
-          <Link
-            key={artist.id}
-            to={{
-              pathname: `/artist/${artist.title}`,
-              search: `?url=${encodeURIComponent(artist._links.self.href)}`,
-            }}
-            style={{ textDecoration: "none", cursor: "pointer" }}
-          >
-            <ArtistCardLittle image={artist.image} name={artist.name} />
-          </Link>
-        ))}
-      </div>
-    </>
+    t?.tours && (
+      <>
+        {favorites && favorites.length ? (
+          <div className="artist-card-container">
+            {favorites.map((artist) => (
+              <Link
+                key={artist.id}
+                to={{
+                  pathname: `/artist/${artist.title}`,
+                  search: `?url=${encodeURIComponent(artist._links.self.href)}`,
+                }}
+                style={{ textDecoration: "none", cursor: "pointer" }}
+              >
+                <ArtistCardLittle image={artist.image} name={artist.name} />
+              </Link>
+            ))}
+          </div>
+        ) : (
+          <NoElementsFound exploreIn="/home/artists" field={t?.tours.artists || "artists"} />
+        )}
+      </>
+    )
   );
 };
 

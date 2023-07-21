@@ -105,7 +105,7 @@ const ArtistSearchPage = () => {
                       >
                         <ArtistCard
                           context="search-result"
-                          imageUrl={result.imageUrl}
+                          imageUrl={result.imageUrl || "https://drawinghowtos.com/wp-content/uploads/2022/07/painter-colored.jpg"}
                           title={result.title}
                           birthday={result.birthday}
                           deathday={result.deathday}

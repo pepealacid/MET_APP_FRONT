@@ -1,10 +1,18 @@
-import SandClock from "../../assets/images/SandClock.png";
-import FavHeart from "../../assets/images/FavHeart.png";
+import SandClock from "../../assets/images/SandClock.svg";
+import FavHeart from "../../assets/images/FavHeart.svg";
 import PropTypes from "prop-types";
-import FavHeartFilled from "../../assets/images/FavHeartFilled.png";
+import FavHeartFilled from "../../assets/images/FavHeartFilled.svg";
 import { useContext } from "react";
 import { FavContext } from "../../context/fav.context";
 import "./ArtworkCard.css";
+import {
+  Box,
+  Image,
+  Button,
+  Text,
+  Flex,
+  Stack,
+} from "@chakra-ui/react";
 
 const ArtworkCard = ({ context, imageUrl, title, author, date, artworkID }) => {
   const cardStyles =
@@ -54,7 +62,7 @@ const ArtworkCard = ({ context, imageUrl, title, author, date, artworkID }) => {
           <p className="author">{truncatedAuthor}</p>
           <div className="date">
             <img className="clock" src={SandClock} alt="year" />
-            <p>{date}</p>
+            <p style={{marginTop : "4px"}}>{date}</p>
           </div>
         </div>
       </div>

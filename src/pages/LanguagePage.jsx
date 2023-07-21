@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from "react";
+import React, { useContext } from "react";
 import { LanguageContext } from "../context/language.context";
 import {
   RadioGroup,
@@ -8,11 +8,7 @@ import {
   Text,
   Flex,
   Box,
-  Image,
-  Button,
 } from "@chakra-ui/react";
-
-import GoBackButton from "../assets/images/GoBackButton.png";
 
 import { useNavigate } from "react-router-dom";
 
@@ -80,15 +76,6 @@ const LanguagePage = () => {
               <Text paddingBottom="10px">Français</Text>
               <Box ml={4}>
                 <Radio value="fr" />
-              </Box>
-            </Flex>
-            <Flex
-              justifyContent="space-between"
-              borderBottom="1px solid #efefef"
-            >
-              <Text paddingBottom="10px">Gaelic</Text>
-              <Box ml={4}>
-                <Radio value="gd" />
               </Box>
             </Flex>
             <Flex

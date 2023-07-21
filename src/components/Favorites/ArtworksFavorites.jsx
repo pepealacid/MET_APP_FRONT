@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import axios from "axios";
 import { Grid, Spinner } from "@chakra-ui/react";
 import ArtworkCardLittle from "../ArtworkCard/ArtworkCardLittle";
@@ -6,11 +6,15 @@ import { Link } from "react-router-dom";
 import { TOKEN_NAME } from "../../context/auth.context";
 import userService from "../../services/user.service";
 import favoriteService from "../../services/favorite.service";
+import NoElementsFound from "./NoElementsFound";
+import { LanguageContext } from "../../context/language.context";
 
 const ArtworksFavorites = () => {
   const [favoriteArtworkIds, setFavoriteArtworksIds] = useState([]);
   const [favorites, setFavorites] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
+
+  const { t } = useContext(LanguageContext)
 
   useEffect(() => {
     getFavoriteArtworks();
@@ -60,8 +64,9 @@ const ArtworksFavorites = () => {
     return <Spinner size="xl" />;
   }
 
-  return (
+  return t?.tours && (
     <>
+    {favorites && favorites.length ? 
       <Grid
         templateColumns="repeat(2, 1fr)"
         gap={4}
@@ -76,7 +81,8 @@ const ArtworksFavorites = () => {
             />
           </Link>
         ))}
-      </Grid>
+      </Grid> : 
+      <NoElementsFound exploreIn="/home/artworks" field= {t?.tours.artworks || "artworks"} />}
     </>
   );
 };

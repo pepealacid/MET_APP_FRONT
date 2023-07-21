@@ -13,15 +13,15 @@ import {
   Tr,
   Td,
 } from "@chakra-ui/react";
-import SandClock from "../../assets/images/SandClock.png";
-import Brush from "../../assets/images/Brush.png";
-import Ruler from "../../assets/images/Ruler.png";
-import WhiteClock from "../../assets/images/WhiteClock.png";
+import SandClock from "../../assets/images/SandClock.svg";
+import Brush from "../../assets/images/Brush.svg";
+import Ruler from "../../assets/images/Ruler.svg";
+import WhiteClock from "../../assets/images/WhiteClock.svg";
 import { FavContext } from "../../context/fav.context";
-import ArtistFavHeart from "../../assets/images/ArtistFavHeart.png";
-import FavHeartFilled from "../../assets/images/FavHeartFilled.png";
+import FavHeart from "../../assets/images/FavHeart.svg";
+import FavHeartFilled from "../../assets/images/FavHeartFilled.svg";
 import RandomArtist from "../../assets/images/RandomArtist.png";
-import InfoButton from "../../assets/images/InfoButton.png";
+import InfoButton from "../../assets/images/InfoButton.svg";
 import MuseumCard from "../../components/MuseumCard/MuseumCard";
 import ArtworkCard from "../../components/ArtworkCard/ArtworkCard";
 import { LanguageContext } from "../../context/language.context";
@@ -168,7 +168,7 @@ const ArtworkDetailsPage = () => {
                       ) : (
                         <img
                           className="fav-button-img"
-                          src={ArtistFavHeart}
+                          src={FavHeart}
                           alt="not-favorited"
                         />
                       )}

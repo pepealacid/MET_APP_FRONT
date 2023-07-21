@@ -1,153 +1,189 @@
 {
-    "zero": {
-      "skip": "Überspringen",
-      "one": {
-        "header": "Verpasse nichts!",
-        "text": "Wähle eine der vordefinierten Touren aus oder passe deine eigene an, um alles zu sehen."
-      },
-      "two": {
-        "header": "Erhalte alle Informationen mit nur einem Scan",
-        "text": "Scanne jedes Kunstwerk, um die ganze Geschichte dahinter zu sehen."
-      },
-      "three": {
-        "header": "Füge alles, was dir gefällt, zu deinen Favoriten hinzu",
-        "text": "Unser Algorithmus stellt sicher, dass nichts, was dir gefällt, unbemerkt bleibt."
-      }
+  "main": {
+    "loading": "Laden...",
+    "searchArtwork": "Suche nach Kunstwerken",
+    "searchArtist": "Suche nach Künstlern",
+    "searchTour": "Suche nach Touren"
+  },
+  "zero": {
+    "skip": "Überspringen",
+    "one": {
+      "header": "Verpassen Sie nichts!",
+      "text": "Wählen Sie eine der vorgegebenen Touren aus oder passen Sie Ihre eigene an, um alles zu sehen."
     },
-    "buttons": {
-      "tours": "Touren",
-      "artists": "Künstler",
-      "artworks": "Kunstwerke",
-      "museum": "Museum",
-      "about": "Über",
-      "tickets": "Tickets",
-      "ticketsButton": "Tickets kaufen"
+    "two": {
+      "header": "Erhalten Sie alle Informationen mit nur einem Scan",
+      "text": "Scannen Sie jedes Kunstwerk, um die ganze Geschichte dahinter zu erfahren."
     },
-    "navbar": {
-      "explore": "Entdecken",
-      "favorites": "Favoriten",
-      "profile": "Profil",
-      "edit": "Bearbeiten",
-      "changePassword": "Passwort ändern",
-      "language": "Sprache",
-      "appearance": "Erscheinungsbild",
-      "support": "Support",
-      "legal": "Rechtliches",
-      "logout": "Abmelden",
-      "deleteAccount": "Konto löschen",
-      "deleteUser": "Benutzer löschen",
-      "deleteConfirmation": "Sind Sie sicher, dass Sie Ihr Konto löschen möchten? Diese Aktion kann nicht rückgängig gemacht werden.",
-      "cancel": "Abbrechen",
-      "delete": "Löschen"
-    },
-  
-    "artistSearchPage": {
-      "goBack": "Zurück",
-      "favorited": "Favorisiert",
-      "notFavorited": "Nicht favorisiert",
-      "about": "Über",
-      "readMore": "Weiterlesen",
-      "readLess": "Weniger lesen",
-      "getMoreInfo": "Mehr Informationen",
-      "loadingArtistDetails": "Künstlerdetails werden geladen...",
-      "notBioAvailable": "Biografie nicht verfügbar",
-      "american": "Amerikanische Künstler",
-      "spanish": "Spanische Künstler",
-      "women": "Frauen in der Kunst",
-      "results": "Ergebnisse für"
-    },
-  
-    "artworkSearchPage": {
-      "women": "Frauen in der Kunst",
-      "american": "Amerikanische Kunstwerke",
-      "european": "Europäische Kunstwerke",
-      "random": "Zufällige Kunstwerke",
-      "results": "Ergebnisse für"
-    },
-  
-    "changeYourPassword": {
-      "current": "Aktuelles Passwort",
-      "new": "Neues Passwort",
-      "confirm": "Passwort bestätigen",
-      "change": "Passwort ändern",
-      "success": "Passwort erfolgreich geändert!"
-    },
-  
-    "themePage": {
-      "header": "Thema",
-      "light": "Hell",
-      "dark": "Dunkel"
-    },
-  
-    "support": {
-      "header": "Support",
-      "first": "Wenn Sie Hilfe benötigen oder Fragen zur Musart-App haben, zögern Sie nicht, sich an unser Support-Team zu wenden. Wir sind hier, um zu helfen!",
-      "contactHeader": "Kontaktinformationen",
-      "mail": "E-Mail: angpepeles@gmail.com",
-      "phone": "Telefon: +34 667 63 44 56",
-      "operating": "Betriebszeiten",
-      "week": "Montag bis Freitag: 9:00 bis 17:00 Uhr (EST)",
-      "weekend": "Samstag bis Sonntag: Geschlossen"
-    },
-  
-    "legal": {
-      "title": "Datenschutz-Bestimmungen",
-      "intro": "Diese Datenschutz-Bestimmungen regeln die Art und Weise, wie Musart Informationen von Benutzern (jeder, ein 'Benutzer') der mobilen Anwendung Musart ('App') sammelt, verwendet, wartet und offenlegt. Diese Datenschutz-Bestimmungen gelten für die App und alle von Musart angebotenen Produkte und Dienstleistungen.",
-      "personalIdentificationInfoTitle": "Persönliche Identifikationsinformationen",
-      "personalIdentificationInfo": "Musart kann persönliche Identifikationsinformationen von Benutzern auf verschiedene Weise erfassen, einschließlich bei der Registrierung auf der App und bei der Angabe von Namen, E-Mail-Adresse und Passwort. Die erfassten persönlichen Identifikationsinformationen dienen Authentifizierungszwecken und zur Verbesserung der Benutzererfahrung in der App. Musart verpflichtet sich, die persönlichen Informationen des Benutzers vertraulich und sicher zu behandeln.",
-      "nonPerIdInTitle": "Nicht-Personenbezogene Identifikationsinformationen",
-      "nonPerIdIn": "Musart kann auch nicht-personenbezogene Identifikationsinformationen über Benutzer erfassen, wann immer sie mit der App interagieren. Diese Informationen können den Typ des verwendeten Geräts, das Betriebssystem, den Browsernamen und andere technische Details im Zusammenhang mit der Interaktion des Benutzers mit der App umfassen. Diese Informationen werden erfasst, um die Funktionalität der App zu verbessern und eine bessere Benutzererfahrung zu bieten.",
-      "useOfTitle": "Verwendung gesammelter Informationen",
-      "useOfCollectedInfo": [
-        "Musart kann die gesammelten Informationen für folgende Zwecke verwenden:",
-        "- Bereitstellung und Personalisierung der Benutzererfahrung: Die erfassten Informationen ermöglichen es Musart, den Inhalt und die Funktionen der App an die Vorlieben und Interessen des Benutzers anzupassen.",
-        "- Verbesserung des Kundenservice: Die Informationen helfen Musart, Anfragen des Benutzers effizienter zu beantworten und einen effektiven Kundenservice zu bieten.",
-        "- Versenden von periodischen E-Mails: Musart kann die angegebene E-Mail-Adresse verwenden, um den Benutzer über Updates, Benachrichtigungen und wichtige Informationen im Zusammenhang mit der App zu informieren. Der Benutzer kann sich durch Kontaktaufnahme mit Musart oder durch Verwendung des in den E-Mails bereitgestellten Abmeldelinks von solchen Mitteilungen abmelden."
-      ],
-      "protectionOfUserInfoTitle": "Schutz der Benutzerinformationen",
-      "protectionOfUserInfo": "Musart ergreift angemessene Sicherheitsmaßnahmen, um Benutzerinformationen vor unbefugtem Zugriff, Veränderung, Offenlegung oder Zerstörung zu schützen. Dies umfasst angemessene Datenerfassung, -speicherung und -verarbeitungspraktiken sowie Sicherheitsmaßnahmen zum Schutz vor unbefugtem Zugriff auf Benutzerinformationen.",
-      "sharingOfUserInfoTitle": "Weitergabe von Benutzerinformationen",
-      "sharingOfUserInfo": "Musart verkauft, handelt oder vermietet persönliche Identifikationsinformationen des Benutzers nicht an Dritte. Benutzerinformationen werden ausschließlich für die in dieser Datenschutz-Bestimmungen genannten Zwecke verwendet und sind nur für autorisiertes Personal oder Dienstleister von Musart zugänglich, die die Informationen zur Erbringung von Dienstleistungen im Auftrag von Musart benötigen.",
-      "changesToPolicyTitle": "Änderungen dieser Datenschutz-Bestimmungen",
-      "changesToPolicy": "Musart behält sich das Recht vor, diese Datenschutz-Bestimmungen jederzeit zu aktualisieren oder zu ändern. Benutzer werden ermutigt, diese Datenschutz-Bestimmungen regelmäßig auf Änderungen zu überprüfen. Die fortgesetzte Nutzung der App nach den Änderungen gilt als Anerkennung und Akzeptanz der aktualisierten Datenschutz-Bestimmungen.",
-      "contactUsTitle": "Kontaktieren Sie uns",
-      "contactUsInfo": "Wenn Benutzer Fragen oder Bedenken hinsichtlich dieser Datenschutz-Bestimmungen oder der Praktiken der Musart-App haben, können sie uns unter angpepeles@gmail.com kontaktieren."
-    },
-  
-    "editProfile": {
-      "name": "Name",
-      "email": "E-Mail",
-      "description": "Beschreibung",
-      "save": "Speichern"
-    },
-  
-    "museum": {
-      "aboutTitle": "Über das Museum",
-      "about": "Das Metropolitan Museum of Art, allgemein bekannt als das Met, ist das größte Kunstmuseum in Amerika und befindet sich in New York City. Bis 2022 hat es 3.208.832 Besucher begrüßt und steht damit an achter Stelle der meistbesuchten Kunstmuseen weltweit. In den USA ist es das zweitmeistbesuchte Kunstmuseum, übertroffen nur von der National Gallery of Art in Washington D.C. Die ständige Sammlung des Met umfasst über zwei Millionen Werke, die in 17 kuratorischen Abteilungen organisiert sind. Das Hauptgebäude des Met liegt an der 1000 Fifth Avenue entlang des Museum Mile auf der Upper East Side von Manhattan und ist eines der größten Kunstmuseen der Welt in Bezug auf die Fläche. Der Bau begann im Jahr 1880, und es erstreckt sich über etwa 2 Millionen Quadratfuß (190.000 m²). Ein weiterer Standort, The Cloisters im Fort Tryon Park in Upper Manhattan, beherbergt eine umfangreiche Sammlung von Kunstwerken, Architektur und Artefakten aus dem mittelalterlichen Europa. Die Gründung des Metropolitan Museum of Art geht auf das Jahr 1870 zurück, mit der Mission, Kunst und Kunstpädagogik dem amerikanischen Volk zugänglich zu machen. Die ständige Sammlung umfasst verschiedene Kunstformen, darunter antike Kulturen, das alte Ägypten, europäische Gemälde und Skulpturen der Alten Meister, amerikanische und moderne Kunst. Darüber hinaus besitzt das Met umfangreiche Sammlungen afrikanischer, asiatischer, ozeanischer, byzantinischer und islamischer Kunst. Das Museum präsentiert auch enzyklopädische Sammlungen von Musikinstrumenten, Kostümen, Accessoires und antiken Waffen und Rüstungen aus der ganzen Welt. Die Galerien zeichnen sich insbesondere durch bemerkenswerte Interieurs aus, die von der römischen Antike bis zum modernen amerikanischen Design reichen.",
-      "schedules": "Öffnungszeiten",
-      "closed": "GESCHLOSSEN",
-      "find": "Wo Sie es finden",
-      "maps": "In Karten öffnen"
-    },
-  
-    "artworkDetails": {
-      "about": "Über",
-      "details": "Details",
-      "find": "Wo Sie dies finden",
-      "open": "In Karten öffnen",
-      "like": "Dir könnte auch gefallen",
-      "loading": "Lade Kunstwerksdetails...",
-      "unable": "Kunstwerksdetails konnten nicht abgerufen werden."
-    },
-  
-    "artistDetails": {
-      "about": "Über",
-      "more": "Mehr lesen",
-      "less": "Weniger lesen",
-      "moreInfo": "Mehr Informationen",
-      "visit": "Besuchen",
-      "not": "Biografie nicht verfügbar",
-      "loading": "Künstlerdetails werden geladen..."
+    "three": {
+      "header": "Fügen Sie alles, was Ihnen gefällt, zu Ihren Favoriten hinzu",
+      "text": "Unser Algorithmus stellt sicher, dass Ihnen nichts entgeht, was Ihnen gefällt."
     }
+  },
+  "buttons": {
+    "tours": "Touren",
+    "artists": "Künstler",
+    "artworks": "Kunstwerke",
+    "museum": "Museum",
+    "about": "Über",
+    "tickets": "Tickets",
+    "ticketsButton": "Tickets kaufen"
+  },
+  "navbar": {
+    "explore": "Erkunden",
+    "favorites": "Favoriten",
+    "profile": "Profil",
+    "edit": "Bearbeiten",
+    "changePassword": "Passwort ändern",
+    "language": "Sprache",
+    "appearance": "Erscheinung",
+    "support": "Unterstützung",
+    "legal": "Rechtliches",
+    "logout": "Abmelden",
+    "deleteAccount": "Konto löschen",
+    "deleteUser": "Benutzer löschen",
+    "deleteConfirmation": "Sind Sie sicher, dass Sie Ihr Konto löschen möchten? Diese Aktion kann nicht rückgängig gemacht werden.",
+    "cancel": "Abbrechen",
+    "delete": "Löschen"
+  },
+  "artistSearchPage": {
+    "goBack": "Zurück",
+    "favorited": "Favorisiert",
+    "notFavorited": "Nicht favorisiert",
+    "about": "Über",
+    "readMore": "Mehr lesen",
+    "readLess": "Weniger lesen",
+    "getMoreInfo": "Mehr Informationen",
+    "loadingArtistDetails": "Künstlerdetails werden geladen...",
+    "notBioAvailable": "Biografie nicht verfügbar",
+    "american": "Amerikanische Künstler",
+    "spanish": "Spanische Künstler",
+    "women": "Frauen in der Kunst",
+    "results": "Ergebnisse für"
+  },
+  "artworkSearchPage": {
+    "women": "Frauen in der Kunst",
+    "american": "Amerikanische Kunstwerke",
+    "european": "Europäische Kunstwerke",
+    "random": "Zufällige Kunstwerke",
+    "results": "Ergebnisse für"
+  },
+  "changeYourPassword": {
+    "current": "Aktuelles Passwort",
+    "new": "Neues Passwort",
+    "confirm": "Passwort bestätigen",
+    "change": "Ihr Passwort ändern",
+    "success": "Passwort erfolgreich geändert!"
+  },
+  "themePage": {
+    "header": "Design",
+    "light": "Hell",
+    "dark": "Dunkel"
+  },
+  "support": {
+    "header": "Unterstützung",
+    "first": "Wenn Sie Unterstützung benötigen oder Fragen zur Musart-App haben, zögern Sie nicht, sich an unser Support-Team zu wenden. Wir sind hier, um zu helfen!",
+    "contactHeader": "Kontaktinformationen",
+    "mail": "E-Mail: angpepeles@gmail.com",
+    "phone": "Telefon: +34 667 63 44 56",
+    "operating": "Öffnungszeiten",
+    "week": "Montag bis Freitag: 9:00 - 17:00 Uhr (EST)",
+    "weekend": "Samstag und Sonntag: Geschlossen"
+  },
+  "legal": {
+    "title": "Datenschutzrichtlinie",
+    "intro": "Diese Datenschutzrichtlinie regelt die Art und Weise, wie Musart Informationen von Benutzern (jeder, ein 'Benutzer') der Musart-Mobilanwendung ('App') sammelt, verwendet, pflegt und offenlegt. Diese Datenschutzrichtlinie gilt für die App und alle Produkte und Dienstleistungen, die von Musart angeboten werden.",
+    "personalIdentificationInfoTitle": "Persönliche Identifikationsinformationen",
+    "personalIdentificationInfo": "Musart kann persönliche Identifikationsinformationen von Benutzern auf verschiedene Weise erfassen, einschließlich bei der Registrierung auf der App, wenn Benutzer ihren Namen, ihre E-Mail-Adresse und ihr Passwort angeben. Die erfassten persönlichen Identifikationsinformationen werden für Authentifizierungszwecke verwendet und um die Benutzererfahrung innerhalb der App zu verbessern. Musart verpflichtet sich, die persönlichen Informationen des Benutzers vertraulich und sicher aufzubewahren.",
+    "nonPerIdInTitle": "Nicht personenbezogene Identifikationsinformationen",
+    "nonPerIdIn": "Musart kann auch nicht personenbezogene Identifikationsinformationen über Benutzer erfassen, wann immer sie mit der App interagieren. Diese Informationen können den Typ des verwendeten Geräts, das Betriebssystem, den Browsertitel und andere technische Details umfassen, die sich auf die Interaktion des Benutzers mit der App beziehen. Diese Informationen dienen dazu, die Funktionalität der App zu verbessern und eine bessere Benutzererfahrung zu bieten.",
+    "useOfTitle": "Verwendung der gesammelten Informationen",
+    "useOfCollectedInfo": [
+      "Musart kann die gesammelten Informationen für folgende Zwecke verwenden:",
+      "- Bereitstellung und Personalisierung der Benutzererfahrung: Die gesammelten Informationen ermöglichen es Musart, den Inhalt und die Funktionen der App entsprechend den Vorlieben und Interessen des Benutzers anzupassen.",
+      "- Verbesserung des Kundenservice: Die Informationen helfen Musart, Anfragen für Benutzerunterstützung effizienter zu beantworten und einen effektiven Kundenservice zu bieten.",
+      "- Versenden von periodischen E-Mails: Musart kann die bereitgestellte E-Mail-Adresse verwenden, um dem Benutzer Updates, Benachrichtigungen und wichtige Informationen zur App zu senden. Der Benutzer kann sich abmelden, um solche Mitteilungen zu erhalten, indem er sich an Musart wendet oder den Abmeldelink in den E-Mails verwendet."
+    ],
+    "protectionOfUserInfoTitle": "Schutz der Benutzerinformationen",
+    "protectionOfUserInfo": "Musart ergreift angemessene Sicherheitsmaßnahmen, um die Benutzerinformationen vor unbefugtem Zugriff, Änderung, Offenlegung oder Zerstörung zu schützen. Dazu gehört die Aufrechterhaltung angemessener Datenerfassung, -speicherung und -verarbeitungspraktiken sowie Sicherheitsmaßnahmen zum Schutz vor unbefugtem Zugriff auf Benutzerinformationen.",
+    "sharingOfUserInfoTitle": "Weitergabe von Benutzerinformationen",
+    "sharingOfUserInfo": "Musart verkauft, handelt oder vermietet die persönlichen Identifikationsinformationen des Benutzers nicht an andere. Die Benutzerinformationen werden ausschließlich für die in dieser Datenschutzrichtlinie genannten Zwecke verwendet und sind nur für autorisiertes Personal von Musart oder Dienstleister zugänglich, die die Informationen kennen müssen, um im Auftrag von Musart Dienstleistungen zu erbringen.",
+    "changesToPolicyTitle": "Änderungen dieser Datenschutzrichtlinie",
+    "changesToPolicy": "Musart behält sich das Recht vor, diese Datenschutzrichtlinie jederzeit zu aktualisieren oder zu ändern. Benutzer werden ermutigt, diese Datenschutzrichtlinie regelmäßig auf Änderungen zu überprüfen. Die fortgesetzte Nutzung der App nach den Änderungen stellt die Anerkennung und Akzeptanz der aktualisierten Datenschutzrichtlinie durch den Benutzer dar.",
+    "contactUsTitle": "Kontaktiere uns",
+    "contactUsInfo": "Wenn Benutzer Fragen oder Bedenken bezüglich dieser Datenschutzrichtlinie oder der Praktiken der Musart App haben, können sie uns unter angpepeles@gmail.com kontaktieren."
+  },
+  "editProfile": {
+    "name": "Name",
+    "email": "E-Mail",
+    "description": "Beschreibung",
+    "save": "Speichern"
+  },
+  "museum": {
+    "aboutTitle": "Über das Museum",
+    "about": "Das Metropolitan Museum of Art, auch bekannt als Met, ist das größte Kunstmuseum in Amerika und befindet sich in New York City. Bis 2022 hat es 3.208.832 Besucher begrüßt und rangiert damit an achter Stelle der meistbesuchten Kunstmuseen weltweit. In den USA ist es das zweitmeistbesuchte Kunstmuseum, übertroffen nur von der National Gallery of Art in Washington D.C. Die ständige Sammlung des Met umfasst über zwei Millionen Werke, die in 17 kuratorischen Abteilungen organisiert sind. Das Hauptgebäude des Met befindet sich in der Fifth Avenue, 1000, in der Region, die als Museum Mile bekannt ist, im Upper East Side von Manhattan, und ist eines der größten Kunstmuseen der Welt. Der Bau begann 1880 und umfasst etwa 190.000 Quadratmeter. Ein weiterer Standort, The Cloisters, befindet sich im Fort Tryon Park in Upper Manhattan und beherbergt eine umfangreiche Sammlung mittelalterlicher Kunst, Architektur und Artefakte aus Europa. Die Gründung des Metropolitan Museum of Art geht auf das Jahr 1870 zurück und hat die Mission, Kunst und Kunstausbildung dem amerikanischen Volk näher zu bringen. Die ständige Sammlung umfasst verschiedene Kunstformen, darunter klassische Antike, das alte Ägypten, Gemälde und Skulpturen der europäischen Alten Meister und moderne amerikanische Kunst. Darüber hinaus verfügt das Met über umfangreiche Bestände an afrikanischer, asiatischer, ozeanischer, byzantinischer und islamischer Kunst. Das Museum präsentiert auch enzyklopädische Sammlungen von Musikinstrumenten, Kostümen, Accessoires und antiken Waffen und Rüstungen aus aller Welt. Die Galerien zeigen bemerkenswerte Interieurs aus der römischen Zeit des 1. Jahrhunderts bis zum modernen amerikanischen Design.",
+    "schedules": "Öffnungszeiten",
+    "closed": "GESCHLOSSEN",
+    "find": "Wo Sie es finden",
+    "maps": "In Karten öffnen"
+  },
+  "artworkDetails": {
+    "about": "Über",
+    "details": "Details",
+    "find": "Wo Sie dieses Kunstwerk finden",
+    "open": "In Karten öffnen",
+    "like": "Ihnen könnte auch gefallen",
+    "loading": "Kunstwerkdetails werden geladen...",
+    "unable": "Die Details zu diesem Kunstwerk konnten nicht abgerufen werden."
+  },
+  "artistDetails": {
+    "about": "Über",
+    "more": "Mehr lesen",
+    "less": "Weniger lesen",
+    "moreInfo": "Mehr Informationen",
+    "visit": "Besuchen",
+    "not": "Biografie nicht verfügbar",
+    "loading": "Künstlerdetails werden geladen..."
+  },
+  "toursRecommendations": {
+    "one": "Ein-Stunden-Touren",
+    "recom": "Empfohlen",
+    "like": "Ihnen könnte auch gefallen",
+    "personalize": "Tour personalisieren"
+  },
+  "tours": {
+    "rate": "Wie würden Sie insgesamt die Erfahrung mit dieser Tour bewerten?",
+    "next": "Weiter",
+    "end": "Tour beenden",
+    "time": "War die Zeit der Tour entsprechend Ihrer Vorliebe und Ihrer geschätzten Zeit genau?",
+    "info": "Waren die Informationen zu den Kunstwerken in der Tour für Sie nützlich?",
+    "noMatch": "Keine übereinstimmenden Touren",
+    "long": "Wie viel Zeit haben Sie für den Besuch?",
+    "least": "Sie benötigen mindestens eine Stunde für den Besuch",
+    "exceed": "Sie können die Tour nicht länger als 5 Stunden machen",
+    "negative": "Sie können keine negativen Minuten haben",
+    "moreMinutes": "Sie können nicht mehr als 59 Minuten haben",
+    "allFields": "Sie müssen alle Felder ordnungsgemäß ausfüllen",
+    "oneTage": "Sie müssen mindestens ein Tag auswählen",
+    "miss": "Welche Kunstrichtung möchten Sie nicht verpassen?",
+    "important": "Ich möchte nur die wichtigsten Kunstwerke sehen",
+    "save": "Tour speichern",
+    "tourTime": "Tourzeit",
+    "can": "Sie können hier Kunstwerke hinzufügen oder löschen. Wir informieren Sie, wenn Ihre Änderungen die Tourzeit überschreiten.",
+    "room": "Raum",
+    "discover": "Kunst entdecken",
+    "goTo": "Um zum nächsten Kunstwerk zu gelangen, müssen Sie zur Galerie gehen:",
+    "unknown": "Unbekannter Künstler",
+    "bio": "Künstlerbiografie: ",
+    "type": "Kunstart: ",
+    "created": "Erstellt durch",
+    "noFavorites": "Sie haben keine Favoriten {{field}}",
+    "mark": "Alle {{field}}, die Sie als Favoriten markieren, werden hier angezeigt",
+    "explore": "Los geht's!",
+    "artworks": "Kunstwerke",
+    "artists": "Künstler",
+    "creating": "Wir erstellen die perfekte Tour für Sie...",
+    "start": "Tour starten",
+    "personalized": "Persönliche Tour"
   }
-  
+}

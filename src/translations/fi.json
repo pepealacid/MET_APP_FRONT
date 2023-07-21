@@ -1,142 +1,190 @@
+
 {
+  "main": {
+  "loading": "Ladataan...",
+  "searchArtwork": "Etsi taideteoksia",
+  "searchArtist": "Etsi taiteilijoita",
+  "searchTour": "Etsi kierroksia"
+  },
   "zero": {
-    "skip": "Ohita",
-    "one": {
-      "header": "Älä missaa mitään!",
-      "text": "Valitse valmiista kierroksista tai räätälöi oma kierroksesi nähdäksesi kaiken."
-    },
-    "two": {
-      "header": "Saat kaiken tiedon yhdellä skannauksella",
-      "text": "Skannaa taide-esineitä nähdäksesi niiden koko tarinan."
-    },
-    "three": {
-      "header": "Lisää kaikki mieluisat kohteet suosikkeihin",
-      "text": "Algoritmimme varmistaa, ettei mikään mieluisa jää huomaamatta."
-    }
+  "skip": "Ohita",
+  "one": {
+  "header": "Älä missaa mitään!",
+  "text": "Valitse valmiista kierroksista tai räätälöi oma kierros nähdäksesi kaiken."
+  },
+  "two": {
+  "header": "Saat kaiken tiedon yhdellä skannauksella",
+  "text": "Skannaa mikä tahansa taideteos nähdäksesi koko tarinan sen takana."
+  },
+  "three": {
+  "header": "Lisää kaikki tykkäämäsi suosikkeihin",
+  "text": "Algoritmimme varmistaa, ettei mikään mielenkiintoinen jää huomaamatta."
+  }
   },
   "buttons": {
-    "tours": "Kierrokset",
-    "artists": "Taiteilijat",
-    "artworks": "Taide-esineet",
-    "museum": "Museo",
-    "about": "Tietoja",
-    "tickets": "Liput",
-    "ticketsButton": "Osta liput"
+  "tours": "Kierrokset",
+  "artists": "Taiteilijat",
+  "artworks": "Taideteokset",
+  "museum": "Museo",
+  "about": "Tietoja",
+  "tickets": "Liput",
+  "ticketsButton": "Osta liput"
   },
   "navbar": {
-    "explore": "Tutki",
-    "favorites": "Suosikit",
-    "profile": "Profiili",
-    "edit": "Muokkaa",
-    "changePassword": "Vaihda salasana",
-    "language": "Kieli",
-    "appearance": "Ulkoasu",
-    "support": "Tuki",
-    "legal": "Oikeudellinen",
-    "logout": "Kirjaudu ulos",
-    "deleteAccount": "Poista tili",
-    "deleteUser": "Poista käyttäjä",
-    "deleteConfirmation": "Oletko varma, että haluat poistaa tilisi? Tämä toimenpide on peruuttamaton.",
-    "cancel": "Peruuta",
-    "delete": "Poista"
+  "explore": "Tutustu",
+  "favorites": "Suosikit",
+  "profile": "Profiili",
+  "edit": "Muokkaa",
+  "changePassword": "Vaihda salasanasi",
+  "language": "Kieli",
+  "appearance": "Ulkoasu",
+  "support": "Tuki",
+  "legal": "Oikeudellinen",
+  "logout": "Kirjaudu ulos",
+  "deleteAccount": "Poista tili",
+  "deleteUser": "Poista käyttäjä",
+  "deleteConfirmation": "Oletko varma, että haluat poistaa tilisi? Tämä toiminto on peruuttamaton.",
+  "cancel": "Peruuta",
+  "delete": "Poista"
   },
   "artistSearchPage": {
-    "goBack": "Palaa takaisin",
-    "favorited": "Lisätty suosikkeihin",
-    "notFavorited": "Ei lisätty suosikkeihin",
-    "about": "Tietoja",
-    "readMore": "Lue lisää",
-    "readLess": "Lue vähemmän",
-    "getMoreInfo": "Lisätietoja",
-    "loadingArtistDetails": "Ladataan taiteilijan tietoja...",
-    "notBioAvailable": "Biografia ei saatavilla",
-    "american": "Amerikkalaiset taiteilijat",
-    "spanish": "Espanjalaiset taiteilijat",
-    "women": "Naiset taiteessa",
-    "results": "Tulokset haulle"
+  "goBack": "Palaa takaisin",
+  "favorited": "Suosikeissa",
+  "notFavorited": "Ei suosikeissa",
+  "about": "Tietoja",
+  "readMore": "Lue lisää",
+  "readLess": "Lue vähemmän",
+  "getMoreInfo": "Hanki lisätietoja",
+  "loadingArtistDetails": "Ladataan taiteilijan tietoja...",
+  "notBioAvailable": "Elämäkerta ei saatavilla",
+  "american": "Amerikkalaiset taiteilijat",
+  "spanish": "Espanjalaiset taiteilijat",
+  "women": "Naiset taiteessa",
+  "results": "Tulokset haulle"
   },
   "artworkSearchPage": {
-    "women": "Naiset taiteessa",
-    "american": "Amerikkalaiset taide-esineet",
-    "european": "Eurooppalaiset taide-esineet",
-    "random": "Satunnaiset taide-esineet",
-    "results": "Tulokset haulle"
+  "women": "Naiset taiteessa",
+  "american": "Amerikkalaiset taideteokset",
+  "european": "Eurooppalaiset taideteokset",
+  "random": "Satunnaiset taideteokset",
+  "results": "Tulokset haulle"
   },
   "changeYourPassword": {
-    "current": "Nykyinen salasana",
-    "new": "Uusi salasana",
-    "confirm": "Vahvista salasana",
-    "change": "Vaihda salasana",
-    "success": "Salasana vaihdettu onnistuneesti!"
+  "current": "Nykyinen salasana",
+  "new": "Uusi salasana",
+  "confirm": "Vahvista salasana",
+  "change": "Vaihda salasana",
+  "success": "Salasanan vaihto onnistui!"
   },
   "themePage": {
-    "header": "Teema",
-    "light": "Vaalea",
-    "dark": "Tumma"
+  "header": "Teema",
+  "light": "Vaalea",
+  "dark": "Tumma"
   },
   "support": {
-    "header": "Tuki",
-    "first": "Jos tarvitset apua tai sinulla on kysyttävää Musart-sovelluksesta, älä epäröi ottaa yhteyttä tukeemme. Olemme täällä auttamassa!",
-    "contactHeader": "Yhteystiedot",
-    "mail": "Sähköposti: angpepeles@gmail.com",
-    "phone": "Puhelin: +34 667 63 44 56",
-    "operating": "Aukioloajat",
-    "week": "Maanantai-perjantai: 9.00 - 17.00 (EST)",
-    "weekend": "Launtai-sunnuntai: Suljettu"
+  "header": "Tuki",
+  "first": "Jos tarvitset apua tai sinulla on kysyttävää Musart-sovelluksesta, älä epäröi ottaa yhteyttä tukitiimiimme. Olemme täällä auttamassa!",
+  "contactHeader": "Yhteystiedot",
+  "mail": "Sähköposti: angpepeles@gmail.com",
+  "phone": "Puhelin: +34 667 63 44 56",
+  "operating": "Aukioloajat",
+  "week": "Maanantaista perjantaihin: 9:00 - 17:00 (EST)",
+  "weekend": "Launtaista sunnuntaihin: Suljettu"
   },
   "legal": {
-    "title": "Tietosuojakäytäntö",
-    "intro": "Tämä tietosuojakäytäntö määrittelee, miten Musart kerää, käyttää, ylläpitää ja paljastaa tietoja käyttäjiltä (kukin, 'Käyttäjä') Musart-mobiilisovelluksen ('Sovellus') kautta. Tämä tietosuojakäytäntö koskee sovellusta sekä kaikkia Musartin tarjoamia tuotteita ja palveluita.",
-    "personalIdentificationInfoTitle": "Henkilökohtainen tunnistetieto",
-    "personalIdentificationInfo": "Musart voi kerätä käyttäjiltä henkilökohtaista tunnistetietoa eri tavoin, mukaan lukien rekisteröitymisen yhteydessä annetut nimi, sähköpostiosoite ja salasana. Kerättyä henkilökohtaista tunnistetietoa käytetään tunnistautumistarkoituksiin ja Sovelluksen käyttäjäkokemuksen parantamiseen. Musart sitoutuu pitämään käyttäjän henkilötiedot luottamuksellisina ja turvassa.",
-    "nonPerIdInTitle": "Ei-henkilökohtainen tunnistetieto",
-    "nonPerIdIn": "Musart voi myös kerätä ei-henkilökohtaista tunnistetietoa käyttäjistä aina kun he vuorovaikuttavat Sovelluksen kanssa. Tämä tieto voi sisältää käytetyn laitteen tyypin, käyttöjärjestelmän, selaimen nimen ja muut tekniset yksityiskohdat, jotka liittyvät käyttäjän vuorovaikutukseen Sovelluksen kanssa. Tämä tieto kerätään Sovelluksen toiminnallisuuden parantamiseksi ja paremman käyttökokemuksen tarjoamiseksi.",
-    "useOfTitle": "Kerätyn tiedon käyttö",
-    "useOfCollectedInfo": [
-      "Musart voi käyttää kerättyä tietoa seuraaviin tarkoituksiin:",
-      "- Käyttäjäkokemuksen tarjoaminen ja personointi: Kerätyn tiedon avulla Musart voi räätälöidä Sovelluksen sisältöä ja ominaisuuksia paremmin vastaamaan käyttäjän mieltymyksiä ja kiinnostuksen kohteita.",
-      "- Asiakaspalvelun parantaminen: Tieto auttaa Musartia vastaamaan käyttäjän tukipyyntöihin tehokkaammin ja tarjoamaan tehokasta asiakaspalvelua.",
-      "- Periodisten sähköpostien lähettäminen: Musart voi käyttää annettua sähköpostiosoitetta lähettämään käyttäjälle päivityksiä, ilmoituksia ja tärkeitä tietoja Sovellukseen liittyen. Käyttäjä voi halutessaan lopettaa tällaisten viestien vastaanottamisen ottamalla yhteyttä Musartiin tai käyttämällä viesteissä annettua tilauksen peruutuslinkkiä."
-    ],
-    "protectionOfUserInfoTitle": "Käyttäjätietojen suojaus",
-    "protectionOfUserInfo": "Musart ryhtyy asianmukaisiin turvatoimenpiteisiin suojatakseen käyttäjän tietoja luvattomalta pääsyltä, muutoksilta, paljastuksilta tai tuhoamiselta. Tämä sisältää asianmukaisen tiedonkeruun, tallennuksen ja käsittelyn käytännöt ja turvatoimenpiteet suojaamaan käyttäjän tietoja luvattomalta pääsyltä.",
-    "sharingOfUserInfoTitle": "Käyttäjätietojen jakaminen",
-    "sharingOfUserInfo": "Musart ei myy, vaihda tai vuokraa käyttäjän henkilökohtaista tunnistetietoa muille. Käyttäjän tietoja käytetään tiukasti tämän tietosuojakäytännön tarkoituksiin ja niihin pääsevät käsiksi vain Musartin valtuuttamat henkilöstö tai palveluntarjoajat, jotka tarvitsevat tiedot tarjotakseen palveluita Musartin puolesta.",
-    "changesToPolicyTitle": "Muutokset tähän tietosuojakäytäntöön",
-    "changesToPolicy": "Musart pidättää oikeuden päivittää tai muuttaa tätä tietosuojakäytäntöä milloin tahansa. Käyttäjiä kannustetaan tarkistamaan tämä tietosuojakäytäntö säännöllisesti muutosten varalta. Muutosten jälkeinen Sovelluksen käyttö tarkoittaa käyttäjän tunnustusta ja hyväksyntää päivitetystä tietosuojakäytännöstä.",
-    "contactUsTitle": "Ota yhteyttä",
-    "contactUsInfo": "Jos käyttäjillä on kysyttävää tai huolenaiheita tästä tietosuojakäytännöstä tai Musart-sovelluksen käytännöistä, he voivat ottaa meihin yhteyttä sähköpostitse osoitteessa angpepeles@gmail.com."
+  "title": "Tietosuojakäytäntö",
+  "intro": "Tämä tietosuojakäytäntö koskee Musartin mobiilisovelluksen ('Sovellus') käyttäjien ('Käyttäjä') keräämiä tietoja. Tämä tietosuojakäytäntö koskee Sovellusta ja kaikkia Musartin tarjoamia tuotteita ja palveluja.",
+  "personalIdentificationInfoTitle": "Henkilökohtaiset tunnistetiedot",
+  "personalIdentificationInfo": "Musart voi kerätä henkilökohtaisia tunnistetietoja Käyttäjiltä monin eri tavoin, mukaan lukien silloin kun Käyttäjät rekisteröityvät Sovellukseen ja antavat nimensä, sähköpostiosoitteensa ja salasanansa. Kerättyjä henkilökohtaisia tunnistetietoja käytetään todentamistarkoituksiin ja käyttäjäkokemuksen parantamiseen Sovelluksessa. Musart sitoutuu varmistamaan, että Käyttäjän henkilökohtaiset tiedot säilytetään luottamuksellisina ja turvassa.",
+  "nonPerIdInTitle": "Henkilökohtaiset tunnistamattomat tiedot",
+  "nonPerIdIn": "Musart voi myös kerätä tunnistamattomia henkilökohtaisia tietoja Käyttäjistä aina kun he vuorovaikuttavat Sovelluksen kanssa. Tämä tieto voi sisältää käytetyn laitteen tyypin, käyttöjärjestelmän, selaimen nimen ja muita teknisiä yksityiskohtia Käyttäjän vuorovaikutuksesta Sovelluksen kanssa. Tämä tieto kerätään Sovelluksen toiminnallisuuden parantamiseksi ja paremman käyttäjäkokemuksen tarjoamiseksi.",
+  "useOfTitle": "Kerättyjen tietojen käyttö",
+  "useOfCollectedInfo": [
+  "Musart voi käyttää kerättyjä tietoja seuraaviin tarkoituksiin:",
+  "- Käyttäjäkokemuksen tarjoaminen ja mukauttaminen: Kerätyt tiedot mahdollistavat Sovelluksen sisällön ja ominaisuuksien räätälöinnin vastaamaan paremmin Käyttäjän mieltymyksiä ja kiinnostuksen kohteita.",
+  "- Asiakaspalvelun parantaminen: Tiedot auttavat Musartia vastaamaan käyttäjän tukipyynnöihin tehokkaammin ja tarjoamaan tehokasta asiakaspalvelua.",
+  "- Säännöllisten sähköpostien lähettäminen: Musart voi käyttää annettua sähköpostiosoitetta lähettääkseen Käyttäjälle päivityksiä, ilmoituksia ja tärkeää tietoa Sovellukseen liittyen. Käyttäjä voi halutessaan lopettaa tällaisten viestien vastaanottamisen ottamalla yhteyttä Musartiin tai käyttämällä viestien lopetuslinkkiä."
+  ],
+  "protectionOfUserInfoTitle": "Käyttäjätietojen suojaaminen",
+  "protectionOfUserInfo": "Musart toteuttaa asianmukaisia turvatoimia suojatakseen käyttäjätiedot luvattomalta käytöltä, muokkaukselta, paljastukselta tai tuhoamiselta. Tähän kuuluu asianmukaisten tietojen keruun, säilytyksen ja käsittelyn käytäntöjen ja turvatoimien ylläpitäminen käyttäjätietojen luvatonta käyttöä vastaan.",
+  "sharingOfUserInfoTitle": "Käyttäjätietojen jakaminen",
+  "sharingOfUserInfo": "Musart ei myy, vaihda tai vuokraa käyttäjän henkilökohtaisia tunnistetietoja muille. Käyttäjätiedot ovat tarkoitettu vain tässä tietosuojakäytännössä mainittuihin tarkoituksiin ja niihin pääsevät käsiksi vain valtuutetut Musartin henkilökunta tai palveluntarjoajat, jotka tarvitsevat tiedot Musartin palvelujen tarjoamiseksi.",
+  "changesToPolicyTitle": "Muutokset tähän tietosuojakäytäntöön",
+  "changesToPolicy": "Musart pidättää oikeuden päivittää tai muuttaa tätä tietosuojakäytäntöä milloin tahansa. Käyttäjiä kannustetaan tarkistamaan tämä tietosuojakäytäntö säännöllisesti mahdollisten muutosten varalta. Sovelluksen käyttö jatkuneen muutoksen jälkeen tarkoittaa Käyttäjän tunnustusta ja hyväksyntää päivitetystä tietosuojakäytännöstä.",
+  "contactUsTitle": "Ota yhteyttä",
+  "contactUsInfo": "Jos Käyttäjillä on kysyttävää tai huolenaiheita tästä tietosuojakäytännöstä tai Musart-sovelluksen käytännöistä, he voivat ottaa meihin yhteyttä osoitteessa angpepeles@gmail.com."
   },
   "editProfile": {
-    "name": "Nimi",
-    "email": "Sähköposti",
-    "description": "Kuvaus",
-    "save": "Tallenna"
+  "name": "Nimi",
+  "email": "Sähköposti",
+  "description": "Kuvaus",
+  "save": "Tallenna"
   },
   "museum": {
-    "aboutTitle": "Tietoa museosta",
-    "about": "Metropolitan-taidemuseo, yleisesti tunnettu nimellä Met, on suurin taidemuseo Amerikoissa, ja se sijaitsee New York Cityssä. Vuonna 2022 se sai 3 208 832 vierailijaa, mikä sijoittaa sen kahdeksanneksi maailman eniten vierailtuksi taidemuseoksi. Yhdysvalloissa se on toiseksi eniten vierailtu taidemuseo, ohittaen vain Washington D.C.:ssä sijaitsevan National Gallery of Artin. Metin pysyvässä kokoelmassa on yli kaksi miljoonaa teosta, jotka on järjestetty 17 kuraattoriosastoon. Met sijaitsee osoitteessa 1000 Fifth Avenue, Manhattanin Upper East Sidellä, ja sen päärakennus on yksi maailman suurimmista taidemuseoista pinta-alaltaan. Sen rakentaminen alkoi vuonna 1880, ja se kattaa noin kaksi miljoonaa neliöjalkaa (190 000 m2). Toinen sijainti, The Cloisters Fort Tryon Parkissa, sisältää laajan kokoelman taiteita, arkkitehtuuria ja artefakteja keskiajan Euroopasta. Metropolian taidemuseon perustaminen juontaa juurensa vuoteen 1870, ja sen tehtävänä on tuoda taidetta ja taidekasvatusta amerikkalaisille. Pysyvässä kokoelmassa on erilaisia taidemuotoja, mukaan lukien antiikin Kreikka ja Rooma, muinainen Egypti, eurooppalaiset vanhat mestarit sekä amerikkalainen ja moderni taide. Lisäksi Metissä on laajat kokoelmat afrikkalaista, aasialaista, oseanialaista, bysanttilaista ja islamilaisista taidetta. Museo esittelee myös laajan valikoiman musiikki-instrumentteja, pukuja, asusteita sekä antiikin aseita ja haarniskoja eri puolilta maailmaa. Merkittävästi, näyttelysali esittelee huomattavia sisustuksia roomalaisesta ajasta 1900-luvun amerikkalaiseen suunnitteluun.",
-    "schedules": "Aukioloajat",
-    "closed": "SULJETTU",
-    "find": "Missä se sijaitsee",
-    "maps": "Avaa Mapsissa"
+  "aboutTitle": "Museosta",
+  "about": "Metropolitan Museum of Art, yleisemmin tunnettu Metinä, on suurin taidemuseo Amerikassa ja se sijaitsee New York Cityssä. Vuonna 2022 se oli vastaanottanut 3 208 832 vierailijaa, sijoittuen kahdeksanneksi maailman eniten vierailtujen taidemuseoiden joukossa. Yhdysvalloissa se on toiseksi eniten vierailtu taidemuseo, ohittaen ainoastaan Washington D.C.:n National Gallery of Artin. Metin pysyvä kokoelma käsittää yli kaksi miljoonaa teosta, jotka on järjestetty 17 kuraattoriosastoon. Metin päärakennus sijaitsee osoitteessa 1000 Fifth Avenue, Museum Milella Manhattanin Upper East Sidellä ja sen pinta-ala on yksi maailman suurimmista taidemuseoista. Rakentaminen alkoi vuonna 1880, ja sen pinta-ala on noin 2 miljoonaa neliöjalkaa (190 000 m2). Toinen sijainti, The Cloisters Fort Tryon Parkissa Upper Manhattanilla, esittelee laajan kokoelman keskiaikaisen Euroopan taiteesta, arkkitehtuurista ja esineistä. Metropolitan Museum of Artin perustamisjuuret ulottuvat vuoteen 1870, ja sen tehtävänä on tuoda taide ja taidekasvatus amerikkalaisille. Sen pysyvä kokoelma kattaa eri taiteen muodot, mukaan lukien antiikin ajan taide, muinaisen Egyptin, eurooppalaisten vanhojen mestareiden maalaukset ja veistokset, amerikkalainen ja moderni taide. Lisäksi Metillä on laajat kokoelmat afrikkalaista, aasialaista, oseanialaista, bysanttilaista ja islamilaista taidetta. Museo näyttää myös kattavat kokoelmat musiikki-instrumentteja, pukuja, asusteita sekä antiikkisia aseita ja haarniskoja ympäri maailmaa. Museon näyttelytiloissa on huomattavia sisustuksia roomalaisesta ajasta nykyaikaiseen amerikkalaiseen suunnitteluun.",
+  "schedules": "Aukioloajat",
+  "closed": "SULJETTU",
+  "find": "Mistä löydät sen",
+  "maps": "Avaa kartalla"
   },
   "artworkDetails": {
-    "about": "Tietoa",
-    "details": "Tiedot",
-    "find": "Mistä tämä löytyy",
-    "open": "Avaa Mapsissa",
-    "like": "Saatat pitää myös",
-    "loading": "Ladataan taide-esineen tietoja...",
-    "unable": "Ei voitu hakea taide-esineen tietoja."
+  "about": "Tietoja",
+  "details": "Tiedot",
+  "find": "Mistä löydät tämän",
+  "open": "Avaa kartalla",
+  "like": "Saatat myös pitää",
+  "loading": "Ladataan taideteoksen tietoja...",
+  "unable": "Taideteoksen tietojen haku ei onnistunut."
   },
   "artistDetails": {
-    "about": "Tietoa",
-    "more": "Lue lisää",
-    "less": "Lue vähemmän",
-    "moreInfo": "Lisätietoja",
-    "visit": "Vieraile",
-    "not": "Biografia ei saatavilla",
-    "loading": "Ladataan taiteilijan tietoja..."
+  "about": "Tietoja",
+  "more": "Lue lisää",
+  "less": "Lue vähemmän",
+  "moreInfo": "Hanki lisätietoja",
+  "visit": "Vieraile",
+  "not": "Elämäkerta ei saatavilla",
+  "loading": "Ladataan taiteilijan tietoja..."
+  },
+  "toursRecommendations": {
+  "one": "Yhden tunnin kierrokset",
+  "recom": "Suositukset",
+  "like": "Saatat pitää",
+  "personalize": "Räätälöi kierros"
+  },
+  "tours": {
+  "rate": "Kaiken kaikkiaan, kuinka arvioit kokemuksen tämän kierroksen kanssa?",
+  "next": "Seuraava",
+  "end": "Lopeta kierros",
+  "time": "Oliko kierroksen aika tarkka mieltymystesi ja arvioidun aikasi mukaan?",
+  "info": "Oliko kierroksen taideteosten tiedot hyödyllisiä sinulle?",
+  "noMatch": "Ei sopivia kierroksia",
+  "long": "Kuinka paljon aikaa sinulla on vierailuun?",
+  "least": "Tarvitset vähintään yhden tunnin vierailuun",
+  "exceed": "Et voi ylittää 5 tunnin kierrosta",
+  "negative": "Et voi valita negatiivista aikaa",
+  "moreMinutes": "Et voi valita enemmän kuin 59 minuuttia",
+  "allFields": "Sinun on täytettävä kaikki kentät asianmukaisesti",
+  "oneTage": "Sinun on valittava vähintään yksi tunniste",
+  "miss": "Minkä taiteilijaliikkeen haluaisit jättää väliin?",
+  "important": "Haluaisin nähdä vain tärkeimmät taideteokset",
+  "save": "Tallenna kierros",
+  "tourTime": "Kierroksen kesto",
+  "can": "Voit lisätä tai poistaa taideteoksia tässä. Ilmoitamme sinulle, jos muutoksesi ylittävät kierroksen ajan.",
+  "room": "Huone",
+  "discover": "Löydä taide",
+  "goTo": "Siirtyäksesi seuraavaan taideteokseen sinun on mentävä galleriaan:",
+  "unknown": "Tuntematon taiteilija",
+  "bio": "Taiteilijan elämäkerta: ",
+  "type": "Taidetyyppi: ",
+  "created": "Luotu käyttämällä",
+  "noFavorites": "Sinulla ei ole suosikki {{field}}",
+  "mark": "Kaikki merkkaamasi {{field}} näkyvät täällä",
+  "explore": "Lähde tutkimusmatkalle!",
+  "artworks": "taideteokset",
+  "artists": "taiteilijat",
+  "creating": "Luomme juuri sinulle täydellistä kierrosta...",
+  "start": "Aloita kierros",
+  "personalized": "Räätälöity kierros"
   }
-}
+  }

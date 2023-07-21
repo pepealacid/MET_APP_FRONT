@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { Image, Box } from "@chakra-ui/react";
 import Background from "../../assets/images/ZeroBackbround.png";
-import Logo from "../../assets/images/ZeroLogo.png";
+import Logo from "../../assets/images/ZeroLogo.svg";
 
 const ZeroZero = ({ setCounter }) => {
 

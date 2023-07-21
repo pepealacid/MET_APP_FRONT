@@ -2,7 +2,7 @@ import React, { useContext } from "react";
 import { Box, Button, Image, Text } from "@chakra-ui/react";
 import BackgroundThree from "../../assets/images/BackgroundThree.png";
 import ProgressThree from "../../assets/images/Progress3.png";
-import Next from "../../assets/images/Next.png";
+import Next from "../../assets/images/Next.svg";
 import { LanguageContext } from "../../context/language.context";
 
 const ZeroThree = ({ setCounter }) => {

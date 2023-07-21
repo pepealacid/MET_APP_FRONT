@@ -1,5 +1,5 @@
 import { Box, Image } from "@chakra-ui/react";
-import GoBackButton from "../assets/images/GoBackButton.png";
+import GoBackButton from "../assets/images/GoBackButton.svg";
 import { useNavigate } from "react-router-dom";
 
 const BackButton = () => {
