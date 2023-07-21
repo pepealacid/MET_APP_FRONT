@@ -1,5 +1,5 @@
 import { Box, Image, Flex, CardBody, Heading, Text, CardFooter, Button } from "@chakra-ui/react"
-import SandClock from "../../../assets/images/SandClock.png"
+import SandClock from "../../../assets/images/SandClock.svg"
 
 
 function PieceCard({ art, deleteOne, cannotDelete }) {

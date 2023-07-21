@@ -1,6 +1,6 @@
 import { Image, Heading, Flex, Box, Text } from "@chakra-ui/react"
 import { useNavigate } from "react-router"
-import Next from "../../assets/images/Next.png"
+import Next from "../../assets/images/Next.svg"
 import Progress3 from "../../assets/images/Progress3.png"
 
 import { useState } from "react"

@@ -1,8 +1,8 @@
 import { Image, Flex, Text, Heading, Box } from '@chakra-ui/react'
 import { useState } from 'react'
-import SandClock from "../../../assets/images/SandClock.png"
-import LessArrow from "../../../assets/images/LessArrow.png"
-import MoreArrow from "../../../assets/images/MoreArrow.png"
+import SandClock from "../../../assets/images/SandClock.svg"
+import LessArrow from "../../../assets/images/LessArrow.svg"
+import MoreArrow from "../../../assets/images/MoreArrow.svg"
 
 
 

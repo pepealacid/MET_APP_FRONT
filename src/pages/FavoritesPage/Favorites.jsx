@@ -1,9 +1,8 @@
-import { Image, Text, Button } from "@chakra-ui/react";
+import { Image, Text } from "@chakra-ui/react";
 import { Outlet } from "react-router-dom";
 import FavFieldsButtons from "../../components/FavFieldsButtons";
 import FavoritesHeader from "../../assets/images/FavoritesHeader.svg";
 import "./Favorites.css"
-import GoBackButton from "../../assets/images/GoBackButton.png"
 
 const Favorites = () => {
 

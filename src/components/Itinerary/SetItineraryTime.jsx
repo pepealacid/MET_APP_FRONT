@@ -2,7 +2,7 @@ import { useState } from "react"
 
 import { Input, Text, Image, Box, Heading, Flex } from "@chakra-ui/react"
 import "./itineraries.css"
-import Next from "../../assets/images/Next.png"
+import Next from "../../assets/images/Next.svg"
 import Progress1 from "../../assets/images/Progress1.png"
 
 function SetItineraryTime({ setItineraryData, setPage, handleDataChange }) {

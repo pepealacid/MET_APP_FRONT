@@ -3,7 +3,7 @@ import { useEffect, useState } from "react"
 import apiMET from "../../../services/apiMET.service"
 import "./tagSelection.css"
 import Progress2 from "../../../assets/images/Progress2.png"
-import Next from "../../../assets/images/Next.png"
+import Next from "../../../assets/images/Next.svg"
 
 
 function TagSelection({ setItineraryData, setPage, finalData, setFinalData, handleDataChange }) {

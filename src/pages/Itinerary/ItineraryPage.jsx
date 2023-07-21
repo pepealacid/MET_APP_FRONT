@@ -7,10 +7,10 @@ import { convertToHoursAndMinutes } from "../../utils/functions"
 import { Box, Flex, Heading, Image, Text } from "@chakra-ui/react"
 import { AuthContext } from "../../context/auth.context"
 import { useNavigate } from "react-router-dom"
-import timeWhite from "../../assets/images/timeWhite.png"
-import paint from "../../assets/images/paint.png"
-import ArtistFavHeart from "../../assets/images/ArtistFavHeart.png"
-import FavHeartFilled from "../../assets/images/FavHeartFilled.png"
+import TimeWhite from "../../assets/images/TimeWhite.svg"
+import paint from "../../assets/images/paint.svg"
+import FavHeart from "../../assets/images/FavHeart.svg"
+import FavHeartFilled from "../../assets/images/FavHeartFilled.svg"
 
 
 
@@ -116,7 +116,7 @@ function ItineraryPage() {
                         ?
                             <Image pt="5px" pl="3px" src={FavHeartFilled} />    
                         :
-                            <Image src={ArtistFavHeart} />
+                            <Image src={FavHeart} />
                     }
 
                 </Box>
@@ -131,7 +131,7 @@ function ItineraryPage() {
                         {tourData.name}
                     </Heading>
                     <Flex>
-                        <Image p="2px" src={timeWhite} pt="5px" />
+                        <Image p="2px" src={TimeWhite} pt="5px" />
                         <Text color="white" fontSize="1.2em" m="0px 10px">
                             {time}
                         </Text>

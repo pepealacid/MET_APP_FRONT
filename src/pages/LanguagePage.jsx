@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from "react";
+import React, { useContext } from "react";
 import { LanguageContext } from "../context/language.context";
 import {
   RadioGroup,
@@ -8,11 +8,8 @@ import {
   Text,
   Flex,
   Box,
-  Image,
-  Button,
 } from "@chakra-ui/react";
 
-import GoBackButton from "../assets/images/GoBackButton.png";
 
 import { useNavigate } from "react-router-dom";
 
