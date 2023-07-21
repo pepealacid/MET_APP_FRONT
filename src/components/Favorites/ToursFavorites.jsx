@@ -1,9 +1,8 @@
 import { useState, useContext, useEffect } from "react";
-import FavFieldsButtons from "../FavFieldsButtons";
 import NoElementsFound from "./NoElementsFound";
 import itineraryService from "../../services/itinerary.service";
 import { AuthContext } from "../../context/auth.context";
-import { Box } from "@chakra-ui/react";
+import { Box, Grid, GridItem } from "@chakra-ui/react";
 import FavCard from "../Itinerary/fav/favCard";
 
 
@@ -23,7 +22,6 @@ const ToursFavorites = () => {
       if (userId) {
         const res = await itineraryService.getUserItineraries(userId)
         setSaveTour(res.data)
-        console.log(res.data)
       }
     } catch (error) {
       console.log(error)
@@ -34,22 +32,31 @@ const ToursFavorites = () => {
 
 
   return (
-    <div>
-      <h3>ToursFavorites</h3>
-      <FavFieldsButtons />
-      {
-        savedTour
-          ?
-          <Box>
-            {
-              savedTour.map((tour)=> <FavCard key={tour._id} tour={tour}/>) 
-            }
-          </Box>
-          :
-          <NoElementsFound> tours </NoElementsFound>
-      }
-
-    </div>
+    <Box>
+      <div>
+        {
+          savedTour && savedTour.length
+            ?
+            <Grid
+              templateColumns="repeat(2, 1fr)"
+              gap={4}
+              paddingTop={"40px"}
+              marginLeft={"10px"}
+              mb={"150px"}
+            >
+              {
+                savedTour.map((tour) =>
+                  <GridItem key={tour._id} >
+                    <FavCard tour={tour} />
+                  </GridItem>
+                )
+              }
+            </Grid>
+            :
+            <NoElementsFound exploreIn="/home/tours"> tours </NoElementsFound>
+        }
+      </div>
+    </Box>
   );
 };
 

@@ -19,6 +19,9 @@ class ItineraryService {
     getItineraryById(id){
         return this.api.get(`/itinerary/${id}`)
     }
+    getAll(){
+        return this.api.get("/itinerary/")
+    }
 }
 
 const itineraryService = new ItineraryService();

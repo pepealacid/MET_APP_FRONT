@@ -1,0 +1,100 @@
+.artwork-card {
+    margin: 20px;
+    border-radius: 10px;
+    border-bottom: 1px solid grey;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+    width: 260px;
+    height: 180px;
+}
+
+.artwork-card .foot {
+    padding: 10px;
+}
+
+.artwork-card .main-img {
+    height: 80px;
+    width: 100vh;
+    object-fit: none;
+    object-position: center;
+    overflow: hidden;
+    padding: 0px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.artwork-card .title {
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.artwork-card .date {
+    display: flex;
+    font-size: 16px;
+}
+
+.artwork-card .clock {
+    height: 20px;
+    margin-top: 2px;
+}
+
+.artwork-card .author {
+    margin: 2px;
+    font-size: 14px;
+}
+
+.artwork-card .img-container {
+    position: relative;
+    display: inline-block;
+}
+
+.artwork-card .fav-button {
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 1;
+    padding: 8px;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    width: 50px;
+    height: 50px;
+}
+
+.artwork-card .fav-button-img-active {
+    pointer-events: none;
+}
+
+.artwork-card .fav-button:focus {
+    outline: 0;
+}
+
+.little-artwork-card {
+    border-radius: 10px;
+    border-bottom: 1px solid grey;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+    width: 90%;
+    height: 120px;
+}
+
+.little-artwork-card .main-img {
+    height: 70px;
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+    overflow: hidden;
+    padding: 0px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.little-artwork-card .foot {
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.little-artwork-card .title {
+    font-size: 12px;
+    text-align: center;
+}

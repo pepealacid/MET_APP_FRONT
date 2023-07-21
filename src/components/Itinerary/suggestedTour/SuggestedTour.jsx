@@ -1,6 +1,6 @@
 import { useEffect, useState, useContext } from "react"
 import { decideArtpiecesAmount, decideTourArtpieces } from "../../../utils/tourCreation"
-import { Box, Button } from "@chakra-ui/react"
+import { Box, Heading } from "@chakra-ui/react"
 import PieceCard from "./PieceCard"
 import SuggestedTime from "./SuggestedTime"
 import itineraryService from "../../../services/itinerary.service"
@@ -14,7 +14,7 @@ function SuggestedTour({ itineraryData, finalData, handleDataChange }) {
     const [galleries, setGalleries] = useState([]);
     const [artData, setArtData] = useState([]);
     const [time, setTime] = useState(0);
-    const allStates = { pieces, galleries, artData, time, setTime}
+    const allStates = { pieces, galleries, artData, time, setTime }
     const { user } = useContext(AuthContext);
     const navigate = useNavigate()
 
@@ -36,10 +36,10 @@ function SuggestedTour({ itineraryData, finalData, handleDataChange }) {
         }
     };
 
-    const saveInUsersItineraries = async(id)=>{
+    const saveInUsersItineraries = async (id) => {
         try {
             const userId = getUserId()
-            const itineraryId = { itineraryId : id}
+            const itineraryId = { itineraryId: id }
             await itineraryService.addItinerary(userId, itineraryId)
         } catch (error) {
             console.log(error)
@@ -47,7 +47,7 @@ function SuggestedTour({ itineraryData, finalData, handleDataChange }) {
 
     }
 
-    const getUserId = ()=>{
+    const getUserId = () => {
         return user.data._id
     }
 
@@ -86,27 +86,48 @@ function SuggestedTour({ itineraryData, finalData, handleDataChange }) {
     };
 
     return (
-        <>
-            <Box>
-                <SuggestedTime
-                    {...allStates}
-                    handleDataChange={handleDataChange}
-                    
-                />
-            </Box>
-            <Box>
-                {artData.map((art) => (
-                    <Box key={art.objectID}>
-                        <PieceCard art={art} deleteOne={deleteOne} />
-                    </Box>
-                ))}
-            </Box>
-            {artData.length ? (
-                <Button onClick={()=>{
-                    createItinerary()
-                }}>Save tour</Button>
-            ) : null}
-        </>
+        <Box w="100%"
+            h="100%"
+        >
+            <>
+                {
+                    artData.length
+                        ?
+                        (
+                            
+                            <Box bg={"black"} color={"white"} position="fixed" h={"60px"}
+                                w={"364px"} zIndex="9999"
+                                ml={"25px"} borderRadius={"5px"}
+                                pt={"15px"} mt={"calc(100vh - 80px)"}
+
+                                onClick={createItinerary}
+                            >
+                                <Heading size="md" textAlign="center">
+
+                                  Save tour
+                                </Heading>
+                            </Box>
+
+                        )
+                        : null
+                }
+                <Box>
+                    <SuggestedTime
+                        {...allStates}
+                        handleDataChange={handleDataChange}
+
+                    />
+                </Box>
+                <Box>
+                    {artData.map((art) => (
+                        <Box key={art.objectID}>
+                            <PieceCard art={art} deleteOne={deleteOne} />
+                        </Box>
+                    ))}
+                </Box>
+                
+            </>
+        </Box>
     );
 }
 
