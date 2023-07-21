@@ -6,6 +6,7 @@ import { Link } from "react-router-dom";
 import { TOKEN_NAME } from "../../context/auth.context";
 import userService from "../../services/user.service";
 import favoriteService from "../../services/favorite.service";
+import NoElementsFound from "./NoElementsFound";
 
 const ArtworksFavorites = () => {
   const [favoriteArtworkIds, setFavoriteArtworksIds] = useState([]);
@@ -62,6 +63,7 @@ const ArtworksFavorites = () => {
 
   return (
     <>
+    {favorites && favorites.length ? 
       <Grid
         templateColumns="repeat(2, 1fr)"
         gap={4}
@@ -76,7 +78,8 @@ const ArtworksFavorites = () => {
             />
           </Link>
         ))}
-      </Grid>
+      </Grid> : 
+      <NoElementsFound exploreIn="/home/artworks"> artworks </NoElementsFound>}
     </>
   );
 };

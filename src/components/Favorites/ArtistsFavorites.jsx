@@ -7,6 +7,7 @@ import "./ListingFavorites.css";
 import { TOKEN_NAME } from "../../context/auth.context";
 import userService from "../../services/user.service";
 import favoriteService from "../../services/favorite.service";
+import NoElementsFound from "./NoElementsFound";
 
 const ArtistsFavorites = () => {
   const [favoriteArtistIds, setFavoriteArtistIds] = useState([]);
@@ -80,20 +81,24 @@ const ArtistsFavorites = () => {
 
   return (
     <>
-      <div className="artist-card-container">
-        {favorites.map((artist) => (
-          <Link
-            key={artist.id}
-            to={{
-              pathname: `/artist/${artist.title}`,
-              search: `?url=${encodeURIComponent(artist._links.self.href)}`,
-            }}
-            style={{ textDecoration: "none", cursor: "pointer" }}
-          >
-            <ArtistCardLittle image={artist.image} name={artist.name} />
-          </Link>
-        ))}
-      </div>
+      {favorites && favorites.length ? (
+        <div className="artist-card-container">
+          {favorites.map((artist) => (
+            <Link
+              key={artist.id}
+              to={{
+                pathname: `/artist/${artist.title}`,
+                search: `?url=${encodeURIComponent(artist._links.self.href)}`,
+              }}
+              style={{ textDecoration: "none", cursor: "pointer" }}
+            >
+              <ArtistCardLittle image={artist.image} name={artist.name} />
+            </Link>
+          ))}
+        </div>
+      ) : (
+        <NoElementsFound exploreIn="/home/artists"> artists </NoElementsFound>
+      )}
     </>
   );
 };

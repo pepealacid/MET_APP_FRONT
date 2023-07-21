@@ -1,5 +1,5 @@
 import { Box, Image, Heading, Text, Flex } from "@chakra-ui/react"
-import noHeart from "../../assets/images/noHeart.png"
+import noHeart from "../../assets/images/noHeart.svg"
 import { useNavigate } from "react-router"
 
 
