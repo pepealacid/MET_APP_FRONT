@@ -1,7 +1,15 @@
 import { useState } from "react";
-import { Input, Box, Spinner, Center } from "@chakra-ui/react";
+import {
+  Input,
+  Box,
+  Spinner,
+  Center,
+  InputGroup,
+  InputLeftElement,
+  Image,
+} from "@chakra-ui/react";
 import axios from "axios";
-import { SearchIcon } from "@chakra-ui/icons";
+import Magnifier from "../assets/images/Magnifier.svg";
 
 export default function ArtworksSearchBar({ updateResults, setQuery }) {
   const [searchQuery, setSearchQuery] = useState("");
@@ -14,7 +22,7 @@ export default function ArtworksSearchBar({ updateResults, setQuery }) {
   const handleSubmit = async (event) => {
     event.preventDefault();
     setLoading(true);
-    setQuery(searchQuery)
+    setQuery(searchQuery);
 
     try {
       const apiUrl = `https://collectionapi.metmuseum.org/public/collection/v1/search?q=${searchQuery}&isHighlight=true`;
@@ -43,21 +51,24 @@ export default function ArtworksSearchBar({ updateResults, setQuery }) {
       <Box position="relative">
         <form onSubmit={handleSubmit}>
           <Box position="relative" marginTop="2rem" marginBottom="2rem">
-            <SearchIcon
-              position="absolute"
-              left="2.2rem"
-              top="50%"
-              transform="translateY(-50%)"
-              color="gray.300"
-            />
             <Center>
-              <Input
-                placeholder="       Search for artworks"
-                className="search-bar"
-                size="md"
-                w="90%"
-                onChange={handleChange}
-              />
+              <InputGroup>
+                <InputLeftElement pointerEvents="none">
+                  <Image
+                    src={Magnifier}
+                    alt="Search"
+                    boxSize="25px"
+                    marginLeft="46px"
+                  />
+                </InputLeftElement>
+                <Input
+                  placeholder="Search for artworks"
+                  className="search-bar"
+                  size="md"
+                  w="90%"
+                  onChange={handleChange}
+                />
+              </InputGroup>
             </Center>
           </Box>
         </form>

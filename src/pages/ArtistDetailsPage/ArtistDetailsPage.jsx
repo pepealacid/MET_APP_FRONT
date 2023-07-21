@@ -4,13 +4,13 @@ import axios from "axios";
 import { Spinner, Text, Box, Image, Flex } from "@chakra-ui/react";
 import RandomArtist from "../../assets/images/RandomArtist.png";
 import { FavContext } from "../../context/fav.context";
-import ArtistFavHeart from "../../assets/images/ArtistFavHeart.png";
-import FavHeartFilled from "../../assets/images/FavHeartFilled.png";
-import WhiteClock from "../../assets/images/WhiteClock.png";
-import WhiteLocation from "../../assets/images/WhiteLocation.png";
-import InfoButton from "../../assets/images/InfoButton.png";
-import ShowMoreArrow from "../../assets/images/MoreArrow.png";
-import ShowLessArrow from "../../assets/images/LessArrow.png";
+import FavHeart from "../../assets/images/FavHeart.svg";
+import FavHeartFilled from "../../assets/images/FavHeartFilled.svg";
+import WhiteClock from "../../assets/images/WhiteClock.svg";
+import WhiteLocation from "../../assets/images/WhiteLocation.svg";
+import InfoButton from "../../assets/images/InfoButton.svg";
+import ShowMoreArrow from "../../assets/images/MoreArrow.svg";
+import ShowLessArrow from "../../assets/images/LessArrow.svg";
 import "./ArtistDetailsPage.css";
 import { LanguageContext } from "../../context/language.context";
 
@@ -101,7 +101,7 @@ const ArtistDetailsPage = () => {
                 ) : (
                   <img
                     className="fav-button-img"
-                    src={ArtistFavHeart}
+                    src={FavHeart}
                     alt="not-favorited"
                   />
                 )}

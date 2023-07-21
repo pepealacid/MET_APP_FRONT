@@ -1,9 +1,9 @@
 import PropTypes from "prop-types";
 import { useContext, useEffect, useState } from "react";
 import "./ArtistCard.css";
-import ArtistFavHeart from "../../assets/images/ArtistFavHeart.png";
-import FavHeartFilled from "../../assets/images/FavHeartFilled.png";
-import SandClock from "../../assets/images/SandClock.png";
+import FavHeart from "../../assets/images/FavHeart.svg";
+import FavHeartFilled from "../../assets/images/FavHeartFilled.svg";
+import SandClock from "../../assets/images/SandClock.svg";
 import { FavContext } from "../../context/fav.context";
 
 const ArtistCard = ({
@@ -65,7 +65,7 @@ const ArtistCard = ({
               ) : (
                 <img
                   className="fav-button-img"
-                  src={ArtistFavHeart}
+                  src={FavHeart}
                   alt="not-favorite"
                 />
               )}

@@ -1,9 +1,12 @@
 import { useContext, useState, useEffect } from "react";
 import { Flex, Button, Image, Text, useColorModeValue } from "@chakra-ui/react";
 import { TOKEN_NAME } from "../context/auth.context";
-import Favorites from "../assets/images/Favorites.png";
-import Explore from "../assets/images/Explore.png";
-import Profile from "../assets/images/Profile.png";
+import FavoritesEmpty from "../assets/images/Favorites.svg";
+import FavoritesFill from "../assets/images/FavoritesFill.svg";
+import ExploreEmpty from "../assets/images/ExploreEmpty.svg";
+import ExploreFill from "../assets/images/ExploreFill.svg";
+import ProfileEmpty from "../assets/images/ProfileEmpty.svg";
+import ProfileFill from "../assets/images/ProfileFill.svg";
 import { useNavigate, useLocation } from "react-router-dom";
 import userService from "../services/user.service";
 import { LanguageContext } from "../context/language.context";
@@ -63,7 +66,18 @@ const Navbar = () => {
           variant="ghost"
         >
           <Flex direction="column" alignItems="center">
-            <Image src={Explore} alt="Explore" />
+            <Image
+              src={
+                location.pathname === "/home" ||
+                location.pathname === "/home/artworks" ||
+                location.pathname === "/home/artists" ||
+                location.pathname === "/home/museums" ||
+                location.pathname === "/home/tours"
+                  ? ExploreFill
+                  : ExploreEmpty
+              }
+              alt="Explore"
+            />
             <Text mt={2}>{t?.navbar.explore || "Explore"}</Text>
           </Flex>
         </Button>
@@ -74,7 +88,17 @@ const Navbar = () => {
           variant="ghost"
         >
           <Flex direction="column" alignItems="center">
-            <Image src={Favorites} alt="Favorites" />
+            <Image
+              src={
+                location.pathname === "/favorites" ||
+                location.pathname === "/favorites/artworks" ||
+                location.pathname === "/favorites/artists" ||
+                location.pathname === "/favorites/tours"
+                  ? FavoritesFill
+                  : FavoritesEmpty
+              }
+              alt="Favorites"
+            />
             <Text mt={2}>{t?.navbar.favorites}</Text>
           </Flex>
         </Button>
@@ -86,7 +110,12 @@ const Navbar = () => {
           variant="ghost"
         >
           <Flex direction="column" alignItems="center">
-            <Image src={Profile} alt="Favorites" />
+            <Image
+              src={
+                location.pathname === "/profile" ? ProfileFill : ProfileEmpty
+              }
+              alt="Favorites"
+            />
             <Text mt={2}>{t?.navbar.profile}</Text>
           </Flex>
         </Button>

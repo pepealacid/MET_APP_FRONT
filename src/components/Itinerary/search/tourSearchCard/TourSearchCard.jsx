@@ -1,11 +1,9 @@
-import PropTypes from "prop-types";
 import { useContext, useEffect, useState } from "react";
 import "./TourSearchCard.css";
-import ArtistFavHeart from "../../../../assets/images/ArtistFavHeart.png";
-import FavHeartFilled from "../../../../assets/images/FavHeartFilled.png";
-import SmallWallClock from "../../../../assets/images/SmallWallClock.png";
-import gallery from "../../../../assets/images/gallery.png";
-import FavHeart from "../../../../assets/images/FavHeart.png";
+import FavHeartFilled from "../../../../assets/images/FavHeartFilled.svg";
+import SmallWallClock from "../../../../assets/images/SmallWallClock.svg";
+import Gallery from "../../../../assets/images/Gallery.svg";
+import FavHeart from "../../../../assets/images/FavHeart.svg";
 import { convertToHoursAndMinutes } from "../../../../utils/functions";
 import { AuthContext } from "../../../../context/auth.context"
 import itineraryService from "../../../../services/itinerary.service"
@@ -103,7 +101,7 @@ const TourSearchCard = ({
                     <Image className="clock" src={SmallWallClock} p="2px" />
                     <Text ml="6px" mr="6px" pt="4px">{time}</Text>
                     <Text ml="6px" mr="6px">{ " | "}</Text>
-                    <Image className="clock" src={gallery} p="2px" />
+                    <Image className="clock" src={Gallery} p="2px" />
                     <Text ml="6px" mr="6px" pt="4px">{data.artworkData?.length}</Text>
                 </div>
             </div>

@@ -16,14 +16,14 @@ import {
   AlertDialogOverlay,
 } from "@chakra-ui/react";
 import { Image, Text } from "@chakra-ui/react";
-import NextProfile from "../assets/images/NextProfile.png";
-import Key from "../assets/images/Key.png";
-import Translate from "../assets/images/Translate.png";
-import Appearance from "../assets/images/Appearance.png";
-import Support from "../assets/images/Support.png";
-import Legal from "../assets/images/Legal.png";
-import Logout from "../assets/images/Logout.png";
-import Delete from "../assets/images/Delete.png";
+import NextProfile from "../assets/images/NextProfile.svg";
+import Key from "../assets/images/Key.svg";
+import Translate from "../assets/images/Translate.svg";
+import Appearance from "../assets/images/Appearance.svg";
+import Support from "../assets/images/Support.svg";
+import Legal from "../assets/images/Legal.svg";
+import Logout from "../assets/images/Logout.svg";
+import Delete from "../assets/images/Delete.svg";
 import userService from "../services/user.service";
 import { useNavigate } from "react-router-dom";
 import { TOKEN_NAME } from "../context/auth.context";
