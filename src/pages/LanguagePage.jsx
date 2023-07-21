@@ -1,5 +1,5 @@
 import React, { useContext, useEffect } from "react";
-import { LenguageContext } from "../context/lenguage.context";
+import { LanguageContext } from "../context/language.context";
 import {
   RadioGroup,
   Stack,
@@ -17,18 +17,12 @@ import GoBackButton from "../assets/images/GoBackButton.png";
 import { useNavigate } from "react-router-dom";
 
 const LanguagePage = () => {
-  const { lenguage, setLenguage } = useContext(LenguageContext);
+  const { language, setLanguage } = useContext(LanguageContext);
   const navigate = useNavigate();
 
-  const changeLenguage = (newLenguage) => {
-    setLenguage(newLenguage);
+  const changeLanguage = (newLanguage) => {
+    setLanguage(newLanguage);
   };
-
-
-
-  useEffect(() => {
-    console.log(lenguage);
-  }, [lenguage]);
 
   return (
     <>
@@ -41,7 +35,7 @@ const LanguagePage = () => {
         </Text>
       </Box>
       <Flex direction="column" mt={8} paddingLeft="30px" paddingRight="30px">
-        <RadioGroup value={lenguage} onChange={(e) => changeLenguage(e)}>
+        <RadioGroup value={language} onChange={(e) => changeLanguage(e)}>
           <Stack spacing={4}>
             <Flex
               justifyContent="space-between"
@@ -95,6 +89,15 @@ const LanguagePage = () => {
               <Text paddingBottom="10px">Gaelic</Text>
               <Box ml={4}>
                 <Radio value="gd" />
+              </Box>
+            </Flex>
+            <Flex
+              justifyContent="space-between"
+              borderBottom="1px solid #efefef"
+            >
+              <Text paddingBottom="10px">Euskera</Text>
+              <Box ml={4}>
+                <Radio value="eu" />
               </Box>
             </Flex>
             <Flex

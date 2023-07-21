@@ -1,9 +1,8 @@
 import { useEffect, useState, useContext } from "react";
-import { useSearchParams, useNavigate, Link } from "react-router-dom";
+import { useSearchParams, Link } from "react-router-dom";
 import axios from "axios";
 import { Spinner, Text, Box, Image, Flex } from "@chakra-ui/react";
 import RandomArtist from "../../assets/images/RandomArtist.png";
-import GoBackButton from "../../assets/images/GoBackButton.png";
 import { FavContext } from "../../context/fav.context";
 import ArtistFavHeart from "../../assets/images/ArtistFavHeart.png";
 import FavHeartFilled from "../../assets/images/FavHeartFilled.png";
@@ -13,6 +12,7 @@ import InfoButton from "../../assets/images/InfoButton.png";
 import ShowMoreArrow from "../../assets/images/MoreArrow.png";
 import ShowLessArrow from "../../assets/images/LessArrow.png";
 import "./ArtistDetailsPage.css";
+import { LanguageContext } from "../../context/language.context";
 
 const ArtistDetailsPage = () => {
   const [searchParams, setSearchParams] = useSearchParams();
@@ -22,7 +22,8 @@ const ArtistDetailsPage = () => {
   const [showFullDescription, setShowFullDescription] = useState(false);
   const { favoriteArtistIds, addFavoriteArtist, removeFavoriteArtist } =
     useContext(FavContext);
-  const navigate = useNavigate();
+
+  const { t } = useContext(LanguageContext);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -61,7 +62,6 @@ const ArtistDetailsPage = () => {
     setShowFullDescription(!showFullDescription);
   };
 
-
   const isArtistFavorited = () => {
     return favoriteArtistIds.includes(artistData.id);
   };
@@ -75,161 +75,177 @@ const ArtistDetailsPage = () => {
   };
 
   return (
-    <div>
-      {artistData ? (
-        <div className="artist-details-container">
-          <div className="top-main">
-            <Image
-              className="main-image"
-              src={imageUrl || RandomArtist}
-              alt={artistData.name}
-            />
-            
-            <button
-              className={`fav-button ${isArtistFavorited() ? "favorited" : ""}`}
-              onClick={handleFavorite}
-            >
-              {isArtistFavorited() ? (
-                <img
-                  className="fav-button-img"
-                  src={FavHeartFilled}
-                  alt="favorited"
-                />
-              ) : (
-                <img
-                  className="fav-button-img"
-                  src={ArtistFavHeart}
-                  alt="not-favorited"
-                />
-              )}
-            </button>
-          </div>
-          <div className="top-info">
-            <Text className="name" as="h4">
-              {artistData.name}
-            </Text>
-            <div className="top-text">
-              {artistData.birthday && artistData.birthday !== "" && (
-                <>
-                  <Image className="white-clock" src={WhiteClock} alt="date" />
-                  <Text className="dates">
-                    {artistData.birthday} - {artistData.deathday || "undefined"}
-                  </Text>
-                </>
-              )}
-              {((artistData.birthday &&
-                artistData.birthday !== "" &&
-                artistData.hometown) ||
-                artistData.nationality) && <Text>|</Text>}
-              {(artistData.hometown || artistData.nationality) && (
-                <>
-                  <Image src={WhiteLocation} alt="location" />
-                  <Text>
-                    {artistData.hometown
-                      ? artistData.hometown
-                      : artistData.nationality}
-                  </Text>
-                </>
-              )}
+    t?.artistDetails && (
+      <div>
+        {artistData ? (
+          <div className="artist-details-container">
+            <div className="top-main">
+              <Image
+                className="main-image"
+                src={imageUrl || RandomArtist}
+                alt={artistData.name}
+              />
+
+              <button
+                className={`fav-button ${
+                  isArtistFavorited() ? "favorited" : ""
+                }`}
+                onClick={handleFavorite}
+              >
+                {isArtistFavorited() ? (
+                  <img
+                    className="fav-button-img"
+                    src={FavHeartFilled}
+                    alt="favorited"
+                  />
+                ) : (
+                  <img
+                    className="fav-button-img"
+                    src={ArtistFavHeart}
+                    alt="not-favorited"
+                  />
+                )}
+              </button>
             </div>
-          </div>
-          <div className="bottom-info">
-            <div className="about-div">
-              <Text className="about-header">About</Text>
-              {artistData.biography ? (
-                <>
-                  <Text>
-                    {showFullDescription
-                      ? artistData.biography
-                      : `${artistData.biography.slice(0, 100)}...`}
-                    {artistData.biography.length > 100 && (
-                      <div>
-                        <br />
-                        <span
-                          className="read-more"
-                          style={{ cursor: "pointer", color: "blue" }}
-                          onClick={toggleDescription}
-                        >
-                          <p className="show-more-text">
-                            {showFullDescription ? "Read less" : "Read more"}
-                          </p>
-                          <img
-                            src={
-                              showFullDescription
-                                ? ShowLessArrow
-                                : ShowMoreArrow
-                            }
-                          />
-                        </span>
-                      </div>
-                    )}
-                  </Text>
-                  {artistData._links.permalink &&
-                    artistData._links.permalink.href !== "" && (
-                      <Box mt={20}>
-                        <Text
-                          className="more-info-header"
-                          fontWeight="bold"
-                          fontSize="20px"
-                        >
-                          Get more info
-                        </Text>
-                        <Link
-                          to={artistData._links.permalink.href} // Access href property
-                          target="_blank"
-                        >
-                          <Flex
-                            className="info-card"
-                            backgroundColor="#f6f6f6"
-                            borderRadius="10px"
-                            display="inline-flex"
-                            alignItems="center"
-                            justifyContent="flex-start"
+            <div className="top-info">
+              <Text className="name" as="h4">
+                {artistData.name}
+              </Text>
+              <div className="top-text">
+                {artistData.birthday && artistData.birthday !== "" && (
+                  <>
+                    <Image
+                      className="white-clock"
+                      src={WhiteClock}
+                      alt="date"
+                    />
+                    <Text className="dates">
+                      {artistData.birthday} -{" "}
+                      {artistData.deathday || "undefined"}
+                    </Text>
+                  </>
+                )}
+                {((artistData.birthday &&
+                  artistData.birthday !== "" &&
+                  artistData.hometown) ||
+                  artistData.nationality) && <Text>|</Text>}
+                {(artistData.hometown || artistData.nationality) && (
+                  <>
+                    <Image src={WhiteLocation} alt="location" />
+                    <Text>
+                      {artistData.hometown
+                        ? artistData.hometown
+                        : artistData.nationality}
+                    </Text>
+                  </>
+                )}
+              </div>
+            </div>
+            <div className="bottom-info">
+              <div className="about-div">
+                <Text className="about-header">
+                  {t?.artistDetails.about || "About"}
+                </Text>
+                {artistData.biography ? (
+                  <>
+                    <Text>
+                      {showFullDescription
+                        ? artistData.biography
+                        : `${artistData.biography.slice(0, 100)}...`}
+                      {artistData.biography.length > 100 && (
+                        <div>
+                          <br />
+                          <span
+                            className="read-more"
+                            style={{ cursor: "pointer", color: "blue" }}
+                            onClick={toggleDescription}
                           >
-                            <Flex direction="column" flexGrow={1}>
-                              <Text
-                                className="header"
-                                fontWeight="bold"
-                                padding={4}
-                                paddingBottom={0}
-                              >
-                                Artsy
-                              </Text>
-                              <Text
-                                className="link"
-                                padding={4}
-                                paddingTop={2}
-                                fontSize="12px"
-                                maxWidth="200px"
-                                overflow="hidden"
-                                textOverflow="ellipsis"
-                                whiteSpace="nowrap"
-                              >
-                                Visit {artistData._links.permalink.href}{" "}
-                                {/* Access href property */}
-                              </Text>
+                            <p className="show-more-text">
+                              {showFullDescription
+                                ? `${t?.artistDetails.less || "Read less"}`
+                                : `${t?.artistDetails.more || "Read more"}`}
+                            </p>
+                            <img
+                              src={
+                                showFullDescription
+                                  ? ShowLessArrow
+                                  : ShowMoreArrow
+                              }
+                            />
+                          </span>
+                        </div>
+                      )}
+                    </Text>
+                    {artistData._links.permalink &&
+                      artistData._links.permalink.href !== "" && (
+                        <Box mt={20}>
+                          <Text
+                            className="more-info-header"
+                            fontWeight="bold"
+                            fontSize="20px"
+                          >
+                            {t?.artistDetails.moreInfo || "Get more info"}
+                          </Text>
+                          <Link
+                            to={artistData._links.permalink.href}
+                            target="_blank"
+                          >
+                            <Flex
+                              className="info-card"
+                              backgroundColor="#f6f6f6"
+                              borderRadius="10px"
+                              display="inline-flex"
+                              alignItems="center"
+                              justifyContent="flex-start"
+                            >
+                              <Flex direction="column" flexGrow={1}>
+                                <Text
+                                  className="header"
+                                  fontWeight="bold"
+                                  padding={4}
+                                  paddingBottom={0}
+                                >
+                                  Artsy
+                                </Text>
+                                <Text
+                                  className="link"
+                                  padding={4}
+                                  paddingTop={2}
+                                  fontSize="12px"
+                                  maxWidth="200px"
+                                  overflow="hidden"
+                                  textOverflow="ellipsis"
+                                  whiteSpace="nowrap"
+                                >
+                                  {t?.artistDetails.visit || "Visit"}{" "}
+                                  {artistData._links.permalink.href}{" "}
+                                  {/* Access href property */}
+                                </Text>
+                              </Flex>
+                              <Box className="button-side" padding={4}>
+                                <img src={InfoButton} alt="go" />
+                              </Box>
                             </Flex>
-                            <Box className="button-side" padding={4}>
-                              <img src={InfoButton} alt="go" />
-                            </Box>
-                          </Flex>
-                        </Link>
-                      </Box>
-                    )}
-                </>
-              ) : (
-                <Text>Not bio available</Text>
-              )}
+                          </Link>
+                        </Box>
+                      )}
+                  </>
+                ) : (
+                  <Text>{t?.artistDetails.not || "Not bio available"}</Text>
+                )}
+              </div>
             </div>
           </div>
-        </div>
-      ) : (
-        <div>
-          <Spinner />
-          <Text>Loading artist details...</Text>
-        </div>
-      )}
-    </div>
+        ) : (
+          <div>
+            <Spinner />
+            <Text>
+              {t?.artistDetails.loading || "Loading artist details..."}
+            </Text>
+          </div>
+        )}
+      </div>
+    )
   );
 };
 

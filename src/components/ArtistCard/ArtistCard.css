@@ -1,20 +1,20 @@
-.artist-card {
+.recommendation .artist-card {
   margin: 20px;
   border-radius: 10px;
   border-bottom: 1px solid grey;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
   width: 260px;
-  height: 180px;
+  height: 150px;
   display: flex;
   flex-direction: column;
   position: relative;
 }
 
-.artist-card .top {
+.recommendation .artist-card .top {
   display: flex;
 }
 
-.artist-card .artist-image {
+.recommendation .artist-card .artist-image {
   position: absolute;
   border-radius: 100%;
   height: 80px;
@@ -22,9 +22,9 @@
   margin: 10px;
 }
 
-.artist-card .top p {
+.recommendation .artist-card .top p {
   left: 94px;
-  top:10px;
+  top: 10px;
   position: absolute;
   font-weight: bold;
   white-space: nowrap;
@@ -34,9 +34,10 @@
   font-size: 18px;
   padding-top: 40px;
   max-width: calc(100% - 110px);
+  padding-bottom: 20px;
 }
 
-.artist-card .fav-button {
+.recommendation .artist-card .fav-button {
   position: absolute;
   top: 10px;
   right: 10px;
@@ -47,11 +48,80 @@
   height: 40px;
 }
 
-.artist-card .foot {
+.recommendation .artist-card .foot {
   display: flex;
   position: absolute;
-  top:140px;
-  left:14px
+  top: 110px;
+  left: 14px;
+}
+
+.search-result .artist-card {
+  margin: 10px;
+  border-radius: 10px;
+  border-bottom: 1px solid grey;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+  width: 180px;
+  height: 104px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.search-result .artist-card .top {
+  display: flex;
+}
+
+.search-result .artist-card .artist-image {
+  position: absolute;
+  border-radius: 100%;
+  height: 64px;
+  width: 64px;
+  margin: 8px;
+}
+
+.search-result .artist-card .top p {
+  left: 78px;
+  top: 8px;
+  position: absolute;
+  font-weight: bold;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  flex-grow: 1;
+  font-size: 14px;
+  padding-top: 32px;
+  max-width: calc(100% - 86px);
+  padding-bottom: 16px;
+}
+
+.search-result .artist-card .fav-button {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  width: 32px;
+  height: 32px;
+}
+
+.search-result .artist-card .foot {
+  display: flex;
+  position: absolute;
+  top: 74px;
+  left: 12px;
+}
+
+.search-result .artist-card .foot p {
+  font-size: 12px;
+  margin-top: 4px;
+  margin-left: 4px;
+}
+
+.search-result .artist-card .clock {
+  width: 12px;
+  height: 14px;
+  margin-top: 6px;
 }
 
 .little-artist-card {

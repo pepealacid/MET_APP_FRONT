@@ -1,4 +1,4 @@
-import { useEffect, useState, useRef } from "react";
+import { useEffect, useState, useRef, useContext } from "react";
 import { TOKEN_NAME } from "../context/auth.context";
 import {
   Box,
@@ -13,20 +13,24 @@ import userService from "../services/user.service";
 import { useNavigate } from "react-router-dom";
 import DefaultUser from "../assets/images/DefaultUser.svg";
 import UploadPicture from "../assets/images/UploadPicture.svg";
+import uploadService from "../services/upload.service";
+import { LanguageContext } from "../context/language.context";
 
 const EditProfilePage = () => {
   const [userInfo, setUserInfo] = useState(undefined);
   const [loadingImage, setLoadingImage] = useState(false);
+  const [userId, setUserId] = useState();
 
+  const { t } = useContext(LanguageContext);
 
-  const [data, setData] = useState({
+  const [userData, setUserData] = useState({
     username: "",
     email: "",
     description: "",
-    image: ""
+    image: "",
   });
 
-  const userImage = data.image;
+  const userImage = userData.image;
   const navigate = useNavigate();
   const fileInputRef = useRef(null);
 
@@ -34,17 +38,23 @@ const EditProfilePage = () => {
     fetchUserInfo();
   }, []);
 
+  useEffect(() => {
+    console.log(userData);
+  }, [userData]);
+
   const fetchUserInfo = async () => {
     try {
       const token = localStorage.getItem(TOKEN_NAME);
       const user = await userService.getUser(token);
       const userData = user.data;
       setUserInfo(userData);
+      setUserId(userData._id);
       if (userData) {
-        setData({
+        setUserData({
           username: userData.username,
           email: userData.email,
           description: userData.description,
+          image: userData.image,
         });
       }
     } catch (error) {
@@ -53,8 +63,8 @@ const EditProfilePage = () => {
   };
 
   const handleChange = (e) => {
-    setData({
-      ...data,
+    setUserData({
+      ...userData,
       [e.target.name]: e.target.value,
     });
   };
@@ -67,7 +77,8 @@ const EditProfilePage = () => {
 
     uploadService.uploadImage(uploadData).then(({ data }) => {
       setLoadingImage(false);
-      setPostStatus({ ...postStatus, image: data.cloudinary_url });
+      setUserData({ ...userData, image: data.cloudinary_url });
+      console.log(data);
     });
   };
 
@@ -75,90 +86,98 @@ const EditProfilePage = () => {
     e.preventDefault();
 
     try {
-      await userService.edit(userInfo._id, data);
-      navigate("/my-profile");
+      console.log("-.-.-.-.", userData);
+      await userService.edit(userId, userData);
+      navigate("/home/artworks");
     } catch (error) {
       console.log(error);
     }
   };
 
   return (
-    <>
-      <Box
-        flexBasis="100%"
-        display="flex"
-        justifyContent="center"
-        mb={2}
-        paddingTop="100px"
-      >
-        <Image
-          objectFit="cover"
-          borderRadius="100%"
-          height="100px"
-          width="100px"
-          src={userImage || DefaultUser}
-          alt="user"
-        />
-
-        <Box position="absolute" top="170px" left="220px">
-          <label htmlFor="file-upload">
+    t?.editProfile && (
+      <>
+        <form onSubmit={handleSubmit}>
+          <Box
+            flexBasis="100%"
+            display="flex"
+            justifyContent="center"
+            mb={2}
+            paddingTop="100px"
+          >
             <Image
-              src={UploadPicture}
-              size={24}
-              cursor="pointer"
-              color="teal"
+              objectFit="cover"
+              borderRadius="100%"
+              height="100px"
+              width="100px"
+              src={userImage || DefaultUser}
+              alt="user"
             />
-          </label>
-        </Box>
-      </Box>
 
-      <Box maxW="sm" mx="auto">
-        <FormControl mt={4}>
-          <FormLabel>Name</FormLabel>
-          <Input
-            placeholder="Enter your name"
-            type="text"
-            name="username"
-            value={data.username}
-            onChange={handleChange}
-          />
-        </FormControl>
+            <Box position="absolute" top="170px" left="220px">
+              <label htmlFor="file-upload">
+                <Image
+                  src={UploadPicture}
+                  size={24}
+                  cursor="pointer"
+                  color="teal"
+                />
+              </label>
+            </Box>
+          </Box>
 
-        <FormControl mt={4}>
-          <FormLabel>Email</FormLabel>
-          <Input
-            placeholder="Enter your email"
-            type="email"
-            name="email"
-            value={data.email}
-            onChange={handleChange}
-          />
-        </FormControl>
+          <Box maxW="sm" mx="auto">
+            <FormControl mt={4}>
+              <FormLabel>{t?.editProfile.name || "Name"}</FormLabel>
+              <Input
+                placeholder="Enter your name"
+                type="text"
+                name="username"
+                value={userData.username}
+                onChange={handleChange}
+              />
+            </FormControl>
 
-        <FormControl mt={4}>
-          <FormLabel>Description</FormLabel>
-          <Textarea
-            placeholder="Enter a description"
-            type="text"
-            name="description"
-            value={data.description}
-            onChange={handleChange}
-          />
-        </FormControl>
+            <FormControl mt={4}>
+              <FormLabel>{t?.editProfile.email || "Email"}</FormLabel>
+              <Input
+                placeholder="Enter your email"
+                type="email"
+                name="email"
+                value={userData.email}
+                onChange={handleChange}
+              />
+            </FormControl>
 
-        <Input
-          type="file"
-          id="file-upload"
-          ref={fileInputRef}
-          style={{ display: "none" }}
-          onChange={uploadImage}
-        />
+            <FormControl mt={4}>
+              <FormLabel>
+                {t?.editProfile.description || "Description"}
+              </FormLabel>
+              <Textarea
+                placeholder="Enter a description"
+                type="text"
+                name="description"
+                value={userData.description}
+                onChange={handleChange}
+              />
+            </FormControl>
 
-        <Button mt={4} bg="black" color="white" onClick={handleSubmit}>
-          Save
-        </Button>
-      </Box>
-    </>
+            <Input
+              type="file"
+              id="file-upload"
+              name="image"
+              ref={fileInputRef}
+              style={{ display: "none" }}
+              onChange={uploadImage}
+            />
+
+            <Button type="submit" mt={4} bg="black" color="white">
+              {t?.editProfile.save || "Save"}
+            </Button>
+          </Box>
+        </form>
+      </>
+    )
   );
 };
 

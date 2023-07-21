@@ -6,6 +6,7 @@ class UserService {
   }
 
   edit(id, data) {
+    console.log("tas dentro del service")
     return this.api.put(`/user/edit-user/${id}`, data);
   }
 

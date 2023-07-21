@@ -1,87 +1,142 @@
 {
-    "navbar": {
-        "explore": "Rannsaich",
-        "favorites": "Àrd-ghnèithean",
-        "profile": "Pròifil",
-        "edit": "Deasaich",
-        "tourTimePreferences": "Roghainnean àm turas",
-        "scanHistory": "Eachdraidh-sgrùdaidh",
-        "changePassword": "Atharraich do phasgan-faire",
-        "language": "Cànan",
-        "appearance": "Coltas",
-        "support": "Taic",
-        "legal": "Coileanadh",
-        "logout": "Log às",
-        "deleteAccount": "Sguab às cunntas",
-        "deleteUser": "Sguab às Luchd-cleachdaidh",
-        "deleteConfirmation": "A bheil thu cinnteach gu bheil thu airson do chunntas a sguabadh às? Chan urrainn dhan gnìomh seo ath-tharraing air ais.",
-        "cancel": "Sguir dheth",
-        "delete": "Sguab às"
+  "zero": {
+    "skip": "Scaoil",
+    "one": {
+      "header": "Ná caill rud ar bith!",
+      "text": "Roghnaigh aon cheann de na turais réamhshainithe nó cuir do chuid féin le chéile chun gach rud a fheiceáil."
     },
-
-    "artistSearchPage": {
-        "goBack": "Till air ais",
-        "favorited": "Air a ghràdhachadh",
-        "notFavorited": "Gun gràdhachadh",
-        "about": "Mu",
-        "readMore": "Lèugh barrachd",
-        "readLess": "Lèugh nas lugha",
-        "getMoreInfo": "Faigh barrachd fiosrachaidh",
-        "loadingArtistDetails": "Ag luchdadh fiosrachadh mu dheidhinn an neach-ealain...",
-        "notBioAvailable": "Chan eil bio ri fhaighinn"
+    "two": {
+      "header": "Faigh gach eolas le scan amháin",
+      "text": "Scainn gach saothar ealaíne chun an scéal iomlán taobh thiar de."
     },
-
-    "artworkSearchPage": {
-        "women": "Nam ban anns an ealain",
-        "american": "Ealain na h-Aimeireaga",
-        "european": "Ealain na Roinn-Eòrpa",
-        "random": "Ealain nam priobadh"
-    },
-
-    "changeYourPassword": {
-        "current": "Pasgan-faire làithreach",
-        "new": "Pasgan-faire ùr",
-        "confirm": "Dearbhaich pasgan-faire",
-        "change": "Atharraich pasgan-faire"
-    },
-
-    "themePage": {
-        "select": "Tagh dreach a' phrògraim",
-        "light": "Modh solais",
-        "dark": "Modh dorcha"
-    },
-
-    "support": {
-        "header": "Taic",
-        "first": "Ma tha thu airson cuideachadh no tha ceistean agad mu dheireadh air an app Musart, na tèid clis gus ar luchd-taic a chuir fios thugainn. Tha sinn an seo gus cuideachadh!",
-        "contactHeader": "Fiosrachadh fo chonn",
-        "mail": "Post-d: angpepeles@gmail.com",
-        "phone": "Fòn: +34 667 63 44 56",
-        "operating": "Òrain gnìomhachais",
-        "week": "Di-Luain-Di-hAoine: 9:00 AM - 5:00 PM (EST)",
-        "weekend": "Disathairne-DiDòmhnaich: Dùinte"
-    },
-
-    "legal": {
-        "title": "Poileasaidh prìobhaideachd",
-        "intro": "Tha an Poileasaidh Prìobhaideachd seo a' stiùireadh mar a chruinnicheas Musart, cleachdaidhean, stòraichean agus ruith, agus a' no-dhearbhadh fiosrachadh a chaidh a chruinneachadh bhon luchd-cleachdaidh (gach neach, 'Cleachdaiche') de inneal-mheadhanach Musart ('App'). Tha am Poileasaidh Prìobhaideachd seo freagarrach do'n App agus do gach puingean agus seirbheisean a chuirear ri chèile le Musart.",
-        "personalIdentificationInfoTitle": "Fiosrachadh aithne pearsanta",
-        "personalIdentificationInfo": "Tha Musart comasach air fiosrachadh aithne pearsanta a chruinneachadh bhon luchd-cleachdaidh ann an diofar dhòighean, a' gabhail a-steach nuair a tha cleachdaichean a' clàradh air an App agus a' toirt a-steach an t-ainm, seòladh post-d agus pasgan-faire. Tha an fiosrachadh aithne pearsanta a chruinnich airson adhartachadh agus airson feartan an App a fheuchainn. Tha Musart air a bhith freagarrach gu bheil fiosrachadh pearsanta a' chleachdaiche a' cumail air fhaighinn gu faiceallach agus gu sàbhailte.",
-        "nonPersonalIdentificationInfoTitle": "Fiosrachadh aithne neo pearsanta",
-        "nonPersonalIdentificationInfo": "Tha Musart comasach cuideachd air fiosrachadh aithne neo pearsanta mu luchd-cleachdaidh a chruinneachadh nuair a tha iad ag iomradh ris an App. Dh'fhaodadh na fiosrachaidhean seo a bhith a' gabhail a-steach seòrsa na h-inneal a chleachdas iad, an t-siostam obrachaidh, ainm an fhrèataiche agus faidhlichean teicnigeach eile co-cheangailte ri buaidh chleachdaichean air an App. Tha na fiosrachaidhean seo a' cur ris cur-seachadan an App agus a' tabhann iomadachadh do chleachdaichean nas fheàrr.",
-        "useOfCollectedInfoTitle": "Cleachdadh na fiosrachaidhean cruinnichte",
-        "useOfCollectedInfo": [
-            "Airson lìbhrigeadh agus pearsantachd cleachdaichean: Tha na fiosrachaidhean cruinnichte a' leigeil le Musart earbsa a dhèanamh air coimeas agus feartan an App gus freastal air roghainnean agus ùidheamachdan an luchd-cleachdaidh nas fheàrr.",
-            "Airson cuideachadh do chliantean: Tha na fiosrachaidhean a' cuideachadh Musart freagairt gu iomchaidh airson iarrtasan taic luchd-cleachdaidh agus do chliantean a bhrosnachadh.",
-            "Airson a' seòladh ràitheil de phost-d: Dh'fhaodadh Musart a chleachdadh an seòladh post-d a thoirt seachad airson luchd-cleachdaidh nuair a thèid ùrachadh, brathachadh is fiosrachadh cudromach mu'n App. Dh'fhaodadh luchd-cleachdaidh a thaghadh airson nach faod iad fiosrachaidhean den t-seòladh a thoirt seachad le bhith a' togail Musart an co-chomhairleachadh no le bhith a' cleachdadh ceangal-clàraichte leum anns na post-d."
-        ],
-        "protectionOfUserInfoTitle": "Dìon fiosrachaidh na cleachdaiche",
-        "protectionOfUserInfo": "Tha Musart a' gabhail nan cothroman-sàbhailte ri fhaighinn airson fiosrachaidh na cleachdaiche a chumail bho ro-sheasmhachadh, atharrachadh, foillseachadh no milleadh neo-fhrithealaichte. Tha seo a' gabhail a-steach cosgaisean ri cuideachadh ri chruinneachadh, stòrachadh agus obrachadh fiosrachaidh agus ri seasmhachadh airson cur às dhan fiosrachadh na cleachdaiche gun cheadan ath-chluich.",
-        "sharingOfUserInfoTitle": "Roinn fiosrachaidh na cleachdaiche",
-        "sharingOfUserInfo": "Chan reic, chan fhoilseaich, no cha ghabh Musart fiosrachadh pearsanta aithne na cleachdaiche a roinn ri chuideigin eile. Tha fiosrachadh na cleachdaiche a' cleachdadh an aon cheangal ri àiteachan an Poileasaidh Prìobhaideachd seo agus tha e a-mhàin ri fhaighinn aig luchd-obrach Musart a tha fo chheadas no luchd-maoineachaidh a dh'fhaodadh gus fiosrachadh fhaighinn airson seirbheisean a chumail air adhart airson Musart.",
-        "changesToPolicyTitle": "Atharrachaidhean airson Poileasaidh Prìobhaideachd seo",
-        "changesToPolicy": "Tha Musart a' cumail gu bheil e ceadachail Poileasaidh Prìobhaideachd seo a ghluasad no a atharrachadh aig aon àm. Tha sinn a' brosnachadh luchd-cleachdaidh gus am Poileasaidh Prìobhaideachd seo fhaicinn gu cunbhalach airson atharrachaidhean. Thèid coileanadh a' Phoileasaidh Prìobhaideachd agus cleachdadh an App a leanas às deidh na h-atharrachaidhean a bhith ann mar rianadh air admhaichean is aonta luchd-cleachdaidh.",
-        "contactUsTitle": "Cur fios thugainn",
-        "contactUsInfo": "Ma tha ceistean sam bith no buaidh aig luchd-cleachdaidh mu'n Poileasaidh Prìobhaideachd seo no mu dheidhinn prataig Musart, faodaidh iad cur fios thugainn aig angpepeles@gmail.com."
+    "three": {
+      "header": "Cuir gach rud a thaitníonn leat i do ghráinseachtaí",
+      "text": "Deimhníonn ár algorithim nach bhfuil aon rud a thaitníonn leat faoi chailliúint."
     }
+  },
+  "buttons": {
+    "tours": "Turasanna",
+    "artists": "Ealaíontóirí",
+    "artworks": "Saothair Ealaíne",
+    "museum": "Músaem",
+    "about": "Maidir",
+    "tickets": "Ticéid",
+    "ticketsButton": "Ceannaigh ticéid"
+  },
+  "navbar": {
+    "explore": "Fiosrú",
+    "favorites": "Faoistine",
+    "profile": "Profile",
+    "edit": "Cuir in Eagar",
+    "changePassword": "Athraigh do phasfhocal",
+    "language": "Teanga",
+    "appearance": "Cuma",
+    "support": "Tacaíocht",
+    "legal": "Dlí",
+    "logout": "Logáil Amach",
+    "deleteAccount": "Scrios Cuntas",
+    "deleteUser": "Scrios Úsáideoir",
+    "deleteConfirmation": "An bhfuil tú cinnte gur mhaith leat do chuntas a scriosadh? Tá an gníomh seo neamhbhuan.",
+    "cancel": "Cealaigh",
+    "delete": "Scrios"
+  },
+  "artistSearchPage": {
+    "goBack": "Téigh Siar",
+    "favorited": "Ainmnithe",
+    "notFavorited": "Gan Ainmniú",
+    "about": "Maidir",
+    "readMore": "Léigh níos mó",
+    "readLess": "Léigh níos lú",
+    "getMoreInfo": "Faigh tuilleadh eolais",
+    "loadingArtistDetails": "Á lódáil sonraí ealaíontóra...",
+    "notBioAvailable": "Gan cur síos ar fáil",
+    "american": "Ealaíontóirí Meiriceánacha",
+    "spanish": "Ealaíontóirí Spáinnise",
+    "women": "Mná san Ealaín",
+    "results": "Torthaí do"
+  },
+  "artworkSearchPage": {
+    "women": "Mná san Ealaín",
+    "american": "Saothair Ealaíne Meiriceánacha",
+    "european": "Saothair Ealaíne Eorpacha",
+    "random": "Saothair Ealaíne Idirghníomhacha",
+    "results": "Torthaí do"
+  },
+  "changeYourPassword": {
+    "current": "Pasfhocal Reatha",
+    "new": "Pasfhocal Nua",
+    "confirm": "Deimhnigh Pasfhocal",
+    "change": "Athraigh do phasfhocal",
+    "success": "Athraíodh do phasfhocal go rathúil!"
+  },
+  "themePage": {
+    "header": "Téama",
+    "light": "Geal",
+    "dark": "Dorcha"
+  },
+  "support": {
+    "header": "Tacaíocht",
+    "first": "Má tá cabhair ar bith de dhíth ort nó má tá aon cheist agat faoi aipe Musart, ná bíodh leisce ort dul i dteagmháil le foireann tacaíochta. Táimid anseo chun cabhrú!",
+    "contactHeader": "Eolas Teagmhála",
+    "mail": "Ríomhphost: angpepeles@gmail.com",
+    "phone": "Fón: +34 667 63 44 56",
+    "operating": "Uaireanta Oibre",
+    "week": "Dé Luain-Dé hAoine: 9:00 AM - 5:00 PM (HNA)",
+    "weekend": "Dé Sathairn-Dé Domhnaigh: Dúnta"
+  },
+  "legal": {
+    "title": "Polasaí Príobháideachta",
+    "intro": "Rialaíonn an Polasaí Príobháideachta seo conas a bhailíonn, a úsáideann, a choimeádann, agus a nochtann Musart eolas a bhailítear ó úsáideoirí (gach duine acu, 'Úsáideoir') den aipe gutháin Musart ('An Aip'). Déanann an Polasaí Príobháideachta seo cur i bhfeidhm ar an Aip agus ar gach táirge agus seirbhís a chuirtear ar fáil ag Musart.",
+    "personalIdentificationInfoTitle": "Eolas um Aitheantas Phearsanta",
+    "personalIdentificationInfo": "D'fhéadfaí eolas um aitheantas phearsanta a bhailiú ó Úsáideoirí ar an Aip go éagsúil, ina measc nuair a chláraíonn Úsáideoirí ar an Aip agus nuair a thugann siad a n-ainm, a seoladh ríomhphoist agus a phasfhocal. Úsáidtear an eolas um aitheantas phearsanta a bailítear chun cuspóirí d'aithint a bhaint amach agus chun feidhmíocht an úsáideora a fheabhsú laistigh den Aip. Tá Musart tiomanta freastal ar chinntiú go bhfuil eolas phearsanta an Úsáideora faoi rún agus faoi shábháilteacht.",
+    "nonPerIdInTitle": "Eolas Gan Aitheantas Phearsanta",
+    "nonPerIdIn": "D'fhéadfaí eolas gan aitheantas phearsanta faoi Úsáideoirí a bhailiú fad is atá siad ag iarraidh aon interact leis an Aip. D'fhéadfaí an eolas seo a bheith san áireamh an cineál gléas atá in úsáid, an córas oibriúcháin, ainm an bhrabhsálaí agus sonraí teicniúla eile a bhaineann le cumarsáid an Úsáideora leis an Aip. Bailítear an eolas seo chun feidhmíocht an Aip a fheabhsú agus chun taithí úsáideora níos fearr a chur ar fáil.",
+    "useOfTitle": "Úsáid na Faisnéise Bailithe",
+    "useOfCollectedInfo": [
+      "D'fhéadfaí Musart an eolas bailithe a úsáid do na críocha seo a leanas:",
+      "- Chun soláthar agus pearsanú taithí an Úsáideora: Cuireann an eolas a bailítear ar chumas Musart ábhar agus gnéithe den Aip a sheasamh d'aon ghrá agus suim an Úsáideora.",
+      "- Chun seirbhís custaiméara a fheabhsú: Cabhraíonn an eolas leis Musart freagairt a thabhairt ar iarraidh tacaíochta ón úsáideoir agus seirbhís custaiméara éifeachtach a sholáthar.",
+      "- Chun ríomhphoist slánachta a sheoladh: D'fhéadfaí an seoladh ríomhphoist a soláthraítear a úsáid chun nuachtlitreacha, fógraí agus eolas tábhachtach faoin Aip a sheoladh chuig an Úsáideoir. D'fhéadfaí an t-Úsáideoir a tharraingt siar ón gceannach ar theagmhálacha mar seo trí sheoladh chuig Musart nó trí úsáid a bhaint as an nasc eisiach atá ar fáil sna ríomhphoistí."
+    ],
+    "protectionOfUserInfoTitle": "Cosaint Faisnéise Úsáideora",
+    "protectionOfUserInfo": "Glaonn Musart na bearta slándála cuí chun faisnéis Úsáideoira a chosaint ó rochtain neamhúdaraithe, athrú, nochtadh nó scrios. Cuimsíonn seo baint, stóráil agus próiseáil sonraí cuí agus bearta slándála chun cosaint a thabhairt in aghaidh rochtain neamhúdaraithe ar fhaisnéis Úsáideoira.",
+    "sharingOfUserInfoTitle": "Comhroinnt Faisnéise Úsáideora",
+    "sharingOfUserInfo": "Ní dhíolann, ní dhéanann trádáil ná cíosú na sonraí aitheantais phearsanta atá ag Úsáideoirí do dhuine eile Musart. Úsáidtear faisnéis Úsáideoira go stricte do na críocha a luaitear sa Pholasaí Príobháideachta seo agus níl ach fhoireann údaraithe Musart nó soláthraithe seirbhíse ar ghlacadh leis an eolas a bhaineann leis na críocha sin a bhaint amach.",
+    "changesToPolicyTitle": "Athruithe ar an bPolasaí Príobháideachta seo",
+    "changesToPolicy": "Coinníonn Musart an ceart chun an Polasaí Príobháideachta seo a nuashonrú nó a athrú ag am ar bith. Moltar do Úsáideoirí an Polasaí Príobháideachta seo a sheiceáil ó am go chéile do chuid athruithe. Mhíníonn úsáid leanúnach den Aip tar éis na hathruithe sin a dheimhniú agus a glacadh leis an bPolasaí Príobháideachta nuashonraithe.",
+    "contactUsTitle": "Teagmháil linn",
+    "contactUsInfo": "Má tá ceist ar bith ag Úsáideoirí nó má tá aon imní acu maidir leis an bPolasaí Príobháideachta seo nó le cleachtais na hAipe Musart, is féidir leo teagmháil a dhéanamh linn ag angpepeles@gmail.com."
+  },
+  "editProfile": {
+    "name": "Ainm",
+    "email": "Ríomhphost",
+    "description": "Cur síos",
+    "save": "Sábháil"
+  },
+  "museum": {
+    "aboutTitle": "Maidir leis an mBailiúchán",
+    "about": "Is é an Metropolitan Museum of Art, a bhfuil aithne air go coitianta mar an Met, an músaem ealaíne is mó sna Stáit Aontaithe, atá suite i gCathair Nua-Eabhrac. Faoin 2022, chuir 3,208,832 cuairteoirí fáilte roimhe, rud a thugann an ócáid sa leathcheann is mó de na músaemanna ealaíne is airde ar domhan. Sna Stáit Aontaithe, tá sé ar an dara músaem ealaíne is mó cuairte acu, níl ach Gaileara Náisiúnta Ealaíne Washington D.C. á bhfuascailt ón mbealach ag Met. Tá os cionn dhá mhilliún saothar ina cuid de chuid Met, a ndearnadh eagraíocht iad i 17 roinn churatóireachta. Tá foirgneamh príomhúil Met suite i 1000 Fifth Avenue, ar an Míle Mhúsaem ar Cúinne Uachtarach Oirthear Manhattan, agus tá sé ar cheann de na músaemanna ealaíne is mó ar domhan ó thaobh achrann de. Thosaigh tógáil an Mhúsaem i 1880, agus tá sí le cúig gcaogad cinn foirneachtain (190,000 m2) timpeall 2 milliún troigh dromchla. Tá áit eile, The Cloisters i bpáirc Fort Tryon ar Uachtar Mhanhattan, áit a bhfuil bailiúchán mór ealaíne, árdsaothrachta agus artefacht ón Meánaoiseacht san Eoraip. Dátaíonn bunú Metropolitan Museum of Art siar go 1870, le misean le haghaidh ealaíon agus oideachais ealaíne a thabhairt do mhuintir Mheiriceá. Cuimsíonn a bailiúchán buan réimsí éagsúla ealaíne, ina measc seanfhaisnéis, sean Éigipteach, ealaín Shean-Mháistreacha agus dealbhóireachtaí, ealaín Mheiriceánach agus nuachta. Ina theannta sin, tá Mhét ag coinneáil maoin chuid mhaith ealaíne Aifríneacha, Áiseacha, Iosraileacha, Rómhánacha agus Ioslamacha. Taispeánann an músaem bailiúcháin éagsúil de ghléasanna ceoil, cóstaimeacha, ábhar agus armála seanda ó thimpeall an domhain. Go hiontach, cuireann na gailearaí suíomhanna iontacha i láthair ó Rómha san 1ú haois go dtí dhearadh Meiriceánach nua-aimseartha.",
+    "schedules": "Sceidliúir",
+    "closed": "DÚNTA",
+    "find": "Cá bhfaighidh tú é",
+    "maps": "Oscail i gCeardlann"
+  },
+  "artworkDetails": {
+    "about": "Maidir",
+    "details": "Sonraí",
+    "find": "Cá bhfaighidh tú seo",
+    "open": "Oscail i gCeardlann",
+    "like": "D'fhéadfadh go mbeadh suim agat freisin",
+    "loading": "Á lódáil sonraí saothair ealaíne...",
+    "unable": "Ní féidir sonraí saothair ealaíne a fháil."
+  },
+  "artistDetails": {
+    "about": "Maidir",
+    "more": "Léigh níos mó",
+    "less": "Léigh níos lú",
+    "moreInfo": "Faigh tuilleadh eolais",
+    "visit": "Cuairt",
+    "not": "Gan cur síos ar fáil",
+    "loading": "Á lódáil sonraí ealaíontóra..."
+  }
 }

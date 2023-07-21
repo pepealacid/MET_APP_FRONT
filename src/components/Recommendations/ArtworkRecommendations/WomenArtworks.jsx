@@ -3,8 +3,7 @@ import axios from "axios";
 import { Spinner, Table, Tbody, Tr, Td, Text, Box } from "@chakra-ui/react";
 import ArtworkCard from "../../ArtworkCard/ArtworkCard";
 import { Link } from "react-router-dom";
-import { LenguageContext } from "../../../context/lenguage.context";
-
+import { LanguageContext } from "../../../context/language.context";
 
 const WomenArtworks = () => {
   const womenArtworkIDs = [
@@ -20,7 +19,7 @@ const WomenArtworks = () => {
   const [womenArtworks, setWomenArtworks] = useState([]);
   const [loading, setLoading] = useState(true);
 
-  const { t } = useContext(LenguageContext)
+  const { t } = useContext(LanguageContext);
 
   useEffect(() => {
     fetchWomenArtworks();
@@ -124,7 +123,11 @@ const WomenArtworks = () => {
                       style={{ textDecoration: "none", cursor: "pointer" }}
                     >
                       <ArtworkCard
-                        imageUrl={artwork.primaryImageSmall || artwork.primaryImage}
+
+                        context="recommendation"
+                        imageUrl={
+                          artwork.primaryImageSmall || artwork.primaryImage
+                        }
                         title={artwork.title}
                         author={artwork.artistDisplayName}
                         date={artwork.objectEndDate || artwork.objectBeginDate}
@@ -136,7 +139,6 @@ const WomenArtworks = () => {
               </Tr>
             </Tbody>
           </Table>
-
         </Box>
       )}
     </div>

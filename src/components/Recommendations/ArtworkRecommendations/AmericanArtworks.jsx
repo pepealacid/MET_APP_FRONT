@@ -3,7 +3,7 @@ import axios from "axios";
 import { Spinner, Table, Tbody, Tr, Td, Text, Box } from "@chakra-ui/react";
 import { Link } from "react-router-dom";
 import ArtworkCard from "../../ArtworkCard/ArtworkCard";
-import { LenguageContext } from "../../../context/lenguage.context";
+import { LanguageContext } from "../../../context/language.context";
 
 const AmericanArtworks = () => {
   const [americanArtworks, setAmericanArtworks] = useState([]);
@@ -49,7 +49,7 @@ const AmericanArtworks = () => {
     }
   };
 
-  const { t } = useContext(LenguageContext)
+  const { t } = useContext(LanguageContext);
 
   const getRandomArtworkIDs = (count) => {
     const shuffledIDs = americanArtworksIDs.sort(() => 0.5 - Math.random());
@@ -58,7 +58,9 @@ const AmericanArtworks = () => {
 
   return (
     <div>
-      <Text className="recomm-header">{t?.artworkSearchPage.american || "American Artworks"}</Text>
+      <Text className="recomm-header">
+        {t?.artworkSearchPage.american || "American Artworks"}
+      </Text>
       {loading ? (
         <Spinner />
       ) : (
@@ -70,28 +72,30 @@ const AmericanArtworks = () => {
           whiteSpace="nowrap"
         >
           <Table size="sm">
-  <Tbody>
-    <Tr>
-      {americanArtworks.map((artwork) => (
-        <Td key={artwork.id} px={2}>
-          <Link
-            to={`/artwork/${artwork.objectID}`}
-            style={{ textDecoration: "none", cursor: "pointer" }}
-          >
-            <ArtworkCard
-              imageUrl={artwork.primaryImageSmall || artwork.primaryImage}
-              title={artwork.title}
-              author={artwork.artistDisplayName}
-              date={artwork.objectEndDate || artwork.objectBeginDate}
-              artworkID={artwork.objectID}
-            />
-          </Link>
-        </Td>
-      ))}
-    </Tr>
-  </Tbody>
-</Table>
-
+            <Tbody>
+              <Tr>
+                {americanArtworks.map((artwork) => (
+                  <Td key={artwork.id} px={2}>
+                    <Link
+                      to={`/artwork/${artwork.objectID}`}
+                      style={{ textDecoration: "none", cursor: "pointer" }}
+                    >
+                      <ArtworkCard
+                        context="recommendation"
+                        imageUrl={
+                          artwork.primaryImageSmall || artwork.primaryImage
+                        }
+                        title={artwork.title}
+                        author={artwork.artistDisplayName}
+                        date={artwork.objectEndDate || artwork.objectBeginDate}
+                        artworkID={artwork.objectID}
+                      />
+                    </Link>
+                  </Td>
+                ))}
+              </Tr>
+            </Tbody>
+          </Table>
         </Box>
       )}
     </div>

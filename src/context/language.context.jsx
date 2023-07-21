@@ -1,15 +1,15 @@
 import React, { createContext, useState, useEffect } from "react";
 
-const LenguageContext = createContext();
+const LanguageContext = createContext();
 
-const LenguageProvider = ({ children }) => {
-  const [lenguage, setLenguage] = useState("en");
+const LanguageProvider = ({ children }) => {
+  const [language, setLanguage] = useState("en");
   const [t, setT] = useState({});
 
   useEffect(() => {
     const fetchTranslations = async () => {
       try {
-        const response = await fetch(`../src/translations/${lenguage}.json`);
+        const response = await fetch(`../src/translations/${language}.json`);
         const data = await response.json();
         setT(data);
       } catch (error) {
@@ -18,15 +18,15 @@ const LenguageProvider = ({ children }) => {
       }
     };
     fetchTranslations();
-  }, [lenguage]);
+  }, [language]);
 
   
 
   return (
-    <LenguageContext.Provider value={{ lenguage, setLenguage, t }}>
+    <LanguageContext.Provider value={{ language, setLanguage, t }}>
       {children}
-    </LenguageContext.Provider>
+    </LanguageContext.Provider>
   );
 };
 
-export { LenguageContext, LenguageProvider };
+export { LanguageContext, LanguageProvider };

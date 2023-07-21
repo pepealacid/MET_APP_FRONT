@@ -6,10 +6,10 @@ import { BrowserRouter as Router } from "react-router-dom";
 import { AuthContextWrapper } from "./context/auth.context.jsx";
 import { FavContextWrapper } from "./context/fav.context.jsx";
 import customTheme from "./assets/themes/customTheme.jsx";
-import { LenguageProvider } from "./context/lenguage.context.jsx";
+import { LanguageProvider } from "./context/language.context.jsx";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
-  <LenguageProvider>
+  <LanguageProvider>
     <ChakraProvider theme={customTheme}>
       <ColorModeScript initialColorMode={customTheme.config.initialColorMode} />
       <AuthContextWrapper>
@@ -20,5 +20,5 @@ ReactDOM.createRoot(document.getElementById("root")).render(
         </FavContextWrapper>
       </AuthContextWrapper>
     </ChakraProvider>
-  </LenguageProvider>
+  </LanguageProvider>
 );

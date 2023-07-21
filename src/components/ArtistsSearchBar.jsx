@@ -4,9 +4,14 @@ import { SearchIcon } from "@chakra-ui/icons";
 import axios from "axios";
 import "../main.css";
 
-export default function ArtistsSearchBar({ updateResults }) {
+export default function ArtistsSearchBar({ updateResults, setQuery }) {
   const [searchQuery, setSearchQuery] = useState("");
   const [loading, setLoading] = useState(false);
+
+  const handleChange = (e) => {
+    setSearchQuery(e.target.value);
+    setQuery(e.target.value);
+  };
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -20,6 +25,7 @@ export default function ArtistsSearchBar({ updateResults }) {
         },
       });
       const results = response.data._embedded.results;
+      console.log(searchQuery);
 
       for (const result of results) {
         if (result._links.self.href) {
@@ -126,6 +132,7 @@ export default function ArtistsSearchBar({ updateResults }) {
               className="search-bar"
               size="md"
               w="90%"
+              onChange={handleChange}
             />
           </Center>
         </Box>

@@ -1,4 +1,4 @@
-.artwork-card {
+.recommendation .artwork-card {
   margin: 20px;
   border-radius: 10px;
   border-bottom: 1px solid grey;
@@ -7,11 +7,11 @@
   height: 180px;
 }
 
-.artwork-card .foot {
+.recommendation .artwork-card .foot {
   padding: 10px;
 }
 
-.artwork-card .main-img {
+.recommendation .artwork-card .main-img {
   height: 80px;
   width: 100vh;
   object-fit: none;
@@ -22,32 +22,32 @@
   border-top-right-radius: 10px;
 }
 
-.artwork-card .title {
+.recommendation .artwork-card .title {
   font-weight: bold;
   font-size: 20px;
 }
 
-.artwork-card .date {
+.recommendation .artwork-card .date {
   display: flex;
   font-size: 16px;
 }
 
-.artwork-card .clock {
+.recommendation .artwork-card .clock {
   height: 20px;
   margin-top: 2px;
 }
 
-.artwork-card .author {
+.recommendation .artwork-card .author {
   margin: 2px;
   font-size: 14px;
 }
 
-.artwork-card .img-container {
+.recommendation .artwork-card .img-container {
   position: relative;
   display: inline-block;
 }
 
-.artwork-card .fav-button {
+.recommendation .artwork-card .fav-button {
   position: absolute;
   top: 0;
   right: 0;
@@ -60,11 +60,81 @@
   height: 50px;
 }
 
-.artwork-card .fav-button-img-active {
+.recommendation .artwork-card .fav-button-img-active {
   pointer-events: none;
 }
 
-.artwork-card .fav-button:focus {
+.recommendation .artwork-card .fav-button:focus {
+  outline: 0;
+}
+
+.search-result .artwork-card {
+  margin: 10px;
+  border-radius: 10px;
+  border-bottom: 1px solid grey;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+  width: 180px; 
+  height: 160px; 
+}
+
+.search-result .artwork-card .foot {
+  padding: 5px; 
+}
+
+.search-result .artwork-card .main-img {
+  height: 80px; 
+  width: 100vh; 
+  object-fit: cover; 
+  object-position: center;
+  overflow: hidden;
+  padding: 0px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+.search-result .artwork-card .title {
+  font-weight: bold;
+  font-size: 14px; 
+}
+
+.search-result .artwork-card .date {
+  display: flex;
+  font-size: 12px; 
+}
+
+.search-result .artwork-card .clock {
+  height: 12px; 
+  margin-top: 2px;
+}
+
+.search-result .artwork-card .author {
+  margin: 2px;
+  font-size: 10px; 
+}
+
+.search-result .artwork-card .img-container {
+  position: relative;
+  display: inline-block;
+}
+
+.search-result .artwork-card .fav-button {
+  position: absolute;
+  top: 5px; 
+  right: 5px; 
+  z-index: 1;
+  padding: 8px;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  width: 35px; 
+  height: 25px; 
+}
+
+.search-result .artwork-card .fav-button-img-active {
+  pointer-events: none;
+}
+
+.search-result .artwork-card .fav-button:focus {
   outline: 0;
 }
 
