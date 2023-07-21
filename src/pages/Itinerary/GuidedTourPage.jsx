@@ -1,9 +1,10 @@
 import { useParams } from "react-router-dom"
 import itineraryService from "../../services/itinerary.service"
-import { useEffect, useState } from "react"
-import { Box, Button, AspectRatio, Heading} from "@chakra-ui/react"
+import { useContext, useEffect, useState } from "react"
+import { Box, Button, AspectRatio, Heading, useConst} from "@chakra-ui/react"
 import TourCard from "../../components/Itinerary/guidedTour/tourCard"
 import { useNavigate } from "react-router-dom"
+import { LanguageContext } from "../../context/language.context"
 const metMap = "https://maps.metmuseum.org/?screenmode=base&floor=1#hash=17.98/40.77923/-73.962729/-61"
 
 
@@ -11,6 +12,8 @@ function GuidedTourPage() {
     const [finalTour, setFinalTour] = useState([])
     const [swipeCount, setSwipeCount] = useState(0)
     const navigate = useNavigate()
+
+    const { t } = useContext(LanguageContext)
 
     let { id } = useParams()
     useEffect(() => {
@@ -66,7 +69,7 @@ function GuidedTourPage() {
         navigate("/tour/end")
     }
 
-    return (
+    return t?.tours && (
         <Box>
             <Box bg={"black"} color={"white"} position="fixed" h={"45px"}
                 w={"190px"} zIndex="9999"
@@ -76,7 +79,7 @@ function GuidedTourPage() {
                 onClick={goToNextPiece}
             >
                 <Heading size="md" textAlign="center">
-                    Next
+                    {t?.tours.next || "Next"}
                 </Heading>
             </Box>
             <Box bg={"white"} color={"black"} boxShadow="2xl" position="fixed" h={"45px"}
@@ -87,7 +90,7 @@ function GuidedTourPage() {
                 onClick={endTour}
             >
                 <Heading size="md" textAlign="center">
-                   End Tour
+                  {t?.tours.end || "End Tour"}
                 </Heading>
             </Box>
 

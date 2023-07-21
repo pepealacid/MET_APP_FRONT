@@ -53,7 +53,7 @@ const ToursFavorites = () => {
               }
             </Grid>
             :
-            <NoElementsFound exploreIn="/home/tours"> tours </NoElementsFound>
+            <NoElementsFound exploreIn="/home/tours" field="tours" /> 
         }
       </div>
     </Box>

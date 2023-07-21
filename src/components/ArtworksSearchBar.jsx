@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import {
   Input,
   Box,
@@ -10,10 +10,13 @@ import {
 } from "@chakra-ui/react";
 import axios from "axios";
 import Magnifier from "../assets/images/Magnifier.svg";
+import { LanguageContext } from "../context/language.context";
 
 export default function ArtworksSearchBar({ updateResults, setQuery }) {
   const [searchQuery, setSearchQuery] = useState("");
   const [loading, setLoading] = useState(false);
+
+  const { t } = useContext(LanguageContext)
 
   const handleChange = (e) => {
     setSearchQuery(e.target.value);
@@ -46,7 +49,7 @@ export default function ArtworksSearchBar({ updateResults, setQuery }) {
     setLoading(false);
   };
 
-  return (
+  return t?.main && (
     <>
       <Box position="relative">
         <form onSubmit={handleSubmit}>
@@ -62,7 +65,7 @@ export default function ArtworksSearchBar({ updateResults, setQuery }) {
                   />
                 </InputLeftElement>
                 <Input
-                  placeholder="Search for artworks"
+                  placeholder={t?.main.searchArtwork || "Search for artworks"}
                   className="search-bar"
                   size="md"
                   w="90%"

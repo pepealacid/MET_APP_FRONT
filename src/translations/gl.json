@@ -1,153 +1,189 @@
 {
-    "zero": {
-      "skip": "Omitir",
-      "one": {
-        "header": "Non perdas nada!",
-        "text": "Escolle calquera dos roteiros predefinidos ou personaliza o teu propio para ver todo."
-      },
-      "two": {
-        "header": "Obteña toda a información cun só escaneo",
-        "text": "Escanea calquera obra de arte para ver toda a historia detrás dela."
-      },
-      "three": {
-        "header": "Engade todo o que che gusta aos teus favoritos",
-        "text": "O noso algoritmo garante que nada do que che gusta pase desapercibido."
-      }
+  "main": {
+    "loading": "Cargando...",
+    "searchArtwork": "Buscar obras de arte",
+    "searchArtist": "Buscar artistas",
+    "searchTour": "Buscar tours"
+  },
+  "zero": {
+    "skip": "Saltar",
+    "one": {
+      "header": "Non perdas nada!",
+      "text": "Escolle calquera dos tours predefinidos ou personaliza o teu para ver todo."
     },
-    "buttons": {
-      "tours": "Roteiros",
-      "artists": "Artistas",
-      "artworks": "Obras de Arte",
-      "museum": "Museo",
-      "about": "Sobre",
-      "tickets": "Entradas",
-      "ticketsButton": "Comprar entradas"
+    "two": {
+      "header": "Obtén toda a información cunha única escaneada",
+      "text": "Escanea calquera obra de arte para ver toda a historia que hai detrás dela."
     },
-    "navbar": {
-      "explore": "Explorar",
-      "favorites": "Favoritos",
-      "profile": "Perfil",
-      "edit": "Editar",
-      "changePassword": "Cambiar o teu contrasinal",
-      "language": "Idioma",
-      "appearance": "Apariencia",
-      "support": "Soporte",
-      "legal": "Legal",
-      "logout": "Cerrar sesión",
-      "deleteAccount": "Eliminar conta",
-      "deleteUser": "Eliminar Usuario",
-      "deleteConfirmation": "Estás seguro de querer eliminar a túa conta? Esta acción é irreversible.",
-      "cancel": "Cancelar",
-      "delete": "Eliminar"
-    },
-  
-    "artistSearchPage": {
-      "goBack": "Volver",
-      "favorited": "Engadido aos favoritos",
-      "notFavorited": "Non engadido aos favoritos",
-      "about": "Sobre",
-      "readMore": "Ler máis",
-      "readLess": "Ler menos",
-      "getMoreInfo": "Obter máis información",
-      "loadingArtistDetails": "Cargando detalles do artista...",
-      "notBioAvailable": "Biografía non dispoñible",
-      "american": "Artistas americanos",
-      "spanish": "Artistas españoles",
-      "women": "Mulleres na arte",
-      "results": "Resultados para"
-    },
-  
-    "artworkSearchPage": {
-      "women": "Mulleres na arte",
-      "american": "Obras de arte americanas",
-      "european": "Obras de arte europeas",
-      "random": "Obras de arte aleatorias",
-      "results": "Resultados para"
-    },
-  
-    "changeYourPassword": {
-      "current": "Contrasinal actual",
-      "new": "Novo contrasinal",
-      "confirm": "Confirmar novo contrasinal",
-      "change": "Cambiar o teu contrasinal",
-      "success": "Contrasinal cambiado con éxito!"
-    },
-  
-    "themePage": {
-      "header": "Tema",
-      "light": "Luz",
-      "dark": "Escuro"
-    },
-  
-    "support": {
-      "header": "Soporte",
-      "first": "Se precisas axuda ou tes algunha dúbida sobre a aplicación Musart, por favor, non dubides en contactar co noso equipo de soporte. Estamos aquí para axudarte!",
-      "contactHeader": "Información de contacto",
-      "mail": "Email: angpepeles@gmail.com",
-      "phone": "Teléfono: +34 667 63 44 56",
-      "operating": "Horario de atención",
-      "week": "Luns a venres: 9:00 - 17:00 (EST)",
-      "weekend": "Sábado e domingo: Pechado"
-    },
-  
-    "legal": {
-      "title": "Política de Privacidade",
-      "intro": "Esta Política de Privacidade rexe a forma en que Musart recolle, utiliza, mantén e divulga a información recollida dos usuarios (cada un, 'Usuario') da aplicación móbil Musart ('App'). Esta Política de Privacidade aplica á App e a todos os produtos e servizos ofrecidos por Musart.",
-      "personalIdentificationInfoTitle": "Información de identificación persoal",
-      "personalIdentificationInfo": "Musart pode recoller información de identificación persoal dos usuarios de varias formas, incluíndo cando os usuarios rexistranse na App e proporcionan o seu nome, dirección de correo electrónico e contrasinal. A información de identificación persoal recollida úsase con fins de autenticación e para mellorar a experiencia do usuario na App. Musart comprométese a garantir que a información persoal do usuario se manteña confidencial e segura.",
-      "nonPerIdInTitle": "Información non de identificación persoal",
-      "nonPerIdIn": "Musart tamén pode recoller información non de identificación persoal sobre os usuarios cada vez que interactúan coa App. Esta información pode incluír o tipo de dispositivo utilizado, o sistema operativo, o nome do navegador e outros detalles técnicos relacionados coa interacción do usuario coa App. Esta información recóllense para mellorar a funcionalidade da App e proporcionar unha mellor experiencia de usuario.",
-      "useOfTitle": "Uso da información recollida",
-      "useOfCollectedInfo": [
-        "Musart pode utilizar a información recollida para os seguintes propósitos:",
-        "- Proporcionar e personalizar a experiencia do usuario: A información recollida permite a Musart personalizar o contido e as funcionalidades da App para adaptalas ás preferencias e intereses do usuario.",
-        "- Mellorar o servizo ao cliente: A información axuda a Musart a responder máis eficazmente ás solicitudes de asistencia do usuario e a proporcionar un servizo de atención ao cliente eficiente.",
-        "- Enviar correos electrónicos periódicos: Musart pode utilizar o enderezo de correo electrónico proporcionado para enviar ao usuario actualizacións, notificacións e información importante relacionada coa App. O usuario pode optar por non recibir comunicacións desas características contactando con Musart ou utilizando o enlace para darse de baixa proporcionado nos correos electrónicos."
-      ],
-      "protectionOfUserInfoTitle": "Protección da información do usuario",
-      "protectionOfUserInfo": "Musart toma as medidas de seguridade adecuadas para protexer a información do usuario contra o acceso non autorizado, a alteración, a divulgación ou a destrución. Isto inclúe manter prácticas adecuadas de recollida, almacenamento e procesamento de datos e medidas de seguridade para protexer contra o acceso non autorizado á información do usuario.",
-      "sharingOfUserInfoTitle": "Compartición da información do usuario",
-      "sharingOfUserInfo": "Musart non vende, negocia nin aluga a información de identificación persoal do usuario a terceiros. A información do usuario utilízase estritamente para os fins mencionados nesta Política de Privacidade e só é accesible ao persoal autorizado de Musart ou aos provedores de servizos que necesiten coñecer a información para prestar servizos en nome de Musart.",
-      "changesToPolicyTitle": "Cambios nesta Política de Privacidade",
-      "changesToPolicy": "Musart reserva o dereito de actualizar ou modificar esta Política de Privacidade en calquera momento. Recoméndase aos usuarios que revisen periodicamente esta Política de Privacidade para calquera cambio. O uso continuado da App despois das modificacións constituirá o recoñecemento e a aceptación pola parte do usuario da Política de Privacidade actualizada.",
-      "contactUsTitle": "Contacta connosco",
-      "contactUsInfo": "Se os usuarios teñen algunha pregunta ou preocupación sobre esta Política de Privacidade ou as prácticas da App Musart, poden contactar connosco a través do correo electrónico angpepeles@gmail.com."
-    },
-  
-    "editProfile": {
-      "name": "Nome",
-      "email": "Correo electrónico",
-      "description": "Descrición",
-      "save": "Gardar"
-    },
-  
-    "museum": {
-      "aboutTitle": "Sobre o museo",
-      "about": "O Museo Metropolitano de Arte, coñecido comunmente como Met, é o maior museo de arte das Américas, situado en Nova York. En 2022, recibiu 3,208,832 visitantes, situándose en oitavo lugar entre os museos de arte máis visitados do mundo. Nos Estados Unidos, é o segundo museo de arte máis visitado, só por detrás da National Gallery of Art en Washington D.C. A colección permanente do Met conta con máis de dous millóns de obras, organizadas en 17 departamentos curatoriais. Situado na Quinta Avenida, no Upper East Side de Manhattan, o edificio principal do Met é un dos maiores museos de arte do mundo en superficie. A súa construción comezou en 1880 e ocupa aproximadamente 2 millóns de pés cadrados (190,000 m2). Outra localización, The Cloisters en Fort Tryon Park no Upper Manhattan, alberga unha ampla colección de arte, arquitectura e artefactos da Europa medieval. A fundación do Museo Metropolitano de Arte data de 1870, coa misión de achegar a arte e a educación artística ao pobo estadounidense. A súa colección permanente abarca diversas formas de arte, incluíndo a antigüidade clásica, o antigo Exipto, as pinturas e esculturas dos mestres europeos, a arte estadounidense e a arte moderna. Ademais, o Met posúe extensas coleccións de arte africana, asiática, oceánica, bizantina e islámica. O museo tamén exhibe coleccións enciclopédicas de instrumentos musicais, disfraces, accesorios e antigas armas e armaduras de todo o mundo. Destacan as notables galerías que abarcan desde a Roma do século I ata o deseño moderno estadounidense.",
-      "schedules": "Horarios",
-      "closed": "PECHADO",
-      "find": "Onde atopalo",
-      "maps": "Abrir en Mapas"
-    },
-  
-    "artworkDetails": {
-      "about": "Sobre",
-      "details": "Detalles",
-      "find": "Onde atopar esta obra",
-      "open": "Abrir en Mapas",
-      "like": "También che pode gustar",
-      "loading": "Cargando detalles da obra de arte...",
-      "unable": "Non se puido obter os detalles da obra de arte."
-    },
-  
-    "artistDetails": {
-      "about": "Sobre",
-      "more": "Ler máis",
-      "less": "Ler menos",
-      "moreInfo": "Obter máis información",
-      "visit": "Visitar",
-      "not": "Biografía non dispoñible",
-      "loading": "Cargando detalles do artista..."
+    "three": {
+      "header": "Engade todo o que che guste á túa lista de favoritos",
+      "text": "O noso algoritmo asegúrase de que nada do que che guste pase desapercibido."
     }
+  },
+  "buttons": {
+    "tours": "Tours",
+    "artists": "Artistas",
+    "artworks": "Obras de Arte",
+    "museum": "Museo",
+    "about": "Sobre",
+    "tickets": "Entradas",
+    "ticketsButton": "Comprar entradas"
+  },
+  "navbar": {
+    "explore": "Explorar",
+    "favorites": "Favoritos",
+    "profile": "Perfil",
+    "edit": "Editar",
+    "changePassword": "Cambiar o contrasinal",
+    "language": "Idioma",
+    "appearance": "Aparencia",
+    "support": "Soporte",
+    "legal": "Legal",
+    "logout": "Cerrar sesión",
+    "deleteAccount": "Eliminar conta",
+    "deleteUser": "Eliminar usuario",
+    "deleteConfirmation": "Tes a certeza de que queres eliminar a túa conta? Esta acción é irreversible.",
+    "cancel": "Cancelar",
+    "delete": "Eliminar"
+  },
+  "artistSearchPage": {
+    "goBack": "Volver",
+    "favorited": "Engadido aos favoritos",
+    "notFavorited": "Non engadido aos favoritos",
+    "about": "Sobre",
+    "readMore": "Ler máis",
+    "readLess": "Ler menos",
+    "getMoreInfo": "Obter máis información",
+    "loadingArtistDetails": "Cargando detalles do artista...",
+    "notBioAvailable": "Biografía non dispoñible",
+    "american": "Artistas americanos",
+    "spanish": "Artistas españoles",
+    "women": "Mulleres no arte",
+    "results": "Resultados para"
+  },
+  "artworkSearchPage": {
+    "women": "Mulleres no arte",
+    "american": "Obras de arte americanas",
+    "european": "Obras de arte europeas",
+    "random": "Obras de arte ao chou",
+    "results": "Resultados para"
+  },
+  "changeYourPassword": {
+    "current": "Contrasinal actual",
+    "new": "Novo contrasinal",
+    "confirm": "Confirmar contrasinal",
+    "change": "Cambiar o contrasinal",
+    "success": "Contrasinal cambiado con éxito!"
+  },
+  "themePage": {
+    "header": "Aparencia",
+    "light": "Claro",
+    "dark": "Escuro"
+  },
+  "support": {
+    "header": "Soporte",
+    "first": "Se necesitas axuda ou tes algunha pregunta sobre a aplicación Musart, non dubides en poñerte en contacto co noso equipo de soporte. Estamos aquí para axudar!",
+    "contactHeader": "Información de contacto",
+    "mail": "Correo electrónico: angpepeles@gmail.com",
+    "phone": "Teléfono: +34 667 63 44 56",
+    "operating": "Horario de atención",
+    "week": "De luns a venres: 9:00 - 17:00 (EST)",
+    "weekend": "Sábado e domingo: Pechado"
+  },
+  "legal": {
+    "title": "Política de Privacidade",
+    "intro": "Esta Política de Privacidade rexe a maneira na que Musart recolle, utiliza, mantén e divulga a información recollida dos usuarios (cada un, un 'Usuario') da aplicación móbil Musart ('App'). Esta Política de Privacidade aplica á App e a todos os produtos e servizos ofrecidos por Musart.",
+    "personalIdentificationInfoTitle": "Información de Identificación Persoal",
+    "personalIdentificationInfo": "Musart pode recoller información de identificación persoal dos usuarios de varias maneiras, incluíndo cando os usuarios se rexistran na App e proporcionan o seu nome, dirección de correo electrónico e contrasinal. A información de identificación persoal recollida úsase para fins de autenticación e para mellorar a experiencia do usuario dentro da App. Musart comprométese a garantir que a información persoal do usuario se manteña confidencial e segura.",
+    "nonPerIdInTitle": "Información Non de Identificación Persoal",
+    "nonPerIdIn": "Musart tamén pode recoller información non persoal de identificación sobre os usuarios cada vez que interactúan coa App. Esta información pode incluír o tipo de dispositivo utilizado, o sistema operativo, o nome do navegador e outros detalles técnicos relacionados coa interacción do usuario coa App. Esta información recóllase para mellorar a funcionalidade da App e proporcionar unha mellor experiencia de usuario.",
+    "useOfTitle": "Uso da Información Recollida",
+    "useOfCollectedInfo": [
+      "Musart pode usar a información recollida para os seguintes fins:",
+      "- Para proporcionar e personalizar a experiencia do usuario: A información recollida permite a Musart personalizar o contido e as funcións da App para adaptarse mellor ás preferencias e intereses do usuario.",
+      "- Para mellorar o servizo ao cliente: A información axuda a Musart a responder de forma máis eficiente ás solicitudes de soporte do usuario e proporcionar un servizo de atención ao cliente eficaz.",
+      "- Para enviar correos electrónicos periódicos: Musart pode usar o enderezo de correo electrónico fornecido para enviar actualizacións, notificacións e información importante relacionada coa App. O usuario pode optar por non recibir estas comunicacións poñéndose en contacto con Musart ou utilizando o enlace de cancelamento de subscripción proporcionado nos correos electrónicos."
+    ],
+    "protectionOfUserInfoTitle": "Protección da Información do Usuario",
+    "protectionOfUserInfo": "Musart toma medidas de seguridade adecuadas para protexer a información do usuario contra o acceso non autorizado, a alteración, a divulgación ou a destrución. Isto inclúe o mantemento de prácticas adecuadas de recollida, almacenamento e procesamento de datos e medidas de seguridade para protexer contra o acceso non autorizado á información do usuario.",
+    "sharingOfUserInfoTitle": "Compartición da Información do Usuario",
+    "sharingOfUserInfo": "Musart non vende, comercializa nin aluga información de identificación persoal do usuario a terceiros. A información do usuario úsase estritamente para os fins mencionados nesta Política de Privacidade e só é accesible ao persoal autorizado de Musart ou aos provedores de servizos que precisan coñecer a información para proporcionar servizos en nome de Musart.",
+    "changesToPolicyTitle": "Cambios nesta Política de Privacidade",
+    "changesToPolicy": "Musart reserva o dereito de actualizar ou modificar esta Política de Privacidade en calquera momento. Recoméndase aos usuarios que verifiquen periodicamente esta Política de Privacidade para coñecer os cambios. O uso continuado da App despois das modificacións constituirá o recoñecemento e a aceptación polo usuario da Política de Privacidade actualizada.",
+    "contactUsTitle": "Contacta con Nós",
+    "contactUsInfo": "Se os usuarios teñen algunha pregunta ou preocupación sobre esta Política de Privacidade ou sobre as prácticas da App Musart, poden poñerse en contacto con nós en angpepeles@gmail.com."
+  },
+  "editProfile": {
+    "name": "Nome",
+    "email": "Correo Electrónico",
+    "description": "Descrición",
+    "save": "Gardar"
+  },
+  "museum": {
+    "aboutTitle": "Sobre o museo",
+    "about": "O Museo Metropolitano de Arte, coñecido comunmente como Met, é o maior museo de arte das Américas, situado en Nova York. No ano 2022, recibiu 3.208.832 visitantes, ocupando o oitavo lugar entre os museos de arte máis visitados en todo o mundo. Nos Estados Unidos, é o segundo museo de arte máis visitado, só superado pola Galería Nacional de Arte en Washington D.C. A colección permanente do Met conta con máis de dous millóns de obras, organizadas en 17 departamentos curatoriais. Situado en 1000 Fifth Avenue, na Millas dos Museos do Upper East Side de Manhattan, o edificio principal do Met é un dos museos de arte máis grandes do mundo en termos de superficie. A súa construción comezou en 1880 e abrangue aproximadamente 2 millóns de pés cadrados (190.000 m2). Outra localización, The Cloisters no parque Fort Tryon en Upper Manhattan, acolle unha ampla colección de arte, arquitectura e artefactos da Europa medieval. O establecemento do Museo Metropolitano de Arte data de 1870, cunha misión de levar arte e educación artística ao pobo estadounidense. A súa colección permanente abarca diversas formas de arte, incluíndo antigüidades clásicas, antigo Exipto, pinturas e esculturas europeas dos mestres antigos e arte moderno estadounidense. Ademais, o Met posúe unha extensa colección de arte africana, asiática, oceánica, bizantina e islámica. O museo tamén exhibe coleccións enciclopédicas de instrumentos musicais, disfraces, accesorios e armas antigas de todo o mundo. As galerías destacan interiores notables desde Roma do século I ata o deseño moderno estadounidense.",
+    "schedules": "Horarios",
+    "closed": "PECHADO",
+    "find": "Onde atopalo",
+    "maps": "Abrir en Mapas"
+  },
+  "artworkDetails": {
+    "about": "Sobre",
+    "details": "Detalles",
+    "find": "Onde atopar isto",
+    "open": "Abrir en Mapas",
+    "like": "También che pode gustar",
+    "loading": "Cargando detalles da obra de arte...",
+    "unable": "Non é posíbel obter detalles da obra de arte."
+  },
+  "artistDetails": {
+    "about": "Sobre",
+    "more": "Ler máis",
+    "less": "Ler menos",
+    "moreInfo": "Obter máis información",
+    "visit": "Visitar",
+    "not": "Biografía non dispoñible",
+    "loading": "Cargando detalles do artista..."
+  },
+  "toursRecommendations": {
+    "one": "Tours dunha hora",
+    "recom": "Recomendado",
+    "like": "También che pode gustar",
+    "personalize": "Personalizar un Tour"
+  },
+  "tours": {
+    "rate": "No xeral, como valorarías a experiencia con este tour?",
+    "next": "Seguinte",
+    "end": "Fin do Tour",
+    "time": "O tempo do tour foi preciso segundo a túa preferencia e estimación?",
+    "info": "A información das obras de arte do Tour foi útil para ti?",
+    "noMatch": "Non hai tours coincidentes",
+    "long": "Canto tempo tes para a túa visita?",
+    "least": "Necesitas polo menos unha hora para a túa visita",
+    "exceed": "Non podes exceder 5 horas de tour",
+    "negative": "Non podes ter minutos negativos",
+    "moreMinutes": "Non podes ter máis de 59 minutos",
+    "allFields": "Debes completar todos os campos correctamente",
+    "oneTage": "Debes elixir polo menos unha etiqueta",
+    "miss": "Que movemento de artistas non queres perder?",
+    "important": "Só quero ver as obras de arte máis importantes",
+    "save": "Gardar tour",
+    "tourTime": "Tempo do Tour",
+    "can": "Podes engadir ou eliminar as obras de arte aquí. Notificaremosche se os teus cambios exceden o tempo do tour.",
+    "room": "Sala",
+    "discover": "Descubrir arte",
+    "goTo": "Para ir á seguinte obra de arte, debes ir á galería:",
+    "unknown": "Artista descoñecido",
+    "bio": "Biografía do artista: ",
+    "type": "Tipo de arte: ",
+    "created": "Creado mediante",
+    "noFavorites": "Non tes favoritos {{field}}",
+    "mark": "Todas as {{field}} que marques como favoritas aparecerán aquí",
+    "explore": "¡A explorar!",
+    "artworks": "obras de arte",
+    "artists": "artistas",
+    "creating": "Estamos a crear o tour perfecto para ti...",
+    "start": "Iniciar Tour",
+    "personalized": "Tour personalizado"
   }
-  
+}

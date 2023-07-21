@@ -10,7 +10,6 @@ import {
   Box,
 } from "@chakra-ui/react";
 
-
 import { useNavigate } from "react-router-dom";
 
 const LanguagePage = () => {
@@ -77,15 +76,6 @@ const LanguagePage = () => {
               <Text paddingBottom="10px">Français</Text>
               <Box ml={4}>
                 <Radio value="fr" />
-              </Box>
-            </Flex>
-            <Flex
-              justifyContent="space-between"
-              borderBottom="1px solid #efefef"
-            >
-              <Text paddingBottom="10px">Gaelic</Text>
-              <Box ml={4}>
-                <Radio value="gd" />
               </Box>
             </Flex>
             <Flex

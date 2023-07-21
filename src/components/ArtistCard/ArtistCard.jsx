@@ -42,14 +42,19 @@ const ArtistCard = ({
       <div className="artist-card">
         <div className="top">
           <div>
-            <img
-              className="artist-image"
-              src={
-                imageUrl ||
-                "https://drawinghowtos.com/wp-content/uploads/2022/07/painter-colored.jpg"
-              }
-              alt={"image " + title}
-            />
+            {imageUrl ? (
+              <img
+                className="artist-image"
+                src={imageUrl}
+                alt={"image " + title}
+              />
+            ) : (
+              <img
+                className="artist-image"
+                src="https://drawinghowtos.com/wp-content/uploads/2022/07/painter-colored.jpg"
+                alt="artist"
+              />
+            )}
           </div>
           <div>
             <p>{truncatedTitle}</p>

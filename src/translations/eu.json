@@ -1,153 +1,201 @@
 {
-    "zero": {
-      "skip": "Atendatu ez",
-      "one": {
-        "header": "Ez galdu ezer!",
-        "text": "Hautatu lehenetsitako ibilbideetako bat edo zurea pertsonalizatu, dena ikusteko."
-      },
-      "two": {
-        "header": "Informazio guztia eskaneatu batekin",
-        "text": "Eskaneatu obra artistiko batean, bertan dagoen historia guztia ikusteko."
-      },
-      "three": {
-        "header": "Gogokoena dena gehitu zure gogokoetan",
-        "text": "Gure algoritmoak zure gogokoena ez ditzala ahazten bermatzen du."
-      }
+  "main": {
+    "loading": "Kargatzen...",
+    "searchArtwork": "Bilatu obrak",
+    "searchArtist": "Bilatu artistak",
+    "searchTour": "Bilatu tourak"
+  },
+  "zero": {
+    "skip": "Baztertu",
+    "one": {
+      "header": "Ez galdu ezer!",
+      "text": "Hautatu zeinbait tour predefinitu edo zurea pertsonalizatu, dena ikusteko."
     },
-    "buttons": {
-      "tours": "Ibilbideak",
-      "artists": "Artistak",
-      "artworks": "Obra artistikoak",
-      "museum": "Museoa",
-      "about": "Honi buruz",
-      "tickets": "Sarrerak",
-      "ticketsButton": "Erosi sarrerak"
+    "two": {
+      "header": "Informazio guztia eskanez",
+      "text": "Eskaneatu obra batean eszenatokiaren osotasuna ikusteko."
     },
-    "navbar": {
-      "explore": "Esploratu",
-      "favorites": "Gogokoenak",
-      "profile": "Profila",
-      "edit": "Editatu",
-      "changePassword": "Aldatu zure pasahitza",
-      "language": "Hizkuntza",
-      "appearance": "Itxura",
-      "support": "Laguntza",
-      "legal": "Legala",
-      "logout": "Saioa itxi",
-      "deleteAccount": "Kontua ezabatu",
-      "deleteUser": "Erabiltzailea ezabatu",
-      "deleteConfirmation": "Ziur zaude zure kontua ezabatu nahi duzula? Ekintza hau ezin da desegin.",
-      "cancel": "Ezeztatu",
-      "delete": "Ezabatu"
-    },
-  
-    "artistSearchPage": {
-      "goBack": "Itzuli",
-      "favorited": "Gogokoetan",
-      "notFavorited": "Ez gogokoetan",
-      "about": "Honi buruz",
-      "readMore": "Irakurri gehiago",
-      "readLess": "Irakurri gutxiago",
-      "getMoreInfo": "Informazio gehiago lortu",
-      "loadingArtistDetails": "Artistaren xehetasunak kargatzen...",
-      "notBioAvailable": "Ez dago biografiarik",
-      "american": "Amerikako artistak",
-      "spanish": "Espainiako artistak",
-      "women": "Emakumeak artean",
-      "results": "Emaitzak hauentzat"
-    },
-  
-    "artworkSearchPage": {
-      "women": "Emakumeak artean",
-      "american": "Amerikako obrak",
-      "european": "Europako obrak",
-      "random": "Aleatorioko obrak",
-      "results": "Emaitzak hauentzat"
-    },
-  
-    "changeYourPassword": {
-      "current": "Uneko pasahitza",
-      "new": "Pasahitz berria",
-      "confirm": "Pasahitz berria baieztatu",
-      "change": "Aldatu zure pasahitza",
-      "success": "Pasahitza ongi aldatuta!"
-    },
-  
-    "themePage": {
-      "header": "Itxura",
-      "light": "Argia",
-      "dark": "Iluna"
-    },
-  
-    "support": {
-      "header": "Laguntza",
-      "first": "Musart aplikazioarekin zerikusia duten zalantzak edo galderak badituzu, mesedez, ez ezazu zalantzarik izan gure laguntza taldearekin harremanetan jarri. Laguntzeko hemen gaude!",
-      "contactHeader": "Harremanetarako informazioa",
-      "mail": "Emaila: angpepeles@gmail.com",
-      "phone": "Telefonoa: +34 667 63 44 56",
-      "operating": "Lanaldiak",
-      "week": "Astelehenetik ostiralera: 9:00etatik 17:00etara (EST)",
-      "weekend": "Larunbatean eta igandeetan: Itxita"
-    },
-  
-    "legal": {
-      "title": "Pribatutasun-politika",
-      "intro": "Pribatutasun-politika honek Musartek erabiltzaileekin (batez ere, 'Erabiltzailea' den bakoitzarekin) bildutako informazioa nola jasotzen, erabiltzen, mantentzen eta zehazten den arautzen du. Honek Musart-en mugikor aplikazioan ('App') eta Musarten eskaintzen dituen produktu eta zerbitzu guztietan erabiltzen du.",
-      "personalIdentificationInfoTitle": "Pertsonal identifikazio-informazioa",
-      "personalIdentificationInfo": "Musartek erabiltzaileekin pertsonal identifikazio-informazioa hainbat modutan jaso dezake, aplikazioan erregistratu direnean eta izena, email helbidea eta pasahitza emanez. Bildutako pertsonal identifikazio-informazioa autentifikazio helburuetarako eta aplikazioan erabiltzaileen esperientzia hobetzeko erabiltzen da. Musartek zain dago Erabiltzailearen pertsonal informazioa konfidentziala eta segurua mantentzen dela bermatzeko.",
-      "nonPerIdInTitle": "Ez pertsonal identifikazio-informazioa",
-      "nonPerIdIn": "Musartek ez pertsonal identifikazio-informazioa ere bildu dezake erabiltzaileek aplikazioarekin interakzioan daudenean. Informazio hau aplikazioarekin interakzioan jarduten duten erabiltzailearen gailu-mota, sistema eragilea, nabigatzailearen izena eta beste informazio tekniko batzuk izan daiteke. Informazio hau bildu egiten da aplikazioaren funtzionalitatea hobetzeko eta erabiltzaileen esperientzia hobeagoa eskaintzeko.",
-      "useOfTitle": "Bildutako informazioaren erabilera",
-      "useOfCollectedInfo": [
-        "Musartek bildutako informazioa honako helburu hauetarako erabili dezake:",
-        "- Erabiltzailearen esperientzia ematea eta pertsonalizatzea: Bildutako informazioak Musart-en eduki eta ezaugarriak pertsonalizatzea ahalbidetzen dio, Erabiltzailearen nahien eta interesen arabera.",
-        "- Bezero zerbitzua hobetzea: Informazioak Musartek erabiltzaileek egiten dituzten laguntza-eskaeretara eraginkortasunez erantzuteko eta bezero zerbitzu ona eskaintzeko laguntzen du.",
-        "- Mezu elektronikoak bidaltzea: Musartek emaniko email helbidea erabiltzea Erabiltzaileari eguneratzeak, jakinarazpenak eta aplikazioarekin lotutako informazio garrantzitsuak bidaltzeko. Erabiltzaileak gainera erantzun gabe hartu dezake komunikazio horiek, Musartekin harremanetan jarri edo emailen unsubscrisketa estekan klik eginez."
-      ],
-      "protectionOfUserInfoTitle": "Erabiltzailearen informazioaren babesa",
-      "protectionOfUserInfo": "Musartek segurtasun neurriak hartzen ditu Erabiltzailearen informazioa baimenik gabeko atzipena, aldatzea, argitaratzea edo suntsitzearen aurka babesteko. Horretarako, datuak jaso, gorde eta prozesatzeko egokiak diren praktikak eta segurtasun neurriak ezartzen ditu Musartek Erabiltzailearen informazioa atzitzeko baimena duten Musarteko langile edo zerbitzu hornitzaileekin bakarrik izan dezaten.",
-      "sharingOfUserInfoTitle": "Erabiltzailearen informazioa partekatzea",
-      "sharingOfUserInfo": "Musartek ez du Erabiltzailearen pertsonal identifikazio-informazioa saltzen, trukatzen edo alokatzen besteentzat. Erabiltzailearen informazioa bakarrik berehalako helburuetarako erabiltzen da, Pribatutasun-politika honetan adierazitako helburuengatik. Informazio hori Musarteko baimendutako langile edo zerbitzu hornitzaileen esku dago, haiek zerbitzuak emateko behar duten informazioa jakin dezaten.",
-      "changesToPolicyTitle": "Pribatutasun-politika honen aldaketak",
-      "changesToPolicy": "Musartek eskubidea du Pribatutasun-politika honen eguneratze edo aldatzea behin betiko izan daitekeena. Erabiltzaileak Pribatutasun-politika honetako aldaketak eguneroki egiaztatzeko animatzen dira. Aldaketak onartu ondoren, aplikazioaren erabilera jarraitzeak Erabiltzaileak onartzea izango da Pribatutasun-politika eguneratua.",
-      "contactUsTitle": "Jarri gurekin harremanetan",
-      "contactUsInfo": "Erabiltzaileek edozein zalantza edo kezka izanez gero, edo Musart App-ekin egiten dituen praktikez galdetzeko, kontaktatu gurekin angpepeles@gmail.com helbidean."
-    },
-  
-    "editProfile": {
-      "name": "Izena",
-      "email": "Emaila",
-      "description": "Deskribapena",
-      "save": "Gorde"
-    },
-  
-    "museum": {
-      "aboutTitle": "Museoari buruz",
-      "about": "Metropolitan Art Museoari, Met izenez ezaguna, Amerikan dauden arte museo handiena da, New York hirian kokatuta. 2022an 3,208,832 bisitari hartu ditu, mundu osoko arte museo bisitatuenen zortzikerian kokatuz. Ameriketako Estatu Batuetan, National Gallery of Art-en ondoren bigarren arte museo bisitatua da, Washington D.C.n. Meten jabe jokoa 2 milioi obra ditu, 17 zuzendaritza departamentutan antolatuak. 1000 Fifth Avenue, Manhattanen dagoen Met-eko eraikuntza nagusia munduko arte museo handienetakoa da eremukoan. 1880an hasi zen eraikuntza, 2 milioi gelaren esparrua (190,000 m2) ditu. Beste kokapen bat, The Cloisters, Fort Tryon Park-en, Manhattanen, Europako Erdi Aroko artea, arkitektura eta artifiziazioaren bilduma handia aurkezten du. Metropolitan Art Museoaren sorrera 1870ean eman zen, Amerikarrei artea eta arte-hezkuntza hurbiltzeko misioa izanik. Bere bilduma egonkorra, antzinako antikitatea, ña arteri oldee, amerikarrak eta modernoak barneratzen ditu. Gainera, Metek Afrikako, Asian, Ozeaniko, Bizantinoko eta Islamgo artearen jabe dauka. Museoak, ordea, mundu osoko musika tresnen, kostumen, osagarrien eta adar armaginen bildumak erakusten ditu.",
-      "schedules": "Ordutegiak",
-      "closed": "ITXITA",
-      "find": "Non aurkitu",
-      "maps": "Ireki Mapetan"
-    },
-  
-    "artworkDetails": {
-      "about": "Honi buruz",
-      "details": "Xehetasunak",
-      "find": "Hona non aurkituko duzun",
-      "open": "Ireki Mapetan",
-      "like": "Gustatuko zaizu ere",
-      "loading": "Obra xehetasunak kargatzen...",
-      "unable": "Ezin izan da obra xehetasunak eskuratu."
-    },
-  
-    "artistDetails": {
-      "about": "Honi buruz",
-      "more": "Irakurri gehiago",
-      "less": "Irakurri gutxiago",
-      "moreInfo": "Informazio gehiago lortu",
-      "visit": "Bisita egin",
-      "not": "Biografiarik ez",
-      "loading": "Artista xehetasunak kargatzen..."
+    "three": {
+      "header": "Gustatzen zaizkizun guztia gehitu zure gogokoenetara",
+      "text": "Gure algoritmoak ziurtatzen du ez zaidazula gustoko denik ahaztu."
     }
+  },
+  "buttons": {
+    "tours": "Tourak",
+    "artists": "Artistak",
+    "artworks": "Obrak",
+    "museum": "Museoa",
+    "about": "Gaztelua",
+    "tickets": "Sarrerak",
+    "ticketsButton": "Erosi sarrerak"
+  },
+  "navbar": {
+    "explore": "Esploratu",
+    "favorites": "Gogokoenak",
+    "profile": "Profila",
+    "edit": "Editatu",
+    "changePassword": "Aldatu zure pasahitza",
+    "language": "Hizkuntza",
+    "appearance": "Itxura",
+    "support": "Laguntza",
+    "legal": "Legal",
+    "logout": "Saioa itxi",
+    "deleteAccount": "Kontua ezabatu",
+    "deleteUser": "Erabiltzailea ezabatu",
+    "deleteConfirmation": "Ziur zaude zure kontua ezabatu nahi duzula? Ekintza hau ezin da desegin.",
+    "cancel": "Ezeztatu",
+    "delete": "Ezabatu"
+  },
+
+  "artistSearchPage": {
+    "goBack": "Itzuli",
+    "favorited": "Gogokoak",
+    "notFavorited": "Ez gogokoak",
+    "about": "Gaztelua",
+    "readMore": "Irakurri gehiago",
+    "readLess": "Irakurri gutxiago",
+    "getMoreInfo": "Informazio gehiago lortu",
+    "loadingArtistDetails": "Artista xehetasunak kargatzen...",
+    "notBioAvailable": "Ez dago bio erabilgarri",
+    "american": "Amerikar artistak",
+    "spanish": "Espainiako artistak",
+    "women": "Emakumeak artean",
+    "results": "Emaitzak"
+  },
+
+  "artworkSearchPage": {
+    "women": "Emakumeak artean",
+    "american": "Amerikar obrak",
+    "european": "Europar obrak",
+    "random": "Aleatorioko obrak",
+    "results": "Emaitzak"
+  },
+
+  "changeYourPassword": {
+    "current": "Uneko pasahitza",
+    "new": "Pasahitz berria",
+    "confirm": "Pasahitz berria baieztatu",
+    "change": "Aldatu zure pasahitza",
+    "success": "Pasahitza ongi aldatu da!"
+  },
+
+  "themePage": {
+    "header": "Itxura",
+    "light": "Argia",
+    "dark": "Iluna"
+  },
+
+  "support": {
+    "header": "Laguntza",
+    "first": "Musart aplikazioari buruz zalantza edo galderarik baduzu, mesedez ez ezazu huts egiteko gure laguntza-taldearekin harremanetan jartzeko. Laguntza emateko hemen gaude!",
+    "contactHeader": "Harremanetarako informazioa",
+    "mail": "Posta elektronikoa: angpepeles@gmail.com",
+    "phone": "Telefonoa: +34 667 63 44 56",
+    "operating": "Irekitako ordutegiak",
+    "week": "Astelehenetik ostiralera: 9:00etatik 17:00etara (EST)",
+    "weekend": "Larunbatero - Igandero: Itxita"
+  },
+
+  "legal": {
+    "title": "Pribatutasun politika",
+    "intro": "Pribatutasun politika hau Musart-ek erabiltzaileekin (hemen, 'Erabiltzaileak') bildutako informazioa nola jasotzen, erabiltzen, mantentzen eta adierazten du. Pribatutasun politika hau Musart aplikazioaren ('App') eta Musart-ek eskaintzen dituen produktu eta zerbitzuen guztiei dagokie.",
+    "personalIdentificationInfoTitle": "Pertsona identifikazio-informazioa",
+    "personalIdentificationInfo": "Musart-ek Erabiltzaileak aplikaziora erregistratu eta izena, posta elektronikoa eta pasahitza ematean pertsona identifikazio-informazioa jaso dezake. Bildutako pertsona identifikazio-informazioa autentifikazio helburuak betetzeko eta Apparen barruko erabiltzaile-esperientzia hobetzeko erabiltzen da. Musart-ek zure informazio pertsonala konfidantziala eta segurua mantentzea helburu du.",
+    "nonPerIdInTitle": "Ez-pertsona identifikazio-informazioa",
+    "nonPerIdIn": "Musart-ek Erabiltzaileek aplikazioarekin interakzioan dauden bitartean ez-pertsona identifikazio-informazioa jaso dezake. Informazio hau, erabiltzailearen interakzioarekin erlazionatutako gailu mota, eragile-sistema, nabigatzaile-izena eta beste xehetasun teknikoak izan daitezke. Informazio hau Apparen funtzionalitatea hobetzeko eta erabiltzaile-esperientzia hobea eskaintzeko bildutzen da.",
+    "useOfTitle": "Jasotako informazioaren erabilera",
+    "useOfCollectedInfo": [
+      "Musart-ek jasotako informazioa honako helburuetarako erabili dezake:",
+      "- Erabiltzaile-esperientzia ematea eta pertsonalizatzea: Bildutako informazioak Musart-ek aplikazioaren eduki eta ezaugarriak pertsonalizatzeko eta erabiltzailearen gustuetara eta interesei egokitzen zaizkio.",
+      "- Bezero-zerbitzua hobetzea: Informazioak Musart-ek erabiltzaileen eskaintza eskaeretara erantzuteko eta eraginkorra den bezero-zerbitzua eskaintzeko lagunduko du.",
+      "- Mezu elektronikoak bidaltzea: Musart-ek emandako posta elektroniko helbidea erabil ditzake Erabiltzaileari eguneratzeak, jakinarazpenak eta aplikazioarekin lotutako informazio garrantzitsua bidaltzeko. Erabiltzaileak mezuen harpidetza bertan behera uzteko, Musart-i kontaktatu edo mezuen barruko baztertu esteka erabili dezake."
+    ],
+    "protectionOfUserInfoTitle": "Erabiltzaile-informazioaren babesa",
+    "protectionOfUserInfo": "Musart-ek segurtasun neurri egokiak hartzen ditu Erabiltzaile-informazioa baimenik gabeko sarbide, aldaketarik, argitaratzea edo suntsitzea aurka babesteko. Horretarako, erabiltzaile-informazioa babesteko datu bilduma, biltegiratze eta prozesamenduak eta Erabiltzaile-informazioa baimenik gabeko sarbidea aurka babesteko segurtasun neurriak mantentzen ditu."
+    "sharingOfUserInfoTitle": "Erabiltzaile-informazioaren partekatzea",
+    "sharingOfUserInfo": "Musart-ek Erabiltzaileen pertsona identifikazio-informazioa ez saltzen, ez aldatzen, ez alokatzen. Erabiltzailearen informazioa Pribatutasun Politika honetan aipatutako helburuetarako bakarrik erabiltzen da eta Musart-eko langileen edo zerbitzu hornitzaileen eskura dago, beren zerbitzuak Musart-en izenean emateko informazioa ezagutu behar dutenei eskaintzeko."
+    "changesToPolicyTitle": "Pribatutasun Politika honetako aldaketak",
+    "changesToPolicy": "Musart-ek Pribatutasun Politika hau eguneratu edo aldatzeko eskubidea gordetzen du. Erabiltzaileak Pribatutasun Politika honen aldaketak begiratzera animatzen dira. Aldaketekin jarraitzeak Pribatutasun Politika eguneratua onartzea adieraziko du."
+    "contactUsTitle": "Jarri gurekin harremanetan",
+    "contactUsInfo": "Erabiltzaileek galderarik edo zalantzak badituzte Pribatutasun Politika honi buruz edo Musart Apparen praktikari buruz, gurekin harremanetan jartzeko, jar zaitezte angpepeles@gmail.com helbidean."
+  },
+
+  "editProfile": {
+    "name": "Izena",
+    "email": "Posta elektronikoa",
+    "description": "Deskribapena",
+    "save": "Gorde"
+  },
+
+  "museum": {
+    "aboutTitle": "Museoari buruz",
+    "about": "Metropolitan Museum of Art, batetik besteak, Met, Ameriketako arte museo handiena da, New Yorken kokatua. 2022an, 3.208.832 bisitari jaso ditu, mundu osoko arte museo bisitatuena dena. AEBetan, National Gallery of Art-en ondoren, arte museo bigarrenik bisitatuena da. Met-ek bere sarrerako bilduma 2 milioi obrak baino gehiago ditu, 17 zeregin kuratorialen artean sailkatuta daude. 1000 Fifth Avenue aldean dagoen Met-ek, Manhattaneko Upper East Sideko Museo Miletik, munduko arte museo handienetako bat da azalera arloan. 1880an hasi zen eraikuntza, 2 milioi zatitan zehar estenditzen da (190.000 m2). Beste kokalekua, The Cloisters, Fort Tryon Parkean Upper Manhattanen dago, Europa erdiko arte, arkitektura eta artefaktuen bilduma handia dauka. Metropolitan Museum of Art-aren sortzea 1870era datoz, artea eta arte-hezkuntza amerikar jendearentzat ekarriko zituen helburuarekin. Bere sarrerako bilduma eremu desberdinetako arte formak barne hartzen ditu, antzinaromako artea, antzinako Egipto, Europako artisten pintura eta eskultura, Amerikar eta arte modernoa barne. Gainera, Met-ek Afrikako, Asiako, Ozeaniako, Bizantziako eta Islameko artearen bilduma handia dauka. Museoak instrumentu musikalak, jantziak, osagarriak eta mundu osoko zehazkiak aurkezten ditu arma zahar eta zuloagatik. Gainera, galeriek 1. mendeako Erroman dagozkien diseinu amerikar modernora artean dagozkien interesgarriak izaten dira.",
+    "schedules": "Ordutegiak",
+    "closed": "ITXITA",
+    "find": "Non aurkitu dezakegu",
+    "maps": "Ireki Mapetan"
+  },
+
+  "artworkDetails": {
+    "about": "Museumari buruz",
+    "details": "Xehetasunak",
+    "find": "Non aurkituko duzun",
+    "open": "Ireki Mapetan",
+    "like": "Gustatuko zaizu",
+    "loading": "Obra xehetasunak kargatzen...",
+    "unable": "Ezin izan da obra xehetasunak eskuratu."
+  },
+
+  "artistDetails": {
+    "about": "Artistaari buruz",
+    "more": "Irakurri gehiago",
+    "less": "Irakurri gutxiago",
+    "moreInfo": "Informazio gehiago lortu",
+    "visit": "Ikusi",
+    "not": "Bio erabilgarria ez da",
+    "loading": "Artista xehetasunak kargatzen..."
+  },
+
+  "toursRecommendations": {
+    "one": "Orduko tourak",
+    "recom": "Gomendatua",
+    "like": "Gustoko dituzu",
+    "personalize": "Pertsonalizatu Tour bat"
+  },
+
+  "tours": {
+    "rate": "Orokorrez, nola ebaluatzen duzu tourarekin izandako esperientzia?",
+    "next": "Hurrengoa",
+    "end": "Toura amaitu",
+    "time": "Touraren unea zure gogokoaren eta zure estimazioaren arabera zehaztu zenbait?",
+    "info": "Tourko obrakiko informazioa zuretzat erabilgarria izan da?",
+    "noMatch": "Ez da tour bat aurkitzen",
+    "long": "Zenbat denbora behar duzun zure bisita egiterako?",
+    "least": "Gutxienez ordu bat behar duzu bisitatzeko",
+    "exceed": "Ezin duzu touraren 5 orduak gainditu",
+    "negative": "Ezin duzu minutu negatiboak izan",
+    "moreMinutes": "Ezin duzu 59 minutu baino gehiago izan",
+    "allFields": "Kanpo-bidea beharrezkoa da derrigorrez bete behar duzu",
+    "oneTage": "Gutxienez etiketa bat hautatu behar duzu",
+    "miss": "Zein artista mugimendua ez zenuke galdu nahi?",
+    "important": "Bereziki garrantzitsuenak diren obrak soilik ikusi nahi ditut",
+    "save": "Gorde tourra",
+    "tourTime": "Touraren unea",
+    "can": "Hemen obrak gehitu, ezabatu edo aldatu ditzakezu. Zure aldaketek touraren denbora gainditzen badute, jakinaraziko dizugu.",
+    "room": "Gela",
+    "discover": "Artea ezagutu",
+    "goTo": "Hurrengo obrara joateko gela honetara joan behar duzu:",
+    "unknown": "Artista ezezaguna",
+    "bio": "Artista-biografia: ",
+    "type": "Arte mota: ",
+    "created": "Sortua",
+    "noFavorites": "Ez daukazu gogokorik {{field}}",
+    "mark": "Gogoko duzun {{field}} guztiak hemen agertuko dira",
+    "explore": "Joan Esploratu!",
+    "artworks": "obrak",
+    "artists": "artistak",
+    "creating": "Zuretzako tour perfektua sortzen ari gara...",
+    "start": "Toura hasi",
+    "personalized": "Pertsonalizatutako tourra"
   }
-  
+}
