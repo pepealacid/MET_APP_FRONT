@@ -1,6 +1,8 @@
-import { Card, CardBody, Stack, Heading, Text, Image } from "@chakra-ui/react"
+import { Grid, Heading, Image } from "@chakra-ui/react"
 import { useState } from "react";
 import { useNavigate } from "react-router-dom"
+import "./FavCard.css";
+
 
 
 
@@ -13,31 +15,26 @@ function FavCard({ tour }) {
     const tourId = tour._id
     const navigate = useNavigate()
 
-    const goToDetailsPage = ()=>{
+    const goToDetailsPage = () => {
         navigate(`/itinerary/${tourId}`)
     }
     return (
         <>
-            {hasBeenClick && (
-                <Navigate to={url} />
-            )}
-            <Card maxW='sm' onClick={goToDetailsPage} >
-                <CardBody>
-                    <Image
-                        src={tour.picture}
-                        alt=''
-                        borderRadius='sm'
-                        maxW="xs"
-                    />
-                    <Stack mt='6' spacing='3'>
-                        <Heading size='md'>{tour.name}</Heading>
-                        <Text>
-                            MET MUSEUM
-                        </Text>
-                    </Stack>
-                </CardBody>
+                {hasBeenClick && (
+                    <Navigate to={url} />
+                )}
+                <div className="little-artwork-card" onClick={goToDetailsPage}>
+                    <div className="top">
+                        <div className="img-container">
+                            <img className="main-img" src={tour.picture} alt="artwork" />
+                        </div>
+                    </div>
+                    <div className="foot">
+                    <Heading as='h6' size='xs'>{tour.name}</Heading>
 
-            </Card>
+                    </div>
+                    
+                </div>
         </>
     )
 }

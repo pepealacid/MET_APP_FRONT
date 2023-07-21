@@ -4,15 +4,19 @@ import { useParams } from "react-router-dom"
 import itineraryService from "../../services/itinerary.service"
 import PieceCard from "../../components/Itinerary/suggestedTour/PieceCard"
 import { convertToHoursAndMinutes } from "../../utils/functions"
-import { Box, Image, Button } from "@chakra-ui/react"
+import { Box, Flex, Heading, Image, Text } from "@chakra-ui/react"
 import { AuthContext } from "../../context/auth.context"
 import { useNavigate } from "react-router-dom"
+import timeWhite from "../../assets/images/timeWhite.png"
+import paint from "../../assets/images/paint.png"
+import ArtistFavHeart from "../../assets/images/ArtistFavHeart.png"
+import FavHeartFilled from "../../assets/images/FavHeartFilled.png"
 
 
 
 
 function ItineraryPage() {
-    const metPicture = "https://upload.wikimedia.org/wikipedia/commons/b/ba/Details_of_the_Met.JPG"
+    const metPicture = "https://sothebys-com.brightspotcdn.com/dims4/default/ad7ae47/2147483647/strip/true/crop/3493x1976+0+315/resize/1156x654!/format/webp/quality/90/?url=https%3A%2F%2Fsothebys.brightspotcdn.com%2F1d%2F6e%2F7f23844d45d5b6aef37d9d7b8e50%2F5.%20New%20European%20Paintings%20Galleries_Gallery%20601_Italian%20Baroque_MMA.jpg"
     const { user } = useContext(AuthContext);
     const navigate = useNavigate()
 
@@ -73,36 +77,79 @@ function ItineraryPage() {
             addToSaved()
     }
 
-    const startTour = ()=>{
+    const startTour = () => {
         navigate(`/tour/${id}`)
 
     }
 
 
     return (<>
-        name {tourData.name}
-        time {time}
-        pieces {tourData.artworkData?.length}
 
-        <Box
-            bg={favorite ? "red" : "blue"}
-            onClick={handleSaving}
+        <Box bg={"black"} color={"white"} position="fixed" h={"60px"}
+            w={"364px"} zIndex="9999"
+            ml={"25px"} borderRadius={"5px"}
+            pt={"15px"} mt={"calc(100vh - 170px)"}
+
+            onClick={startTour}
         >
-            {
-                favorite ? "it's saved" : "it's not save "
-            }
+            <Heading size="md" textAlign="center">
 
+                Start Tour
+            </Heading>
         </Box>
 
-        <Box>
-            <Image
-                objectFit='cover'
-                src={metPicture}
-                alt=" met's facade"
-            />
-        </Box>
+        <Flex bg={`url(${metPicture})`}
+            backgroundSize="cover"
+            h="300px"
+            direction="column"
 
-        <Box>
+        >
+            <Flex h="80px" justify="flex-end" align="flex-end">
+
+                <Box 
+                    onClick={handleSaving}
+                    w="35px"
+                    mr="30px"
+                >
+                    {
+                        favorite 
+                        ?
+                            <Image pt="5px" pl="3px" src={FavHeartFilled} />    
+                        :
+                            <Image src={ArtistFavHeart} />
+                    }
+
+                </Box>
+
+
+
+            </Flex>
+            <Flex align="flex-end" h="100%">
+                <Box pl="20px" pb="20px">
+
+                    <Heading color="white" fontWeight="500" size="md">
+                        {tourData.name}
+                    </Heading>
+                    <Flex>
+                        <Image p="2px" src={timeWhite} pt="5px" />
+                        <Text color="white" fontSize="1.2em" m="0px 10px">
+                            {time}
+                        </Text>
+                        <Heading color="white" size="md" m="0px 10px">
+                            |
+                        </Heading>
+                        <Image src={paint} p="2px" pt="5px" />
+                        <Text color="white" fontSize="1.2em" m="0px 10px">
+                            {tourData.artworkData?.length}
+                        </Text>
+
+                    </Flex>
+                </Box>
+
+            </Flex>
+        </Flex>
+
+        <Box mb="180px">
             {
                 tourData.artworkData &&
                 tourData.artworkData.map(artPiece =>
@@ -113,9 +160,7 @@ function ItineraryPage() {
                     />)
             }
         </Box>
-        <Button onClick={startTour}>
-            Start Tour
-        </Button>
+
 
     </>)
 }

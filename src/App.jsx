@@ -13,7 +13,7 @@ import Favorites from "./pages/FavoritesPage/Favorites";
 import ToursFavorites from "./components/Favorites/ToursFavorites";
 import ArtistsFavorites from "./components/Favorites/ArtistsFavorites";
 import ArtworksFavorites from "./components/Favorites/ArtworksFavorites";
-
+import SearchTour from "./pages/Itinerary/SearchTour";
 import ZeroPage from "./pages/ZeroPage";
 import Navbar from "./components/Navbar";
 import LegalPage from "./pages/LegalPage";
@@ -31,12 +31,11 @@ import EndGuidedTourPage from "./pages/Itinerary/EndGuidedTourPage";
 
 function App() {
   const location = useLocation();
-
-  const shouldShowNavbar = !["/", "/login", "/signup"].includes(
-    location.pathname
+  const shouldShowNavbar = !["/", "/login", "/signup", "/itinerary/new", /^\/tour\/.*/].some(path =>
+    typeof path === 'string' ? path === location.pathname : path.test(location.pathname)
   );
 
-  const shouldShowBackButton = !["/favorites", "/itinerary/new"].includes(
+  const shouldShowBackButton = !["/favorites"].includes(
     location.pathname
   );
 
@@ -54,9 +53,9 @@ function App() {
         <Route path="/lenguage" element={<LenguagePage />} />
         <Route path="/edit-profile" element={<EditProfilePage />} />
         <Route path="/change-password" element={<ChangePasswordPage />} />
-          
-          
-          
+
+
+
 
         <Route
           path="/favorites/"
@@ -131,16 +130,16 @@ function App() {
             </PrivateRoute>
           }
         />
-            
-      <Route
-        path="/itinerary/:id"
-        element={
-          <PrivateRoute>
-            <ItineraryPage />
-          </PrivateRoute>
-        }
-      />
-          
+
+        <Route
+          path="/itinerary/:id"
+          element={
+            <PrivateRoute>
+              <ItineraryPage />
+            </PrivateRoute>
+          }
+        />
+
         <Route
           path="/artist/:title"
           element={
@@ -165,16 +164,16 @@ function App() {
             </PrivateRoute>
           }
         />
-                  <Route
-        path="/tour/end"
-        element={
-          <PrivateRoute>
-            <EndGuidedTourPage />
-          </PrivateRoute>
-        }
-      />
-          
-                  <Route
+        <Route
+          path="/tour/end"
+          element={
+            <PrivateRoute>
+              <EndGuidedTourPage />
+            </PrivateRoute>
+          }
+        />
+
+        <Route
           path="/tour/:id"
           element={
             <PrivateRoute>
@@ -182,10 +181,18 @@ function App() {
             </PrivateRoute>
           }
         />
-            
-                  <Route path="/artist/:title" element={<ArtistDetailsPage />} />
-      <Route path="/artwork/:objectId" element={<ArtworkDetailsPage />} />
-          
+        <Route
+          path="/home/tours"
+          element={
+            <PrivateRoute>
+              <SearchTour />
+            </PrivateRoute>
+          }
+        />
+
+        <Route path="/artist/:title" element={<ArtistDetailsPage />} />
+        <Route path="/artwork/:objectId" element={<ArtworkDetailsPage />} />
+
       </Routes>
       {shouldShowNavbar && <Navbar />}
     </div>

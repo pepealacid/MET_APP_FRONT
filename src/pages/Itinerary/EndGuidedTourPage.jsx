@@ -16,7 +16,7 @@ function EndGuidedTourPage(){
             page == 3 && <Rating setPage={setPage} page={page}></Rating>
         }
         { page ==4 &&
-        <Navigate to="/"></Navigate>
+            <Navigate to="/home/tours"></Navigate>
         }
     </>)
 }

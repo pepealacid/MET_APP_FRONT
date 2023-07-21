@@ -1,9 +1,10 @@
 import { useParams } from "react-router-dom"
 import itineraryService from "../../services/itinerary.service"
 import { useEffect, useState } from "react"
-import { Box, Button } from "@chakra-ui/react"
+import { Box, Button, AspectRatio, Heading} from "@chakra-ui/react"
 import TourCard from "../../components/Itinerary/guidedTour/tourCard"
 import { useNavigate } from "react-router-dom"
+const metMap = "https://maps.metmuseum.org/?screenmode=base&floor=1#hash=17.98/40.77923/-73.962729/-61"
 
 
 function GuidedTourPage() {
@@ -67,15 +68,41 @@ function GuidedTourPage() {
 
     return (
         <Box>
+            <Box bg={"black"} color={"white"} position="fixed" h={"45px"}
+                w={"190px"} zIndex="9999"
+                ml={"210px"} borderRadius={"5px"}
+                pt={"5px"} mt={"calc(100vh - 62px)"}
+
+                onClick={goToNextPiece}
+            >
+                <Heading size="md" textAlign="center">
+                    Next
+                </Heading>
+            </Box>
+            <Box bg={"white"} color={"black"} boxShadow="2xl" position="fixed" h={"45px"}
+                w={"190px"} zIndex="9999"
+                ml={"20px"} borderRadius={"5px"}
+                pt={"5px"} mt={"calc(100vh - 60px)"}
+
+                onClick={endTour}
+            >
+                <Heading size="md" textAlign="center">
+                   End Tour
+                </Heading>
+            </Box>
+
             { finalTour && 
                 <TourCard currentGallery={finalTour[swipeCount]} />
             }
-            <Button onClick={endTour}>
-                End tour
-            </Button>
-            <Button onClick={goToNextPiece}>
-                Next
-            </Button >
+           
+            <AspectRatio
+                h="400px"
+            ratio={4/9}
+            >
+                <iframe
+                    src={metMap}
+                />
+            </AspectRatio>
         </Box>
     )
 }
