@@ -22,7 +22,7 @@ const MuseumCard = () => {
         <Link to="https://goo.gl/maps/tnjZzz8u9swcxsgh7" target="_blank">
           <Button bg={"black"}>
             <Image marginRight="10px" src={MapsIcon} />
-            <Text>{t?.artworkDetails.open || "Open in maps"}</Text>
+            <Text color={"white"}>{t?.artworkDetails.open || "Open in maps"}</Text>
           </Button>
         </Link>
       </div>
