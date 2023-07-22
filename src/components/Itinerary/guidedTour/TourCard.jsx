@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import ArtworkCard from "./artworkCard";
+import ArtworkCard from "./ArtworkCard";
 import { Box, Heading } from "@chakra-ui/react";
 import { LanguageContext } from "../../../context/language.context";
 
