@@ -256,6 +256,7 @@ const ArtworkDetailsPage = () => {
                                   fontWeight="bold"
                                   padding={4}
                                   paddingBottom={0}
+                                  color={"black"}
                                 >
                                   Wikidata
                                 </Text>
@@ -268,6 +269,7 @@ const ArtworkDetailsPage = () => {
                                   overflow="hidden"
                                   textOverflow="ellipsis"
                                   whiteSpace="nowrap"
+                                  color={"black"}
                                 >
                                   Visit {artworkData.objectWikidata_URL}
                                 </Text>

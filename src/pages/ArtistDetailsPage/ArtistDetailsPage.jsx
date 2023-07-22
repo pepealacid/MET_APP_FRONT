@@ -107,7 +107,7 @@ const ArtistDetailsPage = () => {
                 )}
               </button>
             </div>
-            <div className="top-info">
+            <div className="top-info" style={{position: "absolute", top: "130px", left: "20px"}}>
               <Text className="name" as="h4">
                 {artistData.name}
               </Text>
@@ -157,7 +157,7 @@ const ArtistDetailsPage = () => {
                           <br />
                           <span
                             className="read-more"
-                            style={{ cursor: "pointer", color: "blue" }}
+                            style={{ cursor: "pointer", color: "red", backgroundColor: "white", width: "120px"}}
                             onClick={toggleDescription}
                           >
                             <p className="show-more-text">
@@ -204,6 +204,7 @@ const ArtistDetailsPage = () => {
                                   fontWeight="bold"
                                   padding={4}
                                   paddingBottom={0}
+                                  color={"black"}
                                 >
                                   Artsy
                                 </Text>
@@ -216,10 +217,10 @@ const ArtistDetailsPage = () => {
                                   overflow="hidden"
                                   textOverflow="ellipsis"
                                   whiteSpace="nowrap"
+                                  color={"black"}
                                 >
                                   {t?.artistDetails.visit || "Visit"}{" "}
                                   {artistData._links.permalink.href}{" "}
-                                  {/* Access href property */}
                                 </Text>
                               </Flex>
                               <Box className="button-side" padding={4}>
