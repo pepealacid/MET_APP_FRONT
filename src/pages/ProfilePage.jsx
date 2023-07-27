@@ -74,6 +74,7 @@ const ProfilePage = () => {
       const token = localStorage.getItem(TOKEN_NAME);
       console.log("HANDLE", token);
       const user = await userService.getUser(token);
+      console.log(user)
       const userData = user.data;
       setUserData(userData);
     } catch (error) {
